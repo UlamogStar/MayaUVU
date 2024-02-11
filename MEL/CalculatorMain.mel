@@ -1,0 +1,96 @@
+global proc float totalSum(float $num1, float $num2) 
+{
+    float $totalSum = $num1 + $num2;
+    return $totalSum;
+}
+
+global proc float totalDiff(float $num1, float $num2)
+{
+    float $totalDiff = $num1 - $num2;
+    return $totalDiff;
+}
+
+global proc float totalProd(float $num1, float $num2)
+{
+    float $totalProd = $num1 * $num2;
+    return $totalProd;
+}
+
+global proc float totalDivi(float $num1, float $num2)
+{
+    if ($num2 == 0)
+    {
+        print("Cannot divide by Zero\n");
+        return 0.0;
+    }
+    else
+    {
+        float $totalDivi = $num1 / $num2;
+        return $totalDivi;
+    }
+}
+
+global proc float calculatePower(float $num1, int $powerExponent) 
+{
+    float $result = pow($num1, $powerExponent);
+    return $result;
+}
+
+global proc float calcMean(float $numbers[])
+{
+    float $sum = 0.0;
+    int $numElements = size($numbers);
+    
+    for ($i = 0; $i < $numElements; $i++)
+    {
+        $sum += $numbers[$i];
+    }
+
+    float $meanTotal = ($sum / $numElements);
+    return $meanTotal;
+}
+
+global proc float calcMedian(float $numbers[]) 
+{
+    float $sortedNumbers[] = `sort $numbers`;
+    int $numElements = size($sortedNumbers);
+    float $median;
+
+    if ($numElements % 2 == 0) 
+    {
+        int $mid = $numElements / 2;
+        $median = ($sortedNumbers[$mid - 1] + $sortedNumbers[$mid]) / 2;
+    } 
+    else 
+    {
+        int $mid = ($numElements - 1) / 2;
+        $median = $sortedNumbers[$mid];
+    }
+
+    return $median;
+}
+
+global proc calculateOperations()
+{
+    float $numbers[] = {5.0, 6.0, 9.0};
+    
+    // Calculate and print results
+    float $sumResult = totalSum($numbers[0], $numbers[1]);
+    float $differenceResult = totalDiff($numbers[0], $numbers[1]);
+    float $productResult = totalProd($numbers[0], $numbers[1]);
+    float $divisionResult = totalDivi($numbers[0], $numbers[1]);
+    float $powerResult = calculatePower($numbers[0], 3);
+    float $meanResult = calcMean($numbers);
+    float $medianResult = calcMedian($numbers);
+
+    print("The Sum is: " + $sumResult + "\n");
+    print("The Difference is: " + $differenceResult + "\n");
+    print("The Product is: " + $productResult + "\n");
+    print("The Quotient is: " + $divisionResult + "\n");
+    print("The Power is: " + $powerResult + "\n");
+    print("Mean of the dataset is: " + $meanResult + "\n");
+    print("Median of the dataset is: " + $medianResult + "\n");
+}
+
+// Call the main calculation procedure
+calculateOperations();

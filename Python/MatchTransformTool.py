@@ -18,7 +18,7 @@ def createControl():
     if selection:
         cmds.select(selection[0])
         cmds.CreateNURBSCircle()
-        
+        cmds.move(0, 0, 0, relative=True)
     else:
         cmds.error('Please select an object')
     cmds.rename('_ctrl_0')
@@ -26,9 +26,11 @@ def createControl():
 def createGroup():
     selection = cmds.ls(selection=True)
     if selection:
-        cmds.select(selection[0])
-        cmds.group(name=selection[0] + '_grp')
+        cmds.group(selection, name='{}_grp'.format(selection[0]))
     else:
+        selection = cmds.ls(selection=True)
+        if selection:
+            cmds.group(selection, name='{}_grp'.format(selection[0]))
         cmds.error('Please select an object')
 
 

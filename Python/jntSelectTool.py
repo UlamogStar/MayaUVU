@@ -1,12 +1,26 @@
 import maya.cmds as cmds
 
 def selectJoints():
-    selected_joints = cmds.ls('*_jnt')
-    selected_joints = cmds.ls('*joint1')
+    selected_joints = []
+    i = 0
+    while True:
+        joint_name = 'joint{}'.format(i)
+        if not cmds.objExists(joint_name):
+            break
+        selected_joints.append(joint_name)
+        i += 1
+    cmds.select(selected_joints)
     
 
 def selectControls():
-    selected_controls = cmds.ls('*_ctrl_')
+    selected_controls = []
+    i = 0
+    while True:
+        control_name = '_ctrl_{}'.format(i)
+        if not cmds.objExists(control_name):
+            break
+        selected_controls.append(control_name)
+        i += 1
     cmds.select(selected_controls)
 
 def selectGeo():
@@ -15,12 +29,16 @@ def selectGeo():
 
 def orientJoints():
     selectJoints = cmds.ls(selection=True)
-    cmds.setAttr.rotateX(0)
-    cmds.setAttr.rotateY(0)
-    cmds.setAttr.rotateZ(0)
+    for jnt in selectJoints:
+        cmds.select(jnt)
+        cmds.setAttr('{}.rx'.format(jnt), 0)
+        cmds.setAttr('{}.ry'.format(jnt), 0)
+        cmds.setAttr('{}.rz'.format(jnt), 0)
     cmds.joint(e=True, oj='xyz', ch=True, zso=True)
 
-
+def deleteSelected():
+    cmds.delete(cmds.ls(selection=True))
+    
 def createUI():
     if cmds.window('jntSelectUI', exists=True):
         cmds.deleteUI('jntSelectUI', window=True)

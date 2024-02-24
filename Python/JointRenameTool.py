@@ -1,10 +1,10 @@
 import maya.cmds as cmds
 
-def renameLeftJoints():
+def renameLeftJoints(*args):
     selection = cmds.ls(selection=True)
     cmds.rename(selection[0], "L_jnt_")
 
-def renameRightJoints():
+def renameRightJoints(*args):
     selection = cmds.ls(selection=True)
     cmds.rename(selection[0], "R_jnt_")
 
@@ -20,3 +20,4 @@ def createUI():
     cmds.showWindow()
 
 createUI()
+

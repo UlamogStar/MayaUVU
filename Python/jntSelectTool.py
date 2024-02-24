@@ -1,15 +1,21 @@
 import maya.cmds as cmds
+def createJoints():
+    i=0
+    cmds.joint(p=(0, 0, 0), name='_jnt_{}'.format(0))
+    new_joint = cmds.joint(p=(0, 0, 0), name='_jnt_{}'.format(i+1))
+    cmds.parent(new_joint, '_jnt_{}'.format(i+1))
 
 def selectJoints():
-    selected_joints = []
-    i = 0
-    while True:
-        joint_name = 'joint{}'.format(i)
-        if not cmds.objExists(joint_name):
-            break
-        selected_joints.append(joint_name)
-        i += 1
+    selected_joints = cmds.ls('*_jnt_*')
     cmds.select(selected_joints)
+
+def selectRight():
+    selected_joints_Right = cmds.ls('*R_*')
+    cmds.select(selected_joints_Right)
+
+def selectLeft():
+    selected_joints_Left = cmds.ls('*L_*')
+    cmds.select(selected_joints_Left)
     
 
 def selectControls():
@@ -43,13 +49,17 @@ def createUI():
     if cmds.window('jntSelectUI', exists=True):
         cmds.deleteUI('jntSelectUI', window=True)
 
-    cmds.window('jntSelectUI', title='Joint Select Tool', widthHeight=(200, 140), sizeable=False)
+    cmds.window('jntSelectUI', title='Joint Select Tool', widthHeight=(200, 200), sizeable=False)
     cmds.columnLayout(adjustableColumn=True)
+    cmds.button(label='Create Joints', command='createJoints()')
     cmds.button(label='Select All Joints', command='selectJoints()')
+    cmds.button(label='Select Right', command='selectRight()') 
+    cmds.button(label='Select Left', command='selectLeft()')
     cmds.button(label='Select All Controls', command='selectControls()')
     cmds.button(label='Select All Geo', command='selectGeo()')
     cmds.button(label='Delete Selected', command='cmds.delete()')
     cmds.button(label='Orient Joints', command='orientJoints()')
     cmds.showWindow('jntSelectUI')
+    
 
 createUI()

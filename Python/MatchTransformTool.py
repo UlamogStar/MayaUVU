@@ -15,13 +15,15 @@ def matchTransforms():
 
 def createControl():
     selection = cmds.ls(selection=True)
-    if selection:
-        cmds.select(selection[0])
+    if not selection:
+        cmds.error('Please select at least one object')
+        return
+    
+    for obj in selection:
+        cmds.select(obj)
         cmds.CreateNURBSCircle()
         cmds.move(0, 0, 0, relative=True)
-    else:
-        cmds.error('Please select an object')
-    cmds.rename('_ctrl_0')
+        cmds.rename('_ctrl_0')
     
 def createGroup():
     selection = cmds.ls(selection=True)

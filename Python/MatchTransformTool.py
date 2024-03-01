@@ -6,6 +6,17 @@ def freezeTransforms():
         cmds.DeleteHistory(obj)
         cmds.FreezeTransformations(obj)
 
+def attributesSetZero():
+    selection = cmds.ls(selection=True)
+    for obj in selection:
+        cmds.setAttr('{}.rx'.format(obj), 0)
+        cmds.setAttr('{}.ry'.format(obj), 0)
+        cmds.setAttr('{}.rz'.format(obj), 0)
+        cmds.setAttr('{}.sx'.format(obj), 1)
+        cmds.setAttr('{}.sy'.format(obj), 1)
+        cmds.setAttr('{}.sz'.format(obj), 1)
+        
+
 def matchTransforms():
     selection = cmds.ls(selection=True)
     if len(selection) != 2:
@@ -42,6 +53,7 @@ def createUI():
     cmds.window('matchTransformUI', title='Match Transform Tool', widthHeight=(200, 100), sizeable=False)
     cmds.columnLayout(adjustableColumn=True)
     cmds.button(label='Freeze Transforms', command='freezeTransforms()')
+    cmds.button(label='Set Attributes to Zero', command='attributesSetZero()')
     cmds.button(label='Match Transforms', command='matchTransforms()')
     cmds.button(label='Create Control', command= 'createControl()')
     cmds.button(label='Create Group', command='createGroup()')

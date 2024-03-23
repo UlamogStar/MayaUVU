@@ -50,7 +50,7 @@ def createGroup():
 def createUI():
     if cmds.window('matchTransformUI', exists=True):
         cmds.deleteUI('matchTransformUI', window=True)
-    cmds.window('matchTransformUI', title='Match Transform Tool', widthHeight=(200, 100), sizeable=False)
+    cmds.window('matchTransformUI', title='Match Transform Tool', widthHeight=(200, 180), sizeable=False)
     cmds.columnLayout(adjustableColumn=True)
     cmds.button(label='Freeze Transforms', command='freezeTransforms()')
     cmds.button(label='Set Attributes to Zero', command='attributesSetZero()')

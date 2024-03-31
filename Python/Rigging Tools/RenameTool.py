@@ -1,12 +1,20 @@
 import maya.cmds as cmds
 
-def renameLeftJoints():
+def renameLeftJoints(*args):
     cmds.ls(selection=True)
     cmds.rename('L_jnt_')
 
-def renameRightJoints():
+def renameRightJoints(*args):
     cmds.ls(selection=True)
     cmds.rename('R_jnt_')
+
+def renameRightControls(*args):
+    cmds.ls(selection=True)
+    cmds.rename('R_ctrl_')
+
+def renameLeftControls(*args):
+    cmds.ls(selection=True)
+    cmds.rename('L_ctrl_')
 
 def createUI():
     windowID = "renameJoints"
@@ -17,6 +25,9 @@ def createUI():
     cmds.columnLayout(adjustableColumn=True)
     cmds.button(label="Rename Left Joints", command=renameLeftJoints)
     cmds.button(label="Rename Right Joints", command=renameRightJoints)
+    cmds.button(label="Rename Left Controls", command=renameLeftControls)
+    cmds.button(label="Rename Right Controls", command=renameRightControls)
+    
     cmds.showWindow()
 
 createUI()

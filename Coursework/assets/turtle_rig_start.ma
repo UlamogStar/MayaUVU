@@ -1,117 +1,114 @@
-//Maya ASCII 2023 scene
-//Name: TurtleSkin(1).ma
-//Last modified: Wed, Apr 10, 2024 10:24:05 PM
+//Maya ASCII 2024 scene
+//Name: turtle_rig_start.ma
+//Last modified: Sat, Jan 06, 2024 07:56:36 PM
 //Codeset: 1252
-requires maya "2023";
+requires maya "2024";
 requires "stereoCamera" "10.0";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiGobo"
-		 -nodeType "aiStandardSurface" "mtoa" "5.2.1.1";
+		 -nodeType "aiStandardSurface" "mtoa" "5.3.1.1";
 requires -nodeType "lightEditor" "renderSetup.py" "1.0";
-requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
-fileInfo "product" "Maya 2023";
-fileInfo "version" "2023";
-fileInfo "cutIdentifier" "202211021031-847a9f9623";
-fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "238F68A8-43DA-D47D-785F-86BE20C7E6FD";
+fileInfo "product" "Maya 2024";
+fileInfo "version" "2024";
+fileInfo "cutIdentifier" "202304191415-7fa20164c6";
+fileInfo "osv" "Windows 11 Pro v2009 (Build: 22621)";
+fileInfo "UUID" "2463942C-4621-74CE-6DC9-3FAC6C655EB4";
 createNode transform -s -n "persp";
-	rename -uid "761E49E2-4345-B49A-CC7F-2287BF5AFE80";
+	rename -uid "6599F4CE-42CD-8B3B-9C73-5A9FBD293DC0";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -19.678923013690021 4.8924445839695023 10.166711441385207 ;
-	setAttr ".r" -type "double3" -11.138352729427487 -421.79999999998574 0 ;
+	setAttr ".t" -type "double3" 21.659030297989947 9.1836096434872161 10.862788597001121 ;
+	setAttr ".r" -type "double3" -20.399999999999864 -298.00000000002643 -3.3873773552832763e-15 ;
+	setAttr ".rp" -type "double3" -1.2212453270876722e-15 4.6629367034256575e-15 0 ;
+	setAttr ".rpt" -type "double3" 8.3242279810815088e-14 -7.6900759732978896e-14 1.1681979574178441e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
-	rename -uid "E93A1CA8-463C-40DB-EF5E-3E98C9C930D3";
+	rename -uid "29DA8EC2-41AD-98E6-5F34-869AD3939064";
 	setAttr -k off ".v" no;
-	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 19.61337044125494;
+	setAttr ".rnd" no;
+	setAttr ".fl" 34.999999999999979;
+	setAttr ".coi" 24.529593885848644;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -2.4130313396453857 1.8865015506744385 -1.5290039777755737 ;
+	setAttr ".tp" -type "double3" 51.653000855075213 3.2083811081148976 6.514141024244422 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
+	setAttr ".ai_translator" -type "string" "perspective";
 createNode transform -s -n "top";
-	rename -uid "4563E765-4CEF-E782-1035-FB99CF39A9A7";
+	rename -uid "1BF8322F-49EC-46E4-BBBF-339774481E26";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0 1000.1 0 ;
-	setAttr ".r" -type "double3" -90 0 0 ;
+	setAttr ".t" -type "double3" 61.922119388928976 1000.1414940381055 8.8911882064835304 ;
+	setAttr ".r" -type "double3" -89.999999999999986 0 0 ;
 createNode camera -s -n "topShape" -p "top";
-	rename -uid "DC325C40-45E2-D2C1-4D3E-6C9DE19702AC";
-	setAttr -k off ".v" no;
+	rename -uid "EB23D06F-43D4-2A2A-58CF-EDA2CF312B1D";
+	setAttr -k off ".v";
 	setAttr ".rnd" no;
-	setAttr ".coi" 1000.1;
-	setAttr ".ow" 30;
+	setAttr ".coi" 999.61497058250825;
+	setAttr ".ow" 272.77051195768007;
 	setAttr ".imn" -type "string" "top";
 	setAttr ".den" -type "string" "top_depth";
 	setAttr ".man" -type "string" "top_mask";
+	setAttr ".tp" -type "double3" 0 0.52652345559728464 2.6645352591003757e-15 ;
 	setAttr ".hc" -type "string" "viewSet -t %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode transform -s -n "front";
-	rename -uid "5619C856-48CB-6E72-C0CB-8791B0A41B25";
+	rename -uid "D0FC6316-43D6-EF6C-2D91-A5A2FB8CD7E5";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0 0 1000.1 ;
+	setAttr ".t" -type "double3" 0.5797091299492485 4.7004291912318674 1000.1000327191896 ;
 createNode camera -s -n "frontShape" -p "front";
-	rename -uid "E5715AFF-4C8A-5516-2F5A-60909B1F1E41";
+	rename -uid "5051EE7D-4974-E8B6-6E9A-549D49718630";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
-	setAttr ".coi" 1000.1;
-	setAttr ".ow" 30;
+	setAttr ".coi" 1000.1000327191896;
+	setAttr ".ow" 37.855006185685866;
 	setAttr ".imn" -type "string" "front";
 	setAttr ".den" -type "string" "front_depth";
 	setAttr ".man" -type "string" "front_mask";
+	setAttr ".tp" -type "double3" 0 0.52652345559728464 2.6645352591003757e-15 ;
 	setAttr ".hc" -type "string" "viewSet -f %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode transform -s -n "side";
-	rename -uid "76FD39CB-4D7B-F651-B1B9-F88AA10EAD07";
+	rename -uid "DFFC6276-4B69-483F-7117-A180DD086375";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1000.1 0 0 ;
-	setAttr ".r" -type "double3" 0 90 0 ;
+	setAttr ".t" -type "double3" 1000.1298811230077 4.7453615128858821 -15.098848474593822 ;
+	setAttr ".r" -type "double3" 0 89.999999999999986 0 ;
 createNode camera -s -n "sideShape" -p "side";
-	rename -uid "9B5FB56C-4DFB-2F9E-D9D7-079F5DA08D86";
-	setAttr -k off ".v" no;
+	rename -uid "F350C73E-407B-82D7-834C-0C88AD97713C";
+	setAttr -k off ".v";
 	setAttr ".rnd" no;
-	setAttr ".coi" 1000.1;
-	setAttr ".ow" 30;
+	setAttr ".coi" 1000.1298811230077;
+	setAttr ".ow" 157.95826931442443;
 	setAttr ".imn" -type "string" "side";
 	setAttr ".den" -type "string" "side_depth";
 	setAttr ".man" -type "string" "side_mask";
+	setAttr ".tp" -type "double3" 0 0.52652345559728464 2.6645352591003757e-15 ;
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
-createNode transform -n "turtle_rig_start2:sea_turtle";
-	rename -uid "2768C19E-4A9E-1140-F426-F2A257C8208F";
-createNode transform -n "turtle_rig_start2:geometry" -p "turtle_rig_start2:sea_turtle";
-	rename -uid "600F8D9B-4838-15C0-9EA6-BEBD8A60F347";
-createNode transform -n "turtle_rig_start2:turtle_geo_grp" -p "turtle_rig_start2:geometry";
-	rename -uid "DB1D4466-4762-8F5A-07A2-388C01498E20";
-createNode transform -n "turtle_rig_start2:f_legs_geo" -p "turtle_rig_start2:turtle_geo_grp";
-	rename -uid "2FBEBB06-41A1-B10E-F1F8-4FB1792DA135";
+createNode transform -n "sea_turtle";
+	rename -uid "DDE2F636-4357-5328-FE26-5F925FEA8493";
+createNode transform -n "geometry" -p "sea_turtle";
+	rename -uid "7C21DED6-4E17-409D-3511-48BC38DDE2C0";
+createNode transform -n "turtle_geo_grp" -p "geometry";
+	rename -uid "A84DFCE9-425B-B273-B63E-B5AEC99622B5";
+createNode transform -n "f_legs_geo" -p "turtle_geo_grp";
+	rename -uid "86901989-404D-2CAE-C38E-8CA54388D746";
 	addAttr -ci true -sn "GoZBrushID" -ln "GoZBrushID" -dt "string";
-	setAttr -l on ".tx";
-	setAttr -l on ".ty";
-	setAttr -l on ".tz";
-	setAttr -l on ".rx";
-	setAttr -l on ".ry";
-	setAttr -l on ".rz";
-	setAttr -l on ".sx";
-	setAttr -l on ".sy";
-	setAttr -l on ".sz";
 	setAttr ".GoZBrushID" -type "string" "FrontLegs";
-createNode mesh -n "turtle_rig_start2:f_legs_geo_Shape" -p "turtle_rig_start2:f_legs_geo";
-	rename -uid "C05D3BEE-4E5E-4BA4-239E-12AF0FD01EE1";
+createNode mesh -n "f_legs_geo_Shape" -p "f_legs_geo";
+	rename -uid "33F9C960-4B02-D97F-1041-A6A7E2301A00";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.73767250776290894 0.71486952900886536 ;
+	setAttr ".pv" -type "double2" 0.67896032333374023 0.48909226059913635 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".clst[0].clsn" -type "string" "FrontLegs_ColorSet";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 165 ".pt";
+	setAttr -s 143 ".pt";
 	setAttr ".pt[157]" -type "float3" 5.1222742e-09 0 -1.8626451e-08 ;
 	setAttr ".pt[160]" -type "float3" 5.1222742e-09 0 -1.8626451e-08 ;
 	setAttr ".pt[163]" -type "float3" 5.1222742e-09 0 -1.8626451e-08 ;
@@ -256,16 +253,13 @@ createNode mesh -n "turtle_rig_start2:f_legs_geo_Shape" -p "turtle_rig_start2:f_
 	setAttr ".pt[1880]" -type "float3" -5.1222742e-09 0 -1.8626451e-08 ;
 	setAttr ".pt[1881]" -type "float3" -5.1222742e-09 0 -1.8626451e-08 ;
 	setAttr ".dr" 1;
-	setAttr ".vcs" 2;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "turtle_rig_start2:f_legs_geo_ShapeOrig" -p "turtle_rig_start2:f_legs_geo";
-	rename -uid "6DB1B8CF-4C53-1B0F-6120-6A9133F1C211";
+createNode mesh -n "f_legs_geo_ShapeOrig" -p "f_legs_geo";
+	rename -uid "7E1862B3-4FE1-042D-F536-94BF6A025711";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".gtag[0].gtagnm" -type "string" "skinCluster5";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "vtx[0:1880]";
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 2132 ".uvst[0].uvsp";
 	setAttr ".uvst[0].uvsp[0:249]" -type "float2" 0.74174774 0.51966739 0.7417568
@@ -8038,25 +8032,16 @@ createNode mesh -n "turtle_rig_start2:f_legs_geo_ShapeOrig" -p "turtle_rig_start
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "turtle_rig_start2:shell_geo" -p "turtle_rig_start2:turtle_geo_grp";
-	rename -uid "4813D7C3-4DD5-7087-7A2D-949D72FF52DF";
+createNode transform -n "shell_geo" -p "turtle_geo_grp";
+	rename -uid "431BABFA-4CE0-BB29-0B6B-6197FC8FF6E3";
 	addAttr -ci true -sn "GoZBrushID" -ln "GoZBrushID" -dt "string";
-	setAttr -l on ".tx";
-	setAttr -l on ".ty";
-	setAttr -l on ".tz";
-	setAttr -l on ".rx";
-	setAttr -l on ".ry";
-	setAttr -l on ".rz";
-	setAttr -l on ".sx";
-	setAttr -l on ".sy";
-	setAttr -l on ".sz";
 	setAttr ".GoZBrushID" -type "string" "shell";
-createNode mesh -n "turtle_rig_start2:shell_geo_Shape" -p "turtle_rig_start2:shell_geo";
-	rename -uid "9BE5ADD3-439B-CA36-3600-BBA338106793";
+createNode mesh -n "shell_geo_Shape" -p "shell_geo";
+	rename -uid "BE6BB8F6-49F4-FFC7-93DD-6492CE072BAC";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.48565198481082916 0.49691888689994812 ;
+	setAttr ".pv" -type "double2" 0.48355068266391754 0.49691888689994812 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
@@ -8064,7 +8049,7 @@ createNode mesh -n "turtle_rig_start2:shell_geo_Shape" -p "turtle_rig_start2:she
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ofb" 1;
-	setAttr -s 39 ".pt";
+	setAttr -s 37 ".pt";
 	setAttr ".pt[0]" -type "float3" -2.6348826e-17 0 0 ;
 	setAttr ".pt[1]" -type "float3" -9.0179694e-18 0 0 ;
 	setAttr ".pt[2]" -type "float3" 1.6615079e-17 0 0 ;
@@ -8107,16 +8092,13 @@ createNode mesh -n "turtle_rig_start2:shell_geo_Shape" -p "turtle_rig_start2:she
 	setAttr ".pt[212]" -type "float3" 1.8917358e-17 0 0 ;
 	setAttr ".bw" 3;
 	setAttr ".dr" 1;
-	setAttr ".vcs" 2;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "turtle_rig_start2:shell_geo_ShapeOrig" -p "turtle_rig_start2:shell_geo";
-	rename -uid "8BF27312-4419-8801-2509-C290905E8310";
+createNode mesh -n "shell_geo_ShapeOrig" -p "shell_geo";
+	rename -uid "B53C69B6-4363-7C04-5D72-709E81765A8D";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".gtag[0].gtagnm" -type "string" "skinCluster6";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "vtx[0:381]";
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 424 ".uvst[0].uvsp";
 	setAttr ".uvst[0].uvsp[0:249]" -type "float2" 0.88718724 0.18300839 0.86363733
@@ -9678,39 +9660,27 @@ createNode mesh -n "turtle_rig_start2:shell_geo_ShapeOrig" -p "turtle_rig_start2
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".bw" 3;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "turtle_rig_start2:r_leg_geo" -p "turtle_rig_start2:turtle_geo_grp";
-	rename -uid "ABEBDB50-475C-712F-5B02-2A80A28727A4";
-	setAttr -l on ".tx";
-	setAttr -l on ".ty";
-	setAttr -l on ".tz";
-	setAttr -l on ".rx";
-	setAttr -l on ".ry";
-	setAttr -l on ".rz";
-	setAttr -l on ".sx";
-	setAttr -l on ".sy";
-	setAttr -l on ".sz";
-createNode mesh -n "turtle_rig_start2:r_leg_geoShape" -p "turtle_rig_start2:r_leg_geo";
-	rename -uid "7F46570C-4B43-B834-FB2D-75B35E932B03";
+createNode transform -n "r_leg_geo" -p "turtle_geo_grp";
+	rename -uid "458705FF-433B-BEF0-C68B-13A5B7AC1EB3";
+createNode mesh -n "r_leg_geoShape" -p "r_leg_geo";
+	rename -uid "9D2CF28A-4B97-C4C9-B213-C28701C79940";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.24520523101091385 0.22600939124822617 ;
+	setAttr ".pv" -type "double2" 0.24138960987329483 0.21884892135858536 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".dr" 1;
-	setAttr ".vcs" 2;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "turtle_rig_start2:r_leg_geoShapeOrig" -p "turtle_rig_start2:r_leg_geo";
-	rename -uid "2F1A76AA-4D64-75B4-22D1-5DA3A9156920";
+createNode mesh -n "r_leg_geoShapeOrig" -p "r_leg_geo";
+	rename -uid "9D98D9FC-4651-EDE6-5EF7-EC9114C158C7";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".gtag[0].gtagnm" -type "string" "skinCluster1";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "vtx[0:184]";
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 216 ".uvst[0].uvsp[0:215]" -type "float2" 0.081660345 0.25080144
 		 0.080778971 0.23731439 0.10386266 0.23586653 0.10435136 0.24998716 0.075972393 0.19882248
@@ -10238,39 +10208,27 @@ createNode mesh -n "turtle_rig_start2:r_leg_geoShapeOrig" -p "turtle_rig_start2:
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "turtle_rig_start2:l_leg_geo" -p "turtle_rig_start2:turtle_geo_grp";
-	rename -uid "F2AD7150-423A-8555-DC91-739583C31DB2";
-	setAttr -l on ".tx";
-	setAttr -l on ".ty";
-	setAttr -l on ".tz";
-	setAttr -l on ".rx";
-	setAttr -l on ".ry";
-	setAttr -l on ".rz";
-	setAttr -l on ".sx";
-	setAttr -l on ".sy";
-	setAttr -l on ".sz";
-createNode mesh -n "turtle_rig_start2:l_leg_geoShape" -p "turtle_rig_start2:l_leg_geo";
-	rename -uid "837C3BF1-41A1-C5D9-9D4A-1583C83B0EF4";
+createNode transform -n "l_leg_geo" -p "turtle_geo_grp";
+	rename -uid "7B913662-47E9-16CD-8E5D-029F5C4E8076";
+createNode mesh -n "l_leg_geoShape" -p "l_leg_geo";
+	rename -uid "CA230E35-4BD5-17D1-2AB5-BDA43A409769";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.25744080543518066 0.3491201251745224 ;
+	setAttr ".pv" -type "double2" 0.25716739892959595 0.35470680892467499 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".dr" 1;
-	setAttr ".vcs" 2;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "turtle_rig_start2:l_leg_geoShapeOrig" -p "turtle_rig_start2:l_leg_geo";
-	rename -uid "6B185676-434B-043F-C6D6-45B3BFCBCA9A";
+createNode mesh -n "l_leg_geoShapeOrig" -p "l_leg_geo";
+	rename -uid "F020C7D9-43B1-CDA3-EBB9-7DAFC38FD5D1";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".gtag[0].gtagnm" -type "string" "skinCluster2";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "vtx[0:184]";
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 216 ".uvst[0].uvsp[0:215]" -type "float2" 0.4209857 0.37391216
 		 0.39829469 0.3730979 0.39878339 0.35897726 0.42186707 0.36042511 0.42667365 0.32193321
@@ -10798,37 +10756,27 @@ createNode mesh -n "turtle_rig_start2:l_leg_geoShapeOrig" -p "turtle_rig_start2:
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "turtle_rig_start2:eyes_geo_grp" -p "turtle_rig_start2:geometry";
-	rename -uid "96A4749A-4178-BE47-D167-FCB84087C482";
-createNode transform -n "turtle_rig_start2:l_eye_geo" -p "turtle_rig_start2:eyes_geo_grp";
-	rename -uid "DD50D06D-498A-2137-EEF3-B4AFB713EE94";
-	setAttr -l on ".tx";
-	setAttr -l on ".ty";
-	setAttr -l on ".tz";
-	setAttr -l on ".rx";
-	setAttr -l on ".ry";
-	setAttr -l on ".rz";
-	setAttr -l on ".sx";
-	setAttr -l on ".sy";
-	setAttr -l on ".sz";
+createNode transform -n "eyes_geo_grp" -p "geometry";
+	rename -uid "C4DFDC01-4080-BE0C-3924-7EBA5E89C48D";
+createNode transform -n "l_eye_geo" -p "eyes_geo_grp";
+	rename -uid "426B75D2-4CE5-A1DC-6382-00AFEE2C2A93";
 	setAttr ".rp" -type "double3" -0.5473729372024535 0.73360133171081532 6.0324883460998526 ;
 	setAttr ".sp" -type "double3" -0.5473729372024535 0.73360133171081532 6.0324883460998526 ;
-createNode mesh -n "turtle_rig_start2:l_eye_geoShape" -p "turtle_rig_start2:l_eye_geo";
-	rename -uid "B9EA77A5-4D05-8CEC-21B1-2A92F028E0D6";
+createNode mesh -n "l_eye_geoShape" -p "l_eye_geo";
+	rename -uid "FC894B13-423B-69A5-C9C4-AC9B3D1E8E99";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.5 0.5 ;
+	setAttr ".pv" -type "double2" 0.49999991059303284 0.5 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".dr" 1;
-	setAttr ".vcs" 2;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "turtle_rig_start2:l_eye_geoShape1Orig" -p "turtle_rig_start2:l_eye_geo";
-	rename -uid "689016D3-4B2E-AF7D-5D01-6A8E622B9C70";
+createNode mesh -n "l_eye_geoShape1Orig" -p "l_eye_geo";
+	rename -uid "60E1B82B-419E-C896-0726-158B841259EE";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
 	setAttr ".vir" yes;
@@ -11906,14 +11854,12 @@ createNode mesh -n "turtle_rig_start2:l_eye_geoShape1Orig" -p "turtle_rig_start2
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "turtle_rig_start2:l_eye_geoShapeOrig" -p "turtle_rig_start2:l_eye_geo";
-	rename -uid "C6DFEB19-40F7-68E6-71F4-98B7439C4FC2";
+createNode mesh -n "l_eye_geoShapeOrig" -p "l_eye_geo";
+	rename -uid "1206D638-49A2-F347-93ED-2AB55888676D";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".gtag[0].gtagnm" -type "string" "skinCluster3";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "vtx[0:362]";
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 418 ".uvst[0].uvsp";
 	setAttr ".uvst[0].uvsp[0:249]" -type "float2" 0 0.050000001 0.052631579 0.050000001
@@ -12988,25 +12934,16 @@ createNode mesh -n "turtle_rig_start2:l_eye_geoShapeOrig" -p "turtle_rig_start2:
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "turtle_rig_start2:r_eye_geo" -p "turtle_rig_start2:eyes_geo_grp";
-	rename -uid "01185EDA-4808-E78A-132A-6C9ECBF814C5";
-	setAttr -l on ".tx";
-	setAttr -l on ".ty";
-	setAttr -l on ".tz";
-	setAttr -l on ".rx";
-	setAttr -l on ".ry";
-	setAttr -l on ".rz";
-	setAttr -l on ".sx";
-	setAttr -l on ".sy";
-	setAttr -l on ".sz";
+createNode transform -n "r_eye_geo" -p "eyes_geo_grp";
+	rename -uid "DCDF7889-44E6-8E0A-6916-62BA1A21E95B";
 	setAttr ".rp" -type "double3" 0.54737293720245284 0.73360133171081532 6.0324883460998526 ;
 	setAttr ".sp" -type "double3" 0.54737293720245284 0.73360133171081532 6.0324883460998526 ;
-createNode mesh -n "turtle_rig_start2:r_eye_geoShape" -p "turtle_rig_start2:r_eye_geo";
-	rename -uid "19C75655-4DE0-CB52-799A-FF87FBB69DB8";
+createNode mesh -n "r_eye_geoShape" -p "r_eye_geo";
+	rename -uid "D701DB5F-4DF9-3984-AA0A-2C9E822844C9";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.50000008940696716 0.5 ;
+	setAttr ".pv" -type "double2" 0.50000008940696716 0.50000005960464478 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
@@ -13014,10 +12951,9 @@ createNode mesh -n "turtle_rig_start2:r_eye_geoShape" -p "turtle_rig_start2:r_ey
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".dr" 1;
-	setAttr ".vcs" 2;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "turtle_rig_start2:r_eye_geoShape1Orig" -p "turtle_rig_start2:r_eye_geo";
-	rename -uid "73121695-411C-A3AE-B3F5-30BF71265921";
+createNode mesh -n "r_eye_geoShape1Orig" -p "r_eye_geo";
+	rename -uid "849589EC-4EC3-93F2-AEA8-30A62BA9C5BD";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
 	setAttr ".vir" yes;
@@ -14096,8 +14032,8 @@ createNode mesh -n "turtle_rig_start2:r_eye_geoShape1Orig" -p "turtle_rig_start2
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "turtle_rig_start2:r_eye_geoShapeOrig" -p "turtle_rig_start2:r_eye_geo";
-	rename -uid "CDAFBCA6-4E5A-43B8-5ABB-5582CC41B737";
+createNode mesh -n "r_eye_geoShapeOrig" -p "r_eye_geo";
+	rename -uid "EF11ADD8-4055-F02E-051C-B19B66A67E34";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
 	setAttr ".vir" yes;
@@ -15324,14 +15260,12 @@ createNode mesh -n "turtle_rig_start2:r_eye_geoShapeOrig" -p "turtle_rig_start2:
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "turtle_rig_start2:r_eye_geoShapeOrig1" -p "turtle_rig_start2:r_eye_geo";
-	rename -uid "2243FD08-481F-1DAE-AD9A-D28C93A4B360";
+createNode mesh -n "r_eye_geoShapeOrig1" -p "r_eye_geo";
+	rename -uid "DD39C337-4792-095F-8B7F-53AA487B1941";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".gtag[0].gtagnm" -type "string" "skinCluster4";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "vtx[0:362]";
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 418 ".uvst[0].uvsp";
 	setAttr ".uvst[0].uvsp[0:249]" -type "float2" 1 0.050000001 0.94736844 0.050000001
@@ -16409,17 +16343,17 @@ createNode mesh -n "turtle_rig_start2:r_eye_geoShapeOrig1" -p "turtle_rig_start2
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "turtle_rig_start2:controls" -p "turtle_rig_start2:sea_turtle";
-	rename -uid "E3AEF6B9-4BD7-6FF6-4B6B-69AA6EE7BBA3";
-createNode transform -n "turtle_rig_start2:offset_grp" -p "turtle_rig_start2:controls";
-	rename -uid "0C933A86-4383-B511-AD47-1B933A806076";
-createNode transform -n "turtle_rig_start2:transform_ctrl_grp" -p "turtle_rig_start2:offset_grp";
-	rename -uid "68F98613-4727-3793-61B4-92BF459BC838";
-createNode transform -n "turtle_rig_start2:transform_ctrl" -p "turtle_rig_start2:transform_ctrl_grp";
-	rename -uid "6AF59363-43BA-C678-4775-A4A894D9E6B3";
+createNode transform -n "controls" -p "sea_turtle";
+	rename -uid "E0EE9E2C-4F0A-32F6-CDCC-F4893E7BC40F";
+createNode transform -n "offset_grp" -p "controls";
+	rename -uid "5FADA9B5-45C1-C01A-E014-CEA3DE1DEA5F";
+createNode transform -n "transform_ctrl_grp" -p "offset_grp";
+	rename -uid "4B062C33-42C6-F1A0-502E-4896E4CEC9D0";
+createNode transform -n "transform_ctrl" -p "transform_ctrl_grp";
+	rename -uid "22C7290B-4A34-AB3B-5723-66975EF7CE4E";
 	setAttr -l on -k off ".v";
-createNode nurbsCurve -n "turtle_rig_start2:transform_ctrlShape" -p "turtle_rig_start2:transform_ctrl";
-	rename -uid "450588E7-4DB9-8142-1E91-79A26630CDB3";
+createNode nurbsCurve -n "transform_ctrlShape" -p "transform_ctrl";
+	rename -uid "B50A23A4-48B3-F80C-E84D-0AB95EC4C786";
 	setAttr -k off ".v";
 	setAttr ".cc" -type "nurbsCurve" 
 		3 8 2 no 3
@@ -16437,17 +16371,17 @@ createNode nurbsCurve -n "turtle_rig_start2:transform_ctrlShape" -p "turtle_rig_
 		6.9385449709788624e-16 6.9385449709788624e-16 -11.331503868396583
 		-8.0125832263848213 4.9062922005469714e-16 -8.0125832263848196
 		;
-createNode transform -n "turtle_rig_start2:cog_ctrl_grp" -p "turtle_rig_start2:transform_ctrl";
-	rename -uid "96491BBF-4546-359D-FB55-5FA2EFAFDAEE";
+createNode transform -n "cog_ctrl_grp" -p "transform_ctrl";
+	rename -uid "BDB1E6E6-47EB-10CF-8B70-38A8B7E3A6C1";
 	setAttr ".rp" -type "double3" 0 0.51646006107330322 -2.2993907928466797 ;
 	setAttr ".sp" -type "double3" 0 0.51646006107330322 -2.2993907928466797 ;
-createNode transform -n "turtle_rig_start2:cog_ctrl" -p "turtle_rig_start2:cog_ctrl_grp";
-	rename -uid "40ACDEB7-48E8-BF89-4C57-B59077331D0A";
+createNode transform -n "cog_ctrl" -p "cog_ctrl_grp";
+	rename -uid "E2B7BD37-448E-F06A-A481-53855BC9B274";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" 0 0.51646006107330322 -2.2993907928466797 ;
 	setAttr ".sp" -type "double3" 0 0.51646006107330322 -2.2993907928466797 ;
-createNode nurbsCurve -n "turtle_rig_start2:cog_ctrlShape" -p "turtle_rig_start2:cog_ctrl";
-	rename -uid "F92CD54F-4331-9FD9-AC1C-B4BCA99E7ED2";
+createNode nurbsCurve -n "cog_ctrlShape" -p "cog_ctrl";
+	rename -uid "858F61A9-49C6-11E7-CCAB-628557EB7ADC";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 17;
@@ -16467,24 +16401,23 @@ createNode nurbsCurve -n "turtle_rig_start2:cog_ctrlShape" -p "turtle_rig_start2
 		3.042213667033199e-16 3.7229285142295359 -2.4151942261991661
 		-3.5131270751294128 2.4221097447225368 -2.4151942261991661
 		;
-createNode transform -n "turtle_rig_start2:upper_body_ctrl_grp" -p "turtle_rig_start2:cog_ctrl";
-	rename -uid "E2FEA9B9-4FC8-D9B5-12AF-0D93EFECCB09";
-createNode transform -n "turtle_rig_start2:spine_ctrl_grp" -p "turtle_rig_start2:upper_body_ctrl_grp";
-	rename -uid "52528DB1-47CE-78CE-B420-4EBF60BD837B";
+createNode transform -n "upper_body_ctrl_grp" -p "cog_ctrl";
+	rename -uid "6EB886AF-40EA-6E30-177D-948AAD079CC5";
+createNode transform -n "spine_ctrl_grp" -p "upper_body_ctrl_grp";
+	rename -uid "0AC84682-48F6-CFD5-2AD0-53936480132A";
 	setAttr ".rp" -type "double3" 0 0.51646006107330322 -2.2993907928466797 ;
 	setAttr ".sp" -type "double3" 0 0.51646006107330322 -2.2993907928466797 ;
-createNode transform -n "turtle_rig_start2:spine_01_ctrl_grp" -p "turtle_rig_start2:spine_ctrl_grp";
-	rename -uid "8A96A094-4BC0-A9F2-38EB-9A98479FA461";
+createNode transform -n "spine_01_ctrl_grp" -p "spine_ctrl_grp";
+	rename -uid "2F63473E-4197-EF80-5886-A59C5FD4BD5F";
 	setAttr ".rp" -type "double3" 1.0691507374362047e-31 0.51646006107330289 -2.2993909094282223 ;
 	setAttr ".sp" -type "double3" 1.0691507374362047e-31 0.51646006107330289 -2.2993909094282223 ;
-createNode transform -n "turtle_rig_start2:spine_01_ctrl" -p "turtle_rig_start2:spine_01_ctrl_grp";
-	rename -uid "E9B3B311-427F-687B-E00F-F69A2B329F07";
+createNode transform -n "spine_01_ctrl" -p "spine_01_ctrl_grp";
+	rename -uid "2DB2868F-4D7A-82FF-B63F-C0B05845746D";
 	setAttr -l on -k off ".v";
-	setAttr ".r" -type "double3" 0 0 -2.1282512815489114 ;
 	setAttr ".rp" -type "double3" 3.8400065842264206e-47 0.51646006107330322 -2.2993909094282223 ;
 	setAttr ".sp" -type "double3" 3.8400065842264206e-47 0.51646006107330322 -2.2993909094282223 ;
-createNode nurbsCurve -n "turtle_rig_start2:spine_01_ctrlShape" -p "turtle_rig_start2:spine_01_ctrl";
-	rename -uid "E4DB3519-49BA-D178-E97B-97806C9D45A8";
+createNode nurbsCurve -n "spine_01_ctrlShape" -p "spine_01_ctrl";
+	rename -uid "55A41086-4DC4-A756-D78E-ECA10C878D48";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 14;
@@ -16504,9 +16437,8 @@ createNode nurbsCurve -n "turtle_rig_start2:spine_01_ctrlShape" -p "turtle_rig_s
 		0.37980661671790705 3.4653084699693322 -2.2993909094282223
 		0.37980661671790727 1.5832014435121629 1.1551314424875012
 		;
-createNode parentConstraint -n "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:spine_01_ctrl_grp";
-	rename -uid "62545BF0-47FF-522F-1E62-038CDD83C072";
+createNode parentConstraint -n "spine_01_ctrl_grp_parentConstraint1" -p "spine_01_ctrl_grp";
+	rename -uid "D493DE81-4E3B-A256-6265-9DB7930804E2";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "cog_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -16526,9 +16458,8 @@ createNode parentConstraint -n "turtle_rig_start2:spine_01_ctrl_grp_parentConstr
 	setAttr ".rst" -type "double3" -1.0691507374362047e-31 3.3306690738754696e-16 0 ;
 	setAttr ".rsrr" -type "double3" 0 -89.999999999999986 0 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:spine_01_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:spine_01_ctrl_grp";
-	rename -uid "D80E7BD8-4512-5517-9602-A4BB21335180";
+createNode scaleConstraint -n "spine_01_ctrl_grp_scaleConstraint1" -p "spine_01_ctrl_grp";
+	rename -uid "8336CB5B-42BD-B6B0-6542-D88814C007F9";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "cog_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -16543,17 +16474,17 @@ createNode scaleConstraint -n "turtle_rig_start2:spine_01_ctrl_grp_scaleConstrai
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:spine_02_ctrl_grp" -p "turtle_rig_start2:spine_ctrl_grp";
-	rename -uid "3E5BCE3A-4C37-80DC-EBEF-AF9C5F1B5B8B";
+createNode transform -n "spine_02_ctrl_grp" -p "spine_ctrl_grp";
+	rename -uid "D7500F7F-4621-90F9-8DAD-81B1B8D56916";
 	setAttr ".rp" -type "double3" 1.0691507374362047e-31 0.51646006107330289 -0.78807148867090282 ;
 	setAttr ".sp" -type "double3" 1.0691507374362047e-31 0.51646006107330289 -0.78807148867090282 ;
-createNode transform -n "turtle_rig_start2:spine_02_ctrl" -p "turtle_rig_start2:spine_02_ctrl_grp";
-	rename -uid "8938C10F-44C2-0D7E-AD4A-598FD4FE6636";
+createNode transform -n "spine_02_ctrl" -p "spine_02_ctrl_grp";
+	rename -uid "0A71C48C-4623-0705-DE86-259410C71C89";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" 3.8400065842264206e-47 0.51646006107330322 -0.78807148867090282 ;
 	setAttr ".sp" -type "double3" 3.8400065842264206e-47 0.51646006107330322 -0.78807148867090282 ;
-createNode nurbsCurve -n "turtle_rig_start2:spine_02_ctrlShape" -p "turtle_rig_start2:spine_02_ctrl";
-	rename -uid "9FF1C70F-48B7-8B8F-B0E3-D09AFA6141C8";
+createNode nurbsCurve -n "spine_02_ctrlShape" -p "spine_02_ctrl";
+	rename -uid "2C57E0F7-4D7B-727C-19D5-B188E70E4AC8";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 14;
@@ -16573,9 +16504,8 @@ createNode nurbsCurve -n "turtle_rig_start2:spine_02_ctrlShape" -p "turtle_rig_s
 		-7.7715611723760958e-16 3.8227788136778496 -0.78807148867090238
 		-5.5511151231257827e-16 1.7231953336717143 2.7536664294335642
 		;
-createNode parentConstraint -n "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:spine_02_ctrl_grp";
-	rename -uid "8AA800F5-4EEC-BCFF-87E0-E3B050947325";
+createNode parentConstraint -n "spine_02_ctrl_grp_parentConstraint1" -p "spine_02_ctrl_grp";
+	rename -uid "B77AC89F-48DD-E08A-4F56-C383EB5AD4A8";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "spine_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -16591,13 +16521,12 @@ createNode parentConstraint -n "turtle_rig_start2:spine_02_ctrl_grp_parentConstr
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 1.5113194207573195 -3.3306690738754696e-16 
 		3.3306690738754696e-16 ;
-	setAttr ".lr" -type "double3" 89.999999999999488 -87.871748718451087 -89.999999999999488 ;
+	setAttr ".lr" -type "double3" 0 -89.999999999999986 0 ;
 	setAttr ".rst" -type "double3" 2.5134163100391021e-18 3.3306690738754696e-16 0 ;
 	setAttr ".rsrr" -type "double3" 0 -89.999999999999986 0 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:spine_02_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:spine_02_ctrl_grp";
-	rename -uid "A3F5EE27-436F-96C3-D5E4-5F8151CF6E56";
+createNode scaleConstraint -n "spine_02_ctrl_grp_scaleConstraint1" -p "spine_02_ctrl_grp";
+	rename -uid "DCE7084B-4B7E-1D9A-E63C-268612BC8276";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "spine_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -16612,17 +16541,17 @@ createNode scaleConstraint -n "turtle_rig_start2:spine_02_ctrl_grp_scaleConstrai
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:spine_03_ctrl_grp" -p "turtle_rig_start2:spine_ctrl_grp";
-	rename -uid "33D4DCFA-4402-DB57-3AD2-1881D1A52CDB";
+createNode transform -n "spine_03_ctrl_grp" -p "spine_ctrl_grp";
+	rename -uid "56084D2D-4671-E30A-4B9E-CB874843AC40";
 	setAttr ".rp" -type "double3" 1.0691507374362047e-31 0.51646006107330289 0.74134827780081203 ;
 	setAttr ".sp" -type "double3" 1.0691507374362047e-31 0.51646006107330289 0.74134827780081203 ;
-createNode transform -n "turtle_rig_start2:spine_03_ctrl" -p "turtle_rig_start2:spine_03_ctrl_grp";
-	rename -uid "954D8DFE-4F74-FC21-7672-BD9C6EC9F8E9";
+createNode transform -n "spine_03_ctrl" -p "spine_03_ctrl_grp";
+	rename -uid "59E765BF-4F8C-6A5B-F44D-5EA023839A02";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" 3.8400065842264206e-47 0.51646006107330322 0.74134827780081203 ;
 	setAttr ".sp" -type "double3" 3.8400065842264206e-47 0.51646006107330322 0.74134827780081203 ;
-createNode nurbsCurve -n "turtle_rig_start2:spine_03_ctrlShape" -p "turtle_rig_start2:spine_03_ctrl";
-	rename -uid "7D488B9C-4FA5-D072-946A-56B2D5C76322";
+createNode nurbsCurve -n "spine_03_ctrlShape" -p "spine_03_ctrl";
+	rename -uid "B99B0A4E-43D5-796F-88CB-E0827E497CE9";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 14;
@@ -16642,9 +16571,8 @@ createNode nurbsCurve -n "turtle_rig_start2:spine_03_ctrlShape" -p "turtle_rig_s
 		-6.6613381477509392e-16 3.5181186772519579 0.74134827780081225
 		-6.6613381477509392e-16 1.9054496030277086 4.0510526864121896
 		;
-createNode parentConstraint -n "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:spine_03_ctrl_grp";
-	rename -uid "D950C086-4776-6004-9400-9591235C4486";
+createNode parentConstraint -n "spine_03_ctrl_grp_parentConstraint1" -p "spine_03_ctrl_grp";
+	rename -uid "80F50210-4475-87F0-3BDA-CFA501546041";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "spine_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -16660,13 +16588,12 @@ createNode parentConstraint -n "turtle_rig_start2:spine_03_ctrl_grp_parentConstr
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 1.5294197664717148 -3.3306690738754696e-16 
 		3.3306690738754696e-16 ;
-	setAttr ".lr" -type "double3" 89.999999999999488 -87.871748718451087 -89.999999999999488 ;
+	setAttr ".lr" -type "double3" 0 -89.999999999999986 0 ;
 	setAttr ".rst" -type "double3" 6.5325004231984985e-18 3.3306690738754696e-16 0 ;
 	setAttr ".rsrr" -type "double3" 0 -89.999999999999986 0 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:spine_03_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:spine_03_ctrl_grp";
-	rename -uid "A5A4F4E9-4209-8508-DE38-219D7B19201D";
+createNode scaleConstraint -n "spine_03_ctrl_grp_scaleConstraint1" -p "spine_03_ctrl_grp";
+	rename -uid "2D189742-4163-EF8D-BE2F-1AAEF2219C0C";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "spine_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -16681,21 +16608,21 @@ createNode scaleConstraint -n "turtle_rig_start2:spine_03_ctrl_grp_scaleConstrai
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:l_arm_ctrl_grp" -p "turtle_rig_start2:upper_body_ctrl_grp";
-	rename -uid "7045F3B7-463E-FBED-497B-F4A879BC0B8C";
+createNode transform -n "l_arm_ctrl_grp" -p "upper_body_ctrl_grp";
+	rename -uid "A5C65A9D-49E2-2B21-3C12-7F962B1C80C4";
 	setAttr ".rp" -type "double3" 1.9721522630525304e-31 0.51646006107330322 -2.2993907928466801 ;
 	setAttr ".sp" -type "double3" 1.9721522630525304e-31 0.51646006107330322 -2.2993907928466801 ;
-createNode transform -n "turtle_rig_start2:l_clav_ctrl_grp" -p "turtle_rig_start2:l_arm_ctrl_grp";
-	rename -uid "49DAEE80-48DF-EB13-FAAF-F992F0F92B69";
+createNode transform -n "l_clav_ctrl_grp" -p "l_arm_ctrl_grp";
+	rename -uid "A9F62750-4157-1321-1EE8-2882B5823B8F";
 	setAttr ".rp" -type "double3" 0.32130694389343273 -0.55037277936935458 1.8182637095451351 ;
 	setAttr ".sp" -type "double3" 0.32130694389343273 -0.55037277936935458 1.8182637095451351 ;
-createNode transform -n "turtle_rig_start2:l_clav_ctrl" -p "turtle_rig_start2:l_clav_ctrl_grp";
-	rename -uid "EB39FA18-4068-7BDC-47C9-7D93F58F5DCE";
+createNode transform -n "l_clav_ctrl" -p "l_clav_ctrl_grp";
+	rename -uid "7CF6C091-4735-2516-BDD6-FEA630C580FF";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" 0.32130694389343273 -0.55037277936935425 1.8182637095451351 ;
 	setAttr ".sp" -type "double3" 0.32130694389343273 -0.55037277936935425 1.8182637095451351 ;
-createNode nurbsCurve -n "turtle_rig_start2:l_clav_ctrlShape" -p "turtle_rig_start2:l_clav_ctrl";
-	rename -uid "B332A2AF-4BB6-EB4A-8692-569D34AAE8FD";
+createNode nurbsCurve -n "l_clav_ctrlShape" -p "l_clav_ctrl";
+	rename -uid "6C74C004-4AFD-8E96-2902-63A685C90298";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
@@ -16715,9 +16642,8 @@ createNode nurbsCurve -n "turtle_rig_start2:l_clav_ctrlShape" -p "turtle_rig_sta
 		1.9064552513474453 -0.68594139486694294 3.1920180970018661
 		1.9064552513474453 0.70247495308061603 2.9301975582646622
 		;
-createNode parentConstraint -n "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:l_clav_ctrl_grp";
-	rename -uid "0A922DAD-4BC9-9E98-0776-4CA7FECE756D";
+createNode parentConstraint -n "l_clav_ctrl_grp_parentConstraint1" -p "l_clav_ctrl_grp";
+	rename -uid "72CB4EAA-4BCF-F7D2-62F6-7480BAF50B2A";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "spine_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -16733,13 +16659,12 @@ createNode parentConstraint -n "turtle_rig_start2:l_clav_ctrl_grp_parentConstrai
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 1.0769154317443232 -1.0668328404426579 -0.32130694389343256 ;
 	setAttr ".tg[0].tor" -type "double3" 0 82.131773252693549 0 ;
-	setAttr ".lr" -type "double3" 2.1484591968703777 -7.8627649352562363 -0.29404620860917452 ;
+	setAttr ".lr" -type "double3" 0 -7.868226747306438 0 ;
 	setAttr ".rst" -type "double3" 5.5511151231257827e-17 2.2204460492503131e-16 2.2204460492503131e-16 ;
 	setAttr ".rsrr" -type "double3" 0 -7.8682267473064584 0 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_clav_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:l_clav_ctrl_grp";
-	rename -uid "9CC84304-4766-6B84-DB55-41B0CA8F3BEC";
+createNode scaleConstraint -n "l_clav_ctrl_grp_scaleConstraint1" -p "l_clav_ctrl_grp";
+	rename -uid "BB331C5B-4D80-0CB2-E2A7-D29D6E0A9343";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "spine_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -16754,17 +16679,17 @@ createNode scaleConstraint -n "turtle_rig_start2:l_clav_ctrl_grp_scaleConstraint
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:l_arm_01_ctrl_grp" -p "turtle_rig_start2:l_arm_ctrl_grp";
-	rename -uid "BF5023C0-4BC1-CAC0-B311-7D9AAF69FAB4";
+createNode transform -n "l_arm_01_ctrl_grp" -p "l_arm_ctrl_grp";
+	rename -uid "6FE868DD-4DD2-9977-BC1C-C5BF1F14D479";
 	setAttr ".rp" -type "double3" 2.6503434181213379 -0.55037277936935458 2.1401278972625719 ;
 	setAttr ".sp" -type "double3" 2.6503434181213379 -0.55037277936935458 2.1401278972625719 ;
-createNode transform -n "turtle_rig_start2:l_arm_01_ctrl" -p "turtle_rig_start2:l_arm_01_ctrl_grp";
-	rename -uid "3007D818-479D-7ACC-A70B-8CB3DBDD65C4";
+createNode transform -n "l_arm_01_ctrl" -p "l_arm_01_ctrl_grp";
+	rename -uid "1A881F8D-43C1-64FF-E6A9-E3A4C38754CC";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" 2.6503434181213379 -0.55037277936935425 2.1401278972625719 ;
 	setAttr ".sp" -type "double3" 2.6503434181213379 -0.55037277936935425 2.1401278972625719 ;
-createNode nurbsCurve -n "turtle_rig_start2:l_arm_01_ctrlShape" -p "turtle_rig_start2:l_arm_01_ctrl";
-	rename -uid "390423B7-4548-F591-F3C8-6FB79929761E";
+createNode nurbsCurve -n "l_arm_01_ctrlShape" -p "l_arm_01_ctrl";
+	rename -uid "83757D85-4734-11D7-0B62-76A9A4BD24A7";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
@@ -16784,9 +16709,8 @@ createNode nurbsCurve -n "turtle_rig_start2:l_arm_01_ctrlShape" -p "turtle_rig_s
 		2.7859533169651582 0.15579189583460254 2.1948537146452725
 		2.6503434181213383 0.024870733049601718 3.1127283130806407
 		;
-createNode parentConstraint -n "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:l_arm_01_ctrl_grp";
-	rename -uid "1BD52A21-49A2-1B8A-028D-629EF61C315F";
+createNode parentConstraint -n "l_arm_01_ctrl_grp_parentConstraint1" -p "l_arm_01_ctrl_grp";
+	rename -uid "59442AAE-418D-F351-1110-8AB47D598911";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_clav_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -16804,13 +16728,12 @@ createNode parentConstraint -n "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstr
 		-1.7763568394002505e-15 ;
 	setAttr ".tg[0].tor" -type "double3" -2.8737412887436879e-15 20.959661529218288 
 		-4.598991004639708 ;
-	setAttr ".lr" -type "double3" 2.8259525510136854 13.270073788809954 -3.9116953175957585 ;
+	setAttr ".lr" -type "double3" 0.64576280833433763 13.115648118895795 -4.4093364348999042 ;
 	setAttr ".rst" -type "double3" 0 4.4408920985006262e-16 -8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" 0.64576280833433941 13.115648118895768 -4.4093364348999025 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_arm_01_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:l_arm_01_ctrl_grp";
-	rename -uid "5D3E3F96-4566-66E4-56FC-73B49C342A74";
+createNode scaleConstraint -n "l_arm_01_ctrl_grp_scaleConstraint1" -p "l_arm_01_ctrl_grp";
+	rename -uid "C0223C77-4359-C452-B2A4-E2B0414E8AEB";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_clav_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -16826,17 +16749,17 @@ createNode scaleConstraint -n "turtle_rig_start2:l_arm_01_ctrl_grp_scaleConstrai
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1.0000000000000002 1.0000000000000002 1.0000000000000002 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:l_arm_02_ctrl_grp" -p "turtle_rig_start2:l_arm_ctrl_grp";
-	rename -uid "ADDAA438-4715-8798-4869-8EA6D6E5A5FD";
+createNode transform -n "l_arm_02_ctrl_grp" -p "l_arm_ctrl_grp";
+	rename -uid "6BD0862C-4DD0-7548-B80E-F58AE258D758";
 	setAttr ".rp" -type "double3" 3.643492698669434 -0.62695424712728742 1.9080419540405242 ;
 	setAttr ".sp" -type "double3" 3.643492698669434 -0.62695424712728742 1.9080419540405242 ;
-createNode transform -n "turtle_rig_start2:l_arm_02_ctrl" -p "turtle_rig_start2:l_arm_02_ctrl_grp";
-	rename -uid "0585AFF3-45FF-455A-A3DB-3F8E4E7BF2E9";
+createNode transform -n "l_arm_02_ctrl" -p "l_arm_02_ctrl_grp";
+	rename -uid "8ABF09DA-44CD-65E6-B054-B692334F4AE3";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" 3.643492698669434 -0.62695424712728709 1.9080419540405242 ;
 	setAttr ".sp" -type "double3" 3.643492698669434 -0.62695424712728709 1.9080419540405242 ;
-createNode nurbsCurve -n "turtle_rig_start2:l_arm_02_ctrlShape" -p "turtle_rig_start2:l_arm_02_ctrl";
-	rename -uid "9D7F25DC-4C2A-522C-F213-E5A25CD02A3A";
+createNode nurbsCurve -n "l_arm_02_ctrlShape" -p "l_arm_02_ctrl";
+	rename -uid "E508F7A0-4294-3EE3-804B-38985F0EAD66";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
@@ -16856,9 +16779,8 @@ createNode nurbsCurve -n "turtle_rig_start2:l_arm_02_ctrlShape" -p "turtle_rig_s
 		3.8493775821033283 0.057228800270066188 1.8772271792476669
 		3.6897661803716693 -0.2085783376619095 2.5709391978877196
 		;
-createNode parentConstraint -n "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:l_arm_02_ctrl_grp";
-	rename -uid "B4BE06B7-4C68-6442-2A82-60B056E78562";
+createNode parentConstraint -n "l_arm_02_ctrl_grp_parentConstraint1" -p "l_arm_02_ctrl_grp";
+	rename -uid "FBB4D2B4-479B-AEF6-D521-8B9BD45D2B32";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_arm_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -16875,13 +16797,12 @@ createNode parentConstraint -n "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstr
 	setAttr ".tg[0].tot" -type "double3" 1.0227776394204291 -7.2164496600635175e-16 
 		-2.2204460492503131e-16 ;
 	setAttr ".tg[0].tor" -type "double3" 1.216373235831905e-15 35.202438838383841 3.8464218621913622 ;
-	setAttr ".lr" -type "double3" 5.4422083820217768 48.150735793244465 3.249334377318335 ;
+	setAttr ".lr" -type "double3" 2.2517086311445578 48.227269987282767 0.87102794049866317 ;
 	setAttr ".rst" -type "double3" -8.8817841970012523e-16 2.2204460492503131e-16 2.2204460492503131e-16 ;
 	setAttr ".rsrr" -type "double3" 2.2517086311445524 48.227269987282725 0.87102794049865973 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_arm_02_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:l_arm_02_ctrl_grp";
-	rename -uid "A6123B9C-4E53-D222-EE8E-8283D790E770";
+createNode scaleConstraint -n "l_arm_02_ctrl_grp_scaleConstraint1" -p "l_arm_02_ctrl_grp";
+	rename -uid "24C23766-4E4F-BA08-2A22-5AAEFBF3FDB1";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_arm_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -16897,17 +16818,17 @@ createNode scaleConstraint -n "turtle_rig_start2:l_arm_02_ctrl_grp_scaleConstrai
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1.0000000000000004 1.0000000000000004 0.99999999999999978 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:l_arm_03_ctrl_grp" -p "turtle_rig_start2:l_arm_ctrl_grp";
-	rename -uid "8EAE461E-4004-4857-E966-76946C4011F7";
+createNode transform -n "l_arm_03_ctrl_grp" -p "l_arm_ctrl_grp";
+	rename -uid "79A7D884-4F5A-EBEF-983D-20BD5EC530C0";
 	setAttr ".rp" -type "double3" 4.6844231311177085 -0.61112848556972954 0.74257418334198055 ;
 	setAttr ".sp" -type "double3" 4.6844231311177085 -0.61112848556972954 0.74257418334198055 ;
-createNode transform -n "turtle_rig_start2:l_arm_03_ctrl" -p "turtle_rig_start2:l_arm_03_ctrl_grp";
-	rename -uid "02263257-461D-9B3F-8421-4CBAF4A89EC7";
+createNode transform -n "l_arm_03_ctrl" -p "l_arm_03_ctrl_grp";
+	rename -uid "C9876F07-4576-EDE1-FDDE-F0B63DCC7B7C";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" 4.6844231311177085 -0.61112848556972921 0.74257418334198055 ;
 	setAttr ".sp" -type "double3" 4.6844231311177085 -0.61112848556972921 0.74257418334198055 ;
-createNode nurbsCurve -n "turtle_rig_start2:l_arm_03_ctrlShape" -p "turtle_rig_start2:l_arm_03_ctrl";
-	rename -uid "4BD1A159-473D-E6C6-E903-7B973010971C";
+createNode nurbsCurve -n "l_arm_03_ctrlShape" -p "l_arm_03_ctrl";
+	rename -uid "864EF137-4A63-8BDC-EBD7-F080F099E4F4";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
@@ -16927,9 +16848,8 @@ createNode nurbsCurve -n "turtle_rig_start2:l_arm_03_ctrlShape" -p "turtle_rig_s
 		4.7391732616355533 -0.12651906223747078 0.74262630094906346
 		4.684423131117704 -0.40742553964111422 1.5036305828583902
 		;
-createNode parentConstraint -n "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:l_arm_03_ctrl_grp";
-	rename -uid "D517619F-429E-990B-CBAA-E2B6A33A8F74";
+createNode parentConstraint -n "l_arm_03_ctrl_grp_parentConstraint1" -p "l_arm_03_ctrl_grp";
+	rename -uid "E7D8D2D0-446E-A248-0137-1EA9FFE74B3C";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_arm_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -16946,13 +16866,12 @@ createNode parentConstraint -n "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstr
 	setAttr ".tg[0].tot" -type "double3" 1.5627225423800795 -7.2164496600635175e-16 
 		4.4408920985006262e-16 ;
 	setAttr ".tg[0].tor" -type "double3" 4.5667724148814484e-16 29.475098710243671 2.7793572037683911 ;
-	setAttr ".lr" -type "double3" 24.93610112833839 76.374265250469392 25.364969724936529 ;
+	setAttr ".lr" -type "double3" 16.261934434289625 77.144073351473807 16.920362628276735 ;
 	setAttr ".rst" -type "double3" -8.8817841970012523e-16 7.7715611723760958e-16 1.3322676295501878e-15 ;
 	setAttr ".rsrr" -type "double3" 16.261934434289561 77.144073351473764 16.920362628276671 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_arm_03_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:l_arm_03_ctrl_grp";
-	rename -uid "EF88C65B-4813-E871-8444-98A57C58FED5";
+createNode scaleConstraint -n "l_arm_03_ctrl_grp_scaleConstraint1" -p "l_arm_03_ctrl_grp";
+	rename -uid "64B2F108-41F8-571B-9FA9-619601A3DDB3";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_arm_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -16968,17 +16887,17 @@ createNode scaleConstraint -n "turtle_rig_start2:l_arm_03_ctrl_grp_scaleConstrai
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 0.99999999999999978 0.99999999999999978 1.0000000000000004 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:l_arm_04_ctrl_grp" -p "turtle_rig_start2:l_arm_ctrl_grp";
-	rename -uid "30632738-41C3-7EF8-1888-C5867BA8829D";
+createNode transform -n "l_arm_04_ctrl_grp" -p "l_arm_ctrl_grp";
+	rename -uid "223A397A-4082-FF62-BA70-CCABD51AABD2";
 	setAttr ".rp" -type "double3" 5.0925354872636595 -0.48697602463170686 -1.1265728309054337 ;
 	setAttr ".sp" -type "double3" 5.0925354872636595 -0.48697602463170686 -1.1265728309054337 ;
-createNode transform -n "turtle_rig_start2:l_arm_04_ctrl" -p "turtle_rig_start2:l_arm_04_ctrl_grp";
-	rename -uid "3BC30E05-49C6-21DD-F541-DF83EA50380B";
+createNode transform -n "l_arm_04_ctrl" -p "l_arm_04_ctrl_grp";
+	rename -uid "0B7C0CB2-444E-4202-46DE-E78F5777DC4B";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" 5.0925354872636595 -0.48697602463170653 -1.1265728309054337 ;
 	setAttr ".sp" -type "double3" 5.0925354872636595 -0.48697602463170653 -1.1265728309054337 ;
-createNode nurbsCurve -n "turtle_rig_start2:l_arm_04_ctrlShape" -p "turtle_rig_start2:l_arm_04_ctrl";
-	rename -uid "6B52AFDF-4AC6-8574-E294-3FB648BC37D0";
+createNode nurbsCurve -n "l_arm_04_ctrlShape" -p "l_arm_04_ctrl";
+	rename -uid "1EFE0B5C-476D-2BA6-0BE4-5ABBAFF0EBE1";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
@@ -16998,9 +16917,8 @@ createNode nurbsCurve -n "turtle_rig_start2:l_arm_04_ctrlShape" -p "turtle_rig_s
 		5.0926244748549445 -0.16871279053243618 -1.0639841813566226
 		5.0926244748549436 -0.39760050395813173 -0.48407153383197166
 		;
-createNode parentConstraint -n "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:l_arm_04_ctrl_grp";
-	rename -uid "F28616D6-4B50-C8F2-CD32-36B52E38D39B";
+createNode parentConstraint -n "l_arm_04_ctrl_grp_parentConstraint1" -p "l_arm_04_ctrl_grp";
+	rename -uid "F8B39054-4F94-8F65-5396-049F780CA24E";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_arm_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17018,13 +16936,12 @@ createNode parentConstraint -n "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstr
 		2.2204460492503131e-15 ;
 	setAttr ".tg[0].tor" -type "double3" -7.6532097022715853e-15 9.5416640443905456e-15 
 		-3.975693351829394e-16 ;
-	setAttr ".lr" -type "double3" 24.9361011283384 76.374265250469421 25.364969724936529 ;
+	setAttr ".lr" -type "double3" 16.261934434289614 77.144073351473779 16.920362628276713 ;
 	setAttr ".rst" -type "double3" 8.8817841970012523e-16 5.5511151231257827e-16 -1.7763568394002505e-15 ;
 	setAttr ".rsrr" -type "double3" 16.261934434289582 77.144073351473779 16.920362628276681 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_arm_04_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:l_arm_04_ctrl_grp";
-	rename -uid "915B14BD-430D-E18F-B960-B8A65EAC902F";
+createNode scaleConstraint -n "l_arm_04_ctrl_grp_scaleConstraint1" -p "l_arm_04_ctrl_grp";
+	rename -uid "A68D59F2-4BC7-7D96-597D-18B9AFBA06AA";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_arm_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17040,21 +16957,21 @@ createNode scaleConstraint -n "turtle_rig_start2:l_arm_04_ctrl_grp_scaleConstrai
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 0.99999999999999944 0.99999999999999956 1 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:r_arm_ctrl_grp" -p "turtle_rig_start2:upper_body_ctrl_grp";
-	rename -uid "E4716BC1-4E2B-87CB-94AF-0B9EF862D34E";
+createNode transform -n "r_arm_ctrl_grp" -p "upper_body_ctrl_grp";
+	rename -uid "DAC7763B-4ED5-98B8-B959-C687BF410516";
 	setAttr ".rp" -type "double3" 1.9721522630525304e-31 0.51646006107330322 -2.2993907928466801 ;
 	setAttr ".sp" -type "double3" 1.9721522630525304e-31 0.51646006107330322 -2.2993907928466801 ;
-createNode transform -n "turtle_rig_start2:r_clav_ctrl_grp" -p "turtle_rig_start2:r_arm_ctrl_grp";
-	rename -uid "1AD0B3F6-4195-1A2E-B594-F993B4DFDF61";
+createNode transform -n "r_clav_ctrl_grp" -p "r_arm_ctrl_grp";
+	rename -uid "44A574AF-409D-7B76-BF04-3A81CA38DAF8";
 	setAttr ".rp" -type "double3" -0.32130700000000012 -0.55037300000000033 1.81826 ;
 	setAttr ".sp" -type "double3" -0.32130700000000012 -0.55037300000000033 1.81826 ;
-createNode transform -n "turtle_rig_start2:r_clav_ctrl" -p "turtle_rig_start2:r_clav_ctrl_grp";
-	rename -uid "C23A1EFD-4159-B9D9-7A03-7184692DE95D";
+createNode transform -n "r_clav_ctrl" -p "r_clav_ctrl_grp";
+	rename -uid "42BEF241-40DC-4EC8-DA27-0E9248D04EC2";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" -0.32130700000000012 -0.55037300000000067 1.81826 ;
 	setAttr ".sp" -type "double3" -0.32130700000000012 -0.55037300000000067 1.81826 ;
-createNode nurbsCurve -n "turtle_rig_start2:r_clav_ctrlShape" -p "turtle_rig_start2:r_clav_ctrl";
-	rename -uid "19B92B90-492B-1568-8E1B-8DB8D3E664CB";
+createNode nurbsCurve -n "r_clav_ctrlShape" -p "r_clav_ctrl";
+	rename -uid "FE5E2555-4BCE-F90C-AA78-DDA6BBDEDA29";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 13;
@@ -17074,9 +16991,8 @@ createNode nurbsCurve -n "turtle_rig_start2:r_clav_ctrlShape" -p "turtle_rig_sta
 		-1.9064557596947309 -0.41480460513305695 0.44450193024080642
 		-1.9064557596947309 -1.8032209530806163 0.70632246897801032
 		;
-createNode parentConstraint -n "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:r_clav_ctrl_grp";
-	rename -uid "F1375E72-4524-142A-FA95-18B751937364";
+createNode parentConstraint -n "r_clav_ctrl_grp_parentConstraint1" -p "r_clav_ctrl_grp";
+	rename -uid "C2877B30-4799-91F1-DECC-78BFDB28F08B";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "spine_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17093,13 +17009,12 @@ createNode parentConstraint -n "turtle_rig_start2:r_clav_ctrl_grp_parentConstrai
 	setAttr ".tg[0].tot" -type "double3" 1.0769117221991877 -1.0668330610733034 0.32130700000000023 ;
 	setAttr ".tg[0].tor" -type "double3" -7.0167092985348752e-15 82.131773252693591 
 		180 ;
-	setAttr ".lr" -type "double3" -177.85154080312961 7.8627649352562337 0.29404620860917452 ;
+	setAttr ".lr" -type "double3" 180 7.8682267473064345 9.6968315602313251e-16 ;
 	setAttr ".rst" -type "double3" 1.1102230246251565e-16 4.4408920985006262e-16 -2.2204460492503131e-16 ;
 	setAttr ".rsrr" -type "double3" 180 7.8682267473064256 9.6968315602313291e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_clav_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:r_clav_ctrl_grp";
-	rename -uid "644E8DCE-429A-7F41-0326-61A35D65131C";
+createNode scaleConstraint -n "r_clav_ctrl_grp_scaleConstraint1" -p "r_clav_ctrl_grp";
+	rename -uid "0B700D04-4425-D368-0F37-73BD26AD65AD";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "spine_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17114,17 +17029,17 @@ createNode scaleConstraint -n "turtle_rig_start2:r_clav_ctrl_grp_scaleConstraint
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:r_arm_01_ctrl_grp" -p "turtle_rig_start2:r_arm_ctrl_grp";
-	rename -uid "2C15DDBE-487F-702B-4464-B68E1D3277EB";
+createNode transform -n "r_arm_01_ctrl_grp" -p "r_arm_ctrl_grp";
+	rename -uid "CDD3C3CF-48D2-A74E-2749-5E97DA9239E0";
 	setAttr ".rp" -type "double3" -2.6503400000000008 -0.55037300000000033 2.1401299999999996 ;
 	setAttr ".sp" -type "double3" -2.6503400000000008 -0.55037300000000033 2.1401299999999996 ;
-createNode transform -n "turtle_rig_start2:r_arm_01_ctrl" -p "turtle_rig_start2:r_arm_01_ctrl_grp";
-	rename -uid "BE7AF056-435E-69C5-0EA6-18803CB225ED";
+createNode transform -n "r_arm_01_ctrl" -p "r_arm_01_ctrl_grp";
+	rename -uid "7D329B02-413D-CF0F-80B6-C79A09823DC0";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" -2.6503400000000008 -0.55037300000000067 2.1401299999999996 ;
 	setAttr ".sp" -type "double3" -2.6503400000000008 -0.55037300000000067 2.1401299999999996 ;
-createNode nurbsCurve -n "turtle_rig_start2:r_arm_01_ctrlShape" -p "turtle_rig_start2:r_arm_01_ctrl";
-	rename -uid "1A290183-4C08-C390-E1A7-A9A1A4D82C60";
+createNode nurbsCurve -n "r_arm_01_ctrlShape" -p "r_arm_01_ctrl";
+	rename -uid "34267F8D-4E99-A2E9-0B3B-9AB2F2968627";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 13;
@@ -17144,9 +17059,8 @@ createNode nurbsCurve -n "turtle_rig_start2:r_arm_01_ctrlShape" -p "turtle_rig_s
 		-2.7859536785747996 -1.2565381435330827 2.0854054663764696
 		-2.6503437797309797 -1.1256169807480809 1.1675308679411023
 		;
-createNode parentConstraint -n "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:r_arm_01_ctrl_grp";
-	rename -uid "003B556E-4EC6-CB08-94F4-F8BC4A021444";
+createNode parentConstraint -n "r_arm_01_ctrl_grp_parentConstraint1" -p "r_arm_01_ctrl_grp";
+	rename -uid "425C2133-4E6F-F493-31ED-2FAB01511A93";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_clav_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17163,13 +17077,12 @@ createNode parentConstraint -n "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstr
 	setAttr ".tg[0].tot" -type "double3" -2.3511688607903407 4.4408920985006262e-16 
 		-6.2331682708638425e-06 ;
 	setAttr ".tg[0].tor" -type "double3" 7.450440378224377e-15 20.959661529218241 -4.5989910046397036 ;
-	setAttr ".lr" -type "double3" -177.1740474489863 -13.270073788809915 3.9116953175957523 ;
+	setAttr ".lr" -type "double3" -179.35423719166567 -13.115648118895752 4.4093364348999042 ;
 	setAttr ".rst" -type "double3" 8.8817841970012523e-16 3.3306690738754696e-16 4.4408920985006262e-16 ;
 	setAttr ".rsrr" -type "double3" -179.35423719166567 -13.115648118895757 4.4093364348999033 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_arm_01_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:r_arm_01_ctrl_grp";
-	rename -uid "C9F4C611-4313-0019-7A22-AAA219E8D05A";
+createNode scaleConstraint -n "r_arm_01_ctrl_grp_scaleConstraint1" -p "r_arm_01_ctrl_grp";
+	rename -uid "FD379112-4A80-7E3A-8F45-BAA3C5D1CE91";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_clav_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17185,17 +17098,17 @@ createNode scaleConstraint -n "turtle_rig_start2:r_arm_01_ctrl_grp_scaleConstrai
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1.0000000000000002 1.0000000000000002 1 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:r_arm_02_ctrl_grp" -p "turtle_rig_start2:r_arm_ctrl_grp";
-	rename -uid "0C8D9E69-499C-A60A-27F5-EFA853915023";
+createNode transform -n "r_arm_02_ctrl_grp" -p "r_arm_ctrl_grp";
+	rename -uid "274C7AF0-434B-FA4E-FE9E-999311266AE0";
 	setAttr ".rp" -type "double3" -3.6434900000000012 -0.62695400000000034 1.9080399999999993 ;
 	setAttr ".sp" -type "double3" -3.6434900000000012 -0.62695400000000034 1.9080399999999993 ;
-createNode transform -n "turtle_rig_start2:r_arm_02_ctrl" -p "turtle_rig_start2:r_arm_02_ctrl_grp";
-	rename -uid "082BF271-434F-5F4C-38CC-FEAB6775820C";
+createNode transform -n "r_arm_02_ctrl" -p "r_arm_02_ctrl_grp";
+	rename -uid "139E3325-467D-DB35-657D-BAAD6F4E1281";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" -3.6434900000000012 -0.62695400000000068 1.9080399999999993 ;
 	setAttr ".sp" -type "double3" -3.6434900000000012 -0.62695400000000068 1.9080399999999993 ;
-createNode nurbsCurve -n "turtle_rig_start2:r_arm_02_ctrlShape" -p "turtle_rig_start2:r_arm_02_ctrl";
-	rename -uid "404E2A04-46EB-2C8F-35D4-8FBC60704058";
+createNode nurbsCurve -n "r_arm_02_ctrlShape" -p "r_arm_02_ctrl";
+	rename -uid "2B0FF195-4820-C857-FE2D-B79AE6BA1D1D";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 13;
@@ -17215,9 +17128,8 @@ createNode nurbsCurve -n "turtle_rig_start2:r_arm_02_ctrlShape" -p "turtle_rig_s
 		-3.8493752212065302 -1.3111368895984514 1.9388514546765738
 		-3.6897638194748712 -1.0453297516664757 1.2451394360365207
 		;
-createNode parentConstraint -n "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:r_arm_02_ctrl_grp";
-	rename -uid "6387C218-4056-58A2-B892-CDA73658CE36";
+createNode parentConstraint -n "r_arm_02_ctrl_grp_parentConstraint1" -p "r_arm_02_ctrl_grp";
+	rename -uid "D2ED1473-471F-205A-3103-909A3FDEFE8F";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_arm_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17235,13 +17147,12 @@ createNode parentConstraint -n "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstr
 		3.8019789792009817e-06 ;
 	setAttr ".tg[0].tor" -type "double3" -9.2444365923224789e-15 35.202438838383827 
 		3.8464218621913693 ;
-	setAttr ".lr" -type "double3" -174.55779161797821 -48.150735793244401 -3.2493343773183558 ;
+	setAttr ".lr" -type "double3" -177.74829136885546 -48.227269987282689 -0.87102794049866428 ;
 	setAttr ".rst" -type "double3" 1.3322676295501878e-15 2.2204460492503131e-16 1.5543122344752192e-15 ;
 	setAttr ".rsrr" -type "double3" -177.74829136885546 -48.227269987282703 -0.87102794049866605 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_arm_02_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:r_arm_02_ctrl_grp";
-	rename -uid "C3544FD4-4788-A69A-0C9B-90B2866CDA92";
+createNode scaleConstraint -n "r_arm_02_ctrl_grp_scaleConstraint1" -p "r_arm_02_ctrl_grp";
+	rename -uid "9E18FEB8-4D1F-9C92-802F-369001F13351";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_arm_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17257,17 +17168,17 @@ createNode scaleConstraint -n "turtle_rig_start2:r_arm_02_ctrl_grp_scaleConstrai
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1.0000000000000004 1.0000000000000004 1 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:r_arm_03_ctrl_grp" -p "turtle_rig_start2:r_arm_ctrl_grp";
-	rename -uid "CBEFDF6F-436F-444D-05EA-CA9A3FAEA711";
+createNode transform -n "r_arm_03_ctrl_grp" -p "r_arm_ctrl_grp";
+	rename -uid "C1392DF4-41FC-6B6B-7CF8-E9AB66D019EC";
 	setAttr ".rp" -type "double3" -4.6844200000000011 -0.61112800000000045 0.74257400000000118 ;
 	setAttr ".sp" -type "double3" -4.6844200000000011 -0.61112800000000045 0.74257400000000118 ;
-createNode transform -n "turtle_rig_start2:r_arm_03_ctrl" -p "turtle_rig_start2:r_arm_03_ctrl_grp";
-	rename -uid "8FB5FF6E-418A-8C4E-B4E9-54B0AF44B8CD";
+createNode transform -n "r_arm_03_ctrl" -p "r_arm_03_ctrl_grp";
+	rename -uid "135846AA-48B4-13C4-7911-F2AE1C91B1CB";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" -4.6844200000000011 -0.61112800000000078 0.74257400000000118 ;
 	setAttr ".sp" -type "double3" -4.6844200000000011 -0.61112800000000078 0.74257400000000118 ;
-createNode nurbsCurve -n "turtle_rig_start2:r_arm_03_ctrlShape" -p "turtle_rig_start2:r_arm_03_ctrl";
-	rename -uid "31824CA5-4A85-A7A2-06BC-64A6599774BD";
+createNode nurbsCurve -n "r_arm_03_ctrlShape" -p "r_arm_03_ctrl";
+	rename -uid "83F57E28-478B-FECD-C9EA-B98EEDEB731C";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 13;
@@ -17287,9 +17198,8 @@ createNode nurbsCurve -n "turtle_rig_start2:r_arm_03_ctrlShape" -p "turtle_rig_s
 		-4.7391705868432972 -1.0957368932011262 0.74251878658632897
 		-4.6844204563254479 -0.81483041579748283 -0.018485495322996925
 		;
-createNode parentConstraint -n "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:r_arm_03_ctrl_grp";
-	rename -uid "64686B04-446F-2114-70AD-719CC0904415";
+createNode parentConstraint -n "r_arm_03_ctrl_grp_parentConstraint1" -p "r_arm_03_ctrl_grp";
+	rename -uid "1F0BA585-451A-2007-494F-559B0844EECD";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_arm_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17306,13 +17216,12 @@ createNode parentConstraint -n "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstr
 	setAttr ".tg[0].tot" -type "double3" -1.5627209361658916 -2.7858180640105701e-07 
 		-8.495338676972608e-07 ;
 	setAttr ".tg[0].tor" -type "double3" -1.096025379571548e-14 29.47509871024371 2.7793572037683978 ;
-	setAttr ".lr" -type "double3" -155.06389887166156 -76.374265250469364 -25.364969724936582 ;
+	setAttr ".lr" -type "double3" -163.73806556571043 -77.144073351473779 -16.920362628276695 ;
 	setAttr ".rst" -type "double3" 3.5527136788005009e-15 7.7715611723760958e-16 -2.6645352591003757e-15 ;
 	setAttr ".rsrr" -type "double3" -163.73806556571043 -77.144073351473793 -16.920362628276724 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_arm_03_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:r_arm_03_ctrl_grp";
-	rename -uid "D61F6BD2-40C8-27DD-BAA1-8C8905641E86";
+createNode scaleConstraint -n "r_arm_03_ctrl_grp_scaleConstraint1" -p "r_arm_03_ctrl_grp";
+	rename -uid "3818FFB2-46BE-BE32-F9C4-949D5C7D5C29";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_arm_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17328,17 +17237,17 @@ createNode scaleConstraint -n "turtle_rig_start2:r_arm_03_ctrl_grp_scaleConstrai
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1 1 1.0000000000000009 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:r_arm_04_ctrl_grp" -p "turtle_rig_start2:r_arm_ctrl_grp";
-	rename -uid "FBF68DF4-44A8-8E02-B1B2-7895AA03D122";
+createNode transform -n "r_arm_04_ctrl_grp" -p "r_arm_ctrl_grp";
+	rename -uid "BA940432-49AD-C0AB-18CA-7EBE0C631A00";
 	setAttr ".rp" -type "double3" -5.0925399999999978 -0.48697600000000041 -1.1265700000000003 ;
 	setAttr ".sp" -type "double3" -5.0925399999999978 -0.48697600000000041 -1.1265700000000003 ;
-createNode transform -n "turtle_rig_start2:r_arm_04_ctrl" -p "turtle_rig_start2:r_arm_04_ctrl_grp";
-	rename -uid "D42FE704-4243-9F6A-EEFF-5D8BC2DF1378";
+createNode transform -n "r_arm_04_ctrl" -p "r_arm_04_ctrl_grp";
+	rename -uid "229C5169-4316-C09C-C84C-EB8371CC2B0D";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" -5.0925399999999978 -0.48697600000000074 -1.1265700000000003 ;
 	setAttr ".sp" -type "double3" -5.0925399999999978 -0.48697600000000074 -1.1265700000000003 ;
-createNode nurbsCurve -n "turtle_rig_start2:r_arm_04_ctrlShape" -p "turtle_rig_start2:r_arm_04_ctrl";
-	rename -uid "3DAAC2D0-42BE-3A40-7B94-80BD9C4B45E4";
+createNode nurbsCurve -n "r_arm_04_ctrlShape" -p "r_arm_04_ctrl";
+	rename -uid "C6385995-41FB-7F1C-F3BA-D7BE3E9B86D8";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 13;
@@ -17358,9 +17267,8 @@ createNode nurbsCurve -n "turtle_rig_start2:r_arm_04_ctrlShape" -p "turtle_rig_s
 		-5.0926307853200141 -0.80523911529994863 -1.1891536362186113
 		-5.0926307853200141 -0.57635140187425282 -1.7690662837432622
 		;
-createNode parentConstraint -n "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:r_arm_04_ctrl_grp";
-	rename -uid "2DBC36C4-42AF-ABAE-264C-C19CAAE2F3F1";
+createNode parentConstraint -n "r_arm_04_ctrl_grp_parentConstraint1" -p "r_arm_04_ctrl_grp";
+	rename -uid "4EA550CD-42DC-FC8D-96F3-C6B520094BF0";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_arm_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17377,13 +17285,12 @@ createNode parentConstraint -n "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstr
 	setAttr ".tg[0].tot" -type "double3" -1.917204982826318 4.1133181305497146e-07 -8.1091367900576472e-06 ;
 	setAttr ".tg[0].tor" -type "double3" 5.5659706925611543e-15 1.4312496066585827e-14 
 		-1.590277340731758e-15 ;
-	setAttr ".lr" -type "double3" -155.06389887166159 -76.37426525046935 -25.364969724936557 ;
+	setAttr ".lr" -type "double3" -163.73806556571043 -77.144073351473793 -16.920362628276717 ;
 	setAttr ".rst" -type "double3" -1.7763568394002505e-15 5.5511151231257827e-16 1.1102230246251565e-15 ;
 	setAttr ".rsrr" -type "double3" -163.73806556571043 -77.144073351473793 -16.920362628276738 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_arm_04_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:r_arm_04_ctrl_grp";
-	rename -uid "DBC5BE8A-45AD-B27F-35EC-679A387CB2DC";
+createNode scaleConstraint -n "r_arm_04_ctrl_grp_scaleConstraint1" -p "r_arm_04_ctrl_grp";
+	rename -uid "0A2B3180-4FC1-5A1A-78CC-31B64CE9665E";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_arm_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17399,21 +17306,21 @@ createNode scaleConstraint -n "turtle_rig_start2:r_arm_04_ctrl_grp_scaleConstrai
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 0.99999999999999956 0.99999999999999956 1 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:neck_ctrl_grp" -p "turtle_rig_start2:upper_body_ctrl_grp";
-	rename -uid "54760EB0-428C-D7E7-4D17-04ABA77B0BEC";
+createNode transform -n "neck_ctrl_grp" -p "upper_body_ctrl_grp";
+	rename -uid "159AA959-43FC-AA62-023D-7E89354A8A9D";
 	setAttr ".rp" -type "double3" 1.9721522630525304e-31 0.51646006107330322 -2.2993907928466801 ;
 	setAttr ".sp" -type "double3" 1.9721522630525304e-31 0.51646006107330322 -2.2993907928466801 ;
-createNode transform -n "turtle_rig_start2:neck_01_ctrl_grp" -p "turtle_rig_start2:neck_ctrl_grp";
-	rename -uid "F3CC78F3-4C7C-282F-ED41-05938E1003FA";
+createNode transform -n "neck_01_ctrl_grp" -p "neck_ctrl_grp";
+	rename -uid "B5F66FF5-4E8F-ECAF-261D-DF9918522393";
 	setAttr ".rp" -type "double3" 3.0413030004887347e-31 -0.02919271588325556 3.4258810281753536 ;
 	setAttr ".sp" -type "double3" 3.0413030004887347e-31 -0.02919271588325556 3.4258810281753536 ;
-createNode transform -n "turtle_rig_start2:neck_01_ctrl" -p "turtle_rig_start2:neck_01_ctrl_grp";
-	rename -uid "736B6E3F-4032-1674-0305-3B93B9BC5BBC";
+createNode transform -n "neck_01_ctrl" -p "neck_01_ctrl_grp";
+	rename -uid "B0C30720-4277-838D-B5BF-5883507951F4";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" 1.9721522630525304e-31 -0.029192715883255227 3.4258810281753536 ;
 	setAttr ".sp" -type "double3" 1.9721522630525304e-31 -0.029192715883255227 3.4258810281753536 ;
-createNode nurbsCurve -n "turtle_rig_start2:neck_01_ctrlShape" -p "turtle_rig_start2:neck_01_ctrl";
-	rename -uid "5DF45894-48F2-DFC3-42FB-819C8C68431A";
+createNode nurbsCurve -n "neck_01_ctrlShape" -p "neck_01_ctrl";
+	rename -uid "FAFF7359-4B16-0A6E-E0BD-68871BA66596";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 14;
@@ -17433,9 +17340,8 @@ createNode nurbsCurve -n "turtle_rig_start2:neck_01_ctrlShape" -p "turtle_rig_st
 		0.096962453337724241 1.2087766624422627 3.4258810281753536
 		0.096962453337724686 0.84618382643201295 4.3012575704906224
 		;
-createNode parentConstraint -n "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:neck_01_ctrl_grp";
-	rename -uid "863D52A7-45CF-EB1B-F779-37BBAA3EAB99";
+createNode parentConstraint -n "neck_01_ctrl_grp_parentConstraint1" -p "neck_01_ctrl_grp";
+	rename -uid "0AC12311-4A98-9366-018A-A68553B22423";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "spine_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17450,13 +17356,12 @@ createNode parentConstraint -n "turtle_rig_start2:neck_01_ctrl_grp_parentConstra
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 2.6845327503745415 -0.54565277695655878 8.8817841970012523e-16 ;
-	setAttr ".lr" -type "double3" 89.999999999999488 -87.871748718451087 -89.999999999999488 ;
+	setAttr ".lr" -type "double3" 0 -89.999999999999986 0 ;
 	setAttr ".rst" -type "double3" -2.9209240573490276e-16 3.3306690738754696e-16 0 ;
 	setAttr ".rsrr" -type "double3" 0 -89.999999999999986 0 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:neck_01_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:neck_01_ctrl_grp";
-	rename -uid "50C69D19-48DD-A228-78C0-36830484F9F4";
+createNode scaleConstraint -n "neck_01_ctrl_grp_scaleConstraint1" -p "neck_01_ctrl_grp";
+	rename -uid "40AD00C5-4775-5861-85D7-42BA4552547A";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "spine_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17471,17 +17376,17 @@ createNode scaleConstraint -n "turtle_rig_start2:neck_01_ctrl_grp_scaleConstrain
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:neck_02_ctrl_grp" -p "turtle_rig_start2:neck_ctrl_grp";
-	rename -uid "1639B05B-4684-C0CF-34A7-D9B040D70AEF";
+createNode transform -n "neck_02_ctrl_grp" -p "neck_ctrl_grp";
+	rename -uid "46E59847-4EC2-6043-35B3-5FBB3F8B3B6A";
 	setAttr ".rp" -type "double3" 2.0138840948703498e-16 0.11082875728607133 4.3328537940979004 ;
 	setAttr ".sp" -type "double3" 2.0138840948703498e-16 0.11082875728607133 4.3328537940979004 ;
-createNode transform -n "turtle_rig_start2:neck_02_ctrl" -p "turtle_rig_start2:neck_02_ctrl_grp";
-	rename -uid "95CC0F28-4E4C-4964-BD39-468C41A06D2F";
+createNode transform -n "neck_02_ctrl" -p "neck_02_ctrl_grp";
+	rename -uid "5B30D7A2-44CD-972B-2EE5-A2A80DA2B2C8";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" 2.0138840948703488e-16 0.11082875728607167 4.3328537940979004 ;
 	setAttr ".sp" -type "double3" 2.0138840948703488e-16 0.11082875728607167 4.3328537940979004 ;
-createNode nurbsCurve -n "turtle_rig_start2:neck_02_ctrlShape" -p "turtle_rig_start2:neck_02_ctrl";
-	rename -uid "08F19C43-4C97-5970-F736-569D7FE03552";
+createNode nurbsCurve -n "neck_02_ctrlShape" -p "neck_02_ctrl";
+	rename -uid "6D8067D9-49DC-373E-7BF1-4CA64DE7FB59";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 14;
@@ -17501,9 +17406,8 @@ createNode nurbsCurve -n "turtle_rig_start2:neck_02_ctrlShape" -p "turtle_rig_st
 		-0.069311643440889803 1.2755180962190078 4.3328537940979013
 		-0.069311643440889803 0.94410018234409809 5.1329674165881078
 		;
-createNode parentConstraint -n "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:neck_02_ctrl_grp";
-	rename -uid "A4BDC18D-4388-A7A2-180C-6E9D08009CA3";
+createNode parentConstraint -n "neck_02_ctrl_grp_parentConstraint1" -p "neck_02_ctrl_grp";
+	rename -uid "681A7E04-4CB7-930D-3AE1-A7B430C743E8";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "neck_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17518,13 +17422,12 @@ createNode parentConstraint -n "turtle_rig_start2:neck_02_ctrl_grp_parentConstra
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.90697276592254705 0.14002147316932656 0 ;
-	setAttr ".lr" -type "double3" 89.999999999999488 -87.871748718451087 -89.999999999999488 ;
+	setAttr ".lr" -type "double3" 0 -89.999999999999986 0 ;
 	setAttr ".rst" -type "double3" -4.4408920985006271e-16 3.3306690738754696e-16 0 ;
 	setAttr ".rsrr" -type "double3" 0 -89.999999999999986 0 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:neck_02_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:neck_02_ctrl_grp";
-	rename -uid "74D89CB9-49F5-E711-2F99-E99E1AE1EF73";
+createNode scaleConstraint -n "neck_02_ctrl_grp_scaleConstraint1" -p "neck_02_ctrl_grp";
+	rename -uid "7EA9ADD0-47FB-76A8-CFF2-7886F077B261";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "neck_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17539,17 +17442,17 @@ createNode scaleConstraint -n "turtle_rig_start2:neck_02_ctrl_grp_scaleConstrain
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:head_ctrl_grp" -p "turtle_rig_start2:neck_ctrl_grp";
-	rename -uid "F893B561-4646-820A-C962-4E88A6E3A046";
+createNode transform -n "head_ctrl_grp" -p "neck_ctrl_grp";
+	rename -uid "7D31F78A-4D66-48DE-0A50-15B2F495CFD1";
 	setAttr ".rp" -type "double3" 4.2485475242693696e-16 0.29312112927436784 5.1208639144897461 ;
 	setAttr ".sp" -type "double3" 4.2485475242693696e-16 0.29312112927436784 5.1208639144897461 ;
-createNode transform -n "turtle_rig_start2:head_ctrl" -p "turtle_rig_start2:head_ctrl_grp";
-	rename -uid "8FBC90F8-4DBF-92B4-BB84-8A9917959E1F";
+createNode transform -n "head_ctrl" -p "head_ctrl_grp";
+	rename -uid "741BB916-4511-67C3-6B8D-E1BF18299CB5";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" 4.2485475242693686e-16 0.29312112927436818 5.1208639144897461 ;
 	setAttr ".sp" -type "double3" 4.2485475242693686e-16 0.29312112927436818 5.1208639144897461 ;
-createNode nurbsCurve -n "turtle_rig_start2:head_ctrlShape" -p "turtle_rig_start2:head_ctrl";
-	rename -uid "BEFE2B6F-438C-22E9-7F31-FCA87D03633A";
+createNode nurbsCurve -n "head_ctrlShape" -p "head_ctrl";
+	rename -uid "6AF324E2-44AF-A706-EB26-28A74BDA6DB7";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 14;
@@ -17569,9 +17472,8 @@ createNode nurbsCurve -n "turtle_rig_start2:head_ctrlShape" -p "turtle_rig_start
 		0 1.5088982940922424 5.120863914489747
 		0 1.1597597706992042 5.9637588728121358
 		;
-createNode parentConstraint -n "turtle_rig_start2:head_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:head_ctrl_grp";
-	rename -uid "CDD0029E-45BB-DDD0-49C5-A9AA8583B5E6";
+createNode parentConstraint -n "head_ctrl_grp_parentConstraint1" -p "head_ctrl_grp";
+	rename -uid "58763262-43C3-E621-0399-1B93C2F69023";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "neck_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17586,13 +17488,12 @@ createNode parentConstraint -n "turtle_rig_start2:head_ctrl_grp_parentConstraint
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.78801012039184615 0.18229237198829618 0 ;
-	setAttr ".lr" -type "double3" 89.999999999999488 -87.871748718451087 -89.999999999999488 ;
+	setAttr ".lr" -type "double3" 0 -89.999999999999986 0 ;
 	setAttr ".rst" -type "double3" -2.4988135656760312e-16 3.3306690738754696e-16 0 ;
 	setAttr ".rsrr" -type "double3" 0 -89.999999999999986 0 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:head_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:head_ctrl_grp";
-	rename -uid "39D73C63-40B4-E48B-CC55-7782EA451558";
+createNode scaleConstraint -n "head_ctrl_grp_scaleConstraint1" -p "head_ctrl_grp";
+	rename -uid "4D5F01E4-4B78-505B-8D79-DFB81B842FCA";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "neck_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17607,25 +17508,25 @@ createNode scaleConstraint -n "turtle_rig_start2:head_ctrl_grp_scaleConstraint1"
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:lower_body_ctrl_grp" -p "turtle_rig_start2:cog_ctrl";
-	rename -uid "AF7E7776-4130-F367-D5C6-E9B151F14E86";
-createNode transform -n "turtle_rig_start2:hip_ctrl_grp" -p "turtle_rig_start2:lower_body_ctrl_grp";
-	rename -uid "7110F1BC-4ABD-3AC2-945B-FD8B220C1217";
+createNode transform -n "lower_body_ctrl_grp" -p "cog_ctrl";
+	rename -uid "A0FD8081-42EE-B4E4-6B12-33964C6E36F8";
+createNode transform -n "hip_ctrl_grp" -p "lower_body_ctrl_grp";
+	rename -uid "88F2C1D6-4B94-340B-42A9-62BC547C4D01";
 	setAttr ".rp" -type "double3" 0 0.51646006107330322 -2.2993907928466797 ;
 	setAttr ".sp" -type "double3" 0 0.51646006107330322 -2.2993907928466797 ;
-createNode transform -n "turtle_rig_start2:hip_01_ctrl_grp" -p "turtle_rig_start2:hip_ctrl_grp";
-	rename -uid "4CC732A6-481B-77C7-4172-C59599FD9FAB";
+createNode transform -n "hip_01_ctrl_grp" -p "hip_ctrl_grp";
+	rename -uid "F3B8F917-4FB6-4EAB-6978-808C6025327B";
 	setAttr ".t" -type "double3" -1.0691507374362043e-31 3.3306690738754696e-16 0 ;
 	setAttr ".r" -type "double3" 0 -89.999999999999986 0 ;
 	setAttr ".rp" -type "double3" 1.0691507374362047e-31 0.51646006107330289 -2.2993909094282223 ;
 	setAttr ".sp" -type "double3" 1.0691507374362047e-31 0.51646006107330289 -2.2993909094282223 ;
-createNode transform -n "turtle_rig_start2:hip_01_ctrl" -p "turtle_rig_start2:hip_01_ctrl_grp";
-	rename -uid "1CA7A6DE-454A-5EAD-2FE8-7D9FA7D84D2A";
+createNode transform -n "hip_01_ctrl" -p "hip_01_ctrl_grp";
+	rename -uid "853A3042-4FD8-3677-F17F-D7B58173D977";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" 3.8400065842264206e-47 0.51646006107330322 -2.2993909094282223 ;
 	setAttr ".sp" -type "double3" 3.8400065842264206e-47 0.51646006107330322 -2.2993909094282223 ;
-createNode nurbsCurve -n "turtle_rig_start2:hip_01_ctrlShape" -p "turtle_rig_start2:hip_01_ctrl";
-	rename -uid "FE4EFEE3-4E3A-2301-8208-8CBECA81FB38";
+createNode nurbsCurve -n "hip_01_ctrlShape" -p "hip_01_ctrl";
+	rename -uid "10270642-405A-B02F-2C39-479E7DE6E37E";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 14;
@@ -17645,21 +17546,21 @@ createNode nurbsCurve -n "turtle_rig_start2:hip_01_ctrlShape" -p "turtle_rig_sta
 		-0.54506718808391907 3.1862758893766503 -2.2993909094282223
 		-0.54506718808391952 1.4891872728941093 0.90664758120816424
 		;
-createNode transform -n "turtle_rig_start2:l_leg_ctrl_grp" -p "turtle_rig_start2:lower_body_ctrl_grp";
-	rename -uid "00252620-48FD-D6F2-C774-6FBDFFB70E79";
+createNode transform -n "l_leg_ctrl_grp" -p "lower_body_ctrl_grp";
+	rename -uid "A346EBFF-45A5-0338-A26A-3093D0D042E3";
 	setAttr ".rp" -type "double3" 0 0.51646006107330322 -2.2993907928466797 ;
 	setAttr ".sp" -type "double3" 0 0.51646006107330322 -2.2993907928466797 ;
-createNode transform -n "turtle_rig_start2:l_leg_01_ctrl_grp" -p "turtle_rig_start2:l_leg_ctrl_grp";
-	rename -uid "E9DB19AD-42BA-F3B7-C025-66B06D334DEC";
+createNode transform -n "l_leg_01_ctrl_grp" -p "l_leg_ctrl_grp";
+	rename -uid "21F0430C-46D0-BB55-2A9E-478CCBF4E280";
 	setAttr ".rp" -type "double3" 1.3874559402465825 -0.54378765821456965 -3.8267812728881836 ;
 	setAttr ".sp" -type "double3" 1.3874559402465825 -0.54378765821456965 -3.8267812728881836 ;
-createNode transform -n "turtle_rig_start2:l_leg_01_ctrl" -p "turtle_rig_start2:l_leg_01_ctrl_grp";
-	rename -uid "28C62C35-43A3-7B06-5488-F0BCA4E13F53";
+createNode transform -n "l_leg_01_ctrl" -p "l_leg_01_ctrl_grp";
+	rename -uid "A44FD532-49C5-AC37-A774-909D17EE6645";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" 1.3874559402465825 -0.54378765821456931 -3.8267812728881836 ;
 	setAttr ".sp" -type "double3" 1.3874559402465825 -0.54378765821456931 -3.8267812728881836 ;
-createNode nurbsCurve -n "turtle_rig_start2:l_leg_01_ctrlShape" -p "turtle_rig_start2:l_leg_01_ctrl";
-	rename -uid "95EB7230-459F-9378-2966-D597BD6A3539";
+createNode nurbsCurve -n "l_leg_01_ctrlShape" -p "l_leg_01_ctrl";
+	rename -uid "0DBB79FF-4FC3-B7EE-5698-6086D849D453";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
@@ -17679,9 +17580,8 @@ createNode nurbsCurve -n "turtle_rig_start2:l_leg_01_ctrlShape" -p "turtle_rig_s
 		1.3252457588776303 -1.19874056645244 -3.8267777547283379
 		1.3093148987617238 -0.83051090746408063 -4.4985421424696135
 		;
-createNode parentConstraint -n "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:l_leg_01_ctrl_grp";
-	rename -uid "54809600-4850-57E8-CA44-CD95E83B4A0D";
+createNode parentConstraint -n "l_leg_01_ctrl_grp_parentConstraint1" -p "l_leg_01_ctrl_grp";
+	rename -uid "CEF78792-4F22-291E-94F7-B290835A21BC";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "hip_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17701,9 +17601,8 @@ createNode parentConstraint -n "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstr
 	setAttr ".rst" -type "double3" 4.4408920985006262e-16 4.4408920985006262e-16 0 ;
 	setAttr ".rsrr" -type "double3" -1.3540387281951025e-14 38.914325313619081 4.1784512423565303 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_leg_01_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:l_leg_01_ctrl_grp";
-	rename -uid "C185ACB3-43EC-1F41-4ED2-FE9F55C235CF";
+createNode scaleConstraint -n "l_leg_01_ctrl_grp_scaleConstraint1" -p "l_leg_01_ctrl_grp";
+	rename -uid "A2313535-46A7-CE13-C141-E3A7BF65A1DD";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "hip_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17719,17 +17618,17 @@ createNode scaleConstraint -n "turtle_rig_start2:l_leg_01_ctrl_grp_scaleConstrai
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1.0000000000000002 1 1.0000000000000002 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:l_leg_02_ctrl_grp" -p "turtle_rig_start2:l_leg_ctrl_grp";
-	rename -uid "4E27A999-4FD0-CBD4-9564-D49F6928B712";
+createNode transform -n "l_leg_02_ctrl_grp" -p "l_leg_ctrl_grp";
+	rename -uid "0CB40416-497C-DCA0-D9DC-30863BDCE180";
 	setAttr ".rp" -type "double3" 1.7754502702620802 -0.51544184196971765 -4.1408482360546852 ;
 	setAttr ".sp" -type "double3" 1.7754502702620802 -0.51544184196971765 -4.1408482360546852 ;
-createNode transform -n "turtle_rig_start2:l_leg_02_ctrl" -p "turtle_rig_start2:l_leg_02_ctrl_grp";
-	rename -uid "5E03F74F-4E38-0678-DBFC-FDB43FD45230";
+createNode transform -n "l_leg_02_ctrl" -p "l_leg_02_ctrl_grp";
+	rename -uid "6FB24DE5-42E0-BA69-E4A9-D79846B12F38";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" 1.7754502702620802 -0.51544184196971732 -4.1408482360546852 ;
 	setAttr ".sp" -type "double3" 1.7754502702620802 -0.51544184196971732 -4.1408482360546852 ;
-createNode nurbsCurve -n "turtle_rig_start2:l_leg_02_ctrlShape" -p "turtle_rig_start2:l_leg_02_ctrl";
-	rename -uid "82D793C4-41A7-5340-2722-A684914D4104";
+createNode nurbsCurve -n "l_leg_02_ctrlShape" -p "l_leg_02_ctrl";
+	rename -uid "EEEE8323-4F01-E782-38AF-24974E7FA31E";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
@@ -17749,9 +17648,8 @@ createNode nurbsCurve -n "turtle_rig_start2:l_leg_02_ctrlShape" -p "turtle_rig_s
 		1.7911708214601769 -1.0990453079777573 -4.1675699771942591
 		1.775451108201358 -0.77869340371581286 -4.6954769253918629
 		;
-createNode parentConstraint -n "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:l_leg_02_ctrl_grp";
-	rename -uid "4D9458CA-4605-018F-329C-32A39CD91B70";
+createNode parentConstraint -n "l_leg_02_ctrl_grp_parentConstraint1" -p "l_leg_02_ctrl_grp";
+	rename -uid "062B7A79-4D7C-82EB-181F-77BBE414E043";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_leg_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17773,9 +17671,8 @@ createNode parentConstraint -n "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstr
 	setAttr ".rst" -type "double3" 8.8817841970012523e-16 1.1102230246251565e-16 -1.7763568394002505e-15 ;
 	setAttr ".rsrr" -type "double3" -0.5453099202878452 36.968751426825911 3.310819909784533 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_leg_02_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:l_leg_02_ctrl_grp";
-	rename -uid "A1DBCF2D-4122-D395-9361-269CE595C35D";
+createNode scaleConstraint -n "l_leg_02_ctrl_grp_scaleConstraint1" -p "l_leg_02_ctrl_grp";
+	rename -uid "68561654-424C-B098-797A-91BDF941DB25";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_leg_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17791,17 +17688,17 @@ createNode scaleConstraint -n "turtle_rig_start2:l_leg_02_ctrl_grp_scaleConstrai
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1.0000000000000004 0.99999999999999967 1.0000000000000002 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:l_leg_03_ctrl_grp" -p "turtle_rig_start2:l_leg_ctrl_grp";
-	rename -uid "24594D63-46F3-3954-6E91-03B20A438312";
+createNode transform -n "l_leg_03_ctrl_grp" -p "l_leg_ctrl_grp";
+	rename -uid "BDF9615E-43AD-5CD9-7CDD-3490F83C97D5";
 	setAttr ".rp" -type "double3" 2.4199025446952738 -0.47816085135196085 -4.6267380059800738 ;
 	setAttr ".sp" -type "double3" 2.4199025446952738 -0.47816085135196085 -4.6267380059800738 ;
-createNode transform -n "turtle_rig_start2:l_leg_03_ctrl" -p "turtle_rig_start2:l_leg_03_ctrl_grp";
-	rename -uid "1BBDAA8F-4C71-EA89-5251-9DA2BDF4D8C9";
+createNode transform -n "l_leg_03_ctrl" -p "l_leg_03_ctrl_grp";
+	rename -uid "2219A818-48CB-1324-0854-01BA21348D04";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" 2.4199025446952738 -0.47816085135196051 -4.6267380059800738 ;
 	setAttr ".sp" -type "double3" 2.4199025446952738 -0.47816085135196051 -4.6267380059800738 ;
-createNode nurbsCurve -n "turtle_rig_start2:l_leg_03_ctrlShape" -p "turtle_rig_start2:l_leg_03_ctrl";
-	rename -uid "DDB3B5C9-4C63-2472-F877-F9B68FC207B2";
+createNode nurbsCurve -n "l_leg_03_ctrlShape" -p "l_leg_03_ctrl";
+	rename -uid "ED626222-4E67-32B9-B70F-DDA4C0DEFBA9";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
@@ -17821,9 +17718,8 @@ createNode nurbsCurve -n "turtle_rig_start2:l_leg_03_ctrlShape" -p "turtle_rig_s
 		2.4199027824117723 -0.93776628228103698 -4.6267412335451388
 		2.4199027824117723 -0.64560888315932252 -5.4103528584363643
 		;
-createNode parentConstraint -n "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:l_leg_03_ctrl_grp";
-	rename -uid "4A64DD65-4496-8A88-15C0-79822E344CC0";
+createNode parentConstraint -n "l_leg_03_ctrl_grp_parentConstraint1" -p "l_leg_03_ctrl_grp";
+	rename -uid "53E20789-4414-16DB-E473-4B9BA0C9364A";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_leg_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17844,9 +17740,8 @@ createNode parentConstraint -n "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstr
 	setAttr ".rst" -type "double3" 1.7763568394002505e-15 4.4408920985006262e-16 4.4408920985006262e-15 ;
 	setAttr ".rsrr" -type "double3" -2.8279420560053827 56.128615903490065 -0.22514336011036357 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_leg_03_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:l_leg_03_ctrl_grp";
-	rename -uid "96B94DE2-49CF-5C7D-DE6E-A6A70A9BCD2D";
+createNode scaleConstraint -n "l_leg_03_ctrl_grp_scaleConstraint1" -p "l_leg_03_ctrl_grp";
+	rename -uid "410E3BF4-4B59-658F-3FA8-208804A3F5FE";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_leg_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17862,17 +17757,17 @@ createNode scaleConstraint -n "turtle_rig_start2:l_leg_03_ctrl_grp_scaleConstrai
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 0.99999999999999978 1.0000000000000002 1.0000000000000002 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:l_leg_04_ctrl_grp" -p "turtle_rig_start2:l_leg_ctrl_grp";
-	rename -uid "78DF7306-45B9-885C-7A58-32A67E034F72";
+createNode transform -n "l_leg_04_ctrl_grp" -p "l_leg_ctrl_grp";
+	rename -uid "F2781268-4EAB-208D-7663-329CDBBB1C8B";
 	setAttr ".rp" -type "double3" 2.9085708000536949 -0.48008107968642255 -5.3547438546182802 ;
 	setAttr ".sp" -type "double3" 2.9085708000536949 -0.48008107968642255 -5.3547438546182802 ;
-createNode transform -n "turtle_rig_start2:l_leg_04_ctrl" -p "turtle_rig_start2:l_leg_04_ctrl_grp";
-	rename -uid "BBCC92A1-46BB-9C55-D77F-ADA05479F566";
+createNode transform -n "l_leg_04_ctrl" -p "l_leg_04_ctrl_grp";
+	rename -uid "373BFBAF-45BA-DF2B-38A6-A497412067C1";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" 2.9085708000536949 -0.48008107968642222 -5.3547438546182802 ;
 	setAttr ".sp" -type "double3" 2.9085708000536949 -0.48008107968642222 -5.3547438546182802 ;
-createNode nurbsCurve -n "turtle_rig_start2:l_leg_04_ctrlShape" -p "turtle_rig_start2:l_leg_04_ctrl";
-	rename -uid "48FB2372-46F0-3B4C-17A8-4A967A149633";
+createNode nurbsCurve -n "l_leg_04_ctrlShape" -p "l_leg_04_ctrl";
+	rename -uid "6BFC005A-4B4B-149E-90F6-2E81A7392871";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
@@ -17892,9 +17787,8 @@ createNode nurbsCurve -n "turtle_rig_start2:l_leg_04_ctrlShape" -p "turtle_rig_s
 		2.9085669464642274 -0.99415043283973414 -5.3547430538326148
 		2.9085669464642274 -0.74904642164720026 -6.1383546787238394
 		;
-createNode parentConstraint -n "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:l_leg_04_ctrl_grp";
-	rename -uid "45E09152-4F11-16A2-87DB-D0BC83650A77";
+createNode parentConstraint -n "l_leg_04_ctrl_grp_parentConstraint1" -p "l_leg_04_ctrl_grp";
+	rename -uid "068EBC69-4831-4ABF-1272-05861C918AA4";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_leg_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17916,9 +17810,8 @@ createNode parentConstraint -n "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstr
 	setAttr ".rst" -type "double3" 0 5.5511151231257827e-17 3.5527136788005009e-15 ;
 	setAttr ".rsrr" -type "double3" -7.7822209448831101 66.363226298401386 -6.0446268741973501 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_leg_04_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:l_leg_04_ctrl_grp";
-	rename -uid "5DD7B7E7-4EA3-972E-41BA-0081DD1CCFFB";
+createNode scaleConstraint -n "l_leg_04_ctrl_grp_scaleConstraint1" -p "l_leg_04_ctrl_grp";
+	rename -uid "A95468CA-4F7A-4578-258F-FA84BE58DA0C";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_leg_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17934,17 +17827,17 @@ createNode scaleConstraint -n "turtle_rig_start2:l_leg_04_ctrl_grp_scaleConstrai
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 0.99999999999999978 1.0000000000000004 1.0000000000000002 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:l_leg_05_ctrl_grp" -p "turtle_rig_start2:l_leg_ctrl_grp";
-	rename -uid "4500BAA5-4B11-9F14-4EE5-66BD702941FA";
+createNode transform -n "l_leg_05_ctrl_grp" -p "l_leg_ctrl_grp";
+	rename -uid "F7CF9BC3-43CE-D4FC-0391-E0975D07C7FF";
 	setAttr ".rp" -type "double3" 3.2587571122913781 -0.51716293514442724 -6.1593619591136122 ;
 	setAttr ".sp" -type "double3" 3.2587571122913781 -0.51716293514442724 -6.1593619591136122 ;
-createNode transform -n "turtle_rig_start2:l_leg_05_ctrl" -p "turtle_rig_start2:l_leg_05_ctrl_grp";
-	rename -uid "F9FDC111-42C3-9534-A517-6A83E44D5147";
+createNode transform -n "l_leg_05_ctrl" -p "l_leg_05_ctrl_grp";
+	rename -uid "F7EC6276-40D3-1CBC-59B4-D1B0C40C494F";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" 3.2587571122913781 -0.51716293514442691 -6.1593619591136122 ;
 	setAttr ".sp" -type "double3" 3.2587571122913781 -0.51716293514442691 -6.1593619591136122 ;
-createNode nurbsCurve -n "turtle_rig_start2:l_leg_05_ctrlShape" -p "turtle_rig_start2:l_leg_05_ctrl";
-	rename -uid "27B056AB-463F-FA0D-4312-4CA61DF0A8BA";
+createNode nurbsCurve -n "l_leg_05_ctrlShape" -p "l_leg_05_ctrl";
+	rename -uid "C4189257-4B2D-05D5-762D-6BB5F60C31B3";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
@@ -17964,9 +17857,8 @@ createNode nurbsCurve -n "turtle_rig_start2:l_leg_05_ctrlShape" -p "turtle_rig_s
 		3.2587564716270334 -0.89421793874527733 -6.1593585357169225
 		3.272372990291891 -0.64555639057553993 -6.8400936897478477
 		;
-createNode parentConstraint -n "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:l_leg_05_ctrl_grp";
-	rename -uid "F1BF8C02-4104-42CF-7468-2284CBB51BF1";
+createNode parentConstraint -n "l_leg_05_ctrl_grp_parentConstraint1" -p "l_leg_05_ctrl_grp";
+	rename -uid "AD9F41B6-451F-7CB6-BCB7-52AAB7604CD0";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_leg_04_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -17988,9 +17880,8 @@ createNode parentConstraint -n "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstr
 	setAttr ".rst" -type "double3" 8.8817841970012523e-16 0 0 ;
 	setAttr ".rsrr" -type "double3" -7.7822209448831297 66.363226298401415 -6.0446268741973546 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_leg_05_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:l_leg_05_ctrl_grp";
-	rename -uid "4D88F63B-4AC4-ECBF-28B3-DAB64358D8F7";
+createNode scaleConstraint -n "l_leg_05_ctrl_grp_scaleConstraint1" -p "l_leg_05_ctrl_grp";
+	rename -uid "B5C2DE18-4D78-45B8-960D-EA8BC405B37F";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_leg_04_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18006,21 +17897,21 @@ createNode scaleConstraint -n "turtle_rig_start2:l_leg_05_ctrl_grp_scaleConstrai
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1.0000000000000002 1 1.0000000000000002 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:r_leg_ctrl_grp" -p "turtle_rig_start2:lower_body_ctrl_grp";
-	rename -uid "8C0012AF-4A17-3C02-CCC2-BCA4C11593AF";
+createNode transform -n "r_leg_ctrl_grp" -p "lower_body_ctrl_grp";
+	rename -uid "227E30D5-40E8-AA28-5609-E18D5157D50A";
 	setAttr ".rp" -type "double3" 0 0.51646006107330322 -2.2993907928466797 ;
 	setAttr ".sp" -type "double3" 0 0.51646006107330322 -2.2993907928466797 ;
-createNode transform -n "turtle_rig_start2:r_leg_01_ctrl_grp" -p "turtle_rig_start2:r_leg_ctrl_grp";
-	rename -uid "2099601C-41A6-59E0-38C6-41AB01F0940C";
+createNode transform -n "r_leg_01_ctrl_grp" -p "r_leg_ctrl_grp";
+	rename -uid "DCEFAE40-4BED-06EF-A156-87AAE3B5A938";
 	setAttr ".rp" -type "double3" -1.3874600000000004 -0.54378800000000072 -3.8267800000000003 ;
 	setAttr ".sp" -type "double3" -1.3874600000000004 -0.54378800000000072 -3.8267800000000003 ;
-createNode transform -n "turtle_rig_start2:r_leg_01_ctrl" -p "turtle_rig_start2:r_leg_01_ctrl_grp";
-	rename -uid "45445208-475E-50CE-4190-969328C081EE";
+createNode transform -n "r_leg_01_ctrl" -p "r_leg_01_ctrl_grp";
+	rename -uid "D49AABF0-4116-CC96-67F4-B9B70572FA94";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" -1.3874600000000004 -0.54378800000000105 -3.8267800000000003 ;
 	setAttr ".sp" -type "double3" -1.3874600000000004 -0.54378800000000105 -3.8267800000000003 ;
-createNode nurbsCurve -n "turtle_rig_start2:r_leg_01_ctrlShape" -p "turtle_rig_start2:r_leg_01_ctrl";
-	rename -uid "73BAD35D-4AC4-9D9F-54CC-2C8A2BDC0613";
+createNode nurbsCurve -n "r_leg_01_ctrlShape" -p "r_leg_01_ctrl";
+	rename -uid "CFA7F8DA-4FE7-B740-65ED-3DA68BD21C0D";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 13;
@@ -18040,9 +17931,8 @@ createNode nurbsCurve -n "turtle_rig_start2:r_leg_01_ctrlShape" -p "turtle_rig_s
 		-1.3252474871411297 0.11116427155468034 -3.8267800000000096
 		-1.3093166270252241 -0.25706538743367346 -3.1550156122587318
 		;
-createNode parentConstraint -n "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:r_leg_01_ctrl_grp";
-	rename -uid "64F2B055-4386-CDD1-77FD-EBA51921590A";
+createNode parentConstraint -n "r_leg_01_ctrl_grp_parentConstraint1" -p "r_leg_01_ctrl_grp";
+	rename -uid "D9DDC17C-4269-05F8-476A-2BB7AA94FC12";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "hip_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18062,9 +17952,8 @@ createNode parentConstraint -n "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstr
 	setAttr ".rst" -type "double3" 0 4.4408920985006262e-16 2.6645352591003757e-15 ;
 	setAttr ".rsrr" -type "double3" -179.99999999999977 -38.914325313619045 -4.1784512423565312 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_leg_01_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:r_leg_01_ctrl_grp";
-	rename -uid "E2627676-4D49-E35B-4BC5-2CAE9AAAEE6A";
+createNode scaleConstraint -n "r_leg_01_ctrl_grp_scaleConstraint1" -p "r_leg_01_ctrl_grp";
+	rename -uid "570E7A4E-44FC-BFEF-D239-A0AD9BF40474";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "hip_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18080,17 +17969,17 @@ createNode scaleConstraint -n "turtle_rig_start2:r_leg_01_ctrl_grp_scaleConstrai
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1.0000000000000002 1 1.0000000000000002 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:r_leg_02_ctrl_grp" -p "turtle_rig_start2:r_leg_ctrl_grp";
-	rename -uid "9A02A362-4C1F-CBA4-8E62-AABF03D5A88F";
+createNode transform -n "r_leg_02_ctrl_grp" -p "r_leg_ctrl_grp";
+	rename -uid "B5344C4F-498D-DC30-56F2-DC84F58C9C5C";
 	setAttr ".rp" -type "double3" -1.7754499999999986 -0.51544200000000051 -4.14085 ;
 	setAttr ".sp" -type "double3" -1.7754499999999986 -0.51544200000000051 -4.14085 ;
-createNode transform -n "turtle_rig_start2:r_leg_02_ctrl" -p "turtle_rig_start2:r_leg_02_ctrl_grp";
-	rename -uid "37C71FDE-488C-87CF-CE5A-FFBE84ACFDA0";
+createNode transform -n "r_leg_02_ctrl" -p "r_leg_02_ctrl_grp";
+	rename -uid "574CA315-499E-C81C-EED5-8C9EE6AF935B";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" -1.7754499999999986 -0.51544200000000084 -4.14085 ;
 	setAttr ".sp" -type "double3" -1.7754499999999986 -0.51544200000000084 -4.14085 ;
-createNode nurbsCurve -n "turtle_rig_start2:r_leg_02_ctrlShape" -p "turtle_rig_start2:r_leg_02_ctrl";
-	rename -uid "37BAD23C-49C3-A183-15C5-48818AF12168";
+createNode nurbsCurve -n "r_leg_02_ctrlShape" -p "r_leg_02_ctrl";
+	rename -uid "8B7CA1D2-4F36-A630-1976-30A90628CA22";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 13;
@@ -18110,9 +17999,8 @@ createNode nurbsCurve -n "turtle_rig_start2:r_leg_02_ctrlShape" -p "turtle_rig_s
 		-1.7911697132588134 0.068161338865801335 -4.1141298372174386
 		-1.7754499999999922 -0.25219056539613904 -3.5862228890198313
 		;
-createNode parentConstraint -n "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:r_leg_02_ctrl_grp";
-	rename -uid "F7B70E34-4796-86A9-17D8-9A86EA9EBA29";
+createNode parentConstraint -n "r_leg_02_ctrl_grp_parentConstraint1" -p "r_leg_02_ctrl_grp";
+	rename -uid "D568A06B-4961-AABC-021B-0CAFC46B80E2";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_leg_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18134,9 +18022,8 @@ createNode parentConstraint -n "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstr
 	setAttr ".rst" -type "double3" -2.4424906541753444e-15 1.2212453270876722e-15 8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" 179.45469007971238 -36.968751426825897 -3.3108199097845286 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_leg_02_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:r_leg_02_ctrl_grp";
-	rename -uid "B86F36FF-4CD8-DA0A-F745-24BF3BED634F";
+createNode scaleConstraint -n "r_leg_02_ctrl_grp_scaleConstraint1" -p "r_leg_02_ctrl_grp";
+	rename -uid "8BA44994-464F-F3CA-D17B-0EAFF47EB4CA";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_leg_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18152,17 +18039,17 @@ createNode scaleConstraint -n "turtle_rig_start2:r_leg_02_ctrl_grp_scaleConstrai
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1.0000000000000004 0.99999999999999967 1.0000000000000002 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:r_leg_03_ctrl_grp" -p "turtle_rig_start2:r_leg_ctrl_grp";
-	rename -uid "7AE6B410-45B6-4495-33CD-DB8A2BBA8595";
+createNode transform -n "r_leg_03_ctrl_grp" -p "r_leg_ctrl_grp";
+	rename -uid "C708FC57-4C6E-C1C1-8C2D-FF8A3B065DE9";
 	setAttr ".rp" -type "double3" -2.4199000000000011 -0.47816100000000028 -4.62674 ;
 	setAttr ".sp" -type "double3" -2.4199000000000011 -0.47816100000000028 -4.62674 ;
-createNode transform -n "turtle_rig_start2:r_leg_03_ctrl" -p "turtle_rig_start2:r_leg_03_ctrl_grp";
-	rename -uid "5C86874C-4A46-019E-D57D-52B32EDD89FF";
+createNode transform -n "r_leg_03_ctrl" -p "r_leg_03_ctrl_grp";
+	rename -uid "D44BD3DC-47FC-2271-721A-79BB0A26CF1B";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" -2.4199000000000011 -0.47816100000000061 -4.62674 ;
 	setAttr ".sp" -type "double3" -2.4199000000000011 -0.47816100000000061 -4.62674 ;
-createNode nurbsCurve -n "turtle_rig_start2:r_leg_03_ctrlShape" -p "turtle_rig_start2:r_leg_03_ctrl";
-	rename -uid "BACBDF1F-4B45-EC91-E37B-C2933F9AD844";
+createNode nurbsCurve -n "r_leg_03_ctrlShape" -p "r_leg_03_ctrl";
+	rename -uid "9E0391D5-4FF8-D806-E7AB-A399B0C02366";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 13;
@@ -18182,9 +18069,8 @@ createNode nurbsCurve -n "turtle_rig_start2:r_leg_03_ctrlShape" -p "turtle_rig_s
 		-2.4199000000000011 -0.018555568478496265 -4.6267400000000043
 		-2.4199000000000002 -0.31071296760020461 -3.843128375108777
 		;
-createNode parentConstraint -n "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:r_leg_03_ctrl_grp";
-	rename -uid "1613B088-44DB-276B-9B78-F88BE9C0460D";
+createNode parentConstraint -n "r_leg_03_ctrl_grp_parentConstraint1" -p "r_leg_03_ctrl_grp";
+	rename -uid "10277203-47E3-D3F4-D273-76AB9851F4C7";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_leg_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18205,9 +18091,8 @@ createNode parentConstraint -n "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstr
 	setAttr ".rst" -type "double3" 8.8817841970012523e-16 3.8857805861880479e-16 -8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" 177.17205794399484 -56.128615903490008 0.22514336011036684 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_leg_03_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:r_leg_03_ctrl_grp";
-	rename -uid "DDE033A9-4AA0-0695-5F85-38B6CD89975A";
+createNode scaleConstraint -n "r_leg_03_ctrl_grp_scaleConstraint1" -p "r_leg_03_ctrl_grp";
+	rename -uid "2EEA2002-4E70-385D-8D53-10B161A2F7ED";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_leg_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18223,17 +18108,17 @@ createNode scaleConstraint -n "turtle_rig_start2:r_leg_03_ctrl_grp_scaleConstrai
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 0.99999999999999978 0.99999999999999967 1.0000000000000002 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:r_leg_04_ctrl_grp" -p "turtle_rig_start2:r_leg_ctrl_grp";
-	rename -uid "01A6ED61-4C65-CED5-71EA-608ED0279756";
+createNode transform -n "r_leg_04_ctrl_grp" -p "r_leg_ctrl_grp";
+	rename -uid "D2613145-4A99-FCFB-6EBB-4FB8E1C756BA";
 	setAttr ".rp" -type "double3" -2.9085700000000014 -0.48008100000000009 -5.35474 ;
 	setAttr ".sp" -type "double3" -2.9085700000000014 -0.48008100000000009 -5.35474 ;
-createNode transform -n "turtle_rig_start2:r_leg_04_ctrl" -p "turtle_rig_start2:r_leg_04_ctrl_grp";
-	rename -uid "72461B6B-4B3E-1459-A9EF-66BE8AE2E0F5";
+createNode transform -n "r_leg_04_ctrl" -p "r_leg_04_ctrl_grp";
+	rename -uid "DA3D09D0-4D88-5980-93F7-B79E7EE0BDD0";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" -2.9085700000000014 -0.48008100000000042 -5.35474 ;
 	setAttr ".sp" -type "double3" -2.9085700000000014 -0.48008100000000042 -5.35474 ;
-createNode nurbsCurve -n "turtle_rig_start2:r_leg_04_ctrlShape" -p "turtle_rig_start2:r_leg_04_ctrl";
-	rename -uid "FC7FB9A7-4F20-6CDC-EC02-2AB3779145AE";
+createNode nurbsCurve -n "r_leg_04_ctrlShape" -p "r_leg_04_ctrl";
+	rename -uid "4FB8B824-4DFD-B698-2121-1AA7A0B5BF60";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 13;
@@ -18253,9 +18138,8 @@ createNode nurbsCurve -n "turtle_rig_start2:r_leg_04_ctrlShape" -p "turtle_rig_s
 		-2.9085699999999992 0.033988238661220693 -5.3547400000000032
 		-2.9085699999999992 -0.21111577253130642 -4.5711283751087777
 		;
-createNode parentConstraint -n "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:r_leg_04_ctrl_grp";
-	rename -uid "57413536-4FF2-8FCF-23BE-A095EAFB535C";
+createNode parentConstraint -n "r_leg_04_ctrl_grp_parentConstraint1" -p "r_leg_04_ctrl_grp";
+	rename -uid "C0E5CCD7-4652-F316-9E3E-92A6D783F87D";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_leg_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18276,9 +18160,8 @@ createNode parentConstraint -n "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstr
 	setAttr ".rst" -type "double3" 4.4408920985006262e-16 2.2204460492503131e-16 -8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" 172.21777905511715 -66.363226298401315 6.0446268741973306 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_leg_04_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:r_leg_04_ctrl_grp";
-	rename -uid "041B5AD3-499B-DD29-7C51-D0ACC1B76F86";
+createNode scaleConstraint -n "r_leg_04_ctrl_grp_scaleConstraint1" -p "r_leg_04_ctrl_grp";
+	rename -uid "48BBB261-47D1-BF5F-41D8-E39354E78341";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_leg_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18294,17 +18177,17 @@ createNode scaleConstraint -n "turtle_rig_start2:r_leg_04_ctrl_grp_scaleConstrai
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 0.99999999999999956 1.0000000000000002 1.0000000000000002 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:r_leg_05_ctrl_grp" -p "turtle_rig_start2:r_leg_ctrl_grp";
-	rename -uid "C8861AB1-43F4-FB2F-2BEA-9FA9F15331A8";
+createNode transform -n "r_leg_05_ctrl_grp" -p "r_leg_ctrl_grp";
+	rename -uid "0F1164EF-4BF1-5705-135F-26A3F47F6FC3";
 	setAttr ".rp" -type "double3" -3.25876 -0.51716300000000059 -6.1593600000000013 ;
 	setAttr ".sp" -type "double3" -3.25876 -0.51716300000000059 -6.1593600000000013 ;
-createNode transform -n "turtle_rig_start2:r_leg_05_ctrl" -p "turtle_rig_start2:r_leg_05_ctrl_grp";
-	rename -uid "10F59A42-42C7-0298-F2B8-BFB33E9E090D";
+createNode transform -n "r_leg_05_ctrl" -p "r_leg_05_ctrl_grp";
+	rename -uid "488D58A9-4397-2DB2-A016-0CA90CCA5F61";
 	setAttr -l on -k off ".v";
 	setAttr ".rp" -type "double3" -3.25876 -0.51716300000000093 -6.1593600000000013 ;
 	setAttr ".sp" -type "double3" -3.25876 -0.51716300000000093 -6.1593600000000013 ;
-createNode nurbsCurve -n "turtle_rig_start2:r_leg_05_ctrlShape" -p "turtle_rig_start2:r_leg_05_ctrl";
-	rename -uid "FFD2EE25-492C-919F-03AC-44A2D2B6E257";
+createNode nurbsCurve -n "r_leg_05_ctrlShape" -p "r_leg_05_ctrl";
+	rename -uid "082CAA6D-450B-8260-AADD-A59E744EADBE";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 13;
@@ -18324,9 +18207,8 @@ createNode nurbsCurve -n "turtle_rig_start2:r_leg_05_ctrlShape" -p "turtle_rig_s
 		-3.2587599999999979 -0.14010822244729393 -6.1593600000000031
 		-3.2723765186648555 -0.38876977061702522 -5.4786248459690761
 		;
-createNode parentConstraint -n "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1" 
-		-p "turtle_rig_start2:r_leg_05_ctrl_grp";
-	rename -uid "5CA926A5-48E6-404B-9E77-F882C22E9C2D";
+createNode parentConstraint -n "r_leg_05_ctrl_grp_parentConstraint1" -p "r_leg_05_ctrl_grp";
+	rename -uid "27D8C55C-480A-77C7-0F70-F99C520EF17D";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_leg_04_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18348,9 +18230,8 @@ createNode parentConstraint -n "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstr
 	setAttr ".rst" -type "double3" 4.4408920985006262e-16 3.3306690738754696e-16 0 ;
 	setAttr ".rsrr" -type "double3" 172.21777905511715 -66.363226298401344 6.0446268741973341 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_leg_05_ctrl_grp_scaleConstraint1" 
-		-p "turtle_rig_start2:r_leg_05_ctrl_grp";
-	rename -uid "1CDC5938-4635-8BA4-745C-D6B03EF81889";
+createNode scaleConstraint -n "r_leg_05_ctrl_grp_scaleConstraint1" -p "r_leg_05_ctrl_grp";
+	rename -uid "13A68767-4EC1-9D64-3403-26BFD3AFEC0C";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_leg_04_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18366,14 +18247,13 @@ createNode scaleConstraint -n "turtle_rig_start2:r_leg_05_ctrl_grp_scaleConstrai
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1.0000000000000002 1 1.0000000000000004 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:skeleton" -p "turtle_rig_start2:sea_turtle";
-	rename -uid "0DAFAB98-4930-13AC-3C3D-2FA08FF66BCD";
-createNode transform -n "turtle_rig_start2:hip_jnt_grp" -p "turtle_rig_start2:skeleton";
-	rename -uid "235F83B5-4A33-43E3-914D-C1BB329C569D";
-createNode joint -n "turtle_rig_start2:hip_01_jnt" -p "turtle_rig_start2:hip_jnt_grp";
-	rename -uid "2164E19E-4FA6-8CC7-5999-37B453EE9790";
+createNode transform -n "skeleton" -p "sea_turtle";
+	rename -uid "14B4AB3C-4567-1081-1A53-60A80BBB6FF9";
+createNode transform -n "hip_jnt_grp" -p "skeleton";
+	rename -uid "BEF13590-4EBC-56B3-F9B3-DA9C6EF4CA9D";
+createNode joint -n "hip_01_jnt" -p "hip_jnt_grp";
+	rename -uid "8FF1AC5D-45DD-8C1C-562B-2FBCD04F2CEF";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
-	setAttr ".uoc" 1;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jot" -type "string" "xzy";
@@ -18381,9 +18261,9 @@ createNode joint -n "turtle_rig_start2:hip_01_jnt" -p "turtle_rig_start2:hip_jnt
 	setAttr ".bps" -type "matrix" 2.2204460492503131e-16 0 1 0 0 1 0 0 -1 0 2.2204460492503131e-16 0
 		 0 0.51646006107330322 -2.2993909094282223 1;
 	setAttr ".radi" 0.6;
-createNode parentConstraint -n "turtle_rig_start2:hip_01_jnt_parentConstraint1" -p
-		 "turtle_rig_start2:hip_01_jnt";
-	rename -uid "87EC205D-4189-5C4F-95D5-5890FD107504";
+	setAttr ".liw" yes;
+createNode parentConstraint -n "hip_01_jnt_parentConstraint1" -p "hip_01_jnt";
+	rename -uid "517865E1-468C-8350-1C4D-50A24D4580AF";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "hip_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18400,8 +18280,8 @@ createNode parentConstraint -n "turtle_rig_start2:hip_01_jnt_parentConstraint1" 
 	setAttr ".tg[0].tot" -type "double3" 0 -3.3306690738754696e-16 0 ;
 	setAttr ".rst" -type "double3" 0 0.51646006107330322 -2.2993909094282223 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:hip_01_jnt_scaleConstraint1" -p "turtle_rig_start2:hip_01_jnt";
-	rename -uid "5CDA3F59-40D7-2FF9-1DEE-289D8B361DB2";
+createNode scaleConstraint -n "hip_01_jnt_scaleConstraint1" -p "hip_01_jnt";
+	rename -uid "2B878441-4C4E-6B2C-3367-B2BD3A89E12F";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "hip_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18416,22 +18296,21 @@ createNode scaleConstraint -n "turtle_rig_start2:hip_01_jnt_scaleConstraint1" -p
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:spine_jnt_grp" -p "turtle_rig_start2:skeleton";
-	rename -uid "3AEEA4B3-4445-3DCF-AF58-CABC04F9DA8D";
-createNode joint -n "turtle_rig_start2:spine_01_jnt" -p "turtle_rig_start2:spine_jnt_grp";
-	rename -uid "A60A313B-4258-10FE-1DAD-9696D9B59ADB";
+createNode transform -n "spine_jnt_grp" -p "skeleton";
+	rename -uid "90F17636-4407-B1A2-FFA5-60B4F875E9FB";
+createNode joint -n "spine_01_jnt" -p "spine_jnt_grp";
+	rename -uid "8DB8BE82-4A25-8417-D537-D1A6F40B9E35";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
-	setAttr ".uoc" 1;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jot" -type "string" "xzy";
 	setAttr ".jo" -type "double3" 0 -89.999999999999986 0 ;
-	setAttr ".bps" -type "matrix" 2.2204460492503136e-16 0 1.0000000000000004 0 0 1 0 0
-		 -1.0000000000000004 0 2.2204460492503136e-16 0 0 0.51646006107330322 -2.2993909094282223 1;
+	setAttr ".bps" -type "matrix" 2.2204460492503131e-16 0 1 0 0 1 0 0 -1 0 2.2204460492503131e-16 0
+		 0 0.51646006107330322 -2.2993909094282223 1;
 	setAttr ".radi" 0.29999999999999993;
-createNode parentConstraint -n "turtle_rig_start2:spine_01_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:spine_01_jnt";
-	rename -uid "D76ECEA4-416B-55FB-9FD4-BCB12E219A98";
+	setAttr ".liw" yes;
+createNode parentConstraint -n "spine_01_jnt_parentConstraint1" -p "spine_01_jnt";
+	rename -uid "E2B0A673-472A-9737-EF99-6CA8F752B9BB";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "spine_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18446,12 +18325,10 @@ createNode parentConstraint -n "turtle_rig_start2:spine_01_jnt_parentConstraint1
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0 -3.3306690738754696e-16 0 ;
-	setAttr ".lr" -type "double3" -1.9875038442279038e-16 -3.6917152171015482e-18 -2.1282512815489119 ;
 	setAttr ".rst" -type "double3" 0 0.51646006107330322 -2.2993909094282223 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:spine_01_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:spine_01_jnt";
-	rename -uid "ACA82605-44CC-FD31-F020-61984B1F6C46";
+createNode scaleConstraint -n "spine_01_jnt_scaleConstraint1" -p "spine_01_jnt";
+	rename -uid "5CC80DC0-4E1C-37CD-8CAC-A2BD68019E5E";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "spine_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18466,8 +18343,8 @@ createNode scaleConstraint -n "turtle_rig_start2:spine_01_jnt_scaleConstraint1" 
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:spine_02_jnt" -p "turtle_rig_start2:spine_jnt_grp";
-	rename -uid "E5830E86-4D30-2ADF-F5CC-CEBC17D1F539";
+createNode joint -n "spine_02_jnt" -p "spine_jnt_grp";
+	rename -uid "7A8783FA-4413-96F1-14B6-2E88E8C6072E";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -18476,9 +18353,8 @@ createNode joint -n "turtle_rig_start2:spine_02_jnt" -p "turtle_rig_start2:spine
 	setAttr ".bps" -type "matrix" 2.2204460492503131e-16 0 1 0 0 1 0 0 -1 0 2.2204460492503131e-16 0
 		 0 0.51646006107330322 -0.78807148867090282 1;
 	setAttr ".radi" 0.29999999999999993;
-createNode parentConstraint -n "turtle_rig_start2:spine_02_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:spine_02_jnt";
-	rename -uid "D8CD2EA5-4985-2210-DDEE-43A39EA7E32E";
+createNode parentConstraint -n "spine_02_jnt_parentConstraint1" -p "spine_02_jnt";
+	rename -uid "626927DF-4503-1DF7-F24F-519AE7FF3884";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "spine_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18493,12 +18369,10 @@ createNode parentConstraint -n "turtle_rig_start2:spine_02_jnt_parentConstraint1
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0 -3.3306690738754696e-16 0 ;
-	setAttr ".lr" -type "double3" 3.9750076884558076e-16 7.3834304342030826e-18 -2.1282512815489079 ;
 	setAttr ".rst" -type "double3" 1.5113194207573195 0 3.3558032369758617e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:spine_02_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:spine_02_jnt";
-	rename -uid "195695CD-426D-3F01-6206-159BF55288F4";
+createNode scaleConstraint -n "spine_02_jnt_scaleConstraint1" -p "spine_02_jnt";
+	rename -uid "4D8AFC09-4B3C-300B-E69F-DE86D5B5BFD1";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "spine_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18513,8 +18387,8 @@ createNode scaleConstraint -n "turtle_rig_start2:spine_02_jnt_scaleConstraint1" 
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:spine_03_jnt" -p "turtle_rig_start2:spine_jnt_grp";
-	rename -uid "1DE04E32-4720-54E1-6685-59B2C7C79DAE";
+createNode joint -n "spine_03_jnt" -p "spine_jnt_grp";
+	rename -uid "F243C6A5-4CDC-E638-0B97-F9938146D705";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -18523,9 +18397,8 @@ createNode joint -n "turtle_rig_start2:spine_03_jnt" -p "turtle_rig_start2:spine
 		 0 0.51646006107330322 0.74134827780081203 1;
 	setAttr ".radi" 0.29999999999999993;
 	setAttr ".liw" yes;
-createNode parentConstraint -n "turtle_rig_start2:spine_03_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:spine_03_jnt";
-	rename -uid "853AC882-4DA1-A9AB-50B7-1FA2CF9C415E";
+createNode parentConstraint -n "spine_03_jnt_parentConstraint1" -p "spine_03_jnt";
+	rename -uid "F67B84BD-4551-8620-3864-55BA26A94A26";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "spine_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18540,12 +18413,10 @@ createNode parentConstraint -n "turtle_rig_start2:spine_03_jnt_parentConstraint1
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0 -3.3306690738754696e-16 0 ;
-	setAttr ".lr" -type "double3" 3.9750076884558076e-16 7.3834304342030826e-18 -2.1282512815489079 ;
 	setAttr ".rst" -type "double3" 1.5294197664717148 0 3.3959940781074557e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:spine_03_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:spine_03_jnt";
-	rename -uid "462A20AF-4F5F-FCAB-069F-80B17FAFED01";
+createNode scaleConstraint -n "spine_03_jnt_scaleConstraint1" -p "spine_03_jnt";
+	rename -uid "28C186EF-44EA-7AAC-7084-8D9C6456FB12";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "spine_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18560,10 +18431,10 @@ createNode scaleConstraint -n "turtle_rig_start2:spine_03_jnt_scaleConstraint1" 
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:neck_jnt_grp" -p "turtle_rig_start2:skeleton";
-	rename -uid "21B9E649-4B4B-D393-FB96-E19FC19F164F";
-createNode joint -n "turtle_rig_start2:neck_01_jnt" -p "turtle_rig_start2:neck_jnt_grp";
-	rename -uid "53BD7621-49AC-9084-53B1-6FAD54F64447";
+createNode transform -n "neck_jnt_grp" -p "skeleton";
+	rename -uid "ECF07161-4F4E-0E4F-F00C-E085A1D145CF";
+createNode joint -n "neck_01_jnt" -p "neck_jnt_grp";
+	rename -uid "B2824757-49E7-A9CC-C006-18B2B7494DD9";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -18573,9 +18444,8 @@ createNode joint -n "turtle_rig_start2:neck_01_jnt" -p "turtle_rig_start2:neck_j
 		 -4.4408920985006242e-16 -0.029192715883255227 3.4258810281753536 1;
 	setAttr ".radi" 0.39999999999999991;
 	setAttr ".liw" yes;
-createNode parentConstraint -n "turtle_rig_start2:neck_01_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:neck_01_jnt";
-	rename -uid "B140DFEB-4E97-9F64-7F5D-30B061A61D34";
+createNode parentConstraint -n "neck_01_jnt_parentConstraint1" -p "neck_01_jnt";
+	rename -uid "9A79957B-497D-19C9-95C6-1D9724AB3924";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "neck_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18590,12 +18460,10 @@ createNode parentConstraint -n "turtle_rig_start2:neck_01_jnt_parentConstraint1"
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0 -3.3306690738754696e-16 -1.9721522630525295e-31 ;
-	setAttr ".lr" -type "double3" 3.9750076884558076e-16 7.3834304342030826e-18 -2.1282512815489079 ;
 	setAttr ".rst" -type "double3" 2.6845327503745415 -0.54565277695655845 5.9608601396522257e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:neck_01_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:neck_01_jnt";
-	rename -uid "F08953B8-42DB-2B0A-8B3D-9D8A3D9FB956";
+createNode scaleConstraint -n "neck_01_jnt_scaleConstraint1" -p "neck_01_jnt";
+	rename -uid "E4EB77CC-4583-B287-165D-6CAECD01DFC8";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "neck_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18610,8 +18478,8 @@ createNode scaleConstraint -n "turtle_rig_start2:neck_01_jnt_scaleConstraint1" -
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:neck_02_jnt" -p "turtle_rig_start2:neck_jnt_grp";
-	rename -uid "1061EE6F-4CFA-15F7-C846-519A5AF6DC2B";
+createNode joint -n "neck_02_jnt" -p "neck_jnt_grp";
+	rename -uid "6543FEC6-461B-F8BC-5155-3699D2C82D08";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -18620,9 +18488,8 @@ createNode joint -n "turtle_rig_start2:neck_02_jnt" -p "turtle_rig_start2:neck_j
 	setAttr ".bps" -type "matrix" 2.2204460492503131e-16 0 1 0 0 1 0 0 -1 0 2.2204460492503131e-16 0
 		 2.0138840948703481e-16 0.11082875728607167 4.3328537940979004 1;
 	setAttr ".radi" 0.39999999999999991;
-createNode parentConstraint -n "turtle_rig_start2:neck_02_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:neck_02_jnt";
-	rename -uid "F6ABEC22-4AFA-01BE-1105-02BAA43DB28C";
+createNode parentConstraint -n "neck_02_jnt_parentConstraint1" -p "neck_02_jnt";
+	rename -uid "80306B96-4292-DEFA-D4AB-16B781439BD9";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "neck_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18637,12 +18504,10 @@ createNode parentConstraint -n "turtle_rig_start2:neck_02_jnt_parentConstraint1"
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0 -3.3306690738754696e-16 -2.0138840948703481e-16 ;
-	setAttr ".lr" -type "double3" 3.9750076884558076e-16 7.3834304342030826e-18 -2.1282512815489079 ;
 	setAttr ".rst" -type "double3" 0.90697276592254683 0.14002147316932689 1.9721522630525295e-31 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:neck_02_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:neck_02_jnt";
-	rename -uid "2C3B46D7-43CA-6851-43E5-D1A628EF3C27";
+createNode scaleConstraint -n "neck_02_jnt_scaleConstraint1" -p "neck_02_jnt";
+	rename -uid "DC149B6B-48D1-D205-6BBC-A683B18B8996";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "neck_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18657,8 +18522,8 @@ createNode scaleConstraint -n "turtle_rig_start2:neck_02_jnt_scaleConstraint1" -
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:head_jnt" -p "turtle_rig_start2:neck_jnt_grp";
-	rename -uid "AB3D066C-4986-922D-6367-2C8DE2169DAF";
+createNode joint -n "head_jnt" -p "neck_jnt_grp";
+	rename -uid "ECD0A816-4ABC-44E4-C22A-24A5D5B5C636";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -18666,8 +18531,8 @@ createNode joint -n "turtle_rig_start2:head_jnt" -p "turtle_rig_start2:neck_jnt_
 	setAttr ".bps" -type "matrix" 2.220446049250316e-16 0 1.0000000000000016 0 0 1 0 0
 		 -1.0000000000000016 0 2.220446049250316e-16 0 -4.6332366727318783e-16 0.29312112927436818 5.1208639144897514 1;
 	setAttr ".radi" 0.39999999999999991;
-createNode parentConstraint -n "turtle_rig_start2:head_jnt_parentConstraint1" -p "turtle_rig_start2:head_jnt";
-	rename -uid "04ED51C3-4E96-0D34-9F39-74B914DA10F2";
+createNode parentConstraint -n "head_jnt_parentConstraint1" -p "head_jnt";
+	rename -uid "7BD7732A-4145-161C-04A9-8DA91190709F";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "head_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18683,11 +18548,10 @@ createNode parentConstraint -n "turtle_rig_start2:head_jnt_parentConstraint1" -p
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -8.8817841970012523e-16 -3.3306690738754696e-16 
 		-4.2485475242693701e-16 ;
-	setAttr ".lr" -type "double3" 3.9750076884558076e-16 7.3834304342030826e-18 -2.1282512815489079 ;
 	setAttr ".rst" -type "double3" 0.7880101203918457 0.18229237198829651 -4.8492947080568264e-17 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:head_jnt_scaleConstraint1" -p "turtle_rig_start2:head_jnt";
-	rename -uid "7CAFD08E-423C-BC24-81E9-19A89556C213";
+createNode scaleConstraint -n "head_jnt_scaleConstraint1" -p "head_jnt";
+	rename -uid "6BBE4864-4750-B39A-A4C5-449D22D3578F";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "head_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18702,12 +18566,11 @@ createNode scaleConstraint -n "turtle_rig_start2:head_jnt_scaleConstraint1" -p "
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:l_leg_jnt_grp" -p "turtle_rig_start2:skeleton";
-	rename -uid "95002796-4FBB-6FA9-F00A-8E97C2EFCF36";
-createNode joint -n "turtle_rig_start2:l_leg_01_jnt" -p "turtle_rig_start2:l_leg_jnt_grp";
-	rename -uid "2B176E4C-49AB-4EB2-DEFF-47AD9E40B6F0";
+createNode transform -n "l_leg_jnt_grp" -p "skeleton";
+	rename -uid "A4BF9A2E-429C-62BC-8CF9-109A09DA591E";
+createNode joint -n "l_leg_01_jnt" -p "l_leg_jnt_grp";
+	rename -uid "5590245F-4393-860D-70D2-1EB1B64F1EBC";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
-	setAttr ".uoc" 1;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -1.3795866287270847e-14 38.914325313619067 4.1784512423565259 ;
@@ -18715,9 +18578,9 @@ createNode joint -n "turtle_rig_start2:l_leg_01_jnt" -p "turtle_rig_start2:l_leg
 		 -0.072863105202597825 0.9973419513387749 -3.469446951953615e-18 0 0.62648794388435902 0.045769514560307187 0.77808611843706776 0
 		 1.3874559402465829 -0.54378765821456909 -3.826781272888184 1;
 	setAttr ".radi" 0.4;
-createNode parentConstraint -n "turtle_rig_start2:l_leg_01_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:l_leg_01_jnt";
-	rename -uid "E4FFD91A-4AD6-117D-E848-61B096783B5C";
+	setAttr ".liw" yes;
+createNode parentConstraint -n "l_leg_01_jnt_parentConstraint1" -p "l_leg_01_jnt";
+	rename -uid "098A2877-4F31-AE31-149B-E1AC727F3AE2";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_leg_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18739,9 +18602,8 @@ createNode parentConstraint -n "turtle_rig_start2:l_leg_01_jnt_parentConstraint1
 	setAttr ".rst" -type "double3" -1.5273903634599613 -1.0602477192878723 -1.3874559402465831 ;
 	setAttr ".rsrr" -type "double3" 2.5046868116525188e-14 5.640514942907954e-15 5.9635400277441068e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_leg_01_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:l_leg_01_jnt";
-	rename -uid "FFBFCC7A-4A99-C67E-4AAE-C09A4574DD47";
+createNode scaleConstraint -n "l_leg_01_jnt_scaleConstraint1" -p "l_leg_01_jnt";
+	rename -uid "EAC1BDDC-4A5D-341D-2F9C-1BABAE0A6161";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_leg_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18756,8 +18618,8 @@ createNode scaleConstraint -n "turtle_rig_start2:l_leg_01_jnt_scaleConstraint1" 
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:l_leg_02_jnt" -p "turtle_rig_start2:l_leg_jnt_grp";
-	rename -uid "CA47C4AF-4C61-5416-ACAC-9BB438121E57";
+createNode joint -n "l_leg_02_jnt" -p "l_leg_jnt_grp";
+	rename -uid "B161AB7F-4A3F-054E-F978-3CB2CB107E4F";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -18768,9 +18630,8 @@ createNode joint -n "turtle_rig_start2:l_leg_02_jnt" -p "turtle_rig_start2:l_leg
 		 1.7754502702620805 -0.51544184196971776 -4.1408482360546879 1;
 	setAttr ".radi" 0.29999999999999993;
 	setAttr ".liw" yes;
-createNode parentConstraint -n "turtle_rig_start2:l_leg_02_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:l_leg_02_jnt";
-	rename -uid "E16FCC4B-456E-19DA-14F1-8AB0A18911A2";
+createNode parentConstraint -n "l_leg_02_jnt_parentConstraint1" -p "l_leg_02_jnt";
+	rename -uid "A853C4CA-4055-6642-56D1-8EAF970E1E72";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_leg_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18792,9 +18653,8 @@ createNode parentConstraint -n "turtle_rig_start2:l_leg_02_jnt_parentConstraint1
 	setAttr ".rst" -type "double3" 0.49998114241978353 -1.1102230246251565e-16 0 ;
 	setAttr ".rsrr" -type "double3" -4.0378135604517398e-17 9.1444222962452682e-15 -1.1923925513644085e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_leg_02_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:l_leg_02_jnt";
-	rename -uid "CA34ECC0-4A33-EF9B-A65D-0B98987013A9";
+createNode scaleConstraint -n "l_leg_02_jnt_scaleConstraint1" -p "l_leg_02_jnt";
+	rename -uid "28365E1E-4310-19E0-72BD-E3A1AFB195E9";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_leg_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18810,8 +18670,8 @@ createNode scaleConstraint -n "turtle_rig_start2:l_leg_02_jnt_scaleConstraint1" 
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 0.99999999999999956 1 0.99999999999999956 ;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:l_leg_03_jnt" -p "turtle_rig_start2:l_leg_jnt_grp";
-	rename -uid "DF82C304-4300-B007-F57D-C3B80CC611C3";
+createNode joint -n "l_leg_03_jnt" -p "l_leg_jnt_grp";
+	rename -uid "057924CD-41B0-B766-EBB3-0FB08469AF57";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -18822,9 +18682,8 @@ createNode joint -n "turtle_rig_start2:l_leg_03_jnt" -p "turtle_rig_start2:l_leg
 		 2.4199025446952769 -0.47816085135196035 -4.6267380059800693 1;
 	setAttr ".radi" 0.29999999999999993;
 	setAttr ".liw" yes;
-createNode parentConstraint -n "turtle_rig_start2:l_leg_03_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:l_leg_03_jnt";
-	rename -uid "91DF3E1C-4B8B-60BD-F1B2-1EB478A01198";
+createNode parentConstraint -n "l_leg_03_jnt_parentConstraint1" -p "l_leg_03_jnt";
+	rename -uid "567ECDED-4A38-F4D0-E345-3AA9FDFF6375";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_leg_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18846,9 +18705,8 @@ createNode parentConstraint -n "turtle_rig_start2:l_leg_03_jnt_parentConstraint1
 	setAttr ".rst" -type "double3" 0.80795883236814658 -3.3306690738754696e-16 3.9968028886505635e-15 ;
 	setAttr ".rsrr" -type "double3" 3.478731682850721e-16 9.5447700548216668e-15 -7.7650260777917888e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_leg_03_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:l_leg_03_jnt";
-	rename -uid "059345A7-417F-691C-5A68-86B2BBA958F4";
+createNode scaleConstraint -n "l_leg_03_jnt_scaleConstraint1" -p "l_leg_03_jnt";
+	rename -uid "84C40B4B-4CC7-83F2-C759-2DB34D73852E";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_leg_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18864,8 +18722,8 @@ createNode scaleConstraint -n "turtle_rig_start2:l_leg_03_jnt_scaleConstraint1" 
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 0.99999999999999978 1.0000000000000002 0.99999999999999978 ;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:l_leg_04_jnt" -p "turtle_rig_start2:l_leg_jnt_grp";
-	rename -uid "3DF1E564-4B1F-7475-4B53-8EA9135A3208";
+createNode joint -n "l_leg_04_jnt" -p "l_leg_jnt_grp";
+	rename -uid "63FFB88A-4032-D951-86D5-648B84B73A5C";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -18876,9 +18734,8 @@ createNode joint -n "turtle_rig_start2:l_leg_04_jnt" -p "turtle_rig_start2:l_leg
 		 2.9085708000536954 -0.48008107968642266 -5.3547438546182775 1;
 	setAttr ".radi" 0.29999999999999993;
 	setAttr ".liw" yes;
-createNode parentConstraint -n "turtle_rig_start2:l_leg_04_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:l_leg_04_jnt";
-	rename -uid "9E413FBB-407B-456D-C3A5-B99EE1686F7A";
+createNode parentConstraint -n "l_leg_04_jnt_parentConstraint1" -p "l_leg_04_jnt";
+	rename -uid "4218FB9C-45E6-764C-7623-678B53921189";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_leg_04_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18900,9 +18757,8 @@ createNode parentConstraint -n "turtle_rig_start2:l_leg_04_jnt_parentConstraint1
 	setAttr ".rst" -type "double3" 0.87680834092938031 -2.2204460492503131e-16 1.6653345369377348e-15 ;
 	setAttr ".rsrr" -type "double3" -1.4908850069360225e-16 2.3859983880534723e-14 3.8825130388958944e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_leg_04_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:l_leg_04_jnt";
-	rename -uid "C1614CBC-46A6-BAA5-153C-EA9FB2DD0073";
+createNode scaleConstraint -n "l_leg_04_jnt_scaleConstraint1" -p "l_leg_04_jnt";
+	rename -uid "BFC5A762-490B-E649-A8E5-3E9D5E725D62";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_leg_04_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18918,8 +18774,8 @@ createNode scaleConstraint -n "turtle_rig_start2:l_leg_04_jnt_scaleConstraint1" 
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 0.99999999999999989 0.99999999999999978 0.99999999999999933 ;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:l_leg_05_jnt" -p "turtle_rig_start2:l_leg_jnt_grp";
-	rename -uid "7CBC1E71-4B17-6643-3D7D-B1996651F41F";
+createNode joint -n "l_leg_05_jnt" -p "l_leg_jnt_grp";
+	rename -uid "7860E2FF-493A-E45F-CD11-2AAE41B919FF";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -18930,9 +18786,8 @@ createNode joint -n "turtle_rig_start2:l_leg_05_jnt" -p "turtle_rig_start2:l_leg
 		 3.2587571122913794 -0.51716293514442768 -6.1593619591136131 1;
 	setAttr ".radi" 0.29999999999999993;
 	setAttr ".liw" yes;
-createNode parentConstraint -n "turtle_rig_start2:l_leg_05_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:l_leg_05_jnt";
-	rename -uid "C98C6784-4AC2-6169-351B-079427B1AFD9";
+createNode parentConstraint -n "l_leg_05_jnt_parentConstraint1" -p "l_leg_05_jnt";
+	rename -uid "BE2EF11C-4FF5-5FAB-C53A-58B9C06416F8";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_leg_05_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18950,9 +18805,8 @@ createNode parentConstraint -n "turtle_rig_start2:l_leg_05_jnt_parentConstraint1
 	setAttr ".lr" -type "double3" -1.5604596405930376e-14 5.6836884879004779e-14 6.9574633657014356e-15 ;
 	setAttr ".rst" -type "double3" 0.87830280163762797 -1.1102230246251565e-16 -8.8817841970012523e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_leg_05_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:l_leg_05_jnt";
-	rename -uid "512F15E5-46C3-69F2-6276-7991D6EACD29";
+createNode scaleConstraint -n "l_leg_05_jnt_scaleConstraint1" -p "l_leg_05_jnt";
+	rename -uid "A93A8392-4300-DB2A-2D8D-2A904F7432A1";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_leg_05_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -18968,22 +18822,20 @@ createNode scaleConstraint -n "turtle_rig_start2:l_leg_05_jnt_scaleConstraint1" 
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1 0.99999999999999978 0.99999999999999956 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:r_leg_jnt_grp" -p "turtle_rig_start2:skeleton";
-	rename -uid "C922B1BA-4643-EC62-F15D-D7A46F193448";
-createNode joint -n "turtle_rig_start2:r_leg_01_jnt" -p "turtle_rig_start2:r_leg_jnt_grp";
-	rename -uid "15B45B11-416A-4182-E281-CBB40545CABF";
+createNode transform -n "r_leg_jnt_grp" -p "skeleton";
+	rename -uid "1042B5D2-484F-0485-FA3A-148593E11FD1";
+createNode joint -n "r_leg_01_jnt" -p "r_leg_jnt_grp";
+	rename -uid "A1A66072-4F9F-969C-3A00-D4BD4E67D424";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
-	setAttr ".uoc" 1;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -179.99999999999977 -38.914325313619031 -4.1784512423565294 ;
-	setAttr ".bps" -type "matrix" 0.77601792767163869 -0.056693770704361157 0.62815761739832265 0
-		 -0.072863105202595341 -0.99734195133877579 -3.2057689836051419e-15 0 0.62648794388435924 -0.045769514560303128 -0.77808611843706887 0
-		 -1.3874600000000001 -0.54378800000000027 -3.8267799999999985 1;
+	setAttr ".bps" -type "matrix" 0.77601792767163857 -0.056693770704361143 0.62815761739832243 0
+		 -0.072863105202595327 -0.99734195133877557 -3.2057689836051411e-15 0 0.62648794388435902 -0.045769514560303107 -0.77808611843706854 0
+		 -1.3874599999999992 -0.54378800000000038 -3.8267799999999972 1;
 	setAttr ".radi" 0.4;
-createNode parentConstraint -n "turtle_rig_start2:r_leg_01_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:r_leg_01_jnt";
-	rename -uid "2E58EAA7-43BA-F699-B049-4086A9E7F642";
+createNode parentConstraint -n "r_leg_01_jnt_parentConstraint1" -p "r_leg_01_jnt";
+	rename -uid "580996CA-4B53-0121-B8E3-3ABA8B62FE52";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_leg_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19005,9 +18857,8 @@ createNode parentConstraint -n "turtle_rig_start2:r_leg_01_jnt_parentConstraint1
 	setAttr ".rst" -type "double3" -1.5273890905717771 -1.0602480610733034 1.3874599999999988 ;
 	setAttr ".rsrr" -type "double3" 4.4139062980501597e-32 -6.3611093629270335e-15 -7.9513867036587919e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_leg_01_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:r_leg_01_jnt";
-	rename -uid "69B404E4-47C3-3044-E66B-4B899A4BE210";
+createNode scaleConstraint -n "r_leg_01_jnt_scaleConstraint1" -p "r_leg_01_jnt";
+	rename -uid "705D607A-4682-E553-97A9-7DBD6553637D";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_leg_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19023,8 +18874,8 @@ createNode scaleConstraint -n "turtle_rig_start2:r_leg_01_jnt_scaleConstraint1" 
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1 1.0000000000000002 1.0000000000000002 ;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:r_leg_02_jnt" -p "turtle_rig_start2:r_leg_jnt_grp";
-	rename -uid "DA73963F-4C20-E390-A502-E68A57997AE6";
+createNode joint -n "r_leg_02_jnt" -p "r_leg_jnt_grp";
+	rename -uid "58DBCDAD-4F05-27AC-526A-26B2E617FD24";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -19034,9 +18885,8 @@ createNode joint -n "turtle_rig_start2:r_leg_02_jnt" -p "turtle_rig_start2:r_leg
 		 -0.063463901011584903 -0.99795516567184939 0.0076039843018961368 0 0.59979877979217999 -0.044231047186466324 -0.79892742988621956 0
 		 -1.7754499999999991 -0.51544199999999951 -4.1408499999999995 1;
 	setAttr ".radi" 0.29999999999999993;
-createNode parentConstraint -n "turtle_rig_start2:r_leg_02_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:r_leg_02_jnt";
-	rename -uid "04274E65-4171-CD70-D5A3-CCA10A2AD2CB";
+createNode parentConstraint -n "r_leg_02_jnt_parentConstraint1" -p "r_leg_02_jnt";
+	rename -uid "7BD89BD2-4DE0-54D7-BFB5-AC91DF69C171";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_leg_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19058,9 +18908,8 @@ createNode parentConstraint -n "turtle_rig_start2:r_leg_02_jnt_parentConstraint1
 	setAttr ".rst" -type "double3" -0.49997970027799621 -4.9876509311541639e-07 5.0672101110649237e-06 ;
 	setAttr ".rsrr" -type "double3" 3.5719119957842357e-17 1.3517842710349808e-14 1.0930002175686739e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_leg_02_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:r_leg_02_jnt";
-	rename -uid "BB1FF0CD-44C7-BBCB-4A87-23852D6FF41E";
+createNode scaleConstraint -n "r_leg_02_jnt_scaleConstraint1" -p "r_leg_02_jnt";
+	rename -uid "4640B810-4B8B-E54C-720B-3D9BC9181CBE";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_leg_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19076,8 +18925,8 @@ createNode scaleConstraint -n "turtle_rig_start2:r_leg_02_jnt_scaleConstraint1" 
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 0.99999999999999956 0.99999999999999989 0.99999999999999956 ;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:r_leg_03_jnt" -p "turtle_rig_start2:r_leg_jnt_grp";
-	rename -uid "34FCAFA9-4EDF-0441-6474-16A5C342D512";
+createNode joint -n "r_leg_03_jnt" -p "r_leg_jnt_grp";
+	rename -uid "4AC9E871-4DBC-E3A5-CC95-2987258916B3";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -19087,9 +18936,8 @@ createNode joint -n "turtle_rig_start2:r_leg_03_jnt" -p "turtle_rig_start2:r_leg
 		 -0.03703892658151603 -0.99893545152336305 0.027496938147822184 0 0.82946707686414956 -0.046077841741555055 -0.55665177705535451 0
 		 -2.4198999999999997 -0.47816100000000017 -4.6267399999999999 1;
 	setAttr ".radi" 0.29999999999999993;
-createNode parentConstraint -n "turtle_rig_start2:r_leg_03_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:r_leg_03_jnt";
-	rename -uid "9E8813ED-4DFB-205F-358D-FCA17D0E2E5D";
+createNode parentConstraint -n "r_leg_03_jnt_parentConstraint1" -p "r_leg_03_jnt";
+	rename -uid "74186E81-4185-CE96-D48B-5B8155DAA16B";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_leg_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19111,9 +18959,8 @@ createNode parentConstraint -n "turtle_rig_start2:r_leg_03_jnt_parentConstraint1
 	setAttr ".rst" -type "double3" -0.80795715700684223 -1.5545694442842262e-07 1.5476001844483278e-06 ;
 	setAttr ".rsrr" -type "double3" 2.2860236773019018e-15 9.5447700548216684e-15 -6.5661060513807366e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_leg_03_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:r_leg_03_jnt";
-	rename -uid "91EDFF5B-47BF-2429-6D91-A69F260A880D";
+createNode scaleConstraint -n "r_leg_03_jnt_scaleConstraint1" -p "r_leg_03_jnt";
+	rename -uid "C565EC81-420D-2729-8979-5BBE6DD0BF04";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_leg_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19129,8 +18976,8 @@ createNode scaleConstraint -n "turtle_rig_start2:r_leg_03_jnt_scaleConstraint1" 
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 0.99999999999999956 1.0000000000000004 0.99999999999999978 ;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:r_leg_04_jnt" -p "turtle_rig_start2:r_leg_jnt_grp";
-	rename -uid "3075E3DF-4829-1750-067F-2AAF1C6701C3";
+createNode joint -n "r_leg_04_jnt" -p "r_leg_jnt_grp";
+	rename -uid "82B8DDDB-4B30-734E-89DD-E2A1A7871436";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -19140,9 +18987,8 @@ createNode joint -n "turtle_rig_start2:r_leg_04_jnt" -p "turtle_rig_start2:r_leg
 		 -0.019025262896615037 -0.99834393858056725 0.054290143407022345 0 0.91688058519705207 -0.039075061602866001 -0.39724442355990885 0
 		 -2.9085699999999992 -0.48008099999999998 -5.3547399999999978 1;
 	setAttr ".radi" 0.29999999999999993;
-createNode parentConstraint -n "turtle_rig_start2:r_leg_04_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:r_leg_04_jnt";
-	rename -uid "6ACDA592-49FA-467B-4C13-EEB8A6D8A944";
+createNode parentConstraint -n "r_leg_04_jnt_parentConstraint1" -p "r_leg_04_jnt";
+	rename -uid "5BF1F93E-43ED-E448-B7E4-1FAFACBF7791";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_leg_04_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19164,9 +19010,8 @@ createNode parentConstraint -n "turtle_rig_start2:r_leg_04_jnt_parentConstraint1
 	setAttr ".rst" -type "double3" -0.87680445669361529 -2.6520942109087287e-09 -4.713298760727902e-06 ;
 	setAttr ".rsrr" -type "double3" 3.7272125173400555e-16 1.7498098014999906e-14 -1.9661046028968811e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_leg_04_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:r_leg_04_jnt";
-	rename -uid "D3BF6252-4762-8422-915A-8DB85A7ECBEF";
+createNode scaleConstraint -n "r_leg_04_jnt_scaleConstraint1" -p "r_leg_04_jnt";
+	rename -uid "8F60E47A-4683-E301-4554-FFA75F724902";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_leg_04_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19182,8 +19027,8 @@ createNode scaleConstraint -n "turtle_rig_start2:r_leg_04_jnt_scaleConstraint1" 
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 0.99999999999999989 1.0000000000000002 0.99999999999999956 ;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:r_leg_05_jnt" -p "turtle_rig_start2:r_leg_jnt_grp";
-	rename -uid "850FD043-4D19-030D-746E-039C9A959CA7";
+createNode joint -n "r_leg_05_jnt" -p "r_leg_jnt_grp";
+	rename -uid "8169D88F-4B5B-5542-195F-C09BA0D792ED";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -19193,9 +19038,8 @@ createNode joint -n "turtle_rig_start2:r_leg_05_jnt" -p "turtle_rig_start2:r_leg
 		 -0.019025262896615526 -0.99834393858056725 0.054290143407022443 0 0.91688058519705296 -0.039075061602866473 -0.39724442355990852 0
 		 -3.2587599999999988 -0.51716300000000048 -6.1593600000000004 1;
 	setAttr ".radi" 0.29999999999999993;
-createNode parentConstraint -n "turtle_rig_start2:r_leg_05_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:r_leg_05_jnt";
-	rename -uid "2ACE84BA-44CF-2056-670E-8EAE5513BCE6";
+createNode parentConstraint -n "r_leg_05_jnt_parentConstraint1" -p "r_leg_05_jnt";
+	rename -uid "21958887-4244-F450-AD6C-5DA40005F6F8";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_leg_05_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19214,9 +19058,8 @@ createNode parentConstraint -n "turtle_rig_start2:r_leg_05_jnt_parentConstraint1
 	setAttr ".lr" -type "double3" 3.1209192811860758e-14 -1.272221872585407e-14 6.8580710319057054e-15 ;
 	setAttr ".rst" -type "double3" -0.87830601456275481 1.1155605228463372e-07 -2.6226110237947964e-06 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_leg_05_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:r_leg_05_jnt";
-	rename -uid "3EDF5AFD-4DAA-4987-3276-349D42108594";
+createNode scaleConstraint -n "r_leg_05_jnt_scaleConstraint1" -p "r_leg_05_jnt";
+	rename -uid "AAA5CB01-41D4-053A-61CA-A1B04FF49825";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_leg_05_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19232,10 +19075,10 @@ createNode scaleConstraint -n "turtle_rig_start2:r_leg_05_jnt_scaleConstraint1" 
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1 1.0000000000000002 0.99999999999999933 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:l_arm_jnt_grp" -p "turtle_rig_start2:skeleton";
-	rename -uid "2790052B-433B-AB32-89F6-73BBAE9210BB";
-createNode joint -n "turtle_rig_start2:l_clav_jnt" -p "turtle_rig_start2:l_arm_jnt_grp";
-	rename -uid "CC0025D0-406B-5145-86A8-EE953E1ED2D7";
+createNode transform -n "l_arm_jnt_grp" -p "skeleton";
+	rename -uid "AF2EF238-48DE-A71D-90CE-20858F394967";
+createNode joint -n "l_clav_jnt" -p "l_arm_jnt_grp";
+	rename -uid "3D1A36F3-4208-A4A4-F8E3-D7A121EC7F5C";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -19245,9 +19088,8 @@ createNode joint -n "turtle_rig_start2:l_clav_jnt" -p "turtle_rig_start2:l_arm_j
 		 -0.13689524001500628 0 0.99058553051275378 0 0.32130694389343278 -0.55037277936935436 1.8182637095451353 1;
 	setAttr ".radi" 0.29999999999999993;
 	setAttr ".liw" yes;
-createNode parentConstraint -n "turtle_rig_start2:l_clav_jnt_parentConstraint1" -p
-		 "turtle_rig_start2:l_clav_jnt";
-	rename -uid "9C3E657F-404D-803A-F96B-A29745E114A8";
+createNode parentConstraint -n "l_clav_jnt_parentConstraint1" -p "l_clav_jnt";
+	rename -uid "6E570D37-48AD-E572-7C81-629E2FC346FA";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_clav_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19263,12 +19105,12 @@ createNode parentConstraint -n "turtle_rig_start2:l_clav_jnt_parentConstraint1" 
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0 -3.3306690738754696e-16 0 ;
 	setAttr ".tg[0].tor" -type "double3" 0 1.2722218725854067e-14 0 ;
-	setAttr ".lr" -type "double3" 2.1082058437804267 0.0053594913188773899 -0.29128173280393355 ;
+	setAttr ".lr" -type "double3" 0 -1.1131941385122306e-14 0 ;
 	setAttr ".rst" -type "double3" 1.0769154317443232 -1.0668328404426575 -0.32130694389343256 ;
 	setAttr ".rsrr" -type "double3" 0 -1.9083328088781101e-14 0 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_clav_jnt_scaleConstraint1" -p "turtle_rig_start2:l_clav_jnt";
-	rename -uid "EDE11CCA-41A5-0AAF-9AD4-2397F8B33CC6";
+createNode scaleConstraint -n "l_clav_jnt_scaleConstraint1" -p "l_clav_jnt";
+	rename -uid "8329A5F5-4A75-D3C7-9449-6A8715075F47";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_clav_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19283,8 +19125,8 @@ createNode scaleConstraint -n "turtle_rig_start2:l_clav_jnt_scaleConstraint1" -p
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:l_arm_01_jnt" -p "turtle_rig_start2:l_arm_jnt_grp";
-	rename -uid "E818D02B-4064-150E-CAAB-A29580893CE7";
+createNode joint -n "l_arm_01_jnt" -p "l_arm_jnt_grp";
+	rename -uid "4170B9A0-473F-C105-7371-9CAA1637E453";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -19295,9 +19137,8 @@ createNode joint -n "turtle_rig_start2:l_arm_01_jnt" -p "turtle_rig_start2:l_arm
 		 2.6503434181213388 -0.55037277936935425 2.1401278972625701 1;
 	setAttr ".radi" 0.29999999999999993;
 	setAttr ".liw" yes;
-createNode parentConstraint -n "turtle_rig_start2:l_arm_01_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:l_arm_01_jnt";
-	rename -uid "6A8726A9-4B93-E608-5205-538E80D3D1D4";
+createNode parentConstraint -n "l_arm_01_jnt_parentConstraint1" -p "l_arm_01_jnt";
+	rename -uid "FD853245-43C3-71AE-C4F0-3181E2301E8C";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_arm_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19315,13 +19156,12 @@ createNode parentConstraint -n "turtle_rig_start2:l_arm_01_jnt_parentConstraint1
 		-4.4408920985006262e-16 ;
 	setAttr ".tg[0].tor" -type "double3" 7.0232287880052172e-16 -3.1805546814635168e-15 
 		-1.5902773407317584e-15 ;
-	setAttr ".lr" -type "double3" 2.0672878425526768 0.16035196653016423 0.48257847020477851 ;
+	setAttr ".lr" -type "double3" -9.9392333795734554e-17 2.7096835001062228e-14 1.4411888400381561e-15 ;
 	setAttr ".rst" -type "double3" 2.3511715066364172 2.2204460492503131e-16 -4.4408920985006262e-16 ;
 	setAttr ".rsrr" -type "double3" -1.9878466759146977e-16 3.1867667023257502e-15 7.7029058691694544e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_arm_01_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:l_arm_01_jnt";
-	rename -uid "789AB01A-48B6-0045-EFC3-018D1A02B528";
+createNode scaleConstraint -n "l_arm_01_jnt_scaleConstraint1" -p "l_arm_01_jnt";
+	rename -uid "6973A393-44AF-E1F7-6B1E-CA9DE6719916";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_arm_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19336,8 +19176,8 @@ createNode scaleConstraint -n "turtle_rig_start2:l_arm_01_jnt_scaleConstraint1" 
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:l_arm_02_jnt" -p "turtle_rig_start2:l_arm_jnt_grp";
-	rename -uid "E9F5E690-4806-3A9B-ECAD-BFA5F2A587CD";
+createNode joint -n "l_arm_02_jnt" -p "l_arm_jnt_grp";
+	rename -uid "8584D7DD-4314-2149-B071-8B80DE7387A1";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -19349,9 +19189,8 @@ createNode joint -n "turtle_rig_start2:l_arm_02_jnt" -p "turtle_rig_start2:l_arm
 		 3.6434926986694354 -0.62695424712728742 1.908041954040524 1;
 	setAttr ".radi" 0.29999999999999993;
 	setAttr ".liw" yes;
-createNode parentConstraint -n "turtle_rig_start2:l_arm_02_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:l_arm_02_jnt";
-	rename -uid "56E453F9-4096-A779-1962-2C907F3E6EBE";
+createNode parentConstraint -n "l_arm_02_jnt_parentConstraint1" -p "l_arm_02_jnt";
+	rename -uid "06FE1C08-4B8C-F97F-0B9E-2FB10AF6FE92";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_arm_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19369,13 +19208,12 @@ createNode parentConstraint -n "turtle_rig_start2:l_arm_02_jnt_parentConstraint1
 		8.8817841970012523e-16 ;
 	setAttr ".tg[0].tor" -type "double3" -1.1927080055488192e-15 -3.1805546814635176e-15 
 		6.0828825774835519e-16 ;
-	setAttr ".lr" -type "double3" 1.4178640478841988 0.010387684500444815 1.5873070835480092 ;
+	setAttr ".lr" -type "double3" 9.2559110847277092e-16 5.6975102343189455e-14 -2.0474820761921391e-14 ;
 	setAttr ".rst" -type "double3" 1.0227776394204304 -1.1102230246251565e-16 -4.4408920985006262e-16 ;
 	setAttr ".rsrr" -type "double3" 5.963540027744093e-16 6.3735334046515004e-15 -1.0933156717530838e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_arm_02_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:l_arm_02_jnt";
-	rename -uid "DCCCAC71-499A-041E-6493-1EBD4328087F";
+createNode scaleConstraint -n "l_arm_02_jnt_scaleConstraint1" -p "l_arm_02_jnt";
+	rename -uid "E3168E9D-44FB-7D7E-58DB-7AA629C32780";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_arm_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19391,8 +19229,8 @@ createNode scaleConstraint -n "turtle_rig_start2:l_arm_02_jnt_scaleConstraint1" 
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 0.99999999999999978 0.99999999999999978 1 ;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:l_arm_03_jnt" -p "turtle_rig_start2:l_arm_jnt_grp";
-	rename -uid "BDD3484A-4EB9-5695-2AB7-54863770CEF6";
+createNode joint -n "l_arm_03_jnt" -p "l_arm_jnt_grp";
+	rename -uid "C789F015-46B1-A80B-1368-FB9B67D8C533";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -19404,9 +19242,8 @@ createNode joint -n "turtle_rig_start2:l_arm_03_jnt" -p "turtle_rig_start2:l_arm
 		 4.6844231311177076 -0.61112848556972876 0.74257418334198022 1;
 	setAttr ".radi" 0.29999999999999993;
 	setAttr ".liw" yes;
-createNode parentConstraint -n "turtle_rig_start2:l_arm_03_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:l_arm_03_jnt";
-	rename -uid "9AECDC77-44E1-0476-DFA8-0CBE1E535BF8";
+createNode parentConstraint -n "l_arm_03_jnt_parentConstraint1" -p "l_arm_03_jnt";
+	rename -uid "65BC648C-4F0E-4755-EB81-03B615FD8D5B";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_arm_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19424,13 +19261,12 @@ createNode parentConstraint -n "turtle_rig_start2:l_arm_03_jnt_parentConstraint1
 		-8.8817841970012523e-16 ;
 	setAttr ".tg[0].tor" -type "double3" -1.1927080055488192e-15 6.3611093629270351e-15 
 		2.6979341819009655e-15 ;
-	setAttr ".lr" -type "double3" 0.45223482439036694 -0.046959405564035502 2.0789382214983996 ;
+	setAttr ".lr" -type "double3" -7.9513867036587791e-16 2.5494133618605989e-14 4.1744780194208644e-15 ;
 	setAttr ".rst" -type "double3" 1.5627225423800803 -5.5511151231257827e-16 0 ;
 	setAttr ".rsrr" -type "double3" 1.7890620083232284e-15 6.3611093629270335e-15 -2.9320738469741801e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_arm_03_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:l_arm_03_jnt";
-	rename -uid "B3A1C7B9-4735-80CC-DEFF-58B312E749F8";
+createNode scaleConstraint -n "l_arm_03_jnt_scaleConstraint1" -p "l_arm_03_jnt";
+	rename -uid "B9721439-447B-39A9-351D-5F9F6BB6B645";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_arm_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19446,8 +19282,8 @@ createNode scaleConstraint -n "turtle_rig_start2:l_arm_03_jnt_scaleConstraint1" 
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 0.99999999999999978 0.99999999999999956 1.0000000000000002 ;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:l_arm_04_jnt" -p "turtle_rig_start2:l_arm_jnt_grp";
-	rename -uid "0272AED7-4959-717F-F414-44992EFAC716";
+createNode joint -n "l_arm_04_jnt" -p "l_arm_jnt_grp";
+	rename -uid "A60CA79E-46A7-2066-193F-229BB5DBCEE7";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -19458,9 +19294,8 @@ createNode joint -n "turtle_rig_start2:l_arm_04_jnt" -p "turtle_rig_start2:l_arm
 		 5.0925354872636586 -0.48697602463170614 -1.1265728309054355 1;
 	setAttr ".radi" 0.29999999999999993;
 	setAttr ".liw" yes;
-createNode parentConstraint -n "turtle_rig_start2:l_arm_04_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:l_arm_04_jnt";
-	rename -uid "0ACF897B-4C32-4CC4-3A2F-E7ABFF505E97";
+createNode parentConstraint -n "l_arm_04_jnt_parentConstraint1" -p "l_arm_04_jnt";
+	rename -uid "FD80E958-4B25-D7E7-C763-35AC13072824";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_arm_04_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19476,12 +19311,11 @@ createNode parentConstraint -n "turtle_rig_start2:l_arm_04_jnt_parentConstraint1
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -4.4408920985006262e-16 -2.2204460492503131e-16 
 		-1.7763568394002505e-15 ;
-	setAttr ".lr" -type "double3" 0.45223482439037221 -0.046959405564061384 2.0789382214984027 ;
+	setAttr ".lr" -type "double3" 6.3611093629270351e-15 6.1499006536110982e-15 3.4138806523981712e-31 ;
 	setAttr ".rst" -type "double3" 1.9172063242296042 -1.6653345369377348e-15 1.7763568394002505e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:l_arm_04_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:l_arm_04_jnt";
-	rename -uid "AA0E8CC1-4BCA-CF58-4DB4-9CADF2297567";
+createNode scaleConstraint -n "l_arm_04_jnt_scaleConstraint1" -p "l_arm_04_jnt";
+	rename -uid "E0226803-408D-8DCF-B524-BE8E25D49237";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "l_arm_04_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19497,10 +19331,10 @@ createNode scaleConstraint -n "turtle_rig_start2:l_arm_04_jnt_scaleConstraint1" 
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1 1.0000000000000004 0.99999999999999956 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:r_arm_jnt_grp" -p "turtle_rig_start2:skeleton";
-	rename -uid "7C31B57E-4E87-968C-7A7F-D5BF48F606E7";
-createNode joint -n "turtle_rig_start2:r_clav_jnt" -p "turtle_rig_start2:r_arm_jnt_grp";
-	rename -uid "2D90FA29-4293-D16D-A338-82A1EAD64AEA";
+createNode transform -n "r_arm_jnt_grp" -p "skeleton";
+	rename -uid "0E7DD285-4823-24C3-ABE9-95927657C4A7";
+createNode joint -n "r_clav_jnt" -p "r_arm_jnt_grp";
+	rename -uid "1A7A314D-4E7E-2DCC-4EAE-D2B4DC180B9F";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -19510,9 +19344,8 @@ createNode joint -n "turtle_rig_start2:r_clav_jnt" -p "turtle_rig_start2:r_arm_j
 		 -0.13689524001500628 -1.2246467991473535e-16 -0.990585530512754 0 -0.32130700000000006 -0.55037299999999978 1.8182599999999995 1;
 	setAttr ".radi" 0.29999999999999993;
 	setAttr ".liw" yes;
-createNode parentConstraint -n "turtle_rig_start2:r_clav_jnt_parentConstraint1" -p
-		 "turtle_rig_start2:r_clav_jnt";
-	rename -uid "FCEDAE53-41F5-96B8-38EC-00A4387C1D2E";
+createNode parentConstraint -n "r_clav_jnt_parentConstraint1" -p "r_clav_jnt";
+	rename -uid "E923650C-46F1-780D-E71B-00A4A1A53E71";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_clav_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19529,12 +19362,12 @@ createNode parentConstraint -n "turtle_rig_start2:r_clav_jnt_parentConstraint1" 
 	setAttr ".tg[0].tot" -type "double3" -1.1102230246251565e-16 2.2204460492503131e-16 
 		-2.2204460492503131e-16 ;
 	setAttr ".tg[0].tor" -type "double3" -1.3901301405885882e-14 0 1.9211082070769119e-15 ;
-	setAttr ".lr" -type "double3" 2.1082058437804512 0.0053594913188822211 -0.29128173280393344 ;
+	setAttr ".lr" -type "double3" -5.5173828725626237e-33 -7.9513867036587888e-15 -1.0593375115320379e-30 ;
 	setAttr ".rst" -type "double3" 1.076911722199188 -1.0668330610733032 0.32130700000000029 ;
 	setAttr ".rsrr" -type "double3" 1.3901301405885889e-14 2.3305297917972694e-31 -1.9211082070769123e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_clav_jnt_scaleConstraint1" -p "turtle_rig_start2:r_clav_jnt";
-	rename -uid "A23E594A-46CA-20D9-3C82-4B9AE01336C9";
+createNode scaleConstraint -n "r_clav_jnt_scaleConstraint1" -p "r_clav_jnt";
+	rename -uid "30D0FAEB-41F1-B318-E99A-61A4C11FE914";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_clav_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19550,8 +19383,8 @@ createNode scaleConstraint -n "turtle_rig_start2:r_clav_jnt_scaleConstraint1" -p
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1 1 0.99999999999999978 ;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:r_arm_01_jnt" -p "turtle_rig_start2:r_arm_jnt_grp";
-	rename -uid "7D5DF050-4845-77EC-0E8D-6BA13F5821E0";
+createNode joint -n "r_arm_01_jnt" -p "r_arm_jnt_grp";
+	rename -uid "3376B58F-49AF-B47F-0CC7-8A9CC0212971";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -19562,9 +19395,8 @@ createNode joint -n "turtle_rig_start2:r_arm_01_jnt" -p "turtle_rig_start2:r_arm
 		 -2.6503399999999999 -0.55037300000000011 2.1401299999999996 1;
 	setAttr ".radi" 0.29999999999999993;
 	setAttr ".liw" yes;
-createNode parentConstraint -n "turtle_rig_start2:r_arm_01_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:r_arm_01_jnt";
-	rename -uid "5AF6454F-45A2-63CC-EBB8-06B44E59C73E";
+createNode parentConstraint -n "r_arm_01_jnt_parentConstraint1" -p "r_arm_01_jnt";
+	rename -uid "F4897FC0-4167-42E4-E694-7481F5BC72A3";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_arm_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19580,12 +19412,11 @@ createNode parentConstraint -n "turtle_rig_start2:r_arm_01_jnt_parentConstraint1
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0 4.9960036108132044e-16 4.4408920985006262e-16 ;
 	setAttr ".tg[0].tor" -type "double3" 1.0596887602611255e-16 0 6.6188585570706863e-17 ;
-	setAttr ".lr" -type "double3" 2.0672878425526942 0.16035196653012698 0.48257847020478489 ;
+	setAttr ".lr" -type "double3" -2.9817700138720494e-16 -1.7493050748049341e-14 1.5902773407317584e-15 ;
 	setAttr ".rst" -type "double3" -2.3511688607903398 1.1102230246251565e-16 -6.2331682701977087e-06 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_arm_01_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:r_arm_01_jnt";
-	rename -uid "0572DA44-4783-84BE-DB67-7DB7A67330ED";
+createNode scaleConstraint -n "r_arm_01_jnt_scaleConstraint1" -p "r_arm_01_jnt";
+	rename -uid "EAF8BC65-4884-8B8F-AD39-0EB2BF61339D";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_arm_01_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19600,8 +19431,8 @@ createNode scaleConstraint -n "turtle_rig_start2:r_arm_01_jnt_scaleConstraint1" 
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:r_arm_02_jnt" -p "turtle_rig_start2:r_arm_jnt_grp";
-	rename -uid "5F0D7300-4C19-5DE4-3500-99975B736C98";
+createNode joint -n "r_arm_02_jnt" -p "r_arm_jnt_grp";
+	rename -uid "7FFDD338-425C-961B-5C29-74B7488A3021";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -19613,9 +19444,8 @@ createNode joint -n "turtle_rig_start2:r_arm_02_jnt" -p "turtle_rig_start2:r_arm
 		 -3.6434899999999999 -0.62695400000000012 1.90804 1;
 	setAttr ".radi" 0.29999999999999993;
 	setAttr ".liw" yes;
-createNode parentConstraint -n "turtle_rig_start2:r_arm_02_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:r_arm_02_jnt";
-	rename -uid "561E90B5-44D1-8C67-2B44-13B7850AFAA6";
+createNode parentConstraint -n "r_arm_02_jnt_parentConstraint1" -p "r_arm_02_jnt";
+	rename -uid "3DC5B7FE-4F27-A922-B93C-2C8C7EF69176";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_arm_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19632,14 +19462,13 @@ createNode parentConstraint -n "turtle_rig_start2:r_arm_02_jnt_parentConstraint1
 	setAttr ".tg[0].tot" -type "double3" -7.7715611723760958e-16 5.5511151231257827e-16 
 		8.8817841970012523e-16 ;
 	setAttr ".tg[0].tor" -type "double3" 3.4156930172401535e-15 0 -5.7528211051786802e-15 ;
-	setAttr ".lr" -type "double3" 1.4178640478842601 0.010387684500394364 1.58730708354807 ;
+	setAttr ".lr" -type "double3" 4.7764228409712852e-14 -6.3611093629270446e-15 2.6264424205522946e-14 ;
 	setAttr ".rst" -type "double3" -1.0227792235601547 -4.7886642656758127e-07 3.8019789796450709e-06 ;
 	setAttr ".rsrr" -type "double3" -3.5781240166464568e-15 -6.3673213837892666e-15 
 		5.4665783587654193e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_arm_02_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:r_arm_02_jnt";
-	rename -uid "F504B83F-4A8A-18AE-1F59-078B32EDCED0";
+createNode scaleConstraint -n "r_arm_02_jnt_scaleConstraint1" -p "r_arm_02_jnt";
+	rename -uid "A691BC76-48D6-2F20-9A06-3AA7B9E5974C";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_arm_02_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19655,8 +19484,8 @@ createNode scaleConstraint -n "turtle_rig_start2:r_arm_02_jnt_scaleConstraint1" 
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 0.99999999999999978 1 1 ;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:r_arm_03_jnt" -p "turtle_rig_start2:r_arm_jnt_grp";
-	rename -uid "F9CDB3F0-4F9C-05B7-C272-619CDAB71CF0";
+createNode joint -n "r_arm_03_jnt" -p "r_arm_jnt_grp";
+	rename -uid "09014C1C-4096-55F2-49CE-DDA864F7A366";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -19668,9 +19497,8 @@ createNode joint -n "turtle_rig_start2:r_arm_03_jnt" -p "turtle_rig_start2:r_arm
 		 -4.6844199999999994 -0.61112799999999934 0.74257399999999929 1;
 	setAttr ".radi" 0.29999999999999993;
 	setAttr ".liw" yes;
-createNode parentConstraint -n "turtle_rig_start2:r_arm_03_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:r_arm_03_jnt";
-	rename -uid "CAD45764-44C5-9951-382D-A18AA6A517A3";
+createNode parentConstraint -n "r_arm_03_jnt_parentConstraint1" -p "r_arm_03_jnt";
+	rename -uid "B2AB8E80-4DAA-D37A-2C55-51AF7F45C786";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_arm_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19688,13 +19516,12 @@ createNode parentConstraint -n "turtle_rig_start2:r_arm_03_jnt_parentConstraint1
 		-8.8817841970012523e-16 ;
 	setAttr ".tg[0].tor" -type "double3" -7.086107235369875e-16 3.1805546814635176e-15 
 		3.1251817080332712e-16 ;
-	setAttr ".lr" -type "double3" 0.45223482439041751 -0.046959405564097209 2.0789382214984355 ;
+	setAttr ".lr" -type "double3" 1.5505204072134644e-14 1.9083328088781101e-14 2.3854160110976403e-15 ;
 	setAttr ".rst" -type "double3" -1.5627209361658914 -2.7858180728923543e-07 -8.4953387080588527e-07 ;
 	setAttr ".rsrr" -type "double3" 4.969616689786744e-16 9.5478760652527833e-15 -1.1181637552020175e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_arm_03_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:r_arm_03_jnt";
-	rename -uid "70EFFE4B-40EB-9E23-DAAE-998E5E8982AC";
+createNode scaleConstraint -n "r_arm_03_jnt_scaleConstraint1" -p "r_arm_03_jnt";
+	rename -uid "10397F96-45F9-0BE1-4EE5-00A28333E953";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_arm_03_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19710,21 +19537,20 @@ createNode scaleConstraint -n "turtle_rig_start2:r_arm_03_jnt_scaleConstraint1" 
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 0.99999999999999956 0.99999999999999956 0.99999999999999978 ;
 	setAttr -k on ".w0";
-createNode joint -n "turtle_rig_start2:r_arm_04_jnt" -p "turtle_rig_start2:r_arm_jnt_grp";
-	rename -uid "DDC57C01-45B5-525D-73E5-CABE5C2364A3";
+createNode joint -n "r_arm_04_jnt" -p "r_arm_jnt_grp";
+	rename -uid "057EBEB4-40D3-41DE-E22B-0DB275FDB845";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".jo" -type "double3" -163.7380655657104 -77.144073351473807 -16.920362628276735 ;
+	setAttr ".jo" -type "double3" -163.73806556571043 -77.144073351473807 -16.920362628276731 ;
 	setAttr ".is" -type "double3" 1.0000000000000002 1 1.0000000000000007 ;
 	setAttr ".bps" -type "matrix" 0.21286825053111616 -0.064756964010074622 0.97493263537950059 0
 		 -0.018207199011143056 -0.99789097402423521 -0.062306515430829101 0 0.97691125790421207 -0.0044877135783621645 -0.21359834879241898 0
 		 -5.0925400000000005 -0.4869759999999993 -1.1265699999999996 1;
 	setAttr ".radi" 0.29999999999999993;
 	setAttr ".liw" yes;
-createNode parentConstraint -n "turtle_rig_start2:r_arm_04_jnt_parentConstraint1" 
-		-p "turtle_rig_start2:r_arm_04_jnt";
-	rename -uid "09E315A9-48E9-2064-6571-D39ED8FD4AE2";
+createNode parentConstraint -n "r_arm_04_jnt_parentConstraint1" -p "r_arm_04_jnt";
+	rename -uid "780B2E2D-487A-CCB6-0AD0-6AB0464F5168";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_arm_04_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19740,12 +19566,11 @@ createNode parentConstraint -n "turtle_rig_start2:r_arm_04_jnt_parentConstraint1
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 4.4408920985006262e-16 -1.1102230246251565e-16 
 		-1.7763568394002505e-15 ;
-	setAttr ".lr" -type "double3" 0.4522348243904013 -0.046959405564147828 2.0789382214984347 ;
+	setAttr ".lr" -type "double3" 5.1684013573782151e-15 -1.9083328088781101e-14 2.7829853462805764e-15 ;
 	setAttr ".rst" -type "double3" -1.9172049828263196 4.1133181261088225e-07 -8.1091367922780933e-06 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:r_arm_04_jnt_scaleConstraint1" -p
-		 "turtle_rig_start2:r_arm_04_jnt";
-	rename -uid "4437740D-4E58-C753-F80F-9E8DADC8C870";
+createNode scaleConstraint -n "r_arm_04_jnt_scaleConstraint1" -p "r_arm_04_jnt";
+	rename -uid "3B102AF5-46EB-23F7-86F0-F6B0A11C368F";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "r_arm_04_ctrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19761,11 +19586,11 @@ createNode scaleConstraint -n "turtle_rig_start2:r_arm_04_jnt_scaleConstraint1" 
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 0.99999999999999967 1.0000000000000004 0.99999999999999911 ;
 	setAttr -k on ".w0";
-createNode transform -n "turtle_rig_start2:texture" -p "turtle_rig_start2:sea_turtle";
-	rename -uid "CB192983-40FB-8175-47B6-899240663207";
+createNode transform -n "texture" -p "sea_turtle";
+	rename -uid "CDA357FE-42E0-9F50-B298-CEB18FE408CA";
 	setAttr ".v" no;
-createNode transform -n "turtle_rig_start2:l_eye_projector_grp" -p "turtle_rig_start2:texture";
-	rename -uid "30A61F23-4244-A6F3-C74B-D1BD30FC2BDC";
+createNode transform -n "l_eye_projector_grp" -p "texture";
+	rename -uid "612F012B-4B22-7DB9-F110-BFA0BE8ADDDA";
 	setAttr ".t" -type "double3" 0.54784023761749268 0.73360133171081543 6.0349264144897461 ;
 	setAttr ".r" -type "double3" -3.0000000000000018 73.843498125108113 1.4287590727149012e-15 ;
 	setAttr ".s" -type "double3" 0.39893711812472055 0.39893711812472049 0.39893711812472049 ;
@@ -19773,12 +19598,12 @@ createNode transform -n "turtle_rig_start2:l_eye_projector_grp" -p "turtle_rig_s
 	setAttr ".rpt" -type "double3" -8.9058332239401437e-18 -2.4279665189492357e-19 -2.5800534859157123e-18 ;
 	setAttr ".sp" -type "double3" 0 4.4408920985006262e-16 0 ;
 	setAttr ".spt" -type "double3" 0 -2.6692554028219442e-16 0 ;
-createNode place3dTexture -n "turtle_rig_start2:l_eye_projector" -p "turtle_rig_start2:l_eye_projector_grp";
-	rename -uid "9B4E819C-4391-9EE0-F038-4081F591E288";
+createNode place3dTexture -n "l_eye_projector" -p "l_eye_projector_grp";
+	rename -uid "78DDE1F8-4F4F-A9CB-64A9-AB94A5B25478";
 	setAttr ".t" -type "double3" 0 4.4408920985006262e-16 0 ;
 	setAttr ".s" -type "double3" 0.99999999999999989 1.0000000000000002 1 ;
-createNode transform -n "turtle_rig_start2:r_eye_projector_grp" -p "turtle_rig_start2:texture";
-	rename -uid "60B8A868-4F6B-2168-1567-309569729B55";
+createNode transform -n "r_eye_projector_grp" -p "texture";
+	rename -uid "E6833B3F-46D8-5F27-9EE0-1FA83609B09A";
 	setAttr ".t" -type "double3" -0.54784023761749268 0.73360133171081543 6.0349264144897461 ;
 	setAttr ".r" -type "double3" -3.0000000000000009 -73.843498125108113 -7.1437953635745061e-16 ;
 	setAttr ".s" -type "double3" 0.3989371181247206 0.39893711812472055 0.39893711812472049 ;
@@ -19786,12 +19611,12 @@ createNode transform -n "turtle_rig_start2:r_eye_projector_grp" -p "turtle_rig_s
 	setAttr ".rpt" -type "double3" 5.1591593766490768e-16 -1.2139832594746624e-19 -6.8195654080065179e-16 ;
 	setAttr ".sp" -type "double3" -1.7763568394002505e-15 2.2204460492503131e-16 0 ;
 	setAttr ".spt" -type "double3" 1.0677021611287773e-15 -1.3346277014109719e-16 0 ;
-createNode place3dTexture -n "turtle_rig_start2:r_eye_projector" -p "turtle_rig_start2:r_eye_projector_grp";
-	rename -uid "F48E64BF-43A6-29DC-17D2-C99E17D56D9D";
+createNode place3dTexture -n "r_eye_projector" -p "r_eye_projector_grp";
+	rename -uid "ADAAC8A2-41D9-04AA-0A34-AABF5F28325F";
 	setAttr ".t" -type "double3" -1.7763568394002505e-15 2.2204460492503131e-16 8.8817841970012523e-16 ;
 	setAttr ".s" -type "double3" 0.99999999999999978 1.0000000000000002 1 ;
-createNode parentConstraint -n "turtle_rig_start2:texture_parentConstraint1" -p "turtle_rig_start2:texture";
-	rename -uid "5B6AC423-40A7-D592-6EBC-4D89847D1A5F";
+createNode parentConstraint -n "texture_parentConstraint1" -p "texture";
+	rename -uid "A10770C9-4A10-6C56-0ACD-1C80EAC783ED";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "head_jntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19809,8 +19634,8 @@ createNode parentConstraint -n "turtle_rig_start2:texture_parentConstraint1" -p 
 	setAttr ".tg[0].tor" -type "double3" 0 89.999999999999986 0 ;
 	setAttr ".rst" -type "double3" -9.8607613152626476e-32 0 0 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "turtle_rig_start2:texture_scaleConstraint1" -p "turtle_rig_start2:texture";
-	rename -uid "2BD029CB-4205-EC3C-AE93-C69D09DF2B62";
+createNode scaleConstraint -n "texture_scaleConstraint1" -p "texture";
+	rename -uid "6E2DDCD0-4281-FB69-FED6-C2840B1B69D1";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "head_jntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -19826,105 +19651,92 @@ createNode scaleConstraint -n "turtle_rig_start2:texture_scaleConstraint1" -p "t
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "7F570605-444A-BCC0-1E43-F7A0DB7944DB";
-	setAttr -s 23 ".lnk";
-	setAttr -s 23 ".slnk";
+	rename -uid "B5E44FA1-4FD8-47EC-EC16-A4805CBE27EE";
+	setAttr -s 9 ".lnk";
+	setAttr -s 9 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "B4344521-4A9A-0F0C-15D9-DEACCFD50A76";
+	rename -uid "6E19D080-4750-1364-4CDC-2796D4EE2D47";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 0 ;
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "C8BF4CE7-43B2-C797-61F0-4B92A8285065";
+	rename -uid "60223B33-4738-51E6-755D-7AAC5B2E6F1E";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "2F154D59-4E26-5B1D-F7D3-05AF1BC559BA";
-	setAttr -s 10 ".dli[1:9]"  6 1 2 7 3 4 8 5 
-		9;
-	setAttr -s 10 ".dli";
+	rename -uid "962986D0-450A-386B-DFFA-B5B48B527ACF";
+	setAttr ".cdl" 3;
+	setAttr -s 6 ".dli[1:5]"  6 1 2 3 5;
+	setAttr -s 4 ".dli";
 createNode displayLayer -n "defaultLayer";
-	rename -uid "E11E848E-41B0-8A55-290A-9680142147A1";
+	rename -uid "2E95F022-492C-ADAE-2E7C-B48AFF94D456";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "D1673A76-426A-5BC9-FAF9-388393527CDE";
+	rename -uid "C260981E-4B66-C33A-2C6E-31B56B611659";
 createNode renderLayer -n "defaultRenderLayer";
-	rename -uid "F7181C71-4182-8A6F-51BB-2FB529198FF3";
+	rename -uid "DF3BF690-41AE-9C11-3AD1-0AB851E82DAE";
 	setAttr ".g" yes;
-createNode aiOptions -s -n "defaultArnoldRenderOptions";
-	rename -uid "FB6C3D71-4DD6-0BA5-0A99-679CCD1CBA5D";
-	setAttr ".version" -type "string" "5.2.1.1";
-createNode aiAOVFilter -s -n "defaultArnoldFilter";
-	rename -uid "42E0FC28-485E-CF25-A917-8BAC788D7DEC";
-	setAttr ".ai_translator" -type "string" "gaussian";
-createNode aiAOVDriver -s -n "defaultArnoldDriver";
-	rename -uid "E58F523F-417C-17A1-B4F2-B0A02B5C299D";
-	setAttr ".ai_translator" -type "string" "exr";
-createNode aiAOVDriver -s -n "defaultArnoldDisplayDriver";
-	rename -uid "A770D886-4F00-3BB1-9DC7-AABF1B3F008D";
-	setAttr ".output_mode" 0;
-	setAttr ".ai_translator" -type "string" "maya";
-createNode script -n "turtle_rig_start:uiConfigurationScriptNode";
-	rename -uid "F0D8FB37-436A-2B7D-F85D-6889BC157D72";
+createNode script -n "uiConfigurationScriptNode";
+	rename -uid "000BA9A6-4599-5057-12FF-3AB78F4CEEC4";
 	setAttr ".b" -type "string" (
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
+		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 0\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
-		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n"
-		+ "            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n"
-		+ "            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n"
-		+ "            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n"
-		+ "            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n"
-		+ "            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n"
-		+ "            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n"
-		+ "            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 1\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n"
-		+ "            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n"
-		+ "            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1131\n            -height 714\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n"
-		+ "\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 1\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n"
-		+ "            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 0\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n"
-		+ "            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n"
-		+ "            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n"
-		+ "            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n"
-		+ "                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n"
-		+ "                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -isSet 0\n                -isSetMember 0\n                -showUfeItems 1\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                -selectionOrder \"display\" \n                -expandAttribute 1\n                $editorName;\n"
-		+ "\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayValues 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showPlayRangeShades \"on\" \n                -lockPlayRangeShades \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -keyMinScale 1\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -valueLinesToggle 1\n                -outliner \"graphEditor1OutlineEd\" \n                -highlightAffectedCurves 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n"
-		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n"
-		+ "                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -showUfeItems 1\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n"
-		+ "                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayValues 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n"
-		+ "            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n"
-		+ "                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n"
-		+ "                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -connectedGraphingMode 1\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -showUnitConversions 0\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -connectedGraphingMode 1\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n"
-		+ "                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -showUnitConversions 0\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n"
-		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\n{ string $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"|persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"smoothShaded\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n"
-		+ "                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 0\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n"
-		+ "                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n"
-		+ "                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -bluePencil 1\n                -greasePencils 0\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n"
-		+ "                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 1\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1131\\n    -height 714\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 1\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1131\\n    -height 714\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n"
+		+ "            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n"
+		+ "            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 0\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n"
+		+ "            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|front\" \n            -useInteractiveMode 0\n            -displayLights \"all\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n"
+		+ "            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n"
+		+ "            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 0\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n"
+		+ "            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n"
+		+ "            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 1\n            -headsUpDisplay 1\n            -holdOuts 0\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n"
+		+ "            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 0\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 0\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n"
+		+ "            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1249\n            -height 710\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n"
+		+ "            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -selectCommand \"print(\\\"\\\")\" \n            -showNamespace 1\n"
+		+ "            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n"
+		+ "            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n"
+		+ "            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n"
+		+ "                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n"
+		+ "                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -showUfeItems 1\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n"
+		+ "                -displayValues 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showPlayRangeShades \"on\" \n                -lockPlayRangeShades \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -keyMinScale 1\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -valueLinesToggle 1\n                -outliner \"graphEditor1OutlineEd\" \n                -highlightAffectedCurves 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n"
+		+ "                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -showUfeItems 1\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n"
+		+ "                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayValues 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n"
+		+ "                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n"
+		+ "                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n"
+		+ "                -additiveGraphingMode 0\n                -connectedGraphingMode 1\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -showUnitConversions 0\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n"
+		+ "                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -connectedGraphingMode 1\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n"
+		+ "                -extendToShapes 1\n                -showUnitConversions 0\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n"
+		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\n{ string $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"|persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n"
+		+ "                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n"
+		+ "                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n"
+		+ "                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -bluePencil 1\n                -greasePencils 0\n                -excludeObjectPreset \"All\" \n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 1\\n    -headsUpDisplay 1\\n    -holdOuts 0\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 0\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 0\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1249\\n    -height 710\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 1\\n    -headsUpDisplay 1\\n    -holdOuts 0\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 0\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 0\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1249\\n    -height 710\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
-createNode script -n "turtle_rig_start:sceneConfigurationScriptNode";
-	rename -uid "0B9CBD25-44DE-9BCB-8508-309BAD68262C";
+createNode script -n "sceneConfigurationScriptNode";
+	rename -uid "F6B0A682-4507-9202-4D9D-9EBC2DF6EF39";
 	setAttr ".b" -type "string" "playbackOptions -min 0 -max 720 -ast 0 -aet 720 ";
 	setAttr ".st" 6;
-createNode groupId -n "turtle_rig_start:D1203A034:groupId12";
-	rename -uid "4EDA157D-4580-FB50-EFDC-0997220FFBF8";
+createNode groupId -n "D1203A034:groupId12";
+	rename -uid "30CD6A60-4F5D-EA78-06AD-6391099CB0A4";
 	setAttr ".ihi" 0;
-createNode groupId -n "turtle_rig_start:D1203A034:groupId20";
-	rename -uid "0EF09EAA-4ECB-F5BA-C08A-DB9583F69CDA";
+createNode groupId -n "D1203A034:groupId20";
+	rename -uid "F11D1D25-4091-FBF7-6B67-9BB0312D9421";
 	setAttr ".ihi" 0;
-createNode groupId -n "turtle_rig_start:D1203A034:groupId24";
-	rename -uid "778AA5CB-4FB3-4D83-B480-DBA50A8A021B";
+createNode groupId -n "D1203A034:groupId24";
+	rename -uid "20AC892A-4321-1CA0-D6F3-C4B10279C705";
 	setAttr ".ihi" 0;
-createNode groupId -n "turtle_rig_start:D1203A034:groupId32";
-	rename -uid "94A76814-4807-32AC-97B9-4B86C0C573A3";
+createNode groupId -n "D1203A034:groupId32";
+	rename -uid "71116E7B-4D8B-297F-FDDF-6F8FF6569442";
 	setAttr ".ihi" 0;
-createNode brush -n "turtle_rig_start:D1203A034:art3dPaintLastPaintBrush";
-	rename -uid "784ECFF2-40B0-8AFD-7161-1EA3AF5B300E";
+createNode brush -n "D1203A034:art3dPaintLastPaintBrush";
+	rename -uid "A6470E8C-48EF-209C-4147-5ABA64E1CD47";
 	setAttr ".lcl[0]"  0 0.5 1;
 	setAttr ".pcl[0]"  0 0.5 1;
 	setAttr ".wsc[0]"  0 1 1;
@@ -19942,26 +19754,26 @@ createNode brush -n "turtle_rig_start:D1203A034:art3dPaintLastPaintBrush";
 	setAttr ".env[2].envc" -type "float3" 0 0.1 0.44999999 ;
 	setAttr ".env[2].envi" 2;
 	setAttr ".rro[0]"  0 1 1;
-createNode groupId -n "turtle_rig_start:D1203A034:groupId66";
-	rename -uid "1C17934F-45B3-8858-339D-0CAF2989EB1E";
+createNode groupId -n "D1203A034:groupId66";
+	rename -uid "5854B5BD-4956-3772-7116-DAA6D5A51723";
 	setAttr ".ihi" 0;
-createNode groupId -n "turtle_rig_start:D1203A034:groupId60";
-	rename -uid "C3E62E98-4B4F-3118-CB7B-D28EB60768E8";
+createNode groupId -n "D1203A034:groupId60";
+	rename -uid "C8240883-4604-18BA-1379-CF929C88080B";
 	setAttr ".ihi" 0;
-createNode groupId -n "turtle_rig_start:D1203A034:groupId68";
-	rename -uid "3CC8697D-4471-E1CB-842A-AEB303633473";
+createNode groupId -n "D1203A034:groupId68";
+	rename -uid "6D4C737B-433C-A8CA-C052-6795A2E56790";
 	setAttr ".ihi" 0;
-createNode polyUnite -n "turtle_rig_start:polyUnite1";
-	rename -uid "59B7FA77-42E5-6667-5D2D-66A70F7DA652";
-createNode polyUnite -n "turtle_rig_start:polyUnite2";
-	rename -uid "FCCC90D7-4107-B44E-E4B2-F894F1742801";
-createNode polyUnite -n "turtle_rig_start:polyUnite3";
-	rename -uid "1B8FC193-44D7-8505-C157-74B5DB32A030";
-createNode groupId -n "turtle_rig_start:groupId26";
-	rename -uid "F3CC4EAB-44F3-D481-61CD-F0A07569CD61";
+createNode polyUnite -n "polyUnite1";
+	rename -uid "88B17276-4C5B-484D-7658-1DA76348F0AA";
+createNode polyUnite -n "polyUnite2";
+	rename -uid "7C5CCEB2-4928-D59E-5124-5A852A956EA6";
+createNode polyUnite -n "polyUnite3";
+	rename -uid "E4EE898B-409E-344D-0492-77B84185DF35";
+createNode groupId -n "groupId26";
+	rename -uid "4C3E457E-4AB1-861D-7C80-10B1F9DAD72C";
 	setAttr ".ihi" 0;
-createNode brush -n "turtle_rig_start:art3dPaintLastPaintBrush";
-	rename -uid "41D9AB2A-4B74-3042-EEB3-3D90859DD6AF";
+createNode brush -n "art3dPaintLastPaintBrush";
+	rename -uid "BB3F6A78-4C92-389D-AA87-21BAEDA926AF";
 	setAttr ".lcl[0]"  0 0.5 1;
 	setAttr ".pcl[0]"  0 0.5 1;
 	setAttr ".wsc[0]"  0 1 1;
@@ -19979,4464 +19791,294 @@ createNode brush -n "turtle_rig_start:art3dPaintLastPaintBrush";
 	setAttr ".env[2].envc" -type "float3" 0 0.1 0.44999999 ;
 	setAttr ".env[2].envi" 2;
 	setAttr ".rro[0]"  0 1 1;
-createNode shadingEngine -n "turtle_rig_start:blinn1SG";
-	rename -uid "22A84AD8-4DD3-4DB1-50FF-54BD23FA219A";
+createNode aiOptions -s -n "defaultArnoldRenderOptions";
+	rename -uid "4D71B4E7-4759-7C27-9588-2BBB965D95C8";
+	addAttr -ci true -sn "ARV_options" -ln "ARV_options" -dt "string";
+	setAttr ".version" -type "string" "2.0.1";
+	setAttr ".ARV_options" -type "string" "AOVs=Beauty;Test Resolution=100%;Camera=cameraShape1;Debug Shading=Disabled;Color Management.Gamma=1;Color Management.Exposure=0;Background.BG=BG Color;Background.Color=0 0 0;Background.Image=;Background.Scale=1 1;Background.Offset=0 0;Background.Apply Color Management=1;Foreground.Enable FG=0;Foreground.Image=;Foreground.Scale=1 1;Foreground.Offset=0 0;Foreground.Apply Color Management=1;";
+createNode aiAOVFilter -s -n "defaultArnoldFilter";
+	rename -uid "59DC0650-4FD0-754B-FD89-E8AE5FD648D0";
+	setAttr ".ai_translator" -type "string" "gaussian";
+createNode aiAOVDriver -s -n "defaultArnoldDriver";
+	rename -uid "86A91D37-49FB-E64D-250A-D7AB61CF4B31";
+	setAttr ".ai_translator" -type "string" "exr";
+createNode aiAOVDriver -s -n "defaultArnoldDisplayDriver";
+	rename -uid "ED01FCFC-4F9C-BA92-720C-609836DD99FE";
+	setAttr ".output_mode" 0;
+	setAttr ".ai_translator" -type "string" "maya";
+createNode shadingEngine -n "blinn1SG";
+	rename -uid "3C72116C-403A-6F2A-E45E-D4A4A1A5488C";
 	setAttr ".ihi" 0;
 	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start:materialInfo1";
-	rename -uid "F4132E36-442D-B144-3A2C-4D8228FE3E39";
-createNode file -n "turtle_rig_start:file1";
-	rename -uid "39504790-421E-1689-1E1B-9E935718B725";
+createNode materialInfo -n "materialInfo1";
+	rename -uid "5A434C0C-4410-D02A-6F4D-7EA80134E181";
+createNode file -n "file1";
+	rename -uid "975EEAC3-4B78-C5FE-4DD1-D08BAAFBD183";
 	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start:place2dTexture2";
-	rename -uid "1337BB77-4F91-C153-FD7A-468D4F173C26";
-createNode blinn -n "turtle_rig_start:l_eye_shader";
-	rename -uid "6D5AB9D4-42E9-11A9-402A-99830C2AD352";
-createNode shadingEngine -n "turtle_rig_start:l_eye_sg";
-	rename -uid "A84D1A2E-4954-8DE9-F9D5-7B80F00A12BB";
+createNode place2dTexture -n "place2dTexture2";
+	rename -uid "5EB73E56-49FE-2D3C-FD2C-6F8B64496DC2";
+createNode groupId -n "groupId49";
+	rename -uid "2C3422FE-42ED-CA7C-CE57-CF8D1004C6B0";
+	setAttr ".ihi" 0;
+createNode blinn -n "l_eye_shader";
+	rename -uid "8B1A8AE7-494B-155A-5EFC-D5B6E2BA0AB3";
+createNode shadingEngine -n "l_eye_sg";
+	rename -uid "A319E9BA-427D-C64E-B591-769ADE6F245C";
 	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start:materialInfo5";
-	rename -uid "67D28C0C-42B4-1EFA-0220-20AD775D98E5";
-createNode blinn -n "turtle_rig_start:r_eye_shader";
-	rename -uid "63FDBB1D-490D-9B02-27E8-8588906A4C99";
-createNode shadingEngine -n "turtle_rig_start:r_eye_sg";
-	rename -uid "5B06F967-4059-84BD-0F7B-0B971CE6A96E";
+createNode materialInfo -n "materialInfo5";
+	rename -uid "A3EB6D80-46D7-7DA2-98FC-3CB749B95973";
+createNode blinn -n "r_eye_shader";
+	rename -uid "EC4DD056-434A-E52B-1533-78A4ED2FDDB0";
+createNode shadingEngine -n "r_eye_sg";
+	rename -uid "37D116A7-4ABF-BDB7-6831-EF8BA8ACEF4F";
 	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start:materialInfo6";
-	rename -uid "E3FEC4F6-472B-1D4B-182A-F0AE07C57518";
-createNode displayLayer -n "turtle_rig_start:geo_layer";
-	rename -uid "2E9D4B61-4CB8-6391-E54C-49865DD4C4A2";
+createNode materialInfo -n "materialInfo6";
+	rename -uid "BA0B78AC-4C73-47A7-C5B5-1D917032CC6B";
+createNode displayLayer -n "geo_layer";
+	rename -uid "C78C4212-490B-2D85-FE39-1D8EAACE1E7D";
 	setAttr ".ufem" -type "stringArray" 0  ;
 	setAttr ".do" 2;
-createNode displayLayer -n "turtle_rig_start:skeleton_layer";
-	rename -uid "F042144D-4DFD-AD96-8AD3-0EBBB4CD9C10";
+createNode displayLayer -n "skeleton_layer";
+	rename -uid "C08FF0FE-4FF5-1010-2D61-ADBE5DBF7C86";
+	setAttr ".v" no;
 	setAttr ".ufem" -type "stringArray" 0  ;
 	setAttr ".do" 1;
-createNode displayLayer -n "turtle_rig_start:controls_layer";
-	rename -uid "540998E5-403D-5A78-E66E-37B7AD45EDE4";
+createNode displayLayer -n "controls_layer";
+	rename -uid "16A2BDD7-4ADA-EE2F-6106-1B9DC8B62EA4";
 	setAttr ".ufem" -type "stringArray" 0  ;
 	setAttr ".do" 3;
-createNode projection -n "turtle_rig_start:projection1";
-	rename -uid "EBC531AB-4A89-6F91-2595-D0A351144CF1";
+createNode projection -n "projection1";
+	rename -uid "8C14CCE1-46B5-02A2-3888-999E3932F625";
 	setAttr ".vt1" -type "float2" 7.573966 -0.27351701 ;
 	setAttr ".vt2" -type "float2" 7.573966 -0.27351701 ;
 	setAttr ".vt3" -type "float2" 7.573966 -0.27351701 ;
-createNode ramp -n "turtle_rig_start:ramp1";
-	rename -uid "827C7307-4588-2A8D-05FF-469B2E7E62C1";
+createNode ramp -n "ramp1";
+	rename -uid "80AD2B3B-4934-84E3-497F-8E8250603B1F";
 	setAttr ".t" 4;
 	setAttr -s 2 ".cel";
 	setAttr ".cel[0].ep" 0.23880596458911896;
 	setAttr ".cel[0].ec" -type "float3" 0 0 0 ;
 	setAttr ".cel[1].ep" 0.24776118993759155;
 	setAttr ".cel[1].ec" -type "float3" 1 1 1 ;
-createNode place2dTexture -n "turtle_rig_start:place2dTexture4";
-	rename -uid "A3A80132-4873-9D0B-9543-79A5A31881E8";
-createNode projection -n "turtle_rig_start:projection2";
-	rename -uid "18E526A4-4DED-3987-313C-B5B5E98C2A0B";
+createNode place2dTexture -n "place2dTexture4";
+	rename -uid "9320F33B-4DD0-89F5-83AA-C18F34134B7B";
+createNode projection -n "projection2";
+	rename -uid "C09A5539-41DB-12E0-7682-0DBED0BFDB25";
 	setAttr ".vt1" -type "float2" 0.5 0.5 ;
 	setAttr ".vt2" -type "float2" 0.5 0.5 ;
 	setAttr ".vt3" -type "float2" 0.5 0.5 ;
-createNode ramp -n "turtle_rig_start:ramp2";
-	rename -uid "5E8553A9-4926-2AD2-A765-EA8A4D018F5C";
+createNode ramp -n "ramp2";
+	rename -uid "B1CC3A24-4E9C-6128-36B9-A8AB86D275CA";
 	setAttr ".t" 4;
 	setAttr -s 2 ".cel";
 	setAttr ".cel[0].ep" 0.23899999260902405;
 	setAttr ".cel[0].ec" -type "float3" 0 0 0 ;
 	setAttr ".cel[1].ep" 0.24799999594688416;
 	setAttr ".cel[1].ec" -type "float3" 1 1 1 ;
-createNode place2dTexture -n "turtle_rig_start:place2dTexture5";
-	rename -uid "6EF0EF94-464D-BD0A-2D3F-2D80D1DDA58F";
-createNode aiStandardSurface -n "turtle_rig_start:headband_shader";
-	rename -uid "65C35ED3-4F6A-81AA-30C2-6BAD03D9CC6D";
-createNode shadingEngine -n "turtle_rig_start:headband_sg";
-	rename -uid "5E15B74F-4002-7C71-19F3-3991393C9A46";
+createNode place2dTexture -n "place2dTexture5";
+	rename -uid "F9667E4B-4F24-7D80-36D7-2AAC5EE3CD04";
+createNode aiStandardSurface -n "headband_shader";
+	rename -uid "DCE1069F-408E-12D4-6B94-E9BDD8955146";
+createNode shadingEngine -n "headband_sg";
+	rename -uid "6CF87946-4388-ADEA-13EF-7F8946E82D5F";
 	setAttr ".ihi" 0;
 	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start:materialInfo9";
-	rename -uid "E810A905-4357-B865-A368-A9871C9BD274";
-createNode file -n "turtle_rig_start:file3";
-	rename -uid "2C9370F3-4B6A-DE70-93C5-0DB2138C2A71";
+createNode materialInfo -n "materialInfo9";
+	rename -uid "43FF5924-4AD1-748D-7E8F-BAB36C22A207";
+createNode file -n "file3";
+	rename -uid "BF3E161E-410E-2401-D2F6-818948089B79";
 	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headband_sg_BaseColor.png";
 	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start:place2dTexture6";
-	rename -uid "41B0AEAD-4862-9C40-FC8B-88840D445CB2";
-createNode file -n "turtle_rig_start:file4";
-	rename -uid "27B9E3A5-4AA4-BA1B-43CF-09983F26AC79";
+createNode place2dTexture -n "place2dTexture6";
+	rename -uid "C64CFA86-42FD-F392-48C1-0797E6CFC2C5";
+createNode file -n "file4";
+	rename -uid "2E35D64E-4BF3-1A14-753E-FDBFDA950D77";
 	setAttr ".ail" yes;
 	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headband_sg_Metallic.png";
 	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start:place2dTexture7";
-	rename -uid "E598B1F3-40BB-3A85-A0DD-63AAF4DCEA11";
-createNode file -n "turtle_rig_start:file5";
-	rename -uid "947A1CDE-4586-2EFF-A60B-878D86E1A585";
+createNode place2dTexture -n "place2dTexture7";
+	rename -uid "CAE84940-4918-B0E4-1E09-F4B6F4AB706E";
+createNode file -n "file5";
+	rename -uid "800BC246-4E5E-783E-4964-54A54ACCC44B";
 	setAttr ".ail" yes;
 	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headband_sg_Roughness.png";
 	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start:place2dTexture8";
-	rename -uid "55D1FE11-4C1C-9D42-9A68-5595F5D8649B";
-createNode file -n "turtle_rig_start:file6";
-	rename -uid "143CDB56-4723-3772-A321-1B9AD06E18DA";
+createNode place2dTexture -n "place2dTexture8";
+	rename -uid "0F2F1044-46B1-0C86-7FA2-959275F8AEBA";
+createNode file -n "file6";
+	rename -uid "86C9666F-435F-7C42-60D7-1EA305679BA2";
 	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headband_sg_Normal.png";
 	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start:place2dTexture9";
-	rename -uid "36FB8940-48ED-CF91-A192-C4805CE247E7";
-createNode bump2d -n "turtle_rig_start:bump2d1";
-	rename -uid "334628D1-4137-CD31-C6FC-26B2AA5E33FB";
+createNode place2dTexture -n "place2dTexture9";
+	rename -uid "B14E673B-4C0D-D026-73A4-5E801E9C3E4F";
+createNode bump2d -n "bump2d1";
+	rename -uid "D29F7219-43D7-504F-28CE-ED87D8C27E8F";
 	setAttr ".bi" 1;
 	setAttr ".vc1" -type "float3" 0 9.9999997e-06 0 ;
 	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
-createNode aiStandardSurface -n "turtle_rig_start:headphone_shader";
-	rename -uid "D6A95A21-469D-9C9C-B18F-41824F662D72";
-createNode shadingEngine -n "turtle_rig_start:headphone_sg";
-	rename -uid "39E102DF-4938-E808-ABD6-9E89C4A81585";
+createNode aiStandardSurface -n "headphone_shader";
+	rename -uid "39B5E20F-4D28-52A7-646D-45881A817ED6";
+createNode shadingEngine -n "headphone_sg";
+	rename -uid "54049B4F-402B-1CBA-586B-63A57B41AD6C";
 	setAttr ".ihi" 0;
 	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start:materialInfo10";
-	rename -uid "8AB30147-4F46-2AF6-139B-E883935D4149";
-createNode materialInfo -n "turtle_rig_start:materialInfo7";
-	rename -uid "84C340EF-4AAC-9F76-45BD-2AA2AE67653E";
-createNode file -n "turtle_rig_start:file7";
-	rename -uid "090BB19E-4979-66E4-F9DD-839C3FFA1D16";
+createNode materialInfo -n "materialInfo10";
+	rename -uid "F0A3D84A-4A8E-6396-EDF0-4BB844EBB310";
+createNode materialInfo -n "materialInfo7";
+	rename -uid "9FBBB878-4775-503D-61C5-9EBE6E21038C";
+createNode file -n "file7";
+	rename -uid "5B7D297C-4DC6-7A9A-6C7F-FD828070B043";
 	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headphone_sg_BaseColor.png";
 	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start:place2dTexture10";
-	rename -uid "3DDC8967-403C-C01A-F894-AF95F6068507";
-createNode file -n "turtle_rig_start:file8";
-	rename -uid "D8B96938-491A-4C69-034E-56B1A7C73F98";
+createNode place2dTexture -n "place2dTexture10";
+	rename -uid "BD7F970F-4258-52D1-151B-36B35957A7F7";
+createNode file -n "file8";
+	rename -uid "421766C3-4AC0-779D-8A6B-BDA134B705EC";
 	setAttr ".ail" yes;
 	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headphone_sg_Metallic.png";
 	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start:place2dTexture11";
-	rename -uid "9C8C3067-49D8-EAD1-AD0A-9BAE03EE7575";
-createNode file -n "turtle_rig_start:file9";
-	rename -uid "1D4FDD3F-4BDF-4CA2-EA49-3DBD99378A30";
+createNode place2dTexture -n "place2dTexture11";
+	rename -uid "560E8AAD-4119-E5A2-E7EA-01B64850F2C0";
+createNode file -n "file9";
+	rename -uid "01456192-4BA5-AD83-B200-1EB76892141C";
 	setAttr ".ail" yes;
 	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headphone_sg_Roughness.png";
 	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start:place2dTexture12";
-	rename -uid "0CF13CEA-4F42-A086-499A-16B6125CB3A2";
-createNode file -n "turtle_rig_start:file10";
-	rename -uid "270EB7FB-4951-4206-6B86-C7B575B4152C";
+createNode place2dTexture -n "place2dTexture12";
+	rename -uid "A7E8F4B2-46E4-B151-CA76-0899631EF7BA";
+createNode file -n "file10";
+	rename -uid "7212CC7A-4909-9F25-3185-F09C83E3A3EA";
 	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headphone_sg_Normal.png";
 	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start:place2dTexture13";
-	rename -uid "7787D578-4266-2EC5-1F88-27BA115E19F1";
-createNode bump2d -n "turtle_rig_start:bump2d2";
-	rename -uid "BAB3845B-476C-6115-4118-95AA78AFFC03";
+createNode place2dTexture -n "place2dTexture13";
+	rename -uid "CA2CB347-4006-B147-B954-8AA40D206216";
+createNode bump2d -n "bump2d2";
+	rename -uid "88FB0982-4530-E8BA-E34E-FF8EEA73D71A";
 	setAttr ".bi" 1;
 	setAttr ".vc1" -type "float3" 0 9.9999997e-06 0 ;
 	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
-createNode aiStandardSurface -n "turtle_rig_start:shell_shader";
-	rename -uid "045B6C1D-427F-4F51-3128-8585F7F95BAF";
-createNode shadingEngine -n "turtle_rig_start:shell_sg";
-	rename -uid "4F5DFDE4-403C-1711-6498-45BE939B6414";
+createNode aiStandardSurface -n "shell_shader";
+	rename -uid "2F7C9AF6-4ACA-8C2B-D35F-D6B4E76456D9";
+createNode shadingEngine -n "shell_sg";
+	rename -uid "A23BD30E-4B90-D547-ADB1-CD88A8431FBE";
 	setAttr ".ihi" 0;
 	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start:materialInfo11";
-	rename -uid "994AFA67-48AA-5E12-5A83-0CBF59477930";
-createNode file -n "turtle_rig_start:file11";
-	rename -uid "652D67F9-4144-BAC2-558F-C2B3F6C6EB00";
+createNode materialInfo -n "materialInfo11";
+	rename -uid "07F437DA-4F66-AD22-F108-CB8B6F42497F";
+createNode file -n "file11";
+	rename -uid "7F404BD1-4561-52FD-8302-79A9BCDF6534";
 	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_shell_sg_BaseColor.png";
 	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start:place2dTexture14";
-	rename -uid "16FA2782-4640-4696-B47A-609E28BEE884";
-createNode file -n "turtle_rig_start:file12";
-	rename -uid "5D493FBC-4958-8D9F-17D2-90A94DAD5970";
+createNode place2dTexture -n "place2dTexture14";
+	rename -uid "0196905B-4779-3AC4-6535-3BB1B5933F93";
+createNode file -n "file12";
+	rename -uid "997019AE-4889-603A-E664-529280899DAA";
 	setAttr ".ail" yes;
 	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_shell_sg_Metallic.png";
 	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start:place2dTexture15";
-	rename -uid "F74796EC-410E-90EE-5325-ACABA68FAE98";
-createNode file -n "turtle_rig_start:file13";
-	rename -uid "88A0F3FD-4A7E-3271-C0C0-BB8C489EABD4";
+createNode place2dTexture -n "place2dTexture15";
+	rename -uid "8E2EB2C3-4CC7-A483-E6F9-55AAE707AEFE";
+createNode file -n "file13";
+	rename -uid "C41F467E-4A3F-D3DF-48AE-18B4C8667208";
 	setAttr ".ail" yes;
 	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_shell_sg_Roughness.png";
 	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start:place2dTexture16";
-	rename -uid "880535AC-40DF-FE09-A471-EDA47926BC96";
-createNode materialInfo -n "turtle_rig_start:materialInfo4";
-	rename -uid "C62ACD28-4236-234A-05BC-1C89E40DAAD1";
-createNode file -n "turtle_rig_start:file14";
-	rename -uid "AC3BA543-4763-2428-1615-48B4EBE43B3B";
+createNode place2dTexture -n "place2dTexture16";
+	rename -uid "387F67FC-4CCD-E71C-2577-63BCEEBE9630";
+createNode materialInfo -n "materialInfo4";
+	rename -uid "785FB0D5-44FE-887A-82EF-F8BFA67642E6";
+createNode file -n "file14";
+	rename -uid "DB4DC234-4B39-2277-B532-57A62964E196";
 	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_shell_sg_Normal.png";
 	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start:place2dTexture17";
-	rename -uid "A1DC08BB-4A4F-0CD7-EFF7-2EBAA0014C22";
-createNode bump2d -n "turtle_rig_start:bump2d3";
-	rename -uid "E549403F-43CD-ECDE-9EE2-37A9BCA0D0E2";
+createNode place2dTexture -n "place2dTexture17";
+	rename -uid "B6C9F9C8-4FEF-66B3-F9D9-55A8A0B96C29";
+createNode bump2d -n "bump2d3";
+	rename -uid "72E21350-4DC3-19BF-EBAF-0CA59E72A16D";
 	setAttr ".bi" 1;
 	setAttr ".vc1" -type "float3" 0 6.9999995e-05 0 ;
 	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
-createNode aiStandardSurface -n "turtle_rig_start:skin_shader";
-	rename -uid "0BBB9CBB-433D-CA4F-2834-4EB84748ED69";
-createNode shadingEngine -n "turtle_rig_start:skin_sg";
-	rename -uid "A0DF39C9-435E-B995-51DA-0BBE5F0F96F9";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start:materialInfo12";
-	rename -uid "F531BF5A-451C-877F-7CCE-B09D1DCFABAD";
-createNode file -n "turtle_rig_start:file15";
-	rename -uid "7F7422D6-473C-9280-F0FE-709334698B1B";
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_skin_sg_BaseColor.png";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start:place2dTexture18";
-	rename -uid "ACD1F0CF-4B36-CD99-BF20-86AEE67E0A31";
-createNode file -n "turtle_rig_start:file16";
-	rename -uid "FDB78AE9-4E9D-2929-4D1F-0CACFA727714";
-	setAttr ".ail" yes;
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_skin_sg_Metallic.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start:place2dTexture19";
-	rename -uid "8CC59F6D-4412-BB7E-8219-17AF90F04706";
-createNode file -n "turtle_rig_start:file17";
-	rename -uid "C6C1369C-4659-12AC-0247-B8B1F7ED088D";
-	setAttr ".ail" yes;
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_skin_sg_Roughness.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start:place2dTexture20";
-	rename -uid "8827F3CA-4AD2-2E4E-8A83-1AB43831580B";
-createNode file -n "turtle_rig_start:file18";
-	rename -uid "DD316BDE-47FC-7398-DC97-8F8446AEEB72";
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_skin_sg_Normal.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start:place2dTexture21";
-	rename -uid "2EA5CE8A-46ED-3FB1-7C2A-858907317EC6";
-createNode bump2d -n "turtle_rig_start:bump2d4";
-	rename -uid "483CD535-4868-0E6A-517F-178E5D8F7FDA";
-	setAttr ".bi" 1;
-	setAttr ".vc1" -type "float3" 0 6.9999995e-05 0 ;
-	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
-createNode nodeGraphEditorInfo -n "turtle_rig_start:hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "50FCA0D1-47AD-AEC3-246D-4C860129A09F";
-	setAttr ".def" no;
-	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -195197.61129116284 -6451.2386131823641 ;
-	setAttr ".tgi[0].vh" -type "double2" -193438.08755155621 2417.9054401192866 ;
-createNode lightEditor -n "turtle_rig_start:lightEditor";
-	rename -uid "A3D793A1-450B-ED44-C883-B888595EBCFF";
-createNode aiGobo -n "turtle_rig_start:aiGobo1";
-	rename -uid "EA3BB253-4D52-C23B-4460-6B94A9086402";
-	setAttr ".swrap" 0;
-	setAttr ".twrap" 0;
-	setAttr ".sscale" 60;
-	setAttr ".tscale" 60;
-createNode file -n "turtle_rig_start:file19";
-	rename -uid "4EDF0ED9-46C8-35AF-1556-A69678A993B0";
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/caustics_gobo/caustics_00.tif";
-	setAttr ".ufe" yes;
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start:place2dTexture22";
-	rename -uid "B41770BB-4953-BBC0-5421-D0B9A8868F84";
-createNode expression -n "turtle_rig_start:expression1";
-	rename -uid "9798E798-43DA-ED1B-6007-F398106DE38E";
-	setAttr -k on ".nds";
-	setAttr ".ixp" -type "string" ".O[0] = ((frame-1)%31) + 1";
-createNode animCurveTU -n "turtle_rig_start:place2dTexture22_offsetU";
-	rename -uid "6A449D44-4B7C-0F7E-20BC-76A31A98BCD8";
-	setAttr ".tan" 2;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  0 0 720 0.7;
-createNode animCurveTU -n "turtle_rig_start:place2dTexture22_offsetV";
-	rename -uid "1BEBD33E-4CDE-0D46-A957-68832D40FBA0";
-	setAttr ".tan" 2;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  0 0 720 0.85;
-createNode groupId -n "turtle_rig_start1:D1203A034:groupId12";
-	rename -uid "08EFCC0B-4B18-00C4-2D10-68B9676551DD";
-	setAttr ".ihi" 0;
-createNode groupId -n "turtle_rig_start1:D1203A034:groupId20";
-	rename -uid "33CBDC98-43BE-39D8-B353-97907131690B";
-	setAttr ".ihi" 0;
-createNode groupId -n "turtle_rig_start1:D1203A034:groupId24";
-	rename -uid "A5149A38-47BA-70C9-F813-A3B7F8746BF1";
-	setAttr ".ihi" 0;
-createNode groupId -n "turtle_rig_start1:D1203A034:groupId32";
-	rename -uid "5407D4E7-456B-F7B6-5122-C9ABD7067D26";
-	setAttr ".ihi" 0;
-createNode brush -n "turtle_rig_start1:D1203A034:art3dPaintLastPaintBrush";
-	rename -uid "CC7DF004-48DE-D9A1-7A6C-13938C3E2F6C";
-	setAttr ".lcl[0]"  0 0.5 1;
-	setAttr ".pcl[0]"  0 0.5 1;
-	setAttr ".wsc[0]"  0 1 1;
-	setAttr ".lws[0]"  0 1 1;
-	setAttr ".pws[0]"  0 1 1;
-	setAttr ".tls[0]"  0 1 1;
-	setAttr -s 3 ".env";
-	setAttr ".env[0].envp" 0.20000000298023224;
-	setAttr ".env[0].envc" -type "float3" 0 0 0.15000001 ;
-	setAttr ".env[0].envi" 2;
-	setAttr ".env[1].envp" 0.5;
-	setAttr ".env[1].envc" -type "float3" 0.47999999 0.55000001 0.69999999 ;
-	setAttr ".env[1].envi" 2;
-	setAttr ".env[2].envp" 1;
-	setAttr ".env[2].envc" -type "float3" 0 0.1 0.44999999 ;
-	setAttr ".env[2].envi" 2;
-	setAttr ".rro[0]"  0 1 1;
-createNode groupId -n "turtle_rig_start1:D1203A034:groupId66";
-	rename -uid "7B4EF6BC-4393-1D6F-4BFD-E8908B41A709";
-	setAttr ".ihi" 0;
-createNode groupId -n "turtle_rig_start1:D1203A034:groupId60";
-	rename -uid "D328CB32-428F-3DBE-B0E9-59A95634542F";
-	setAttr ".ihi" 0;
-createNode groupId -n "turtle_rig_start1:D1203A034:groupId68";
-	rename -uid "CEB66036-4221-BB1D-6756-7C8BDEFD7340";
-	setAttr ".ihi" 0;
-createNode polyUnite -n "turtle_rig_start1:polyUnite1";
-	rename -uid "1C2F6254-4CAB-A548-F27F-BEA783636BFA";
-createNode polyUnite -n "turtle_rig_start1:polyUnite2";
-	rename -uid "9089B85F-419A-B89B-EBCF-73A72AD83D97";
-createNode polyUnite -n "turtle_rig_start1:polyUnite3";
-	rename -uid "33588FD0-4A2D-5C67-953E-57A04019D082";
-createNode groupId -n "turtle_rig_start1:groupId26";
-	rename -uid "8FAFDAA2-4AEC-1BA5-DB25-73BB790B99DC";
-	setAttr ".ihi" 0;
-createNode brush -n "turtle_rig_start1:art3dPaintLastPaintBrush";
-	rename -uid "01E7FB66-4609-FEC3-D3D4-61ABFE019B14";
-	setAttr ".lcl[0]"  0 0.5 1;
-	setAttr ".pcl[0]"  0 0.5 1;
-	setAttr ".wsc[0]"  0 1 1;
-	setAttr ".lws[0]"  0 1 1;
-	setAttr ".pws[0]"  0 1 1;
-	setAttr ".tls[0]"  0 1 1;
-	setAttr -s 3 ".env";
-	setAttr ".env[0].envp" 0.20000000298023224;
-	setAttr ".env[0].envc" -type "float3" 0 0 0.15000001 ;
-	setAttr ".env[0].envi" 2;
-	setAttr ".env[1].envp" 0.5;
-	setAttr ".env[1].envc" -type "float3" 0.47999999 0.55000001 0.69999999 ;
-	setAttr ".env[1].envi" 2;
-	setAttr ".env[2].envp" 1;
-	setAttr ".env[2].envc" -type "float3" 0 0.1 0.44999999 ;
-	setAttr ".env[2].envi" 2;
-	setAttr ".rro[0]"  0 1 1;
-createNode shadingEngine -n "turtle_rig_start1:blinn1SG";
-	rename -uid "1AC2CD64-498C-B81C-61D6-10A697EBF270";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start1:materialInfo1";
-	rename -uid "C486354E-417F-CF87-703B-4FBD4FFD12B1";
-createNode file -n "turtle_rig_start1:file1";
-	rename -uid "F83565E9-4A19-1150-EF65-24B5B2FB7A62";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture2";
-	rename -uid "685EFCCE-4DD5-70EF-D2F7-EBB4AD6CF07F";
-createNode blinn -n "turtle_rig_start1:l_eye_shader";
-	rename -uid "0AF0053A-4BE3-6653-51D2-3EB083719F9A";
-createNode shadingEngine -n "turtle_rig_start1:l_eye_sg";
-	rename -uid "84FE6E64-445B-8E58-EDD9-27ADB36F6C10";
-	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start1:materialInfo5";
-	rename -uid "FEA05F44-40DF-DEFB-0031-72953AA29578";
-createNode blinn -n "turtle_rig_start1:r_eye_shader";
-	rename -uid "D13358DF-445A-4204-92DF-0F95E89A3E09";
-createNode shadingEngine -n "turtle_rig_start1:r_eye_sg";
-	rename -uid "45FB17BA-46EC-3FF7-E039-EF8CCDE0F3DB";
-	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start1:materialInfo6";
-	rename -uid "5F0EDC8A-49DD-5FFF-1763-EC86DBB17074";
-createNode displayLayer -n "turtle_rig_start1:geo_layer";
-	rename -uid "8F8354F1-48F6-656B-7F5F-B08B17F59C7B";
-	setAttr ".ufem" -type "stringArray" 0  ;
-	setAttr ".do" 2;
-createNode displayLayer -n "turtle_rig_start1:skeleton_layer";
-	rename -uid "EFE5F55F-459F-4A93-3D71-74B249336D5B";
-	setAttr ".ufem" -type "stringArray" 0  ;
-	setAttr ".do" 1;
-createNode displayLayer -n "turtle_rig_start1:controls_layer";
-	rename -uid "96558AA4-4191-9389-956E-B29F72E4E983";
-	setAttr ".ufem" -type "stringArray" 0  ;
-	setAttr ".do" 3;
-createNode projection -n "turtle_rig_start1:projection1";
-	rename -uid "222C2266-447E-2C7F-030E-C280585347EE";
-	setAttr ".vt1" -type "float2" 7.573966 -0.27351701 ;
-	setAttr ".vt2" -type "float2" 7.573966 -0.27351701 ;
-	setAttr ".vt3" -type "float2" 7.573966 -0.27351701 ;
-createNode ramp -n "turtle_rig_start1:ramp1";
-	rename -uid "B92D2517-4D1E-DB4A-2DB5-CCBB3CFF56C0";
-	setAttr ".t" 4;
-	setAttr -s 2 ".cel";
-	setAttr ".cel[0].ep" 0.23880596458911896;
-	setAttr ".cel[0].ec" -type "float3" 0 0 0 ;
-	setAttr ".cel[1].ep" 0.24776118993759155;
-	setAttr ".cel[1].ec" -type "float3" 1 1 1 ;
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture4";
-	rename -uid "F910C61B-43AA-AF0F-B143-D79076F7522C";
-createNode projection -n "turtle_rig_start1:projection2";
-	rename -uid "8ED5151C-436E-D622-3DD5-409E13C187A3";
-	setAttr ".vt1" -type "float2" 0.5 0.5 ;
-	setAttr ".vt2" -type "float2" 0.5 0.5 ;
-	setAttr ".vt3" -type "float2" 0.5 0.5 ;
-createNode ramp -n "turtle_rig_start1:ramp2";
-	rename -uid "0790EDE2-4DE9-9B05-BFDD-8B9410F4B3C9";
-	setAttr ".t" 4;
-	setAttr -s 2 ".cel";
-	setAttr ".cel[0].ep" 0.23899999260902405;
-	setAttr ".cel[0].ec" -type "float3" 0 0 0 ;
-	setAttr ".cel[1].ep" 0.24799999594688416;
-	setAttr ".cel[1].ec" -type "float3" 1 1 1 ;
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture5";
-	rename -uid "F4382CAC-43D0-F5CB-B91F-D596039229CF";
-createNode aiStandardSurface -n "turtle_rig_start1:headband_shader";
-	rename -uid "65A005B0-46E4-4545-BDF8-C08E874A9B53";
-createNode shadingEngine -n "turtle_rig_start1:headband_sg";
-	rename -uid "1765397A-407F-F12E-8F8F-C6B7BD652560";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start1:materialInfo9";
-	rename -uid "D9CF3034-43AC-3469-45DE-B2A16F01588C";
-createNode file -n "turtle_rig_start1:file3";
-	rename -uid "C80F45A7-407D-1EB2-863E-4793A4BDD480";
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headband_sg_BaseColor.png";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture6";
-	rename -uid "0FB6A6A7-4859-8C91-886C-4295714B3521";
-createNode file -n "turtle_rig_start1:file4";
-	rename -uid "BBDC3916-4CC6-CB47-9FD6-B9980D54E6A4";
-	setAttr ".ail" yes;
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headband_sg_Metallic.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture7";
-	rename -uid "AEABF343-4357-9CBA-E15B-ADB381F32E84";
-createNode file -n "turtle_rig_start1:file5";
-	rename -uid "3F819504-459C-7152-B487-B493034C3010";
-	setAttr ".ail" yes;
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headband_sg_Roughness.png";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture8";
-	rename -uid "918C40F3-46AB-E3CB-BD23-308FCA036A1D";
-createNode file -n "turtle_rig_start1:file6";
-	rename -uid "A0E74863-4253-F93F-A917-5EB1280944B4";
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headband_sg_Normal.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture9";
-	rename -uid "5C2C1C72-422E-9273-B3FE-E8A3D9EF13BA";
-createNode bump2d -n "turtle_rig_start1:bump2d1";
-	rename -uid "1745E7F5-4A45-7500-8F67-CDBAC471C9E9";
-	setAttr ".bi" 1;
-	setAttr ".vc1" -type "float3" 0 9.9999997e-06 0 ;
-	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
-createNode aiStandardSurface -n "turtle_rig_start1:headphone_shader";
-	rename -uid "60DB7534-47C4-3DE4-498E-418F5583310E";
-createNode shadingEngine -n "turtle_rig_start1:headphone_sg";
-	rename -uid "1E3BEDE7-472E-1D84-1C55-72AEFF512899";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start1:materialInfo10";
-	rename -uid "19673BF1-4581-19CE-5A64-A39BA05F69D7";
-createNode materialInfo -n "turtle_rig_start1:materialInfo7";
-	rename -uid "76E4F015-4343-9D77-C03F-628C18BC94BC";
-createNode file -n "turtle_rig_start1:file7";
-	rename -uid "5862BD2C-481B-4C28-A9AE-919E7D1A2329";
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headphone_sg_BaseColor.png";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture10";
-	rename -uid "6EF01191-4175-F1A9-1B36-3BA6C86BA180";
-createNode file -n "turtle_rig_start1:file8";
-	rename -uid "2AAC6495-4BDB-5400-B707-D9A9ED2486F0";
-	setAttr ".ail" yes;
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headphone_sg_Metallic.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture11";
-	rename -uid "844C74CF-49F0-8080-A71F-79A01D3B11AC";
-createNode file -n "turtle_rig_start1:file9";
-	rename -uid "B6AB8589-433E-4900-C587-77BD89A4E979";
-	setAttr ".ail" yes;
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headphone_sg_Roughness.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture12";
-	rename -uid "43353A40-4EED-117D-D826-7CA9599C3CFA";
-createNode file -n "turtle_rig_start1:file10";
-	rename -uid "93B583AF-44CB-B7D3-DC24-93BA41A44EE6";
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headphone_sg_Normal.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture13";
-	rename -uid "B34E16D7-4617-B134-4A95-B19D425E0779";
-createNode bump2d -n "turtle_rig_start1:bump2d2";
-	rename -uid "039E9647-40FB-B100-3FAF-3CB782D7549C";
-	setAttr ".bi" 1;
-	setAttr ".vc1" -type "float3" 0 9.9999997e-06 0 ;
-	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
-createNode aiStandardSurface -n "turtle_rig_start1:shell_shader";
-	rename -uid "36C575B1-4BDC-6A91-2DE6-0CA1984A2EB5";
-createNode shadingEngine -n "turtle_rig_start1:shell_sg";
-	rename -uid "2AC865E0-41A7-F5D0-8903-59BA4391EF52";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start1:materialInfo11";
-	rename -uid "08846BAA-44D7-8658-3281-6FB8BD2572CA";
-createNode file -n "turtle_rig_start1:file11";
-	rename -uid "29A652F0-4E1F-7D46-1E43-82B863387716";
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_shell_sg_BaseColor.png";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture14";
-	rename -uid "FEDB95B0-4583-2A60-7284-CE8850C44B24";
-createNode file -n "turtle_rig_start1:file12";
-	rename -uid "83953468-45DA-FBEB-9884-F7851AB22B17";
-	setAttr ".ail" yes;
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_shell_sg_Metallic.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture15";
-	rename -uid "FDE209A4-4E80-0700-2B2E-028B514F9408";
-createNode file -n "turtle_rig_start1:file13";
-	rename -uid "2428EA66-465C-AC22-56D9-3290A7AC17AD";
-	setAttr ".ail" yes;
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_shell_sg_Roughness.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture16";
-	rename -uid "B1A3011D-48B8-8F10-08CA-3E8233488962";
-createNode materialInfo -n "turtle_rig_start1:materialInfo4";
-	rename -uid "AFA730EB-4C8B-1B7F-B573-F6B5B89AF05B";
-createNode file -n "turtle_rig_start1:file14";
-	rename -uid "F0D92B98-47F8-3794-5D05-9DB4964BE6EB";
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_shell_sg_Normal.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture17";
-	rename -uid "D1FCC558-4669-7152-E632-89A561D60B96";
-createNode bump2d -n "turtle_rig_start1:bump2d3";
-	rename -uid "B50AEF2E-4F41-477E-5CE1-A5872A378A75";
-	setAttr ".bi" 1;
-	setAttr ".vc1" -type "float3" 0 6.9999995e-05 0 ;
-	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
-createNode aiStandardSurface -n "turtle_rig_start1:skin_shader";
-	rename -uid "84CE05AE-4A2A-7F17-0740-E89C0E586CB3";
-createNode shadingEngine -n "turtle_rig_start1:skin_sg";
-	rename -uid "56C59D37-4F81-D7E6-1322-B9BFA35FC460";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start1:materialInfo12";
-	rename -uid "93E75725-41EC-47A9-7302-D8B8D5ACEA59";
-createNode file -n "turtle_rig_start1:file15";
-	rename -uid "3EB312B9-4657-EC4D-5A7A-F883E2B57C81";
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_skin_sg_BaseColor.png";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture18";
-	rename -uid "DE5850D2-4258-2C78-7EDD-4A8E2502234D";
-createNode file -n "turtle_rig_start1:file16";
-	rename -uid "2E203E39-44D3-9448-69C9-7F8D71B5FAA5";
-	setAttr ".ail" yes;
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_skin_sg_Metallic.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture19";
-	rename -uid "FD0D63FC-4444-3EE4-9C64-18A682F02064";
-createNode file -n "turtle_rig_start1:file17";
-	rename -uid "58C00923-4496-82D2-D82B-C8B07C9904F9";
-	setAttr ".ail" yes;
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_skin_sg_Roughness.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture20";
-	rename -uid "31E72185-46FC-2BF2-80AC-299AA41B6CEC";
-createNode file -n "turtle_rig_start1:file18";
-	rename -uid "2796DA3E-42C5-23F8-AD05-00B0B3D9135E";
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_skin_sg_Normal.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture21";
-	rename -uid "DED0CA87-456D-A951-37BA-8AA24190E5F4";
-createNode bump2d -n "turtle_rig_start1:bump2d4";
-	rename -uid "164A02CD-4B62-F096-9828-40A069727591";
-	setAttr ".bi" 1;
-	setAttr ".vc1" -type "float3" 0 6.9999995e-05 0 ;
-	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
-createNode nodeGraphEditorInfo -n "turtle_rig_start1:hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "AE6D656C-417B-72B9-6F2A-2596F0F3D680";
-	setAttr ".def" no;
-	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -195197.61129116284 -6451.2386131823641 ;
-	setAttr ".tgi[0].vh" -type "double2" -193438.08755155621 2417.9054401192866 ;
-createNode lightEditor -n "turtle_rig_start1:lightEditor";
-	rename -uid "9C15DA23-4982-614E-ECD9-2A838A620A36";
-createNode aiGobo -n "turtle_rig_start1:aiGobo1";
-	rename -uid "83E738DD-4400-B373-5BA7-CFA27FCF30A4";
-	setAttr ".swrap" 0;
-	setAttr ".twrap" 0;
-	setAttr ".sscale" 60;
-	setAttr ".tscale" 60;
-createNode file -n "turtle_rig_start1:file19";
-	rename -uid "CCB91FEC-4F2E-60FF-E9F0-B7BC210887B3";
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/caustics_gobo/caustics_00.tif";
-	setAttr ".ufe" yes;
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start1:place2dTexture22";
-	rename -uid "CADB1407-4CD6-4CDE-76FD-FAB27C199680";
-createNode expression -n "turtle_rig_start1:expression1";
-	rename -uid "752D0765-44FF-4B15-98AD-78A8BB9EE8AF";
-	setAttr -k on ".nds";
-	setAttr ".ixp" -type "string" ".O[0] = ((frame-1)%31) + 1";
-createNode animCurveTU -n "turtle_rig_start1:place2dTexture22_offsetU";
-	rename -uid "0AA093D5-4A19-024C-4305-3993C0E602C1";
-	setAttr ".tan" 2;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  0 0 720 0.7;
-createNode animCurveTU -n "turtle_rig_start1:place2dTexture22_offsetV";
-	rename -uid "1E0626FB-4FC9-5DF1-EFE0-31BFCEC2717C";
-	setAttr ".tan" 2;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  0 0 720 0.85;
-createNode groupId -n "turtle_rig_start2:D1203A034:groupId12";
-	rename -uid "648A0378-4027-CCFF-17E9-A891B3368C0F";
-	setAttr ".ihi" 0;
-createNode groupId -n "turtle_rig_start2:D1203A034:groupId20";
-	rename -uid "534692C6-49E2-DEBB-0ED2-638345A91722";
-	setAttr ".ihi" 0;
-createNode groupId -n "turtle_rig_start2:D1203A034:groupId24";
-	rename -uid "30479BE6-41BE-3BB3-C999-FDB9EADBED6B";
-	setAttr ".ihi" 0;
-createNode groupId -n "turtle_rig_start2:D1203A034:groupId32";
-	rename -uid "40490A9B-49AD-C681-DF0E-9997A8B08385";
-	setAttr ".ihi" 0;
-createNode brush -n "turtle_rig_start2:D1203A034:art3dPaintLastPaintBrush";
-	rename -uid "2A290900-4E4A-7F63-4AC9-C0828A67C8FF";
-	setAttr ".lcl[0]"  0 0.5 1;
-	setAttr ".pcl[0]"  0 0.5 1;
-	setAttr ".wsc[0]"  0 1 1;
-	setAttr ".lws[0]"  0 1 1;
-	setAttr ".pws[0]"  0 1 1;
-	setAttr ".tls[0]"  0 1 1;
-	setAttr -s 3 ".env";
-	setAttr ".env[0].envp" 0.20000000298023224;
-	setAttr ".env[0].envc" -type "float3" 0 0 0.15000001 ;
-	setAttr ".env[0].envi" 2;
-	setAttr ".env[1].envp" 0.5;
-	setAttr ".env[1].envc" -type "float3" 0.47999999 0.55000001 0.69999999 ;
-	setAttr ".env[1].envi" 2;
-	setAttr ".env[2].envp" 1;
-	setAttr ".env[2].envc" -type "float3" 0 0.1 0.44999999 ;
-	setAttr ".env[2].envi" 2;
-	setAttr ".rro[0]"  0 1 1;
-createNode groupId -n "turtle_rig_start2:D1203A034:groupId66";
-	rename -uid "687A3EE8-4131-C1F4-BED9-208210013F4B";
-	setAttr ".ihi" 0;
-createNode groupId -n "turtle_rig_start2:D1203A034:groupId60";
-	rename -uid "C812D2EB-43C8-C566-B77E-4980A04FB994";
-	setAttr ".ihi" 0;
-createNode groupId -n "turtle_rig_start2:D1203A034:groupId68";
-	rename -uid "8B8E8433-41D0-DA89-82B2-EFA03FFA126C";
-	setAttr ".ihi" 0;
-createNode polyUnite -n "turtle_rig_start2:polyUnite1";
-	rename -uid "BBAE82B3-4E71-DB80-9857-6D887290CE57";
-createNode polyUnite -n "turtle_rig_start2:polyUnite2";
-	rename -uid "D5090D6E-4ECF-52A9-BECD-58A9CAAAD42D";
-createNode polyUnite -n "turtle_rig_start2:polyUnite3";
-	rename -uid "B5215935-4696-029E-D663-1882D77F93D4";
-createNode groupId -n "turtle_rig_start2:groupId26";
-	rename -uid "7826617A-4A23-2EBC-FD52-0094C5917CCB";
-	setAttr ".ihi" 0;
-createNode brush -n "turtle_rig_start2:art3dPaintLastPaintBrush";
-	rename -uid "02ED860F-4AF3-E028-CF80-E7A4383D24C6";
-	setAttr ".lcl[0]"  0 0.5 1;
-	setAttr ".pcl[0]"  0 0.5 1;
-	setAttr ".wsc[0]"  0 1 1;
-	setAttr ".lws[0]"  0 1 1;
-	setAttr ".pws[0]"  0 1 1;
-	setAttr ".tls[0]"  0 1 1;
-	setAttr -s 3 ".env";
-	setAttr ".env[0].envp" 0.20000000298023224;
-	setAttr ".env[0].envc" -type "float3" 0 0 0.15000001 ;
-	setAttr ".env[0].envi" 2;
-	setAttr ".env[1].envp" 0.5;
-	setAttr ".env[1].envc" -type "float3" 0.47999999 0.55000001 0.69999999 ;
-	setAttr ".env[1].envi" 2;
-	setAttr ".env[2].envp" 1;
-	setAttr ".env[2].envc" -type "float3" 0 0.1 0.44999999 ;
-	setAttr ".env[2].envi" 2;
-	setAttr ".rro[0]"  0 1 1;
-createNode shadingEngine -n "turtle_rig_start2:blinn1SG";
-	rename -uid "2D3361ED-4859-8C95-044E-8E91F0F383EE";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start2:materialInfo1";
-	rename -uid "2BF4AD9B-439A-AAFE-DE1A-1DAE796BDCE5";
-createNode file -n "turtle_rig_start2:file1";
-	rename -uid "54A722CD-4363-8E2B-6B75-3B84350B2FB3";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture2";
-	rename -uid "0C3B098F-4A04-11F7-E968-D79055FE609C";
-createNode groupId -n "turtle_rig_start2:groupId49";
-	rename -uid "B16F22E4-4F53-A9AC-74AC-35844154652E";
-	setAttr ".ihi" 0;
-createNode blinn -n "turtle_rig_start2:l_eye_shader";
-	rename -uid "658B4B08-4D34-F441-1527-C8BB8C3155A1";
-createNode shadingEngine -n "turtle_rig_start2:l_eye_sg";
-	rename -uid "D6E4311B-4FD7-8EF5-B0C9-5DA154E8D99C";
-	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start2:materialInfo5";
-	rename -uid "D1DBCB46-42BA-C0B6-6652-F3BE1B20BBCF";
-createNode blinn -n "turtle_rig_start2:r_eye_shader";
-	rename -uid "625A4B6E-41DC-2B4E-DE07-54B4F702DE79";
-createNode shadingEngine -n "turtle_rig_start2:r_eye_sg";
-	rename -uid "DD8BC441-4E69-45F3-BDA1-76A02B48C5BA";
-	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start2:materialInfo6";
-	rename -uid "8E2A3B2D-4742-4672-DC26-A6B65EFB800A";
-createNode displayLayer -n "turtle_rig_start2:geo_layer";
-	rename -uid "521E2631-4FCD-05AE-0A82-09ACDB150A7D";
-	setAttr ".ufem" -type "stringArray" 0  ;
-	setAttr ".do" 2;
-createNode displayLayer -n "turtle_rig_start2:skeleton_layer";
-	rename -uid "AC6BA627-4EB4-6C33-4084-23888D6B484C";
-	setAttr ".ufem" -type "stringArray" 0  ;
-	setAttr ".do" 1;
-createNode displayLayer -n "turtle_rig_start2:controls_layer";
-	rename -uid "B9DBE98F-4073-7395-676F-6FB8F2021D42";
-	setAttr ".ufem" -type "stringArray" 0  ;
-	setAttr ".do" 3;
-createNode projection -n "turtle_rig_start2:projection1";
-	rename -uid "4FD43D04-4079-3633-4DB4-A893957DD7BE";
-	setAttr ".vt1" -type "float2" 7.573966 -0.27351701 ;
-	setAttr ".vt2" -type "float2" 7.573966 -0.27351701 ;
-	setAttr ".vt3" -type "float2" 7.573966 -0.27351701 ;
-createNode ramp -n "turtle_rig_start2:ramp1";
-	rename -uid "42DFA60E-40C2-EB8D-B245-B78BFC2B5988";
-	setAttr ".t" 4;
-	setAttr -s 2 ".cel";
-	setAttr ".cel[0].ep" 0.23880596458911896;
-	setAttr ".cel[0].ec" -type "float3" 0 0 0 ;
-	setAttr ".cel[1].ep" 0.24776118993759155;
-	setAttr ".cel[1].ec" -type "float3" 1 1 1 ;
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture4";
-	rename -uid "06E58672-453B-B01F-E8EE-4985B5DBF186";
-createNode projection -n "turtle_rig_start2:projection2";
-	rename -uid "1A4EDB83-4403-8639-2380-69BE9CDD9B0E";
-	setAttr ".vt1" -type "float2" 0.5 0.5 ;
-	setAttr ".vt2" -type "float2" 0.5 0.5 ;
-	setAttr ".vt3" -type "float2" 0.5 0.5 ;
-createNode ramp -n "turtle_rig_start2:ramp2";
-	rename -uid "867DA2FF-4490-03AC-C0CA-12BE310A0626";
-	setAttr ".t" 4;
-	setAttr -s 2 ".cel";
-	setAttr ".cel[0].ep" 0.23899999260902405;
-	setAttr ".cel[0].ec" -type "float3" 0 0 0 ;
-	setAttr ".cel[1].ep" 0.24799999594688416;
-	setAttr ".cel[1].ec" -type "float3" 1 1 1 ;
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture5";
-	rename -uid "73BC6C4F-48D6-DD94-AEED-A795C725F210";
-createNode aiStandardSurface -n "turtle_rig_start2:headband_shader";
-	rename -uid "D05E21E9-4962-D12C-B31A-4EA42FD93E33";
-createNode shadingEngine -n "turtle_rig_start2:headband_sg";
-	rename -uid "306C0B96-4088-56D6-879C-10BBB1A61D0C";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start2:materialInfo9";
-	rename -uid "C8E60856-4206-E901-7D83-A68CAE2C0BC7";
-createNode file -n "turtle_rig_start2:file3";
-	rename -uid "9DEA8ECA-4B79-35CC-7EFE-01B4AD9DFB92";
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headband_sg_BaseColor.png";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture6";
-	rename -uid "A8D982E5-4D48-6DCC-6A31-449261ACDF3C";
-createNode file -n "turtle_rig_start2:file4";
-	rename -uid "6B07ABFA-4693-5A8A-0D0E-89A76F0C4928";
-	setAttr ".ail" yes;
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headband_sg_Metallic.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture7";
-	rename -uid "3E61BCB4-46BD-A933-8127-9687C37807A2";
-createNode file -n "turtle_rig_start2:file5";
-	rename -uid "A58BC946-4DD5-1CFD-20C8-528D49302393";
-	setAttr ".ail" yes;
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headband_sg_Roughness.png";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture8";
-	rename -uid "6ABA4E8F-41F8-D5E3-D08F-89883DA71C85";
-createNode file -n "turtle_rig_start2:file6";
-	rename -uid "19FBF06B-4E68-29A2-71EA-0D87C67584A2";
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headband_sg_Normal.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture9";
-	rename -uid "3B79162A-4CEA-CD8B-04B7-A8BD26FE57CD";
-createNode bump2d -n "turtle_rig_start2:bump2d1";
-	rename -uid "D004A47F-4A15-94A4-4AC9-07B2952D584A";
-	setAttr ".bi" 1;
-	setAttr ".vc1" -type "float3" 0 9.9999997e-06 0 ;
-	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
-createNode aiStandardSurface -n "turtle_rig_start2:headphone_shader";
-	rename -uid "E7CD91AE-4084-6C77-F96F-E1A7145C74D6";
-createNode shadingEngine -n "turtle_rig_start2:headphone_sg";
-	rename -uid "E01DAF34-4379-3C74-AF2D-7F8118D2A125";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start2:materialInfo10";
-	rename -uid "CBF4B374-4FE5-7DF2-94AC-80B6A7E1B821";
-createNode materialInfo -n "turtle_rig_start2:materialInfo7";
-	rename -uid "03F1F276-48FC-6194-8239-E185766FD7C4";
-createNode file -n "turtle_rig_start2:file7";
-	rename -uid "AFC4E9CA-416D-817C-3F42-62A4E88EC420";
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headphone_sg_BaseColor.png";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture10";
-	rename -uid "40826A60-46D5-0A86-6386-4FB644977403";
-createNode file -n "turtle_rig_start2:file8";
-	rename -uid "4649E1EF-4D29-F506-CD2A-2BA4074468DD";
-	setAttr ".ail" yes;
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headphone_sg_Metallic.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture11";
-	rename -uid "508FFA96-4C01-27E5-B99C-07AF21481878";
-createNode file -n "turtle_rig_start2:file9";
-	rename -uid "03860E0C-469B-AAEF-DB88-598976B5A03C";
-	setAttr ".ail" yes;
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headphone_sg_Roughness.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture12";
-	rename -uid "A09B8A8A-4E76-53B4-31AE-C985105D3F3C";
-createNode file -n "turtle_rig_start2:file10";
-	rename -uid "CDF91F40-49D9-DFAF-F064-F180F1D0AD5E";
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_headphone_sg_Normal.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture13";
-	rename -uid "40BF7870-4482-6BCD-C3DB-03849FEA02D1";
-createNode bump2d -n "turtle_rig_start2:bump2d2";
-	rename -uid "77565C41-42C2-18EA-060D-A29A38B5B2C1";
-	setAttr ".bi" 1;
-	setAttr ".vc1" -type "float3" 0 9.9999997e-06 0 ;
-	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
-createNode aiStandardSurface -n "turtle_rig_start2:shell_shader";
-	rename -uid "8A764F3E-45A4-0DDA-7AA7-2D877BC6553C";
-createNode shadingEngine -n "turtle_rig_start2:shell_sg";
-	rename -uid "F59ABAC5-45E5-43F7-F889-00B98163697E";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start2:materialInfo11";
-	rename -uid "246C6AB5-4BB2-4B12-B52C-06B856E25E62";
-createNode file -n "turtle_rig_start2:file11";
-	rename -uid "9214178F-48AD-2472-67D8-1DA26B741D70";
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_shell_sg_BaseColor.png";
-	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture14";
-	rename -uid "CD45A070-42EB-4ACB-F6FA-9F941A55EE8F";
-createNode file -n "turtle_rig_start2:file12";
-	rename -uid "C3E65CE3-4149-5945-7CF2-6E8DBEC3F076";
-	setAttr ".ail" yes;
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_shell_sg_Metallic.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture15";
-	rename -uid "EF3F550F-4A71-802D-6E83-348F596CA890";
-createNode file -n "turtle_rig_start2:file13";
-	rename -uid "2215C2F4-4077-AB46-E618-35A694162932";
-	setAttr ".ail" yes;
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_shell_sg_Roughness.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture16";
-	rename -uid "D93CD46F-47F2-D149-F787-5AAACCD0A81F";
-createNode materialInfo -n "turtle_rig_start2:materialInfo4";
-	rename -uid "8847C2B9-45D5-8281-3588-1BA002A192D8";
-createNode file -n "turtle_rig_start2:file14";
-	rename -uid "1B9A542E-436F-6C9A-6BDA-67B23CA6164D";
-	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_shell_sg_Normal.png";
-	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture17";
-	rename -uid "69966EBA-4FE1-2FDE-BAFD-41B24937D178";
-createNode bump2d -n "turtle_rig_start2:bump2d3";
-	rename -uid "7E4272BD-4F9F-5384-5A88-EC80E2C05938";
-	setAttr ".bi" 1;
-	setAttr ".vc1" -type "float3" 0 6.9999995e-05 0 ;
-	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
-createNode aiStandardSurface -n "turtle_rig_start2:skin_shader";
-	rename -uid "9999745F-4810-00BD-480F-17A3E7384C45";
-createNode shadingEngine -n "turtle_rig_start2:skin_sg";
-	rename -uid "A8B2570A-4804-7D59-3E28-FC80FA140E21";
+createNode aiStandardSurface -n "skin_shader";
+	rename -uid "310EA85A-4DA9-ECD6-2E4E-FCB8347C8720";
+createNode shadingEngine -n "skin_sg";
+	rename -uid "666C904F-4E28-A3C1-AC00-D5A95DF338EF";
 	setAttr ".ihi" 0;
 	setAttr -s 3 ".dsm";
 	setAttr ".ro" yes;
-createNode materialInfo -n "turtle_rig_start2:materialInfo12";
-	rename -uid "3F0979AE-4D3E-ABCA-9232-45A6DEFCDC5D";
-createNode file -n "turtle_rig_start2:file15";
-	rename -uid "CE801574-459F-2760-F31E-3C886207127C";
+createNode materialInfo -n "materialInfo12";
+	rename -uid "4C08D9AD-4ADD-8C91-97D9-28BFCD438949";
+createNode file -n "file15";
+	rename -uid "1EC3B00A-4D21-BB73-2986-6197AB24980F";
 	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_skin_sg_BaseColor.png";
 	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture18";
-	rename -uid "7E615FB1-4145-4434-BE8D-CD97F1956FD4";
-createNode file -n "turtle_rig_start2:file16";
-	rename -uid "0EE5BF1B-45DE-4B55-96D7-59A39D7A1A3F";
+createNode place2dTexture -n "place2dTexture18";
+	rename -uid "15BD88D3-4782-8209-4ECB-5C955465CA0A";
+createNode file -n "file16";
+	rename -uid "62B7D7C0-4938-D8DA-563F-B1B375937C90";
 	setAttr ".ail" yes;
 	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_skin_sg_Metallic.png";
 	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture19";
-	rename -uid "1E5E05B8-4F78-9735-C5C4-7D860F98AFE4";
-createNode file -n "turtle_rig_start2:file17";
-	rename -uid "B2FAA526-4758-9FE8-F1C8-2485E07074C8";
+createNode place2dTexture -n "place2dTexture19";
+	rename -uid "DC585D03-4966-5DB5-44AC-8DB3FE6EF341";
+createNode file -n "file17";
+	rename -uid "9CEDC2DB-4F69-FB58-21C0-1ABABB9BDDD3";
 	setAttr ".ail" yes;
 	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_skin_sg_Roughness.png";
 	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture20";
-	rename -uid "E53B0131-4235-6F41-EABC-C9A00C4B0708";
-createNode file -n "turtle_rig_start2:file18";
-	rename -uid "1BAF28BB-4BE5-55DF-B6EB-CC82343956BD";
+createNode place2dTexture -n "place2dTexture20";
+	rename -uid "7EE8FB64-4D89-A999-7AB5-9ABE31714EA4";
+createNode file -n "file18";
+	rename -uid "870BD246-41A0-2EAA-5C82-9D87DD168D93";
 	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/sea_turtle_skin_sg_Normal.png";
 	setAttr ".cs" -type "string" "Raw";
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture21";
-	rename -uid "73D82F61-476A-7339-1687-DDB69539DA0F";
-createNode bump2d -n "turtle_rig_start2:bump2d4";
-	rename -uid "9554F76A-41F3-1466-72EA-4699714F3268";
+createNode place2dTexture -n "place2dTexture21";
+	rename -uid "C06D15D3-4B00-B3F7-79EC-BFAB9AB4B217";
+createNode bump2d -n "bump2d4";
+	rename -uid "C443DCC6-4914-F78B-07D3-56AB507E64B9";
 	setAttr ".bi" 1;
 	setAttr ".vc1" -type "float3" 0 6.9999995e-05 0 ;
 	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
-createNode nodeGraphEditorInfo -n "turtle_rig_start2:hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "46D9BB67-4E66-889D-E310-6D92ED9D68C5";
-	setAttr ".def" no;
+createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "EB71145F-4C94-5F9C-A258-16B64EFF4525";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -195197.61129116284 -6451.2386131823641 ;
 	setAttr ".tgi[0].vh" -type "double2" -193438.08755155621 2417.9054401192866 ;
-createNode lightEditor -n "turtle_rig_start2:lightEditor";
-	rename -uid "19229EE9-4101-CA99-3EB9-F58B00D86A5A";
-createNode aiGobo -n "turtle_rig_start2:aiGobo1";
-	rename -uid "2797B121-40AA-1F8C-6B9B-94958B8D4B3D";
+createNode lightEditor -n "lightEditor";
+	rename -uid "7838F982-49D3-31C4-D231-308D17AA4254";
+createNode aiGobo -n "aiGobo1";
+	rename -uid "3D23AA14-4AAE-EC25-3267-74B2DBD94A9F";
 	setAttr ".swrap" 0;
 	setAttr ".twrap" 0;
 	setAttr ".sscale" 60;
 	setAttr ".tscale" 60;
-createNode file -n "turtle_rig_start2:file19";
-	rename -uid "03DBA32C-4EF7-FA15-B7DD-A9B37374EF87";
+createNode file -n "file19";
+	rename -uid "F4E1AED1-4813-1400-EF2A-D3AFC63986A8";
 	setAttr ".ftn" -type "string" "C:/Users/Clayton/Documents/My Documents/3D/Maya Projects/characters/turtle//sourceimages/caustics_gobo/caustics_00.tif";
 	setAttr ".ufe" yes;
 	setAttr ".cs" -type "string" "sRGB";
-createNode place2dTexture -n "turtle_rig_start2:place2dTexture22";
-	rename -uid "BD795A1A-4EBF-EE41-9BFF-7EB48297AA53";
-createNode expression -n "turtle_rig_start2:expression1";
-	rename -uid "4008F885-42CA-2287-D2E8-2CA1AD300BC3";
+createNode place2dTexture -n "place2dTexture22";
+	rename -uid "693B043A-40C0-4F3E-C6F8-6E843FCA8C97";
+createNode expression -n "expression1";
+	rename -uid "17AD94B8-49D9-F9FE-2A1C-DA8C32BA3995";
 	setAttr -k on ".nds";
 	setAttr ".ixp" -type "string" ".O[0] = ((frame-1)%31) + 1";
-createNode animCurveTU -n "turtle_rig_start2:place2dTexture22_offsetU";
-	rename -uid "84161F97-4602-6BD5-56BD-67B111AFEA1E";
+createNode animCurveTU -n "place2dTexture22_offsetU";
+	rename -uid "A6377FB2-48C6-727C-0094-9E9FACCEEB13";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
 	setAttr -s 2 ".ktv[0:1]"  0 0 720 0.7;
-createNode animCurveTU -n "turtle_rig_start2:place2dTexture22_offsetV";
-	rename -uid "E07CB5CB-481C-A55C-BEC2-5F9A1352705A";
+createNode animCurveTU -n "place2dTexture22_offsetV";
+	rename -uid "DBDF21B0-4C70-34FB-CBED-829B3C00674C";
 	setAttr ".tan" 2;
 	setAttr ".wgt" no;
 	setAttr -s 2 ".ktv[0:1]"  0 0 720 0.85;
-createNode skinCluster -n "skinCluster1";
-	rename -uid "25FFDC32-4540-1082-1FDC-E8B176C8BD48";
-	setAttr ".ip[0].gtg" -type "string" "skinCluster1";
-	setAttr -s 185 ".wl";
-	setAttr ".wl[0:184].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 0.77601792767163813 -0.072863105202595244 0.62648794388435791 -0
-		 -0.056693770704361074 -0.99734195133877401 -0.045769514560303017 0 0.62815761739832188 -3.2127078775090389e-15 -0.77808611843706688 -0
-		 3.4496854488510569 -0.64343722897901467 -2.1332263464745242 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode dagPose -n "bindPose1";
-	rename -uid "A603D40D-40BA-DA28-B835-41A6C45462D4";
-	setAttr -s 4 ".wm";
-	setAttr ".wm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".wm[1]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".wm[2]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr -s 4 ".xm";
-	setAttr ".xm[0]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-		 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
-	setAttr ".xm[1]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-		 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
-	setAttr ".xm[2]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-		 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
-	setAttr ".xm[3]" -type "matrix" "xform" 1.0000000000000004 1.0000000000000004 1.0000000000000009 -1.7347234759768071e-17
-		 1.1102230246251565e-16 2.7755575615628914e-17 0 -1.3874600000000001 -0.54378800000000027
-		 -3.8267799999999985 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 -0.9422640284770879 0.03437382516775836 -0.33288057364093382 -0.012143495129033467 1
-		 1 1 yes;
-	setAttr -s 4 ".m";
-	setAttr -s 4 ".p";
-	setAttr -s 4 ".g[0:3]" yes yes yes no;
-	setAttr ".bp" yes;
-createNode skinCluster -n "skinCluster2";
-	rename -uid "08553E23-4F9F-6A42-A149-A596CBA72E36";
-	setAttr ".ip[0].gtg" -type "string" "skinCluster2";
-	setAttr -s 185 ".wl";
-	setAttr ".wl[0:184].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 0.77601792767163735 -0.072863105202597797 0.62648794388435847 -0
-		 0.056693770704360991 0.99734195133877468 0.045769514560307166 -0 -0.62815761739832243 1.3877787807814438e-17 0.77808611843706688 -0
-		 -3.4496831173611393 0.64343659229581696 2.1332298646343713 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode dagPose -n "bindPose2";
-	rename -uid "47A0D9CF-443F-7455-E8F1-2AB5467EF01A";
-	setAttr -s 4 ".wm";
-	setAttr ".wm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".wm[1]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".wm[2]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".wm[3]" -type "matrix" 0.77601792767163835 0.056693770704361067 -0.62815761739832332 0
-		 -0.072863105202597825 0.9973419513387749 -3.469446951953615e-18 0 0.62648794388435924 0.045769514560307201 0.77808611843706788 0
-		 1.3874559402465827 -0.54378765821456909 -3.8267812728881836 1;
-	setAttr -s 4 ".xm";
-	setAttr ".xm[0]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-		 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
-	setAttr ".xm[1]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-		 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
-	setAttr ".xm[2]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-		 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
-	setAttr ".xm[3]" -type "matrix" "xform" 1.0000000000000004 1 1.0000000000000004 -6.9388939039072247e-17
-		 4.4430605028455962e-16 9.8879238130677967e-17 0 1.3874559402465827 -0.54378765821456909
-		 -3.8267812728881836 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 -0.012143495129035406 0.33288057364093404 0.034373825167759005 0.94226402847708779 1
-		 1 1 yes;
-	setAttr -s 4 ".m";
-	setAttr -s 4 ".p";
-	setAttr -s 4 ".g[0:3]" yes yes yes no;
-	setAttr ".bp" yes;
-createNode skinCluster -n "skinCluster3";
-	rename -uid "D5BC7C6A-4A21-4689-16B3-ACB93EB823EA";
-	setAttr ".ip[0].gtg" -type "string" "skinCluster3";
-	setAttr -s 363 ".wl";
-	setAttr ".wl[0:362].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 2.2204460492503116e-16 -0 -0.99999999999999956 -0
-		 -0 1 -0 0 0.99999999999999956 -0 2.2204460492503116e-16 -0 2.299390909428221 -0.51646006107330322 5.1056734605219768e-16 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode dagPose -n "bindPose3";
-	rename -uid "7DB426CF-45C4-C4E7-80F3-57BC4D3CDCF5";
-	setAttr -s 4 ".wm";
-	setAttr ".wm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".wm[1]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".wm[2]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".wm[3]" -type "matrix" 2.2204460492503136e-16 0 1.0000000000000004 0 0 1 0 0
-		 -1.0000000000000004 0 2.2204460492503136e-16 0 0 0.51646006107330322 -2.2993909094282223 1;
-	setAttr -s 4 ".xm";
-	setAttr ".xm[0]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-		 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
-	setAttr ".xm[1]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-		 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
-	setAttr ".xm[2]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-		 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
-	setAttr ".xm[3]" -type "matrix" "xform" 1.0000000000000002 1 1.0000000000000002 0
-		 0 0 0 0 0.51646006107330322 -2.2993909094282223 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-		 0 0 0 0 1 0 -0.70710678118654746 0 0.70710678118654768 1 1 1 yes;
-	setAttr -s 4 ".m";
-	setAttr -s 4 ".p";
-	setAttr -s 4 ".g[0:3]" yes yes yes no;
-	setAttr ".bp" yes;
-createNode skinCluster -n "skinCluster4";
-	rename -uid "92BECE4B-4A31-6F33-942D-F4A254EA3E17";
-	setAttr ".ip[0].gtg" -type "string" "skinCluster4";
-	setAttr -s 363 ".wl";
-	setAttr ".wl[0:362].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 2.2204460492503116e-16 -0 -0.99999999999999956 -0
-		 -0 1 -0 0 0.99999999999999956 -0 2.2204460492503116e-16 -0 2.299390909428221 -0.51646006107330322 5.1056734605219768e-16 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode skinCluster -n "skinCluster5";
-	rename -uid "C080E48D-4422-2BC3-BEA5-66B48180B0C9";
-	setAttr ".ip[0].gtg" -type "string" "skinCluster5";
-	setAttr -s 1881 ".wl";
-	setAttr ".wl[0:499].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".wl[500:999].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".wl[1000:1499].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".wl[1500:1880].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 2.2204460492503116e-16 -0 -0.99999999999999956 -0
-		 -0 1 -0 0 0.99999999999999956 -0 2.2204460492503116e-16 -0 2.299390909428221 -0.51646006107330322 5.1056734605219768e-16 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode skinCluster -n "skinCluster6";
-	rename -uid "D1A97C7C-4BDF-CCF5-7909-789856A1E63F";
-	setAttr ".ip[0].gtg" -type "string" "skinCluster6";
-	setAttr -s 382 ".wl";
-	setAttr ".wl[0:381].w"
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1;
-	setAttr ".pm[0]" -type "matrix" 2.2204460492503116e-16 -0 -0.99999999999999956 -0
-		 -0 1 -0 0 0.99999999999999956 -0 2.2204460492503116e-16 -0 2.299390909428221 -0.51646006107330322 5.1056734605219768e-16 1;
-	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".dpf[0]"  4;
-	setAttr ".mmi" yes;
-	setAttr ".mi" 5;
-	setAttr ".ucm" yes;
-createNode dagPose -n "bindPose4";
-	rename -uid "F37A18A7-4E6E-28A6-46A5-9BA636889C11";
-	setAttr -s 4 ".wm";
-	setAttr ".wm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".wm[1]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".wm[2]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".wm[3]" -type "matrix" 2.2204460492503136e-16 0 1.0000000000000004 0 0 1 0 0
-		 -1.0000000000000004 0 2.2204460492503136e-16 0 0 0.51646006107330322 -2.2993909094282223 1;
-	setAttr -s 4 ".xm";
-	setAttr ".xm[0]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-		 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
-	setAttr ".xm[1]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-		 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
-	setAttr ".xm[2]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-		 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
-	setAttr ".xm[3]" -type "matrix" "xform" 1.0000000000000002 1 1.0000000000000002 0
-		 0 0 0 0 0.51646006107330322 -2.2993909094282223 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-		 0 0 0 0 1 0 -0.70710678118654746 0 0.70710678118654768 1 1 1 yes;
-	setAttr -s 4 ".m";
-	setAttr -s 4 ".p";
-	setAttr -s 4 ".g[0:3]" yes yes yes no;
-	setAttr ".bp" yes;
 select -ne :time1;
 	setAttr -av -k on ".cch";
 	setAttr -av -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -k on ".o" 1;
-	setAttr -av ".unw" 1;
+	setAttr -k on ".o" 0;
+	setAttr -av ".unw";
 	setAttr -av -k on ".etw";
 	setAttr -av -k on ".tps";
 	setAttr -av -k on ".tms";
@@ -24459,13 +20101,16 @@ select -ne :hardwareRenderingGlobals;
 	setAttr -av ".hfa";
 	setAttr -av ".mbe";
 	setAttr -av -k on ".mbsof";
+	setAttr ".msaa" yes;
+	setAttr ".dli" 1;
 	setAttr ".fprt" yes;
+	setAttr ".rtfm" 1;
 select -ne :renderPartition;
 	setAttr -av -k on ".cch";
 	setAttr -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 23 ".st";
+	setAttr -s 9 ".st";
 	setAttr -cb on ".an";
 	setAttr -cb on ".pt";
 select -ne :renderGlobalsList1;
@@ -24478,7 +20123,7 @@ select -ne :defaultShaderList1;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 23 ".s";
+	setAttr -s 11 ".s";
 select -ne :postProcessList1;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -24490,11 +20135,17 @@ select -ne :defaultRenderUtilityList1;
 	setAttr -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 77 ".u";
+	setAttr -s 27 ".u";
 select -ne :defaultRenderingList1;
 	setAttr -k on ".ihi";
 select -ne :defaultTextureList1;
-	setAttr -s 66 ".tx";
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
+	setAttr -s 22 ".tx";
+select -ne :standardSurface1;
+	setAttr ".sr" 0.40000000596046448;
 select -ne :initialShadingGroup;
 	setAttr -av -k on ".cch";
 	setAttr -k on ".fzn";
@@ -24532,9 +20183,9 @@ select -ne :defaultRenderGlobals;
 	setAttr -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -av -k on ".macc";
-	setAttr -av -k on ".macd";
-	setAttr -av -k on ".macq";
+	setAttr -av -cb on ".macc";
+	setAttr -av -cb on ".macd";
+	setAttr -av -cb on ".macq";
 	setAttr -av -k on ".mcfr";
 	setAttr -cb on ".ifg";
 	setAttr -av -k on ".clip";
@@ -24544,15 +20195,15 @@ select -ne :defaultRenderGlobals;
 	setAttr -av -k on ".esr";
 	setAttr -av -k on ".ors";
 	setAttr -cb on ".sdf";
-	setAttr -av -k on ".outf";
-	setAttr -av -cb on ".imfkey";
+	setAttr -av ".outf" 51;
+	setAttr -av ".imfkey" -type "string" "exr";
 	setAttr -av -k on ".gama";
 	setAttr -k on ".exrc";
 	setAttr -k on ".expt";
-	setAttr -av -k on ".an";
+	setAttr -av -k on ".an" yes;
 	setAttr -cb on ".ar";
 	setAttr -av -k on ".fs";
-	setAttr -av -k on ".ef";
+	setAttr -av -k on ".ef" 720;
 	setAttr -av -k on ".bfs";
 	setAttr -cb on ".me";
 	setAttr -cb on ".se";
@@ -24565,8 +20216,8 @@ select -ne :defaultRenderGlobals;
 	setAttr -cb on ".oft";
 	setAttr -cb on ".umfn";
 	setAttr -cb on ".ufe";
-	setAttr -av -cb on ".pff";
-	setAttr -av -cb on ".peie";
+	setAttr -av -cb on ".pff" yes;
+	setAttr -av -cb on ".peie" 2;
 	setAttr -av -cb on ".ifp";
 	setAttr -k on ".rv";
 	setAttr -av -k on ".comp";
@@ -24589,7 +20240,7 @@ select -ne :defaultRenderGlobals;
 	setAttr -av -k on ".oi";
 	setAttr -av -k on ".rut";
 	setAttr -av -k on ".mot";
-	setAttr -av -cb on ".mb";
+	setAttr -av -k on ".mb";
 	setAttr -av -k on ".mbf";
 	setAttr -av -k on ".mbso";
 	setAttr -av -k on ".mbsc";
@@ -24621,8 +20272,8 @@ select -ne :defaultRenderGlobals;
 	setAttr -av -k on ".tlht";
 	setAttr -av -k on ".jfc";
 	setAttr -cb on ".rsb";
-	setAttr -av -k on ".ope";
-	setAttr -av -k on ".oppf";
+	setAttr -av -cb on ".ope";
+	setAttr -av -cb on ".oppf";
 	setAttr -av -k on ".rcp";
 	setAttr -av -k on ".icp";
 	setAttr -av -k on ".ocp";
@@ -24633,11 +20284,11 @@ select -ne :defaultResolution;
 	setAttr -av -k on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -k on ".bnm";
-	setAttr -av -k on ".w";
-	setAttr -av -k on ".h";
+	setAttr -av -k on ".w" 1280;
+	setAttr -av -k on ".h" 720;
 	setAttr -av -k on ".pa" 1;
-	setAttr -av -k on ".al";
-	setAttr -av -k on ".dar";
+	setAttr -av -k on ".al" yes;
+	setAttr -av -k on ".dar" 1.7769999504089355;
 	setAttr -av -k on ".ldar";
 	setAttr -av -k on ".dpi";
 	setAttr -av -k on ".off";
@@ -24647,13 +20298,15 @@ select -ne :defaultResolution;
 	setAttr -av -k on ".pdu";
 select -ne :defaultColorMgtGlobals;
 	setAttr ".cfe" yes;
-	setAttr ".cfp" -type "string" "<MAYA_RESOURCES>/OCIO-configs/Maya2022-default/config.ocio";
-	setAttr ".vtn" -type "string" "ACES 1.0 SDR-video (sRGB)";
-	setAttr ".vn" -type "string" "ACES 1.0 SDR-video";
-	setAttr ".dn" -type "string" "sRGB";
-	setAttr ".wsn" -type "string" "ACEScg";
-	setAttr ".otn" -type "string" "ACES 1.0 SDR-video (sRGB)";
-	setAttr ".potn" -type "string" "ACES 1.0 SDR-video (sRGB)";
+	setAttr ".cfp" -type "string" "<MAYA_RESOURCES>/OCIO-configs/Maya-legacy/config.ocio";
+	setAttr ".vtn" -type "string" "sRGB gamma (legacy)";
+	setAttr ".vn" -type "string" "sRGB gamma";
+	setAttr ".dn" -type "string" "legacy";
+	setAttr ".wsn" -type "string" "scene-linear Rec 709/sRGB";
+	setAttr ".ovt" no;
+	setAttr ".povt" no;
+	setAttr ".otn" -type "string" "sRGB gamma (legacy)";
+	setAttr ".potn" -type "string" "sRGB gamma (legacy)";
 select -ne :hardwareRenderGlobals;
 	setAttr -av -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -24683,5187 +20336,2081 @@ select -ne :hardwareRenderGlobals;
 	setAttr -av -k off -cb on ".mgcs";
 	setAttr -av -k off -cb on ".twa";
 	setAttr -av -k off -cb on ".twz";
-	setAttr -k on ".hwcc";
-	setAttr -k on ".hwdp";
-	setAttr -k on ".hwql";
+	setAttr -cb on ".hwcc";
+	setAttr -cb on ".hwdp";
+	setAttr -cb on ".hwql";
 	setAttr -k on ".hwfr";
 	setAttr -k on ".soll";
 	setAttr -k on ".sosl";
 	setAttr -k on ".bswa";
 	setAttr -k on ".shml";
 	setAttr -k on ".hwel";
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
-connectAttr "turtle_rig_start2:geo_layer.di" "turtle_rig_start2:geometry.do";
-connectAttr "turtle_rig_start2:groupId49.id" "turtle_rig_start2:f_legs_geo_Shape.iog.og[0].gid"
-		;
-connectAttr "skinCluster5.og[0]" "turtle_rig_start2:f_legs_geo_Shape.i";
-connectAttr "skinCluster6.og[0]" "turtle_rig_start2:shell_geo_Shape.i";
-connectAttr "skinCluster1.og[0]" "turtle_rig_start2:r_leg_geoShape.i";
-connectAttr "skinCluster2.og[0]" "turtle_rig_start2:l_leg_geoShape.i";
-connectAttr "skinCluster3.og[0]" "turtle_rig_start2:l_eye_geoShape.i";
-connectAttr "skinCluster4.og[0]" "turtle_rig_start2:r_eye_geoShape.i";
-connectAttr "turtle_rig_start2:controls_layer.di" "turtle_rig_start2:controls.do"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:spine_01_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:spine_01_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:spine_01_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:spine_01_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:spine_01_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:spine_01_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:spine_01_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:spine_01_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:spine_01_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl_grp.ro" "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl_grp.pim" "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl_grp.rp" "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl_grp.rpt" "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:cog_ctrl.t" "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:cog_ctrl.rp" "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:cog_ctrl.rpt" "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:cog_ctrl.r" "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:cog_ctrl.ro" "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:cog_ctrl.s" "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:cog_ctrl.pm" "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:spine_01_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl_grp.pim" "turtle_rig_start2:spine_01_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:cog_ctrl.s" "turtle_rig_start2:spine_01_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:cog_ctrl.pm" "turtle_rig_start2:spine_01_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:spine_01_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:spine_02_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:spine_02_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:spine_02_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:spine_02_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:spine_02_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:spine_02_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:spine_02_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:spine_02_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:spine_02_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl_grp.ro" "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl_grp.pim" "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl_grp.rp" "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl_grp.rpt" "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl.t" "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl.rp" "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl.rpt" "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl.r" "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl.ro" "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl.s" "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl.pm" "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:spine_02_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl_grp.pim" "turtle_rig_start2:spine_02_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl.s" "turtle_rig_start2:spine_02_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl.pm" "turtle_rig_start2:spine_02_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:spine_02_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:spine_03_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:spine_03_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:spine_03_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:spine_03_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:spine_03_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:spine_03_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:spine_03_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:spine_03_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:spine_03_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl_grp.ro" "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl_grp.pim" "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl_grp.rp" "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl_grp.rpt" "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl.t" "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl.rp" "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl.rpt" "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl.r" "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl.ro" "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl.s" "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl.pm" "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:spine_03_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl_grp.pim" "turtle_rig_start2:spine_03_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl.s" "turtle_rig_start2:spine_03_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl.pm" "turtle_rig_start2:spine_03_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:spine_03_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:l_clav_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:l_clav_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:l_clav_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:l_clav_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:l_clav_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:l_clav_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:l_clav_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:l_clav_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:l_clav_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl_grp.ro" "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl_grp.pim" "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl_grp.rp" "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl_grp.rpt" "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.t" "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.rp" "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.rpt" "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.r" "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.ro" "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.s" "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.pm" "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:l_clav_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl_grp.pim" "turtle_rig_start2:l_clav_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.s" "turtle_rig_start2:l_clav_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.pm" "turtle_rig_start2:l_clav_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:l_clav_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:l_arm_01_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:l_arm_01_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:l_arm_01_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:l_arm_01_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:l_arm_01_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:l_arm_01_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:l_arm_01_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:l_arm_01_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:l_arm_01_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl_grp.ro" "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl_grp.pim" "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl_grp.rp" "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl_grp.rpt" "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl.t" "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl.rp" "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl.rpt" "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl.r" "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl.ro" "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl.s" "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl.pm" "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:l_arm_01_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl_grp.pim" "turtle_rig_start2:l_arm_01_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl.s" "turtle_rig_start2:l_arm_01_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl.pm" "turtle_rig_start2:l_arm_01_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:l_arm_01_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:l_arm_02_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:l_arm_02_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:l_arm_02_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:l_arm_02_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:l_arm_02_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:l_arm_02_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:l_arm_02_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:l_arm_02_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:l_arm_02_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl_grp.ro" "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl_grp.pim" "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl_grp.rp" "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl_grp.rpt" "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl.t" "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl.rp" "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl.rpt" "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl.r" "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl.ro" "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl.s" "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl.pm" "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:l_arm_02_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl_grp.pim" "turtle_rig_start2:l_arm_02_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl.s" "turtle_rig_start2:l_arm_02_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl.pm" "turtle_rig_start2:l_arm_02_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:l_arm_02_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:l_arm_03_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:l_arm_03_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:l_arm_03_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:l_arm_03_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:l_arm_03_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:l_arm_03_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:l_arm_03_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:l_arm_03_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:l_arm_03_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl_grp.ro" "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl_grp.pim" "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl_grp.rp" "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl_grp.rpt" "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl.t" "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl.rp" "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl.rpt" "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl.r" "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl.ro" "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl.s" "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl.pm" "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:l_arm_03_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl_grp.pim" "turtle_rig_start2:l_arm_03_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl.s" "turtle_rig_start2:l_arm_03_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl.pm" "turtle_rig_start2:l_arm_03_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:l_arm_03_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:l_arm_04_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:l_arm_04_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:l_arm_04_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:l_arm_04_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:l_arm_04_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:l_arm_04_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:l_arm_04_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:l_arm_04_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:l_arm_04_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl_grp.ro" "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl_grp.pim" "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl_grp.rp" "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl_grp.rpt" "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl.t" "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl.rp" "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl.rpt" "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl.r" "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl.ro" "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl.s" "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl.pm" "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:l_arm_04_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl_grp.pim" "turtle_rig_start2:l_arm_04_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl.s" "turtle_rig_start2:l_arm_04_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl.pm" "turtle_rig_start2:l_arm_04_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:l_arm_04_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:r_clav_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:r_clav_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:r_clav_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:r_clav_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:r_clav_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:r_clav_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:r_clav_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:r_clav_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:r_clav_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl_grp.ro" "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl_grp.pim" "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl_grp.rp" "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl_grp.rpt" "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.t" "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.rp" "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.rpt" "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.r" "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.ro" "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.s" "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.pm" "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:r_clav_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl_grp.pim" "turtle_rig_start2:r_clav_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.s" "turtle_rig_start2:r_clav_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.pm" "turtle_rig_start2:r_clav_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:r_clav_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:r_arm_01_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:r_arm_01_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:r_arm_01_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:r_arm_01_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:r_arm_01_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:r_arm_01_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:r_arm_01_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:r_arm_01_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:r_arm_01_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl_grp.ro" "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl_grp.pim" "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl_grp.rp" "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl_grp.rpt" "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl.t" "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl.rp" "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl.rpt" "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl.r" "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl.ro" "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl.s" "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl.pm" "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:r_arm_01_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl_grp.pim" "turtle_rig_start2:r_arm_01_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl.s" "turtle_rig_start2:r_arm_01_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl.pm" "turtle_rig_start2:r_arm_01_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:r_arm_01_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:r_arm_02_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:r_arm_02_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:r_arm_02_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:r_arm_02_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:r_arm_02_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:r_arm_02_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:r_arm_02_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:r_arm_02_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:r_arm_02_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl_grp.ro" "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl_grp.pim" "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl_grp.rp" "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl_grp.rpt" "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl.t" "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl.rp" "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl.rpt" "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl.r" "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl.ro" "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl.s" "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl.pm" "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:r_arm_02_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl_grp.pim" "turtle_rig_start2:r_arm_02_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl.s" "turtle_rig_start2:r_arm_02_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl.pm" "turtle_rig_start2:r_arm_02_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:r_arm_02_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:r_arm_03_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:r_arm_03_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:r_arm_03_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:r_arm_03_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:r_arm_03_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:r_arm_03_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:r_arm_03_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:r_arm_03_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:r_arm_03_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl_grp.ro" "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl_grp.pim" "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl_grp.rp" "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl_grp.rpt" "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl.t" "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl.rp" "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl.rpt" "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl.r" "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl.ro" "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl.s" "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl.pm" "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:r_arm_03_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl_grp.pim" "turtle_rig_start2:r_arm_03_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl.s" "turtle_rig_start2:r_arm_03_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl.pm" "turtle_rig_start2:r_arm_03_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:r_arm_03_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:r_arm_04_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:r_arm_04_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:r_arm_04_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:r_arm_04_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:r_arm_04_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:r_arm_04_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:r_arm_04_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:r_arm_04_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:r_arm_04_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl_grp.ro" "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl_grp.pim" "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl_grp.rp" "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl_grp.rpt" "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl.t" "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl.rp" "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl.rpt" "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl.r" "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl.ro" "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl.s" "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl.pm" "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:r_arm_04_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl_grp.pim" "turtle_rig_start2:r_arm_04_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl.s" "turtle_rig_start2:r_arm_04_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl.pm" "turtle_rig_start2:r_arm_04_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:r_arm_04_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:neck_01_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:neck_01_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:neck_01_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:neck_01_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:neck_01_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:neck_01_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:neck_01_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:neck_01_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:neck_01_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl_grp.ro" "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl_grp.pim" "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl_grp.rp" "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl_grp.rpt" "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.t" "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.rp" "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.rpt" "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.r" "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.ro" "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.s" "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.pm" "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:neck_01_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl_grp.pim" "turtle_rig_start2:neck_01_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.s" "turtle_rig_start2:neck_01_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.pm" "turtle_rig_start2:neck_01_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:neck_01_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:neck_02_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:neck_02_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:neck_02_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:neck_02_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:neck_02_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:neck_02_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:neck_02_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:neck_02_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:neck_02_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl_grp.ro" "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl_grp.pim" "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl_grp.rp" "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl_grp.rpt" "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl.t" "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl.rp" "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl.rpt" "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl.r" "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl.ro" "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl.s" "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl.pm" "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:neck_02_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl_grp.pim" "turtle_rig_start2:neck_02_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl.s" "turtle_rig_start2:neck_02_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl.pm" "turtle_rig_start2:neck_02_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:neck_02_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:head_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:head_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:head_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:head_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:head_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:head_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:head_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:head_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:head_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:head_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:head_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:head_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:head_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:head_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:head_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:head_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:head_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:head_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:head_ctrl_grp.ro" "turtle_rig_start2:head_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:head_ctrl_grp.pim" "turtle_rig_start2:head_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:head_ctrl_grp.rp" "turtle_rig_start2:head_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:head_ctrl_grp.rpt" "turtle_rig_start2:head_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl.t" "turtle_rig_start2:head_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl.rp" "turtle_rig_start2:head_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl.rpt" "turtle_rig_start2:head_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl.r" "turtle_rig_start2:head_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl.ro" "turtle_rig_start2:head_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl.s" "turtle_rig_start2:head_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl.pm" "turtle_rig_start2:head_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:head_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:head_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:head_ctrl_grp.pim" "turtle_rig_start2:head_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl.s" "turtle_rig_start2:head_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl.pm" "turtle_rig_start2:head_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:head_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:head_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:l_leg_01_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:l_leg_01_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:l_leg_01_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:l_leg_01_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:l_leg_01_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:l_leg_01_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:l_leg_01_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:l_leg_01_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:l_leg_01_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl_grp.ro" "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl_grp.pim" "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl_grp.rp" "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl_grp.rpt" "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.t" "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.rp" "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.rpt" "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.r" "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.ro" "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.s" "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.pm" "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:l_leg_01_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl_grp.pim" "turtle_rig_start2:l_leg_01_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.s" "turtle_rig_start2:l_leg_01_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.pm" "turtle_rig_start2:l_leg_01_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:l_leg_01_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:l_leg_02_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:l_leg_02_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:l_leg_02_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:l_leg_02_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:l_leg_02_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:l_leg_02_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:l_leg_02_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:l_leg_02_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:l_leg_02_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl_grp.ro" "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl_grp.pim" "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl_grp.rp" "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl_grp.rpt" "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl.t" "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl.rp" "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl.rpt" "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl.r" "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl.ro" "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl.s" "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl.pm" "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:l_leg_02_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl_grp.pim" "turtle_rig_start2:l_leg_02_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl.s" "turtle_rig_start2:l_leg_02_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl.pm" "turtle_rig_start2:l_leg_02_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:l_leg_02_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:l_leg_03_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:l_leg_03_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:l_leg_03_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:l_leg_03_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:l_leg_03_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:l_leg_03_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:l_leg_03_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:l_leg_03_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:l_leg_03_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl_grp.ro" "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl_grp.pim" "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl_grp.rp" "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl_grp.rpt" "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl.t" "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl.rp" "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl.rpt" "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl.r" "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl.ro" "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl.s" "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl.pm" "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:l_leg_03_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl_grp.pim" "turtle_rig_start2:l_leg_03_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl.s" "turtle_rig_start2:l_leg_03_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl.pm" "turtle_rig_start2:l_leg_03_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:l_leg_03_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:l_leg_04_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:l_leg_04_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:l_leg_04_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:l_leg_04_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:l_leg_04_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:l_leg_04_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:l_leg_04_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:l_leg_04_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:l_leg_04_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl_grp.ro" "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl_grp.pim" "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl_grp.rp" "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl_grp.rpt" "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl.t" "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl.rp" "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl.rpt" "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl.r" "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl.ro" "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl.s" "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl.pm" "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:l_leg_04_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl_grp.pim" "turtle_rig_start2:l_leg_04_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl.s" "turtle_rig_start2:l_leg_04_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl.pm" "turtle_rig_start2:l_leg_04_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:l_leg_04_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:l_leg_05_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:l_leg_05_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:l_leg_05_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:l_leg_05_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:l_leg_05_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:l_leg_05_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:l_leg_05_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:l_leg_05_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:l_leg_05_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl_grp.ro" "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl_grp.pim" "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl_grp.rp" "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl_grp.rpt" "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl.t" "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl.rp" "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl.rpt" "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl.r" "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl.ro" "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl.s" "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl.pm" "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:l_leg_05_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl_grp.pim" "turtle_rig_start2:l_leg_05_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl.s" "turtle_rig_start2:l_leg_05_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl.pm" "turtle_rig_start2:l_leg_05_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:l_leg_05_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:r_leg_01_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:r_leg_01_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:r_leg_01_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:r_leg_01_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:r_leg_01_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:r_leg_01_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:r_leg_01_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:r_leg_01_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:r_leg_01_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl_grp.ro" "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl_grp.pim" "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl_grp.rp" "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl_grp.rpt" "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.t" "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.rp" "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.rpt" "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.r" "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.ro" "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.s" "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.pm" "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:r_leg_01_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl_grp.pim" "turtle_rig_start2:r_leg_01_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.s" "turtle_rig_start2:r_leg_01_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.pm" "turtle_rig_start2:r_leg_01_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:r_leg_01_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:r_leg_02_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:r_leg_02_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:r_leg_02_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:r_leg_02_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:r_leg_02_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:r_leg_02_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:r_leg_02_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:r_leg_02_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:r_leg_02_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl_grp.ro" "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl_grp.pim" "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl_grp.rp" "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl_grp.rpt" "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl.t" "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl.rp" "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl.rpt" "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl.r" "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl.ro" "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl.s" "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl.pm" "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:r_leg_02_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl_grp.pim" "turtle_rig_start2:r_leg_02_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl.s" "turtle_rig_start2:r_leg_02_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl.pm" "turtle_rig_start2:r_leg_02_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:r_leg_02_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:r_leg_03_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:r_leg_03_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:r_leg_03_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:r_leg_03_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:r_leg_03_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:r_leg_03_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:r_leg_03_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:r_leg_03_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:r_leg_03_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl_grp.ro" "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl_grp.pim" "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl_grp.rp" "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl_grp.rpt" "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl.t" "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl.rp" "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl.rpt" "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl.r" "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl.ro" "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl.s" "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl.pm" "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:r_leg_03_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl_grp.pim" "turtle_rig_start2:r_leg_03_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl.s" "turtle_rig_start2:r_leg_03_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl.pm" "turtle_rig_start2:r_leg_03_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:r_leg_03_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:r_leg_04_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:r_leg_04_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:r_leg_04_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:r_leg_04_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:r_leg_04_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:r_leg_04_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:r_leg_04_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:r_leg_04_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:r_leg_04_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl_grp.ro" "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl_grp.pim" "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl_grp.rp" "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl_grp.rpt" "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl.t" "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl.rp" "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl.rpt" "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl.r" "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl.ro" "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl.s" "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl.pm" "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:r_leg_04_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl_grp.pim" "turtle_rig_start2:r_leg_04_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl.s" "turtle_rig_start2:r_leg_04_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl.pm" "turtle_rig_start2:r_leg_04_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:r_leg_04_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1.ctx" "turtle_rig_start2:r_leg_05_ctrl_grp.tx"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1.cty" "turtle_rig_start2:r_leg_05_ctrl_grp.ty"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1.ctz" "turtle_rig_start2:r_leg_05_ctrl_grp.tz"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1.crx" "turtle_rig_start2:r_leg_05_ctrl_grp.rx"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1.cry" "turtle_rig_start2:r_leg_05_ctrl_grp.ry"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1.crz" "turtle_rig_start2:r_leg_05_ctrl_grp.rz"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl_grp_scaleConstraint1.csx" "turtle_rig_start2:r_leg_05_ctrl_grp.sx"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl_grp_scaleConstraint1.csy" "turtle_rig_start2:r_leg_05_ctrl_grp.sy"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl_grp_scaleConstraint1.csz" "turtle_rig_start2:r_leg_05_ctrl_grp.sz"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl_grp.ro" "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl_grp.pim" "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl_grp.rp" "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl_grp.rpt" "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl.t" "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl.rp" "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl.rpt" "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl.r" "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl.ro" "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl.s" "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl.pm" "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1.w0" "turtle_rig_start2:r_leg_05_ctrl_grp_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl_grp.pim" "turtle_rig_start2:r_leg_05_ctrl_grp_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl.s" "turtle_rig_start2:r_leg_05_ctrl_grp_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl.pm" "turtle_rig_start2:r_leg_05_ctrl_grp_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl_grp_scaleConstraint1.w0" "turtle_rig_start2:r_leg_05_ctrl_grp_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:skeleton_layer.di" "turtle_rig_start2:skeleton.do"
-		;
-connectAttr "turtle_rig_start2:hip_01_jnt_scaleConstraint1.csx" "turtle_rig_start2:hip_01_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:hip_01_jnt_scaleConstraint1.csy" "turtle_rig_start2:hip_01_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:hip_01_jnt_scaleConstraint1.csz" "turtle_rig_start2:hip_01_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:hip_01_jnt_parentConstraint1.ctx" "turtle_rig_start2:hip_01_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:hip_01_jnt_parentConstraint1.cty" "turtle_rig_start2:hip_01_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:hip_01_jnt_parentConstraint1.ctz" "turtle_rig_start2:hip_01_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:hip_01_jnt_parentConstraint1.crx" "turtle_rig_start2:hip_01_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:hip_01_jnt_parentConstraint1.cry" "turtle_rig_start2:hip_01_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:hip_01_jnt_parentConstraint1.crz" "turtle_rig_start2:hip_01_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:hip_01_jnt.ro" "turtle_rig_start2:hip_01_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:hip_01_jnt.pim" "turtle_rig_start2:hip_01_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:hip_01_jnt.rp" "turtle_rig_start2:hip_01_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:hip_01_jnt.rpt" "turtle_rig_start2:hip_01_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:hip_01_jnt.jo" "turtle_rig_start2:hip_01_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.t" "turtle_rig_start2:hip_01_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.rp" "turtle_rig_start2:hip_01_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.rpt" "turtle_rig_start2:hip_01_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.r" "turtle_rig_start2:hip_01_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.ro" "turtle_rig_start2:hip_01_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.s" "turtle_rig_start2:hip_01_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.pm" "turtle_rig_start2:hip_01_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:hip_01_jnt_parentConstraint1.w0" "turtle_rig_start2:hip_01_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:hip_01_jnt.pim" "turtle_rig_start2:hip_01_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.s" "turtle_rig_start2:hip_01_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:hip_01_ctrl.pm" "turtle_rig_start2:hip_01_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:hip_01_jnt_scaleConstraint1.w0" "turtle_rig_start2:hip_01_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:spine_01_jnt_scaleConstraint1.csx" "turtle_rig_start2:spine_01_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:spine_01_jnt_scaleConstraint1.csy" "turtle_rig_start2:spine_01_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:spine_01_jnt_scaleConstraint1.csz" "turtle_rig_start2:spine_01_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:spine_01_jnt_parentConstraint1.ctx" "turtle_rig_start2:spine_01_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:spine_01_jnt_parentConstraint1.cty" "turtle_rig_start2:spine_01_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:spine_01_jnt_parentConstraint1.ctz" "turtle_rig_start2:spine_01_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:spine_01_jnt_parentConstraint1.crx" "turtle_rig_start2:spine_01_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:spine_01_jnt_parentConstraint1.cry" "turtle_rig_start2:spine_01_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:spine_01_jnt_parentConstraint1.crz" "turtle_rig_start2:spine_01_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:spine_01_jnt.ro" "turtle_rig_start2:spine_01_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:spine_01_jnt.pim" "turtle_rig_start2:spine_01_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:spine_01_jnt.rp" "turtle_rig_start2:spine_01_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:spine_01_jnt.rpt" "turtle_rig_start2:spine_01_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:spine_01_jnt.jo" "turtle_rig_start2:spine_01_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl.t" "turtle_rig_start2:spine_01_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl.rp" "turtle_rig_start2:spine_01_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl.rpt" "turtle_rig_start2:spine_01_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl.r" "turtle_rig_start2:spine_01_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl.ro" "turtle_rig_start2:spine_01_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl.s" "turtle_rig_start2:spine_01_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl.pm" "turtle_rig_start2:spine_01_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:spine_01_jnt_parentConstraint1.w0" "turtle_rig_start2:spine_01_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:spine_01_jnt.pim" "turtle_rig_start2:spine_01_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl.s" "turtle_rig_start2:spine_01_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:spine_01_ctrl.pm" "turtle_rig_start2:spine_01_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:spine_01_jnt_scaleConstraint1.w0" "turtle_rig_start2:spine_01_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:spine_02_jnt_scaleConstraint1.csx" "turtle_rig_start2:spine_02_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:spine_02_jnt_scaleConstraint1.csy" "turtle_rig_start2:spine_02_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:spine_02_jnt_scaleConstraint1.csz" "turtle_rig_start2:spine_02_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:spine_02_jnt_parentConstraint1.ctx" "turtle_rig_start2:spine_02_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:spine_02_jnt_parentConstraint1.cty" "turtle_rig_start2:spine_02_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:spine_02_jnt_parentConstraint1.ctz" "turtle_rig_start2:spine_02_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:spine_02_jnt_parentConstraint1.crx" "turtle_rig_start2:spine_02_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:spine_02_jnt_parentConstraint1.cry" "turtle_rig_start2:spine_02_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:spine_02_jnt_parentConstraint1.crz" "turtle_rig_start2:spine_02_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:spine_02_jnt.ro" "turtle_rig_start2:spine_02_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:spine_02_jnt.pim" "turtle_rig_start2:spine_02_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:spine_02_jnt.rp" "turtle_rig_start2:spine_02_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:spine_02_jnt.rpt" "turtle_rig_start2:spine_02_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:spine_02_jnt.jo" "turtle_rig_start2:spine_02_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl.t" "turtle_rig_start2:spine_02_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl.rp" "turtle_rig_start2:spine_02_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl.rpt" "turtle_rig_start2:spine_02_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl.r" "turtle_rig_start2:spine_02_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl.ro" "turtle_rig_start2:spine_02_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl.s" "turtle_rig_start2:spine_02_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl.pm" "turtle_rig_start2:spine_02_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:spine_02_jnt_parentConstraint1.w0" "turtle_rig_start2:spine_02_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:spine_02_jnt.ssc" "turtle_rig_start2:spine_02_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:spine_02_jnt.pim" "turtle_rig_start2:spine_02_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl.s" "turtle_rig_start2:spine_02_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:spine_02_ctrl.pm" "turtle_rig_start2:spine_02_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:spine_02_jnt_scaleConstraint1.w0" "turtle_rig_start2:spine_02_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:spine_03_jnt_scaleConstraint1.csx" "turtle_rig_start2:spine_03_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:spine_03_jnt_scaleConstraint1.csy" "turtle_rig_start2:spine_03_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:spine_03_jnt_scaleConstraint1.csz" "turtle_rig_start2:spine_03_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:spine_03_jnt_parentConstraint1.ctx" "turtle_rig_start2:spine_03_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:spine_03_jnt_parentConstraint1.cty" "turtle_rig_start2:spine_03_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:spine_03_jnt_parentConstraint1.ctz" "turtle_rig_start2:spine_03_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:spine_03_jnt_parentConstraint1.crx" "turtle_rig_start2:spine_03_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:spine_03_jnt_parentConstraint1.cry" "turtle_rig_start2:spine_03_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:spine_03_jnt_parentConstraint1.crz" "turtle_rig_start2:spine_03_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:spine_03_jnt.ro" "turtle_rig_start2:spine_03_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:spine_03_jnt.pim" "turtle_rig_start2:spine_03_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:spine_03_jnt.rp" "turtle_rig_start2:spine_03_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:spine_03_jnt.rpt" "turtle_rig_start2:spine_03_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:spine_03_jnt.jo" "turtle_rig_start2:spine_03_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.t" "turtle_rig_start2:spine_03_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.rp" "turtle_rig_start2:spine_03_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.rpt" "turtle_rig_start2:spine_03_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.r" "turtle_rig_start2:spine_03_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.ro" "turtle_rig_start2:spine_03_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.s" "turtle_rig_start2:spine_03_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.pm" "turtle_rig_start2:spine_03_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:spine_03_jnt_parentConstraint1.w0" "turtle_rig_start2:spine_03_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:spine_03_jnt.ssc" "turtle_rig_start2:spine_03_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:spine_03_jnt.pim" "turtle_rig_start2:spine_03_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.s" "turtle_rig_start2:spine_03_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:spine_03_ctrl.pm" "turtle_rig_start2:spine_03_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:spine_03_jnt_scaleConstraint1.w0" "turtle_rig_start2:spine_03_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:neck_01_jnt_scaleConstraint1.csx" "turtle_rig_start2:neck_01_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:neck_01_jnt_scaleConstraint1.csy" "turtle_rig_start2:neck_01_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:neck_01_jnt_scaleConstraint1.csz" "turtle_rig_start2:neck_01_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:neck_01_jnt_parentConstraint1.ctx" "turtle_rig_start2:neck_01_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:neck_01_jnt_parentConstraint1.cty" "turtle_rig_start2:neck_01_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:neck_01_jnt_parentConstraint1.ctz" "turtle_rig_start2:neck_01_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:neck_01_jnt_parentConstraint1.crx" "turtle_rig_start2:neck_01_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:neck_01_jnt_parentConstraint1.cry" "turtle_rig_start2:neck_01_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:neck_01_jnt_parentConstraint1.crz" "turtle_rig_start2:neck_01_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:neck_01_jnt.ro" "turtle_rig_start2:neck_01_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:neck_01_jnt.pim" "turtle_rig_start2:neck_01_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:neck_01_jnt.rp" "turtle_rig_start2:neck_01_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:neck_01_jnt.rpt" "turtle_rig_start2:neck_01_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:neck_01_jnt.jo" "turtle_rig_start2:neck_01_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl.t" "turtle_rig_start2:neck_01_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl.rp" "turtle_rig_start2:neck_01_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl.rpt" "turtle_rig_start2:neck_01_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl.r" "turtle_rig_start2:neck_01_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl.ro" "turtle_rig_start2:neck_01_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl.s" "turtle_rig_start2:neck_01_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl.pm" "turtle_rig_start2:neck_01_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:neck_01_jnt_parentConstraint1.w0" "turtle_rig_start2:neck_01_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:neck_01_jnt.ssc" "turtle_rig_start2:neck_01_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:neck_01_jnt.pim" "turtle_rig_start2:neck_01_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl.s" "turtle_rig_start2:neck_01_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:neck_01_ctrl.pm" "turtle_rig_start2:neck_01_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:neck_01_jnt_scaleConstraint1.w0" "turtle_rig_start2:neck_01_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:neck_02_jnt_scaleConstraint1.csx" "turtle_rig_start2:neck_02_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:neck_02_jnt_scaleConstraint1.csy" "turtle_rig_start2:neck_02_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:neck_02_jnt_scaleConstraint1.csz" "turtle_rig_start2:neck_02_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:neck_02_jnt_parentConstraint1.ctx" "turtle_rig_start2:neck_02_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:neck_02_jnt_parentConstraint1.cty" "turtle_rig_start2:neck_02_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:neck_02_jnt_parentConstraint1.ctz" "turtle_rig_start2:neck_02_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:neck_02_jnt_parentConstraint1.crx" "turtle_rig_start2:neck_02_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:neck_02_jnt_parentConstraint1.cry" "turtle_rig_start2:neck_02_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:neck_02_jnt_parentConstraint1.crz" "turtle_rig_start2:neck_02_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:neck_02_jnt.ro" "turtle_rig_start2:neck_02_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:neck_02_jnt.pim" "turtle_rig_start2:neck_02_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:neck_02_jnt.rp" "turtle_rig_start2:neck_02_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:neck_02_jnt.rpt" "turtle_rig_start2:neck_02_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:neck_02_jnt.jo" "turtle_rig_start2:neck_02_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl.t" "turtle_rig_start2:neck_02_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl.rp" "turtle_rig_start2:neck_02_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl.rpt" "turtle_rig_start2:neck_02_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl.r" "turtle_rig_start2:neck_02_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl.ro" "turtle_rig_start2:neck_02_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl.s" "turtle_rig_start2:neck_02_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl.pm" "turtle_rig_start2:neck_02_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:neck_02_jnt_parentConstraint1.w0" "turtle_rig_start2:neck_02_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:neck_02_jnt.ssc" "turtle_rig_start2:neck_02_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:neck_02_jnt.pim" "turtle_rig_start2:neck_02_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl.s" "turtle_rig_start2:neck_02_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:neck_02_ctrl.pm" "turtle_rig_start2:neck_02_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:neck_02_jnt_scaleConstraint1.w0" "turtle_rig_start2:neck_02_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:head_jnt_scaleConstraint1.csx" "turtle_rig_start2:head_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:head_jnt_scaleConstraint1.csy" "turtle_rig_start2:head_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:head_jnt_scaleConstraint1.csz" "turtle_rig_start2:head_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:head_jnt_parentConstraint1.ctx" "turtle_rig_start2:head_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:head_jnt_parentConstraint1.cty" "turtle_rig_start2:head_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:head_jnt_parentConstraint1.ctz" "turtle_rig_start2:head_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:head_jnt_parentConstraint1.crx" "turtle_rig_start2:head_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:head_jnt_parentConstraint1.cry" "turtle_rig_start2:head_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:head_jnt_parentConstraint1.crz" "turtle_rig_start2:head_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:head_jnt.ro" "turtle_rig_start2:head_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:head_jnt.pim" "turtle_rig_start2:head_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:head_jnt.rp" "turtle_rig_start2:head_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:head_jnt.rpt" "turtle_rig_start2:head_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:head_jnt.jo" "turtle_rig_start2:head_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:head_ctrl.t" "turtle_rig_start2:head_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:head_ctrl.rp" "turtle_rig_start2:head_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:head_ctrl.rpt" "turtle_rig_start2:head_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:head_ctrl.r" "turtle_rig_start2:head_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:head_ctrl.ro" "turtle_rig_start2:head_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:head_ctrl.s" "turtle_rig_start2:head_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:head_ctrl.pm" "turtle_rig_start2:head_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:head_jnt_parentConstraint1.w0" "turtle_rig_start2:head_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:head_jnt.ssc" "turtle_rig_start2:head_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:head_jnt.pim" "turtle_rig_start2:head_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:head_ctrl.s" "turtle_rig_start2:head_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:head_ctrl.pm" "turtle_rig_start2:head_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:head_jnt_scaleConstraint1.w0" "turtle_rig_start2:head_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_jnt_scaleConstraint1.csx" "turtle_rig_start2:l_leg_01_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_jnt_scaleConstraint1.csy" "turtle_rig_start2:l_leg_01_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_jnt_scaleConstraint1.csz" "turtle_rig_start2:l_leg_01_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.ctx" "turtle_rig_start2:l_leg_01_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.cty" "turtle_rig_start2:l_leg_01_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.ctz" "turtle_rig_start2:l_leg_01_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.crx" "turtle_rig_start2:l_leg_01_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.cry" "turtle_rig_start2:l_leg_01_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.crz" "turtle_rig_start2:l_leg_01_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_jnt.ro" "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_jnt.pim" "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_jnt.rp" "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_jnt.rpt" "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_jnt.jo" "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl.t" "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl.rp" "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl.rpt" "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl.r" "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl.ro" "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl.s" "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl.pm" "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.w0" "turtle_rig_start2:l_leg_01_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_jnt.ssc" "turtle_rig_start2:l_leg_01_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_jnt.pim" "turtle_rig_start2:l_leg_01_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl.s" "turtle_rig_start2:l_leg_01_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_ctrl.pm" "turtle_rig_start2:l_leg_01_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_01_jnt_scaleConstraint1.w0" "turtle_rig_start2:l_leg_01_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_jnt_scaleConstraint1.csx" "turtle_rig_start2:l_leg_02_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_jnt_scaleConstraint1.csy" "turtle_rig_start2:l_leg_02_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_jnt_scaleConstraint1.csz" "turtle_rig_start2:l_leg_02_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.ctx" "turtle_rig_start2:l_leg_02_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.cty" "turtle_rig_start2:l_leg_02_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.ctz" "turtle_rig_start2:l_leg_02_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.crx" "turtle_rig_start2:l_leg_02_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.cry" "turtle_rig_start2:l_leg_02_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.crz" "turtle_rig_start2:l_leg_02_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_jnt.ro" "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_jnt.pim" "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_jnt.rp" "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_jnt.rpt" "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_jnt.jo" "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl.t" "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl.rp" "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl.rpt" "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl.r" "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl.ro" "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl.s" "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl.pm" "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.w0" "turtle_rig_start2:l_leg_02_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_jnt.ssc" "turtle_rig_start2:l_leg_02_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_jnt.pim" "turtle_rig_start2:l_leg_02_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl.s" "turtle_rig_start2:l_leg_02_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_ctrl.pm" "turtle_rig_start2:l_leg_02_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_02_jnt_scaleConstraint1.w0" "turtle_rig_start2:l_leg_02_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_jnt_scaleConstraint1.csx" "turtle_rig_start2:l_leg_03_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_jnt_scaleConstraint1.csy" "turtle_rig_start2:l_leg_03_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_jnt_scaleConstraint1.csz" "turtle_rig_start2:l_leg_03_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.ctx" "turtle_rig_start2:l_leg_03_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.cty" "turtle_rig_start2:l_leg_03_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.ctz" "turtle_rig_start2:l_leg_03_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.crx" "turtle_rig_start2:l_leg_03_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.cry" "turtle_rig_start2:l_leg_03_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.crz" "turtle_rig_start2:l_leg_03_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_jnt.ro" "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_jnt.pim" "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_jnt.rp" "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_jnt.rpt" "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_jnt.jo" "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl.t" "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl.rp" "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl.rpt" "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl.r" "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl.ro" "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl.s" "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl.pm" "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.w0" "turtle_rig_start2:l_leg_03_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_jnt.ssc" "turtle_rig_start2:l_leg_03_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_jnt.pim" "turtle_rig_start2:l_leg_03_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl.s" "turtle_rig_start2:l_leg_03_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_ctrl.pm" "turtle_rig_start2:l_leg_03_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_03_jnt_scaleConstraint1.w0" "turtle_rig_start2:l_leg_03_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_jnt_scaleConstraint1.csx" "turtle_rig_start2:l_leg_04_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_jnt_scaleConstraint1.csy" "turtle_rig_start2:l_leg_04_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_jnt_scaleConstraint1.csz" "turtle_rig_start2:l_leg_04_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.ctx" "turtle_rig_start2:l_leg_04_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.cty" "turtle_rig_start2:l_leg_04_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.ctz" "turtle_rig_start2:l_leg_04_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.crx" "turtle_rig_start2:l_leg_04_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.cry" "turtle_rig_start2:l_leg_04_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.crz" "turtle_rig_start2:l_leg_04_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_jnt.ro" "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_jnt.pim" "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_jnt.rp" "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_jnt.rpt" "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_jnt.jo" "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl.t" "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl.rp" "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl.rpt" "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl.r" "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl.ro" "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl.s" "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl.pm" "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.w0" "turtle_rig_start2:l_leg_04_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_jnt.ssc" "turtle_rig_start2:l_leg_04_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_jnt.pim" "turtle_rig_start2:l_leg_04_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl.s" "turtle_rig_start2:l_leg_04_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_ctrl.pm" "turtle_rig_start2:l_leg_04_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_04_jnt_scaleConstraint1.w0" "turtle_rig_start2:l_leg_04_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_jnt_scaleConstraint1.csx" "turtle_rig_start2:l_leg_05_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_jnt_scaleConstraint1.csy" "turtle_rig_start2:l_leg_05_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_jnt_scaleConstraint1.csz" "turtle_rig_start2:l_leg_05_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.ctx" "turtle_rig_start2:l_leg_05_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.cty" "turtle_rig_start2:l_leg_05_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.ctz" "turtle_rig_start2:l_leg_05_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.crx" "turtle_rig_start2:l_leg_05_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.cry" "turtle_rig_start2:l_leg_05_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.crz" "turtle_rig_start2:l_leg_05_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_jnt.ro" "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_jnt.pim" "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_jnt.rp" "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_jnt.rpt" "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_jnt.jo" "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl.t" "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl.rp" "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl.rpt" "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl.r" "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl.ro" "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl.s" "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl.pm" "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.w0" "turtle_rig_start2:l_leg_05_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_jnt.ssc" "turtle_rig_start2:l_leg_05_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_jnt.pim" "turtle_rig_start2:l_leg_05_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl.s" "turtle_rig_start2:l_leg_05_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_ctrl.pm" "turtle_rig_start2:l_leg_05_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_leg_05_jnt_scaleConstraint1.w0" "turtle_rig_start2:l_leg_05_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_jnt_scaleConstraint1.csx" "turtle_rig_start2:r_leg_01_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_jnt_scaleConstraint1.csy" "turtle_rig_start2:r_leg_01_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_jnt_scaleConstraint1.csz" "turtle_rig_start2:r_leg_01_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.ctx" "turtle_rig_start2:r_leg_01_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.cty" "turtle_rig_start2:r_leg_01_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.ctz" "turtle_rig_start2:r_leg_01_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.crx" "turtle_rig_start2:r_leg_01_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.cry" "turtle_rig_start2:r_leg_01_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.crz" "turtle_rig_start2:r_leg_01_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_jnt.ro" "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_jnt.pim" "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_jnt.rp" "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_jnt.rpt" "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_jnt.jo" "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl.t" "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl.rp" "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl.rpt" "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl.r" "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl.ro" "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl.s" "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl.pm" "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.w0" "turtle_rig_start2:r_leg_01_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_jnt.ssc" "turtle_rig_start2:r_leg_01_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_jnt.pim" "turtle_rig_start2:r_leg_01_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl.s" "turtle_rig_start2:r_leg_01_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_ctrl.pm" "turtle_rig_start2:r_leg_01_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_01_jnt_scaleConstraint1.w0" "turtle_rig_start2:r_leg_01_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_jnt_scaleConstraint1.csx" "turtle_rig_start2:r_leg_02_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_jnt_scaleConstraint1.csy" "turtle_rig_start2:r_leg_02_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_jnt_scaleConstraint1.csz" "turtle_rig_start2:r_leg_02_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.ctx" "turtle_rig_start2:r_leg_02_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.cty" "turtle_rig_start2:r_leg_02_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.ctz" "turtle_rig_start2:r_leg_02_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.crx" "turtle_rig_start2:r_leg_02_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.cry" "turtle_rig_start2:r_leg_02_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.crz" "turtle_rig_start2:r_leg_02_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_jnt.ro" "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_jnt.pim" "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_jnt.rp" "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_jnt.rpt" "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_jnt.jo" "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl.t" "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl.rp" "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl.rpt" "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl.r" "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl.ro" "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl.s" "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl.pm" "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.w0" "turtle_rig_start2:r_leg_02_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_jnt.ssc" "turtle_rig_start2:r_leg_02_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_jnt.pim" "turtle_rig_start2:r_leg_02_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl.s" "turtle_rig_start2:r_leg_02_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_ctrl.pm" "turtle_rig_start2:r_leg_02_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_02_jnt_scaleConstraint1.w0" "turtle_rig_start2:r_leg_02_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_jnt_scaleConstraint1.csx" "turtle_rig_start2:r_leg_03_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_jnt_scaleConstraint1.csy" "turtle_rig_start2:r_leg_03_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_jnt_scaleConstraint1.csz" "turtle_rig_start2:r_leg_03_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.ctx" "turtle_rig_start2:r_leg_03_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.cty" "turtle_rig_start2:r_leg_03_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.ctz" "turtle_rig_start2:r_leg_03_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.crx" "turtle_rig_start2:r_leg_03_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.cry" "turtle_rig_start2:r_leg_03_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.crz" "turtle_rig_start2:r_leg_03_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_jnt.ro" "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_jnt.pim" "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_jnt.rp" "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_jnt.rpt" "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_jnt.jo" "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl.t" "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl.rp" "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl.rpt" "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl.r" "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl.ro" "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl.s" "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl.pm" "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.w0" "turtle_rig_start2:r_leg_03_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_jnt.ssc" "turtle_rig_start2:r_leg_03_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_jnt.pim" "turtle_rig_start2:r_leg_03_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl.s" "turtle_rig_start2:r_leg_03_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_ctrl.pm" "turtle_rig_start2:r_leg_03_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_03_jnt_scaleConstraint1.w0" "turtle_rig_start2:r_leg_03_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_jnt_scaleConstraint1.csx" "turtle_rig_start2:r_leg_04_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_jnt_scaleConstraint1.csy" "turtle_rig_start2:r_leg_04_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_jnt_scaleConstraint1.csz" "turtle_rig_start2:r_leg_04_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.ctx" "turtle_rig_start2:r_leg_04_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.cty" "turtle_rig_start2:r_leg_04_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.ctz" "turtle_rig_start2:r_leg_04_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.crx" "turtle_rig_start2:r_leg_04_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.cry" "turtle_rig_start2:r_leg_04_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.crz" "turtle_rig_start2:r_leg_04_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_jnt.ro" "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_jnt.pim" "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_jnt.rp" "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_jnt.rpt" "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_jnt.jo" "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl.t" "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl.rp" "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl.rpt" "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl.r" "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl.ro" "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl.s" "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl.pm" "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.w0" "turtle_rig_start2:r_leg_04_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_jnt.ssc" "turtle_rig_start2:r_leg_04_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_jnt.pim" "turtle_rig_start2:r_leg_04_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl.s" "turtle_rig_start2:r_leg_04_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_ctrl.pm" "turtle_rig_start2:r_leg_04_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_04_jnt_scaleConstraint1.w0" "turtle_rig_start2:r_leg_04_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_jnt_scaleConstraint1.csx" "turtle_rig_start2:r_leg_05_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_jnt_scaleConstraint1.csy" "turtle_rig_start2:r_leg_05_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_jnt_scaleConstraint1.csz" "turtle_rig_start2:r_leg_05_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.ctx" "turtle_rig_start2:r_leg_05_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.cty" "turtle_rig_start2:r_leg_05_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.ctz" "turtle_rig_start2:r_leg_05_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.crx" "turtle_rig_start2:r_leg_05_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.cry" "turtle_rig_start2:r_leg_05_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.crz" "turtle_rig_start2:r_leg_05_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_jnt.ro" "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_jnt.pim" "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_jnt.rp" "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_jnt.rpt" "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_jnt.jo" "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl.t" "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl.rp" "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl.rpt" "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl.r" "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl.ro" "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl.s" "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl.pm" "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.w0" "turtle_rig_start2:r_leg_05_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_jnt.ssc" "turtle_rig_start2:r_leg_05_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_jnt.pim" "turtle_rig_start2:r_leg_05_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl.s" "turtle_rig_start2:r_leg_05_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_ctrl.pm" "turtle_rig_start2:r_leg_05_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_leg_05_jnt_scaleConstraint1.w0" "turtle_rig_start2:r_leg_05_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_clav_jnt_scaleConstraint1.csx" "turtle_rig_start2:l_clav_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:l_clav_jnt_scaleConstraint1.csy" "turtle_rig_start2:l_clav_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:l_clav_jnt_scaleConstraint1.csz" "turtle_rig_start2:l_clav_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:l_clav_jnt_parentConstraint1.ctx" "turtle_rig_start2:l_clav_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:l_clav_jnt_parentConstraint1.cty" "turtle_rig_start2:l_clav_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:l_clav_jnt_parentConstraint1.ctz" "turtle_rig_start2:l_clav_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:l_clav_jnt_parentConstraint1.crx" "turtle_rig_start2:l_clav_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:l_clav_jnt_parentConstraint1.cry" "turtle_rig_start2:l_clav_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:l_clav_jnt_parentConstraint1.crz" "turtle_rig_start2:l_clav_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:l_clav_jnt.ro" "turtle_rig_start2:l_clav_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_clav_jnt.pim" "turtle_rig_start2:l_clav_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_clav_jnt.rp" "turtle_rig_start2:l_clav_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_clav_jnt.rpt" "turtle_rig_start2:l_clav_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:l_clav_jnt.jo" "turtle_rig_start2:l_clav_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl.t" "turtle_rig_start2:l_clav_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl.rp" "turtle_rig_start2:l_clav_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl.rpt" "turtle_rig_start2:l_clav_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl.r" "turtle_rig_start2:l_clav_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl.ro" "turtle_rig_start2:l_clav_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl.s" "turtle_rig_start2:l_clav_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl.pm" "turtle_rig_start2:l_clav_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_clav_jnt_parentConstraint1.w0" "turtle_rig_start2:l_clav_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_clav_jnt.ssc" "turtle_rig_start2:l_clav_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:l_clav_jnt.pim" "turtle_rig_start2:l_clav_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl.s" "turtle_rig_start2:l_clav_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_clav_ctrl.pm" "turtle_rig_start2:l_clav_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_clav_jnt_scaleConstraint1.w0" "turtle_rig_start2:l_clav_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_jnt_scaleConstraint1.csx" "turtle_rig_start2:l_arm_01_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_jnt_scaleConstraint1.csy" "turtle_rig_start2:l_arm_01_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_jnt_scaleConstraint1.csz" "turtle_rig_start2:l_arm_01_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.ctx" "turtle_rig_start2:l_arm_01_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.cty" "turtle_rig_start2:l_arm_01_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.ctz" "turtle_rig_start2:l_arm_01_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.crx" "turtle_rig_start2:l_arm_01_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.cry" "turtle_rig_start2:l_arm_01_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.crz" "turtle_rig_start2:l_arm_01_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_jnt.ro" "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_jnt.pim" "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_jnt.rp" "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_jnt.rpt" "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_jnt.jo" "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl.t" "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl.rp" "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl.rpt" "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl.r" "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl.ro" "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl.s" "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl.pm" "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.w0" "turtle_rig_start2:l_arm_01_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_jnt.ssc" "turtle_rig_start2:l_arm_01_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_jnt.pim" "turtle_rig_start2:l_arm_01_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl.s" "turtle_rig_start2:l_arm_01_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_ctrl.pm" "turtle_rig_start2:l_arm_01_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_arm_01_jnt_scaleConstraint1.w0" "turtle_rig_start2:l_arm_01_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_jnt_scaleConstraint1.csx" "turtle_rig_start2:l_arm_02_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_jnt_scaleConstraint1.csy" "turtle_rig_start2:l_arm_02_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_jnt_scaleConstraint1.csz" "turtle_rig_start2:l_arm_02_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.ctx" "turtle_rig_start2:l_arm_02_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.cty" "turtle_rig_start2:l_arm_02_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.ctz" "turtle_rig_start2:l_arm_02_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.crx" "turtle_rig_start2:l_arm_02_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.cry" "turtle_rig_start2:l_arm_02_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.crz" "turtle_rig_start2:l_arm_02_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_jnt.ro" "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_jnt.pim" "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_jnt.rp" "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_jnt.rpt" "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_jnt.jo" "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl.t" "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl.rp" "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl.rpt" "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl.r" "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl.ro" "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl.s" "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl.pm" "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.w0" "turtle_rig_start2:l_arm_02_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_jnt.ssc" "turtle_rig_start2:l_arm_02_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_jnt.pim" "turtle_rig_start2:l_arm_02_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl.s" "turtle_rig_start2:l_arm_02_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_ctrl.pm" "turtle_rig_start2:l_arm_02_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_arm_02_jnt_scaleConstraint1.w0" "turtle_rig_start2:l_arm_02_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_jnt_scaleConstraint1.csx" "turtle_rig_start2:l_arm_03_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_jnt_scaleConstraint1.csy" "turtle_rig_start2:l_arm_03_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_jnt_scaleConstraint1.csz" "turtle_rig_start2:l_arm_03_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.ctx" "turtle_rig_start2:l_arm_03_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.cty" "turtle_rig_start2:l_arm_03_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.ctz" "turtle_rig_start2:l_arm_03_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.crx" "turtle_rig_start2:l_arm_03_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.cry" "turtle_rig_start2:l_arm_03_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.crz" "turtle_rig_start2:l_arm_03_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_jnt.ro" "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_jnt.pim" "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_jnt.rp" "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_jnt.rpt" "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_jnt.jo" "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl.t" "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl.rp" "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl.rpt" "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl.r" "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl.ro" "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl.s" "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl.pm" "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.w0" "turtle_rig_start2:l_arm_03_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_jnt.ssc" "turtle_rig_start2:l_arm_03_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_jnt.pim" "turtle_rig_start2:l_arm_03_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl.s" "turtle_rig_start2:l_arm_03_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_ctrl.pm" "turtle_rig_start2:l_arm_03_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_arm_03_jnt_scaleConstraint1.w0" "turtle_rig_start2:l_arm_03_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.ctx" "turtle_rig_start2:l_arm_04_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.cty" "turtle_rig_start2:l_arm_04_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.ctz" "turtle_rig_start2:l_arm_04_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.crx" "turtle_rig_start2:l_arm_04_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.cry" "turtle_rig_start2:l_arm_04_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.crz" "turtle_rig_start2:l_arm_04_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_jnt_scaleConstraint1.csx" "turtle_rig_start2:l_arm_04_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_jnt_scaleConstraint1.csy" "turtle_rig_start2:l_arm_04_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_jnt_scaleConstraint1.csz" "turtle_rig_start2:l_arm_04_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_jnt.ro" "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_jnt.pim" "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_jnt.rp" "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_jnt.rpt" "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_jnt.jo" "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl.t" "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl.rp" "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl.rpt" "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl.r" "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl.ro" "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl.s" "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl.pm" "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.w0" "turtle_rig_start2:l_arm_04_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_jnt.ssc" "turtle_rig_start2:l_arm_04_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_jnt.pim" "turtle_rig_start2:l_arm_04_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl.s" "turtle_rig_start2:l_arm_04_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_ctrl.pm" "turtle_rig_start2:l_arm_04_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:l_arm_04_jnt_scaleConstraint1.w0" "turtle_rig_start2:l_arm_04_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_clav_jnt_scaleConstraint1.csx" "turtle_rig_start2:r_clav_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:r_clav_jnt_scaleConstraint1.csy" "turtle_rig_start2:r_clav_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:r_clav_jnt_scaleConstraint1.csz" "turtle_rig_start2:r_clav_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:r_clav_jnt_parentConstraint1.ctx" "turtle_rig_start2:r_clav_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:r_clav_jnt_parentConstraint1.cty" "turtle_rig_start2:r_clav_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:r_clav_jnt_parentConstraint1.ctz" "turtle_rig_start2:r_clav_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:r_clav_jnt_parentConstraint1.crx" "turtle_rig_start2:r_clav_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:r_clav_jnt_parentConstraint1.cry" "turtle_rig_start2:r_clav_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:r_clav_jnt_parentConstraint1.crz" "turtle_rig_start2:r_clav_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:r_clav_jnt.ro" "turtle_rig_start2:r_clav_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_clav_jnt.pim" "turtle_rig_start2:r_clav_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_clav_jnt.rp" "turtle_rig_start2:r_clav_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_clav_jnt.rpt" "turtle_rig_start2:r_clav_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:r_clav_jnt.jo" "turtle_rig_start2:r_clav_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl.t" "turtle_rig_start2:r_clav_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl.rp" "turtle_rig_start2:r_clav_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl.rpt" "turtle_rig_start2:r_clav_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl.r" "turtle_rig_start2:r_clav_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl.ro" "turtle_rig_start2:r_clav_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl.s" "turtle_rig_start2:r_clav_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl.pm" "turtle_rig_start2:r_clav_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_clav_jnt_parentConstraint1.w0" "turtle_rig_start2:r_clav_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_clav_jnt.ssc" "turtle_rig_start2:r_clav_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:r_clav_jnt.pim" "turtle_rig_start2:r_clav_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl.s" "turtle_rig_start2:r_clav_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_clav_ctrl.pm" "turtle_rig_start2:r_clav_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_clav_jnt_scaleConstraint1.w0" "turtle_rig_start2:r_clav_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_jnt_scaleConstraint1.csx" "turtle_rig_start2:r_arm_01_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_jnt_scaleConstraint1.csy" "turtle_rig_start2:r_arm_01_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_jnt_scaleConstraint1.csz" "turtle_rig_start2:r_arm_01_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.ctx" "turtle_rig_start2:r_arm_01_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.cty" "turtle_rig_start2:r_arm_01_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.ctz" "turtle_rig_start2:r_arm_01_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.crx" "turtle_rig_start2:r_arm_01_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.cry" "turtle_rig_start2:r_arm_01_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.crz" "turtle_rig_start2:r_arm_01_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_jnt.ro" "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_jnt.pim" "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_jnt.rp" "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_jnt.rpt" "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_jnt.jo" "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl.t" "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl.rp" "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl.rpt" "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl.r" "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl.ro" "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl.s" "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl.pm" "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.w0" "turtle_rig_start2:r_arm_01_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_jnt.ssc" "turtle_rig_start2:r_arm_01_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_jnt.pim" "turtle_rig_start2:r_arm_01_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl.s" "turtle_rig_start2:r_arm_01_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_ctrl.pm" "turtle_rig_start2:r_arm_01_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_arm_01_jnt_scaleConstraint1.w0" "turtle_rig_start2:r_arm_01_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_jnt_scaleConstraint1.csx" "turtle_rig_start2:r_arm_02_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_jnt_scaleConstraint1.csy" "turtle_rig_start2:r_arm_02_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_jnt_scaleConstraint1.csz" "turtle_rig_start2:r_arm_02_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.ctx" "turtle_rig_start2:r_arm_02_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.cty" "turtle_rig_start2:r_arm_02_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.ctz" "turtle_rig_start2:r_arm_02_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.crx" "turtle_rig_start2:r_arm_02_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.cry" "turtle_rig_start2:r_arm_02_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.crz" "turtle_rig_start2:r_arm_02_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_jnt.ro" "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_jnt.pim" "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_jnt.rp" "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_jnt.rpt" "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_jnt.jo" "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl.t" "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl.rp" "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl.rpt" "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl.r" "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl.ro" "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl.s" "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl.pm" "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.w0" "turtle_rig_start2:r_arm_02_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_jnt.ssc" "turtle_rig_start2:r_arm_02_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_jnt.pim" "turtle_rig_start2:r_arm_02_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl.s" "turtle_rig_start2:r_arm_02_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_ctrl.pm" "turtle_rig_start2:r_arm_02_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_arm_02_jnt_scaleConstraint1.w0" "turtle_rig_start2:r_arm_02_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_jnt_scaleConstraint1.csx" "turtle_rig_start2:r_arm_03_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_jnt_scaleConstraint1.csy" "turtle_rig_start2:r_arm_03_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_jnt_scaleConstraint1.csz" "turtle_rig_start2:r_arm_03_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.ctx" "turtle_rig_start2:r_arm_03_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.cty" "turtle_rig_start2:r_arm_03_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.ctz" "turtle_rig_start2:r_arm_03_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.crx" "turtle_rig_start2:r_arm_03_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.cry" "turtle_rig_start2:r_arm_03_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.crz" "turtle_rig_start2:r_arm_03_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_jnt.ro" "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_jnt.pim" "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_jnt.rp" "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_jnt.rpt" "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_jnt.jo" "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl.t" "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl.rp" "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl.rpt" "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl.r" "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl.ro" "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl.s" "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl.pm" "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.w0" "turtle_rig_start2:r_arm_03_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_jnt.ssc" "turtle_rig_start2:r_arm_03_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_jnt.pim" "turtle_rig_start2:r_arm_03_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl.s" "turtle_rig_start2:r_arm_03_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_ctrl.pm" "turtle_rig_start2:r_arm_03_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_arm_03_jnt_scaleConstraint1.w0" "turtle_rig_start2:r_arm_03_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.ctx" "turtle_rig_start2:r_arm_04_jnt.tx"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.cty" "turtle_rig_start2:r_arm_04_jnt.ty"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.ctz" "turtle_rig_start2:r_arm_04_jnt.tz"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.crx" "turtle_rig_start2:r_arm_04_jnt.rx"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.cry" "turtle_rig_start2:r_arm_04_jnt.ry"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.crz" "turtle_rig_start2:r_arm_04_jnt.rz"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_jnt_scaleConstraint1.csx" "turtle_rig_start2:r_arm_04_jnt.sx"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_jnt_scaleConstraint1.csy" "turtle_rig_start2:r_arm_04_jnt.sy"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_jnt_scaleConstraint1.csz" "turtle_rig_start2:r_arm_04_jnt.sz"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_jnt.ro" "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_jnt.pim" "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_jnt.rp" "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_jnt.rpt" "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_jnt.jo" "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.cjo"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl.t" "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl.rp" "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl.rpt" "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl.r" "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl.ro" "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl.s" "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl.pm" "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.w0" "turtle_rig_start2:r_arm_04_jnt_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_jnt.ssc" "turtle_rig_start2:r_arm_04_jnt_scaleConstraint1.tsc"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_jnt.pim" "turtle_rig_start2:r_arm_04_jnt_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl.s" "turtle_rig_start2:r_arm_04_jnt_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_ctrl.pm" "turtle_rig_start2:r_arm_04_jnt_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:r_arm_04_jnt_scaleConstraint1.w0" "turtle_rig_start2:r_arm_04_jnt_scaleConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:texture_parentConstraint1.ctx" "turtle_rig_start2:texture.tx"
-		;
-connectAttr "turtle_rig_start2:texture_parentConstraint1.cty" "turtle_rig_start2:texture.ty"
-		;
-connectAttr "turtle_rig_start2:texture_parentConstraint1.ctz" "turtle_rig_start2:texture.tz"
-		;
-connectAttr "turtle_rig_start2:texture_parentConstraint1.crx" "turtle_rig_start2:texture.rx"
-		;
-connectAttr "turtle_rig_start2:texture_parentConstraint1.cry" "turtle_rig_start2:texture.ry"
-		;
-connectAttr "turtle_rig_start2:texture_parentConstraint1.crz" "turtle_rig_start2:texture.rz"
-		;
-connectAttr "turtle_rig_start2:texture_scaleConstraint1.csx" "turtle_rig_start2:texture.sx"
-		;
-connectAttr "turtle_rig_start2:texture_scaleConstraint1.csy" "turtle_rig_start2:texture.sy"
-		;
-connectAttr "turtle_rig_start2:texture_scaleConstraint1.csz" "turtle_rig_start2:texture.sz"
-		;
-connectAttr "turtle_rig_start2:texture.ro" "turtle_rig_start2:texture_parentConstraint1.cro"
-		;
-connectAttr "turtle_rig_start2:texture.pim" "turtle_rig_start2:texture_parentConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:texture.rp" "turtle_rig_start2:texture_parentConstraint1.crp"
-		;
-connectAttr "turtle_rig_start2:texture.rpt" "turtle_rig_start2:texture_parentConstraint1.crt"
-		;
-connectAttr "turtle_rig_start2:head_jnt.t" "turtle_rig_start2:texture_parentConstraint1.tg[0].tt"
-		;
-connectAttr "turtle_rig_start2:head_jnt.rp" "turtle_rig_start2:texture_parentConstraint1.tg[0].trp"
-		;
-connectAttr "turtle_rig_start2:head_jnt.rpt" "turtle_rig_start2:texture_parentConstraint1.tg[0].trt"
-		;
-connectAttr "turtle_rig_start2:head_jnt.r" "turtle_rig_start2:texture_parentConstraint1.tg[0].tr"
-		;
-connectAttr "turtle_rig_start2:head_jnt.ro" "turtle_rig_start2:texture_parentConstraint1.tg[0].tro"
-		;
-connectAttr "turtle_rig_start2:head_jnt.s" "turtle_rig_start2:texture_parentConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:head_jnt.pm" "turtle_rig_start2:texture_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:head_jnt.jo" "turtle_rig_start2:texture_parentConstraint1.tg[0].tjo"
-		;
-connectAttr "turtle_rig_start2:head_jnt.ssc" "turtle_rig_start2:texture_parentConstraint1.tg[0].tsc"
-		;
-connectAttr "turtle_rig_start2:head_jnt.is" "turtle_rig_start2:texture_parentConstraint1.tg[0].tis"
-		;
-connectAttr "turtle_rig_start2:texture_parentConstraint1.w0" "turtle_rig_start2:texture_parentConstraint1.tg[0].tw"
-		;
-connectAttr "turtle_rig_start2:texture.pim" "turtle_rig_start2:texture_scaleConstraint1.cpim"
-		;
-connectAttr "turtle_rig_start2:head_jnt.s" "turtle_rig_start2:texture_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "turtle_rig_start2:head_jnt.pm" "turtle_rig_start2:texture_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "turtle_rig_start2:texture_scaleConstraint1.w0" "turtle_rig_start2:texture_scaleConstraint1.tg[0].tw"
-		;
+connectAttr "geo_layer.di" "geometry.do";
+connectAttr "groupId49.id" "f_legs_geo_Shape.iog.og[0].gid";
+connectAttr "f_legs_geo_ShapeOrig.w" "f_legs_geo_Shape.i";
+connectAttr "shell_geo_ShapeOrig.w" "shell_geo_Shape.i";
+connectAttr "r_leg_geoShapeOrig.w" "r_leg_geoShape.i";
+connectAttr "l_leg_geoShapeOrig.w" "l_leg_geoShape.i";
+connectAttr "l_eye_geoShapeOrig.w" "l_eye_geoShape.i";
+connectAttr "r_eye_geoShapeOrig1.w" "r_eye_geoShape.i";
+connectAttr "controls_layer.di" "controls.do";
+connectAttr "spine_01_ctrl_grp_parentConstraint1.ctx" "spine_01_ctrl_grp.tx";
+connectAttr "spine_01_ctrl_grp_parentConstraint1.cty" "spine_01_ctrl_grp.ty";
+connectAttr "spine_01_ctrl_grp_parentConstraint1.ctz" "spine_01_ctrl_grp.tz";
+connectAttr "spine_01_ctrl_grp_parentConstraint1.crx" "spine_01_ctrl_grp.rx";
+connectAttr "spine_01_ctrl_grp_parentConstraint1.cry" "spine_01_ctrl_grp.ry";
+connectAttr "spine_01_ctrl_grp_parentConstraint1.crz" "spine_01_ctrl_grp.rz";
+connectAttr "spine_01_ctrl_grp_scaleConstraint1.csx" "spine_01_ctrl_grp.sx";
+connectAttr "spine_01_ctrl_grp_scaleConstraint1.csy" "spine_01_ctrl_grp.sy";
+connectAttr "spine_01_ctrl_grp_scaleConstraint1.csz" "spine_01_ctrl_grp.sz";
+connectAttr "spine_01_ctrl_grp.ro" "spine_01_ctrl_grp_parentConstraint1.cro";
+connectAttr "spine_01_ctrl_grp.pim" "spine_01_ctrl_grp_parentConstraint1.cpim";
+connectAttr "spine_01_ctrl_grp.rp" "spine_01_ctrl_grp_parentConstraint1.crp";
+connectAttr "spine_01_ctrl_grp.rpt" "spine_01_ctrl_grp_parentConstraint1.crt";
+connectAttr "cog_ctrl.t" "spine_01_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "cog_ctrl.rp" "spine_01_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "cog_ctrl.rpt" "spine_01_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "cog_ctrl.r" "spine_01_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "cog_ctrl.ro" "spine_01_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "cog_ctrl.s" "spine_01_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "cog_ctrl.pm" "spine_01_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "spine_01_ctrl_grp_parentConstraint1.w0" "spine_01_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "spine_01_ctrl_grp.pim" "spine_01_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "cog_ctrl.s" "spine_01_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "cog_ctrl.pm" "spine_01_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "spine_01_ctrl_grp_scaleConstraint1.w0" "spine_01_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "spine_02_ctrl_grp_parentConstraint1.ctx" "spine_02_ctrl_grp.tx";
+connectAttr "spine_02_ctrl_grp_parentConstraint1.cty" "spine_02_ctrl_grp.ty";
+connectAttr "spine_02_ctrl_grp_parentConstraint1.ctz" "spine_02_ctrl_grp.tz";
+connectAttr "spine_02_ctrl_grp_parentConstraint1.crx" "spine_02_ctrl_grp.rx";
+connectAttr "spine_02_ctrl_grp_parentConstraint1.cry" "spine_02_ctrl_grp.ry";
+connectAttr "spine_02_ctrl_grp_parentConstraint1.crz" "spine_02_ctrl_grp.rz";
+connectAttr "spine_02_ctrl_grp_scaleConstraint1.csx" "spine_02_ctrl_grp.sx";
+connectAttr "spine_02_ctrl_grp_scaleConstraint1.csy" "spine_02_ctrl_grp.sy";
+connectAttr "spine_02_ctrl_grp_scaleConstraint1.csz" "spine_02_ctrl_grp.sz";
+connectAttr "spine_02_ctrl_grp.ro" "spine_02_ctrl_grp_parentConstraint1.cro";
+connectAttr "spine_02_ctrl_grp.pim" "spine_02_ctrl_grp_parentConstraint1.cpim";
+connectAttr "spine_02_ctrl_grp.rp" "spine_02_ctrl_grp_parentConstraint1.crp";
+connectAttr "spine_02_ctrl_grp.rpt" "spine_02_ctrl_grp_parentConstraint1.crt";
+connectAttr "spine_01_ctrl.t" "spine_02_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "spine_01_ctrl.rp" "spine_02_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "spine_01_ctrl.rpt" "spine_02_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "spine_01_ctrl.r" "spine_02_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "spine_01_ctrl.ro" "spine_02_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "spine_01_ctrl.s" "spine_02_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "spine_01_ctrl.pm" "spine_02_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "spine_02_ctrl_grp_parentConstraint1.w0" "spine_02_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "spine_02_ctrl_grp.pim" "spine_02_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "spine_01_ctrl.s" "spine_02_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "spine_01_ctrl.pm" "spine_02_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "spine_02_ctrl_grp_scaleConstraint1.w0" "spine_02_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "spine_03_ctrl_grp_parentConstraint1.ctx" "spine_03_ctrl_grp.tx";
+connectAttr "spine_03_ctrl_grp_parentConstraint1.cty" "spine_03_ctrl_grp.ty";
+connectAttr "spine_03_ctrl_grp_parentConstraint1.ctz" "spine_03_ctrl_grp.tz";
+connectAttr "spine_03_ctrl_grp_parentConstraint1.crx" "spine_03_ctrl_grp.rx";
+connectAttr "spine_03_ctrl_grp_parentConstraint1.cry" "spine_03_ctrl_grp.ry";
+connectAttr "spine_03_ctrl_grp_parentConstraint1.crz" "spine_03_ctrl_grp.rz";
+connectAttr "spine_03_ctrl_grp_scaleConstraint1.csx" "spine_03_ctrl_grp.sx";
+connectAttr "spine_03_ctrl_grp_scaleConstraint1.csy" "spine_03_ctrl_grp.sy";
+connectAttr "spine_03_ctrl_grp_scaleConstraint1.csz" "spine_03_ctrl_grp.sz";
+connectAttr "spine_03_ctrl_grp.ro" "spine_03_ctrl_grp_parentConstraint1.cro";
+connectAttr "spine_03_ctrl_grp.pim" "spine_03_ctrl_grp_parentConstraint1.cpim";
+connectAttr "spine_03_ctrl_grp.rp" "spine_03_ctrl_grp_parentConstraint1.crp";
+connectAttr "spine_03_ctrl_grp.rpt" "spine_03_ctrl_grp_parentConstraint1.crt";
+connectAttr "spine_02_ctrl.t" "spine_03_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "spine_02_ctrl.rp" "spine_03_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "spine_02_ctrl.rpt" "spine_03_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "spine_02_ctrl.r" "spine_03_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "spine_02_ctrl.ro" "spine_03_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "spine_02_ctrl.s" "spine_03_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "spine_02_ctrl.pm" "spine_03_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "spine_03_ctrl_grp_parentConstraint1.w0" "spine_03_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "spine_03_ctrl_grp.pim" "spine_03_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "spine_02_ctrl.s" "spine_03_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "spine_02_ctrl.pm" "spine_03_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "spine_03_ctrl_grp_scaleConstraint1.w0" "spine_03_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "l_clav_ctrl_grp_parentConstraint1.ctx" "l_clav_ctrl_grp.tx";
+connectAttr "l_clav_ctrl_grp_parentConstraint1.cty" "l_clav_ctrl_grp.ty";
+connectAttr "l_clav_ctrl_grp_parentConstraint1.ctz" "l_clav_ctrl_grp.tz";
+connectAttr "l_clav_ctrl_grp_parentConstraint1.crx" "l_clav_ctrl_grp.rx";
+connectAttr "l_clav_ctrl_grp_parentConstraint1.cry" "l_clav_ctrl_grp.ry";
+connectAttr "l_clav_ctrl_grp_parentConstraint1.crz" "l_clav_ctrl_grp.rz";
+connectAttr "l_clav_ctrl_grp_scaleConstraint1.csx" "l_clav_ctrl_grp.sx";
+connectAttr "l_clav_ctrl_grp_scaleConstraint1.csy" "l_clav_ctrl_grp.sy";
+connectAttr "l_clav_ctrl_grp_scaleConstraint1.csz" "l_clav_ctrl_grp.sz";
+connectAttr "l_clav_ctrl_grp.ro" "l_clav_ctrl_grp_parentConstraint1.cro";
+connectAttr "l_clav_ctrl_grp.pim" "l_clav_ctrl_grp_parentConstraint1.cpim";
+connectAttr "l_clav_ctrl_grp.rp" "l_clav_ctrl_grp_parentConstraint1.crp";
+connectAttr "l_clav_ctrl_grp.rpt" "l_clav_ctrl_grp_parentConstraint1.crt";
+connectAttr "spine_03_ctrl.t" "l_clav_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "spine_03_ctrl.rp" "l_clav_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "spine_03_ctrl.rpt" "l_clav_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "spine_03_ctrl.r" "l_clav_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "spine_03_ctrl.ro" "l_clav_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "spine_03_ctrl.s" "l_clav_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "spine_03_ctrl.pm" "l_clav_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "l_clav_ctrl_grp_parentConstraint1.w0" "l_clav_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_clav_ctrl_grp.pim" "l_clav_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "spine_03_ctrl.s" "l_clav_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "spine_03_ctrl.pm" "l_clav_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "l_clav_ctrl_grp_scaleConstraint1.w0" "l_clav_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "l_arm_01_ctrl_grp_parentConstraint1.ctx" "l_arm_01_ctrl_grp.tx";
+connectAttr "l_arm_01_ctrl_grp_parentConstraint1.cty" "l_arm_01_ctrl_grp.ty";
+connectAttr "l_arm_01_ctrl_grp_parentConstraint1.ctz" "l_arm_01_ctrl_grp.tz";
+connectAttr "l_arm_01_ctrl_grp_parentConstraint1.crx" "l_arm_01_ctrl_grp.rx";
+connectAttr "l_arm_01_ctrl_grp_parentConstraint1.cry" "l_arm_01_ctrl_grp.ry";
+connectAttr "l_arm_01_ctrl_grp_parentConstraint1.crz" "l_arm_01_ctrl_grp.rz";
+connectAttr "l_arm_01_ctrl_grp_scaleConstraint1.csx" "l_arm_01_ctrl_grp.sx";
+connectAttr "l_arm_01_ctrl_grp_scaleConstraint1.csy" "l_arm_01_ctrl_grp.sy";
+connectAttr "l_arm_01_ctrl_grp_scaleConstraint1.csz" "l_arm_01_ctrl_grp.sz";
+connectAttr "l_arm_01_ctrl_grp.ro" "l_arm_01_ctrl_grp_parentConstraint1.cro";
+connectAttr "l_arm_01_ctrl_grp.pim" "l_arm_01_ctrl_grp_parentConstraint1.cpim";
+connectAttr "l_arm_01_ctrl_grp.rp" "l_arm_01_ctrl_grp_parentConstraint1.crp";
+connectAttr "l_arm_01_ctrl_grp.rpt" "l_arm_01_ctrl_grp_parentConstraint1.crt";
+connectAttr "l_clav_ctrl.t" "l_arm_01_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "l_clav_ctrl.rp" "l_arm_01_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "l_clav_ctrl.rpt" "l_arm_01_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "l_clav_ctrl.r" "l_arm_01_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "l_clav_ctrl.ro" "l_arm_01_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "l_clav_ctrl.s" "l_arm_01_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "l_clav_ctrl.pm" "l_arm_01_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "l_arm_01_ctrl_grp_parentConstraint1.w0" "l_arm_01_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_arm_01_ctrl_grp.pim" "l_arm_01_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "l_clav_ctrl.s" "l_arm_01_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "l_clav_ctrl.pm" "l_arm_01_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "l_arm_01_ctrl_grp_scaleConstraint1.w0" "l_arm_01_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "l_arm_02_ctrl_grp_parentConstraint1.ctx" "l_arm_02_ctrl_grp.tx";
+connectAttr "l_arm_02_ctrl_grp_parentConstraint1.cty" "l_arm_02_ctrl_grp.ty";
+connectAttr "l_arm_02_ctrl_grp_parentConstraint1.ctz" "l_arm_02_ctrl_grp.tz";
+connectAttr "l_arm_02_ctrl_grp_parentConstraint1.crx" "l_arm_02_ctrl_grp.rx";
+connectAttr "l_arm_02_ctrl_grp_parentConstraint1.cry" "l_arm_02_ctrl_grp.ry";
+connectAttr "l_arm_02_ctrl_grp_parentConstraint1.crz" "l_arm_02_ctrl_grp.rz";
+connectAttr "l_arm_02_ctrl_grp_scaleConstraint1.csx" "l_arm_02_ctrl_grp.sx";
+connectAttr "l_arm_02_ctrl_grp_scaleConstraint1.csy" "l_arm_02_ctrl_grp.sy";
+connectAttr "l_arm_02_ctrl_grp_scaleConstraint1.csz" "l_arm_02_ctrl_grp.sz";
+connectAttr "l_arm_02_ctrl_grp.ro" "l_arm_02_ctrl_grp_parentConstraint1.cro";
+connectAttr "l_arm_02_ctrl_grp.pim" "l_arm_02_ctrl_grp_parentConstraint1.cpim";
+connectAttr "l_arm_02_ctrl_grp.rp" "l_arm_02_ctrl_grp_parentConstraint1.crp";
+connectAttr "l_arm_02_ctrl_grp.rpt" "l_arm_02_ctrl_grp_parentConstraint1.crt";
+connectAttr "l_arm_01_ctrl.t" "l_arm_02_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "l_arm_01_ctrl.rp" "l_arm_02_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "l_arm_01_ctrl.rpt" "l_arm_02_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "l_arm_01_ctrl.r" "l_arm_02_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "l_arm_01_ctrl.ro" "l_arm_02_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "l_arm_01_ctrl.s" "l_arm_02_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "l_arm_01_ctrl.pm" "l_arm_02_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "l_arm_02_ctrl_grp_parentConstraint1.w0" "l_arm_02_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_arm_02_ctrl_grp.pim" "l_arm_02_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "l_arm_01_ctrl.s" "l_arm_02_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "l_arm_01_ctrl.pm" "l_arm_02_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "l_arm_02_ctrl_grp_scaleConstraint1.w0" "l_arm_02_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "l_arm_03_ctrl_grp_parentConstraint1.ctx" "l_arm_03_ctrl_grp.tx";
+connectAttr "l_arm_03_ctrl_grp_parentConstraint1.cty" "l_arm_03_ctrl_grp.ty";
+connectAttr "l_arm_03_ctrl_grp_parentConstraint1.ctz" "l_arm_03_ctrl_grp.tz";
+connectAttr "l_arm_03_ctrl_grp_parentConstraint1.crx" "l_arm_03_ctrl_grp.rx";
+connectAttr "l_arm_03_ctrl_grp_parentConstraint1.cry" "l_arm_03_ctrl_grp.ry";
+connectAttr "l_arm_03_ctrl_grp_parentConstraint1.crz" "l_arm_03_ctrl_grp.rz";
+connectAttr "l_arm_03_ctrl_grp_scaleConstraint1.csx" "l_arm_03_ctrl_grp.sx";
+connectAttr "l_arm_03_ctrl_grp_scaleConstraint1.csy" "l_arm_03_ctrl_grp.sy";
+connectAttr "l_arm_03_ctrl_grp_scaleConstraint1.csz" "l_arm_03_ctrl_grp.sz";
+connectAttr "l_arm_03_ctrl_grp.ro" "l_arm_03_ctrl_grp_parentConstraint1.cro";
+connectAttr "l_arm_03_ctrl_grp.pim" "l_arm_03_ctrl_grp_parentConstraint1.cpim";
+connectAttr "l_arm_03_ctrl_grp.rp" "l_arm_03_ctrl_grp_parentConstraint1.crp";
+connectAttr "l_arm_03_ctrl_grp.rpt" "l_arm_03_ctrl_grp_parentConstraint1.crt";
+connectAttr "l_arm_02_ctrl.t" "l_arm_03_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "l_arm_02_ctrl.rp" "l_arm_03_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "l_arm_02_ctrl.rpt" "l_arm_03_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "l_arm_02_ctrl.r" "l_arm_03_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "l_arm_02_ctrl.ro" "l_arm_03_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "l_arm_02_ctrl.s" "l_arm_03_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "l_arm_02_ctrl.pm" "l_arm_03_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "l_arm_03_ctrl_grp_parentConstraint1.w0" "l_arm_03_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_arm_03_ctrl_grp.pim" "l_arm_03_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "l_arm_02_ctrl.s" "l_arm_03_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "l_arm_02_ctrl.pm" "l_arm_03_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "l_arm_03_ctrl_grp_scaleConstraint1.w0" "l_arm_03_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "l_arm_04_ctrl_grp_parentConstraint1.ctx" "l_arm_04_ctrl_grp.tx";
+connectAttr "l_arm_04_ctrl_grp_parentConstraint1.cty" "l_arm_04_ctrl_grp.ty";
+connectAttr "l_arm_04_ctrl_grp_parentConstraint1.ctz" "l_arm_04_ctrl_grp.tz";
+connectAttr "l_arm_04_ctrl_grp_parentConstraint1.crx" "l_arm_04_ctrl_grp.rx";
+connectAttr "l_arm_04_ctrl_grp_parentConstraint1.cry" "l_arm_04_ctrl_grp.ry";
+connectAttr "l_arm_04_ctrl_grp_parentConstraint1.crz" "l_arm_04_ctrl_grp.rz";
+connectAttr "l_arm_04_ctrl_grp_scaleConstraint1.csx" "l_arm_04_ctrl_grp.sx";
+connectAttr "l_arm_04_ctrl_grp_scaleConstraint1.csy" "l_arm_04_ctrl_grp.sy";
+connectAttr "l_arm_04_ctrl_grp_scaleConstraint1.csz" "l_arm_04_ctrl_grp.sz";
+connectAttr "l_arm_04_ctrl_grp.ro" "l_arm_04_ctrl_grp_parentConstraint1.cro";
+connectAttr "l_arm_04_ctrl_grp.pim" "l_arm_04_ctrl_grp_parentConstraint1.cpim";
+connectAttr "l_arm_04_ctrl_grp.rp" "l_arm_04_ctrl_grp_parentConstraint1.crp";
+connectAttr "l_arm_04_ctrl_grp.rpt" "l_arm_04_ctrl_grp_parentConstraint1.crt";
+connectAttr "l_arm_03_ctrl.t" "l_arm_04_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "l_arm_03_ctrl.rp" "l_arm_04_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "l_arm_03_ctrl.rpt" "l_arm_04_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "l_arm_03_ctrl.r" "l_arm_04_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "l_arm_03_ctrl.ro" "l_arm_04_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "l_arm_03_ctrl.s" "l_arm_04_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "l_arm_03_ctrl.pm" "l_arm_04_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "l_arm_04_ctrl_grp_parentConstraint1.w0" "l_arm_04_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_arm_04_ctrl_grp.pim" "l_arm_04_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "l_arm_03_ctrl.s" "l_arm_04_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "l_arm_03_ctrl.pm" "l_arm_04_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "l_arm_04_ctrl_grp_scaleConstraint1.w0" "l_arm_04_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_clav_ctrl_grp_parentConstraint1.ctx" "r_clav_ctrl_grp.tx";
+connectAttr "r_clav_ctrl_grp_parentConstraint1.cty" "r_clav_ctrl_grp.ty";
+connectAttr "r_clav_ctrl_grp_parentConstraint1.ctz" "r_clav_ctrl_grp.tz";
+connectAttr "r_clav_ctrl_grp_parentConstraint1.crx" "r_clav_ctrl_grp.rx";
+connectAttr "r_clav_ctrl_grp_parentConstraint1.cry" "r_clav_ctrl_grp.ry";
+connectAttr "r_clav_ctrl_grp_parentConstraint1.crz" "r_clav_ctrl_grp.rz";
+connectAttr "r_clav_ctrl_grp_scaleConstraint1.csx" "r_clav_ctrl_grp.sx";
+connectAttr "r_clav_ctrl_grp_scaleConstraint1.csy" "r_clav_ctrl_grp.sy";
+connectAttr "r_clav_ctrl_grp_scaleConstraint1.csz" "r_clav_ctrl_grp.sz";
+connectAttr "r_clav_ctrl_grp.ro" "r_clav_ctrl_grp_parentConstraint1.cro";
+connectAttr "r_clav_ctrl_grp.pim" "r_clav_ctrl_grp_parentConstraint1.cpim";
+connectAttr "r_clav_ctrl_grp.rp" "r_clav_ctrl_grp_parentConstraint1.crp";
+connectAttr "r_clav_ctrl_grp.rpt" "r_clav_ctrl_grp_parentConstraint1.crt";
+connectAttr "spine_03_ctrl.t" "r_clav_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "spine_03_ctrl.rp" "r_clav_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "spine_03_ctrl.rpt" "r_clav_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "spine_03_ctrl.r" "r_clav_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "spine_03_ctrl.ro" "r_clav_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "spine_03_ctrl.s" "r_clav_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "spine_03_ctrl.pm" "r_clav_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "r_clav_ctrl_grp_parentConstraint1.w0" "r_clav_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_clav_ctrl_grp.pim" "r_clav_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "spine_03_ctrl.s" "r_clav_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "spine_03_ctrl.pm" "r_clav_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "r_clav_ctrl_grp_scaleConstraint1.w0" "r_clav_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_arm_01_ctrl_grp_parentConstraint1.ctx" "r_arm_01_ctrl_grp.tx";
+connectAttr "r_arm_01_ctrl_grp_parentConstraint1.cty" "r_arm_01_ctrl_grp.ty";
+connectAttr "r_arm_01_ctrl_grp_parentConstraint1.ctz" "r_arm_01_ctrl_grp.tz";
+connectAttr "r_arm_01_ctrl_grp_parentConstraint1.crx" "r_arm_01_ctrl_grp.rx";
+connectAttr "r_arm_01_ctrl_grp_parentConstraint1.cry" "r_arm_01_ctrl_grp.ry";
+connectAttr "r_arm_01_ctrl_grp_parentConstraint1.crz" "r_arm_01_ctrl_grp.rz";
+connectAttr "r_arm_01_ctrl_grp_scaleConstraint1.csx" "r_arm_01_ctrl_grp.sx";
+connectAttr "r_arm_01_ctrl_grp_scaleConstraint1.csy" "r_arm_01_ctrl_grp.sy";
+connectAttr "r_arm_01_ctrl_grp_scaleConstraint1.csz" "r_arm_01_ctrl_grp.sz";
+connectAttr "r_arm_01_ctrl_grp.ro" "r_arm_01_ctrl_grp_parentConstraint1.cro";
+connectAttr "r_arm_01_ctrl_grp.pim" "r_arm_01_ctrl_grp_parentConstraint1.cpim";
+connectAttr "r_arm_01_ctrl_grp.rp" "r_arm_01_ctrl_grp_parentConstraint1.crp";
+connectAttr "r_arm_01_ctrl_grp.rpt" "r_arm_01_ctrl_grp_parentConstraint1.crt";
+connectAttr "r_clav_ctrl.t" "r_arm_01_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "r_clav_ctrl.rp" "r_arm_01_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "r_clav_ctrl.rpt" "r_arm_01_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "r_clav_ctrl.r" "r_arm_01_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "r_clav_ctrl.ro" "r_arm_01_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "r_clav_ctrl.s" "r_arm_01_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "r_clav_ctrl.pm" "r_arm_01_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "r_arm_01_ctrl_grp_parentConstraint1.w0" "r_arm_01_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_arm_01_ctrl_grp.pim" "r_arm_01_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "r_clav_ctrl.s" "r_arm_01_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "r_clav_ctrl.pm" "r_arm_01_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "r_arm_01_ctrl_grp_scaleConstraint1.w0" "r_arm_01_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_arm_02_ctrl_grp_parentConstraint1.ctx" "r_arm_02_ctrl_grp.tx";
+connectAttr "r_arm_02_ctrl_grp_parentConstraint1.cty" "r_arm_02_ctrl_grp.ty";
+connectAttr "r_arm_02_ctrl_grp_parentConstraint1.ctz" "r_arm_02_ctrl_grp.tz";
+connectAttr "r_arm_02_ctrl_grp_parentConstraint1.crx" "r_arm_02_ctrl_grp.rx";
+connectAttr "r_arm_02_ctrl_grp_parentConstraint1.cry" "r_arm_02_ctrl_grp.ry";
+connectAttr "r_arm_02_ctrl_grp_parentConstraint1.crz" "r_arm_02_ctrl_grp.rz";
+connectAttr "r_arm_02_ctrl_grp_scaleConstraint1.csx" "r_arm_02_ctrl_grp.sx";
+connectAttr "r_arm_02_ctrl_grp_scaleConstraint1.csy" "r_arm_02_ctrl_grp.sy";
+connectAttr "r_arm_02_ctrl_grp_scaleConstraint1.csz" "r_arm_02_ctrl_grp.sz";
+connectAttr "r_arm_02_ctrl_grp.ro" "r_arm_02_ctrl_grp_parentConstraint1.cro";
+connectAttr "r_arm_02_ctrl_grp.pim" "r_arm_02_ctrl_grp_parentConstraint1.cpim";
+connectAttr "r_arm_02_ctrl_grp.rp" "r_arm_02_ctrl_grp_parentConstraint1.crp";
+connectAttr "r_arm_02_ctrl_grp.rpt" "r_arm_02_ctrl_grp_parentConstraint1.crt";
+connectAttr "r_arm_01_ctrl.t" "r_arm_02_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "r_arm_01_ctrl.rp" "r_arm_02_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "r_arm_01_ctrl.rpt" "r_arm_02_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "r_arm_01_ctrl.r" "r_arm_02_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "r_arm_01_ctrl.ro" "r_arm_02_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "r_arm_01_ctrl.s" "r_arm_02_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "r_arm_01_ctrl.pm" "r_arm_02_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "r_arm_02_ctrl_grp_parentConstraint1.w0" "r_arm_02_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_arm_02_ctrl_grp.pim" "r_arm_02_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "r_arm_01_ctrl.s" "r_arm_02_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "r_arm_01_ctrl.pm" "r_arm_02_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "r_arm_02_ctrl_grp_scaleConstraint1.w0" "r_arm_02_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_arm_03_ctrl_grp_parentConstraint1.ctx" "r_arm_03_ctrl_grp.tx";
+connectAttr "r_arm_03_ctrl_grp_parentConstraint1.cty" "r_arm_03_ctrl_grp.ty";
+connectAttr "r_arm_03_ctrl_grp_parentConstraint1.ctz" "r_arm_03_ctrl_grp.tz";
+connectAttr "r_arm_03_ctrl_grp_parentConstraint1.crx" "r_arm_03_ctrl_grp.rx";
+connectAttr "r_arm_03_ctrl_grp_parentConstraint1.cry" "r_arm_03_ctrl_grp.ry";
+connectAttr "r_arm_03_ctrl_grp_parentConstraint1.crz" "r_arm_03_ctrl_grp.rz";
+connectAttr "r_arm_03_ctrl_grp_scaleConstraint1.csx" "r_arm_03_ctrl_grp.sx";
+connectAttr "r_arm_03_ctrl_grp_scaleConstraint1.csy" "r_arm_03_ctrl_grp.sy";
+connectAttr "r_arm_03_ctrl_grp_scaleConstraint1.csz" "r_arm_03_ctrl_grp.sz";
+connectAttr "r_arm_03_ctrl_grp.ro" "r_arm_03_ctrl_grp_parentConstraint1.cro";
+connectAttr "r_arm_03_ctrl_grp.pim" "r_arm_03_ctrl_grp_parentConstraint1.cpim";
+connectAttr "r_arm_03_ctrl_grp.rp" "r_arm_03_ctrl_grp_parentConstraint1.crp";
+connectAttr "r_arm_03_ctrl_grp.rpt" "r_arm_03_ctrl_grp_parentConstraint1.crt";
+connectAttr "r_arm_02_ctrl.t" "r_arm_03_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "r_arm_02_ctrl.rp" "r_arm_03_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "r_arm_02_ctrl.rpt" "r_arm_03_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "r_arm_02_ctrl.r" "r_arm_03_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "r_arm_02_ctrl.ro" "r_arm_03_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "r_arm_02_ctrl.s" "r_arm_03_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "r_arm_02_ctrl.pm" "r_arm_03_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "r_arm_03_ctrl_grp_parentConstraint1.w0" "r_arm_03_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_arm_03_ctrl_grp.pim" "r_arm_03_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "r_arm_02_ctrl.s" "r_arm_03_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "r_arm_02_ctrl.pm" "r_arm_03_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "r_arm_03_ctrl_grp_scaleConstraint1.w0" "r_arm_03_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_arm_04_ctrl_grp_parentConstraint1.ctx" "r_arm_04_ctrl_grp.tx";
+connectAttr "r_arm_04_ctrl_grp_parentConstraint1.cty" "r_arm_04_ctrl_grp.ty";
+connectAttr "r_arm_04_ctrl_grp_parentConstraint1.ctz" "r_arm_04_ctrl_grp.tz";
+connectAttr "r_arm_04_ctrl_grp_parentConstraint1.crx" "r_arm_04_ctrl_grp.rx";
+connectAttr "r_arm_04_ctrl_grp_parentConstraint1.cry" "r_arm_04_ctrl_grp.ry";
+connectAttr "r_arm_04_ctrl_grp_parentConstraint1.crz" "r_arm_04_ctrl_grp.rz";
+connectAttr "r_arm_04_ctrl_grp_scaleConstraint1.csx" "r_arm_04_ctrl_grp.sx";
+connectAttr "r_arm_04_ctrl_grp_scaleConstraint1.csy" "r_arm_04_ctrl_grp.sy";
+connectAttr "r_arm_04_ctrl_grp_scaleConstraint1.csz" "r_arm_04_ctrl_grp.sz";
+connectAttr "r_arm_04_ctrl_grp.ro" "r_arm_04_ctrl_grp_parentConstraint1.cro";
+connectAttr "r_arm_04_ctrl_grp.pim" "r_arm_04_ctrl_grp_parentConstraint1.cpim";
+connectAttr "r_arm_04_ctrl_grp.rp" "r_arm_04_ctrl_grp_parentConstraint1.crp";
+connectAttr "r_arm_04_ctrl_grp.rpt" "r_arm_04_ctrl_grp_parentConstraint1.crt";
+connectAttr "r_arm_03_ctrl.t" "r_arm_04_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "r_arm_03_ctrl.rp" "r_arm_04_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "r_arm_03_ctrl.rpt" "r_arm_04_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "r_arm_03_ctrl.r" "r_arm_04_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "r_arm_03_ctrl.ro" "r_arm_04_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "r_arm_03_ctrl.s" "r_arm_04_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "r_arm_03_ctrl.pm" "r_arm_04_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "r_arm_04_ctrl_grp_parentConstraint1.w0" "r_arm_04_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_arm_04_ctrl_grp.pim" "r_arm_04_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "r_arm_03_ctrl.s" "r_arm_04_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "r_arm_03_ctrl.pm" "r_arm_04_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "r_arm_04_ctrl_grp_scaleConstraint1.w0" "r_arm_04_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "neck_01_ctrl_grp_parentConstraint1.ctx" "neck_01_ctrl_grp.tx";
+connectAttr "neck_01_ctrl_grp_parentConstraint1.cty" "neck_01_ctrl_grp.ty";
+connectAttr "neck_01_ctrl_grp_parentConstraint1.ctz" "neck_01_ctrl_grp.tz";
+connectAttr "neck_01_ctrl_grp_parentConstraint1.crx" "neck_01_ctrl_grp.rx";
+connectAttr "neck_01_ctrl_grp_parentConstraint1.cry" "neck_01_ctrl_grp.ry";
+connectAttr "neck_01_ctrl_grp_parentConstraint1.crz" "neck_01_ctrl_grp.rz";
+connectAttr "neck_01_ctrl_grp_scaleConstraint1.csx" "neck_01_ctrl_grp.sx";
+connectAttr "neck_01_ctrl_grp_scaleConstraint1.csy" "neck_01_ctrl_grp.sy";
+connectAttr "neck_01_ctrl_grp_scaleConstraint1.csz" "neck_01_ctrl_grp.sz";
+connectAttr "neck_01_ctrl_grp.ro" "neck_01_ctrl_grp_parentConstraint1.cro";
+connectAttr "neck_01_ctrl_grp.pim" "neck_01_ctrl_grp_parentConstraint1.cpim";
+connectAttr "neck_01_ctrl_grp.rp" "neck_01_ctrl_grp_parentConstraint1.crp";
+connectAttr "neck_01_ctrl_grp.rpt" "neck_01_ctrl_grp_parentConstraint1.crt";
+connectAttr "spine_03_ctrl.t" "neck_01_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "spine_03_ctrl.rp" "neck_01_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "spine_03_ctrl.rpt" "neck_01_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "spine_03_ctrl.r" "neck_01_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "spine_03_ctrl.ro" "neck_01_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "spine_03_ctrl.s" "neck_01_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "spine_03_ctrl.pm" "neck_01_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "neck_01_ctrl_grp_parentConstraint1.w0" "neck_01_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "neck_01_ctrl_grp.pim" "neck_01_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "spine_03_ctrl.s" "neck_01_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "spine_03_ctrl.pm" "neck_01_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "neck_01_ctrl_grp_scaleConstraint1.w0" "neck_01_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "neck_02_ctrl_grp_parentConstraint1.ctx" "neck_02_ctrl_grp.tx";
+connectAttr "neck_02_ctrl_grp_parentConstraint1.cty" "neck_02_ctrl_grp.ty";
+connectAttr "neck_02_ctrl_grp_parentConstraint1.ctz" "neck_02_ctrl_grp.tz";
+connectAttr "neck_02_ctrl_grp_parentConstraint1.crx" "neck_02_ctrl_grp.rx";
+connectAttr "neck_02_ctrl_grp_parentConstraint1.cry" "neck_02_ctrl_grp.ry";
+connectAttr "neck_02_ctrl_grp_parentConstraint1.crz" "neck_02_ctrl_grp.rz";
+connectAttr "neck_02_ctrl_grp_scaleConstraint1.csx" "neck_02_ctrl_grp.sx";
+connectAttr "neck_02_ctrl_grp_scaleConstraint1.csy" "neck_02_ctrl_grp.sy";
+connectAttr "neck_02_ctrl_grp_scaleConstraint1.csz" "neck_02_ctrl_grp.sz";
+connectAttr "neck_02_ctrl_grp.ro" "neck_02_ctrl_grp_parentConstraint1.cro";
+connectAttr "neck_02_ctrl_grp.pim" "neck_02_ctrl_grp_parentConstraint1.cpim";
+connectAttr "neck_02_ctrl_grp.rp" "neck_02_ctrl_grp_parentConstraint1.crp";
+connectAttr "neck_02_ctrl_grp.rpt" "neck_02_ctrl_grp_parentConstraint1.crt";
+connectAttr "neck_01_ctrl.t" "neck_02_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "neck_01_ctrl.rp" "neck_02_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "neck_01_ctrl.rpt" "neck_02_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "neck_01_ctrl.r" "neck_02_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "neck_01_ctrl.ro" "neck_02_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "neck_01_ctrl.s" "neck_02_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "neck_01_ctrl.pm" "neck_02_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "neck_02_ctrl_grp_parentConstraint1.w0" "neck_02_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "neck_02_ctrl_grp.pim" "neck_02_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "neck_01_ctrl.s" "neck_02_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "neck_01_ctrl.pm" "neck_02_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "neck_02_ctrl_grp_scaleConstraint1.w0" "neck_02_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "head_ctrl_grp_parentConstraint1.ctx" "head_ctrl_grp.tx";
+connectAttr "head_ctrl_grp_parentConstraint1.cty" "head_ctrl_grp.ty";
+connectAttr "head_ctrl_grp_parentConstraint1.ctz" "head_ctrl_grp.tz";
+connectAttr "head_ctrl_grp_parentConstraint1.crx" "head_ctrl_grp.rx";
+connectAttr "head_ctrl_grp_parentConstraint1.cry" "head_ctrl_grp.ry";
+connectAttr "head_ctrl_grp_parentConstraint1.crz" "head_ctrl_grp.rz";
+connectAttr "head_ctrl_grp_scaleConstraint1.csx" "head_ctrl_grp.sx";
+connectAttr "head_ctrl_grp_scaleConstraint1.csy" "head_ctrl_grp.sy";
+connectAttr "head_ctrl_grp_scaleConstraint1.csz" "head_ctrl_grp.sz";
+connectAttr "head_ctrl_grp.ro" "head_ctrl_grp_parentConstraint1.cro";
+connectAttr "head_ctrl_grp.pim" "head_ctrl_grp_parentConstraint1.cpim";
+connectAttr "head_ctrl_grp.rp" "head_ctrl_grp_parentConstraint1.crp";
+connectAttr "head_ctrl_grp.rpt" "head_ctrl_grp_parentConstraint1.crt";
+connectAttr "neck_02_ctrl.t" "head_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "neck_02_ctrl.rp" "head_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "neck_02_ctrl.rpt" "head_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "neck_02_ctrl.r" "head_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "neck_02_ctrl.ro" "head_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "neck_02_ctrl.s" "head_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "neck_02_ctrl.pm" "head_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "head_ctrl_grp_parentConstraint1.w0" "head_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "head_ctrl_grp.pim" "head_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "neck_02_ctrl.s" "head_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "neck_02_ctrl.pm" "head_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "head_ctrl_grp_scaleConstraint1.w0" "head_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "l_leg_01_ctrl_grp_parentConstraint1.ctx" "l_leg_01_ctrl_grp.tx";
+connectAttr "l_leg_01_ctrl_grp_parentConstraint1.cty" "l_leg_01_ctrl_grp.ty";
+connectAttr "l_leg_01_ctrl_grp_parentConstraint1.ctz" "l_leg_01_ctrl_grp.tz";
+connectAttr "l_leg_01_ctrl_grp_parentConstraint1.crx" "l_leg_01_ctrl_grp.rx";
+connectAttr "l_leg_01_ctrl_grp_parentConstraint1.cry" "l_leg_01_ctrl_grp.ry";
+connectAttr "l_leg_01_ctrl_grp_parentConstraint1.crz" "l_leg_01_ctrl_grp.rz";
+connectAttr "l_leg_01_ctrl_grp_scaleConstraint1.csx" "l_leg_01_ctrl_grp.sx";
+connectAttr "l_leg_01_ctrl_grp_scaleConstraint1.csy" "l_leg_01_ctrl_grp.sy";
+connectAttr "l_leg_01_ctrl_grp_scaleConstraint1.csz" "l_leg_01_ctrl_grp.sz";
+connectAttr "l_leg_01_ctrl_grp.ro" "l_leg_01_ctrl_grp_parentConstraint1.cro";
+connectAttr "l_leg_01_ctrl_grp.pim" "l_leg_01_ctrl_grp_parentConstraint1.cpim";
+connectAttr "l_leg_01_ctrl_grp.rp" "l_leg_01_ctrl_grp_parentConstraint1.crp";
+connectAttr "l_leg_01_ctrl_grp.rpt" "l_leg_01_ctrl_grp_parentConstraint1.crt";
+connectAttr "hip_01_ctrl.t" "l_leg_01_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "hip_01_ctrl.rp" "l_leg_01_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "hip_01_ctrl.rpt" "l_leg_01_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "hip_01_ctrl.r" "l_leg_01_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "hip_01_ctrl.ro" "l_leg_01_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "hip_01_ctrl.s" "l_leg_01_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "hip_01_ctrl.pm" "l_leg_01_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "l_leg_01_ctrl_grp_parentConstraint1.w0" "l_leg_01_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_leg_01_ctrl_grp.pim" "l_leg_01_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "hip_01_ctrl.s" "l_leg_01_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "hip_01_ctrl.pm" "l_leg_01_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "l_leg_01_ctrl_grp_scaleConstraint1.w0" "l_leg_01_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "l_leg_02_ctrl_grp_parentConstraint1.ctx" "l_leg_02_ctrl_grp.tx";
+connectAttr "l_leg_02_ctrl_grp_parentConstraint1.cty" "l_leg_02_ctrl_grp.ty";
+connectAttr "l_leg_02_ctrl_grp_parentConstraint1.ctz" "l_leg_02_ctrl_grp.tz";
+connectAttr "l_leg_02_ctrl_grp_parentConstraint1.crx" "l_leg_02_ctrl_grp.rx";
+connectAttr "l_leg_02_ctrl_grp_parentConstraint1.cry" "l_leg_02_ctrl_grp.ry";
+connectAttr "l_leg_02_ctrl_grp_parentConstraint1.crz" "l_leg_02_ctrl_grp.rz";
+connectAttr "l_leg_02_ctrl_grp_scaleConstraint1.csx" "l_leg_02_ctrl_grp.sx";
+connectAttr "l_leg_02_ctrl_grp_scaleConstraint1.csy" "l_leg_02_ctrl_grp.sy";
+connectAttr "l_leg_02_ctrl_grp_scaleConstraint1.csz" "l_leg_02_ctrl_grp.sz";
+connectAttr "l_leg_02_ctrl_grp.ro" "l_leg_02_ctrl_grp_parentConstraint1.cro";
+connectAttr "l_leg_02_ctrl_grp.pim" "l_leg_02_ctrl_grp_parentConstraint1.cpim";
+connectAttr "l_leg_02_ctrl_grp.rp" "l_leg_02_ctrl_grp_parentConstraint1.crp";
+connectAttr "l_leg_02_ctrl_grp.rpt" "l_leg_02_ctrl_grp_parentConstraint1.crt";
+connectAttr "l_leg_01_ctrl.t" "l_leg_02_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "l_leg_01_ctrl.rp" "l_leg_02_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "l_leg_01_ctrl.rpt" "l_leg_02_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "l_leg_01_ctrl.r" "l_leg_02_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "l_leg_01_ctrl.ro" "l_leg_02_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "l_leg_01_ctrl.s" "l_leg_02_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "l_leg_01_ctrl.pm" "l_leg_02_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "l_leg_02_ctrl_grp_parentConstraint1.w0" "l_leg_02_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_leg_02_ctrl_grp.pim" "l_leg_02_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "l_leg_01_ctrl.s" "l_leg_02_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "l_leg_01_ctrl.pm" "l_leg_02_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "l_leg_02_ctrl_grp_scaleConstraint1.w0" "l_leg_02_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "l_leg_03_ctrl_grp_parentConstraint1.ctx" "l_leg_03_ctrl_grp.tx";
+connectAttr "l_leg_03_ctrl_grp_parentConstraint1.cty" "l_leg_03_ctrl_grp.ty";
+connectAttr "l_leg_03_ctrl_grp_parentConstraint1.ctz" "l_leg_03_ctrl_grp.tz";
+connectAttr "l_leg_03_ctrl_grp_parentConstraint1.crx" "l_leg_03_ctrl_grp.rx";
+connectAttr "l_leg_03_ctrl_grp_parentConstraint1.cry" "l_leg_03_ctrl_grp.ry";
+connectAttr "l_leg_03_ctrl_grp_parentConstraint1.crz" "l_leg_03_ctrl_grp.rz";
+connectAttr "l_leg_03_ctrl_grp_scaleConstraint1.csx" "l_leg_03_ctrl_grp.sx";
+connectAttr "l_leg_03_ctrl_grp_scaleConstraint1.csy" "l_leg_03_ctrl_grp.sy";
+connectAttr "l_leg_03_ctrl_grp_scaleConstraint1.csz" "l_leg_03_ctrl_grp.sz";
+connectAttr "l_leg_03_ctrl_grp.ro" "l_leg_03_ctrl_grp_parentConstraint1.cro";
+connectAttr "l_leg_03_ctrl_grp.pim" "l_leg_03_ctrl_grp_parentConstraint1.cpim";
+connectAttr "l_leg_03_ctrl_grp.rp" "l_leg_03_ctrl_grp_parentConstraint1.crp";
+connectAttr "l_leg_03_ctrl_grp.rpt" "l_leg_03_ctrl_grp_parentConstraint1.crt";
+connectAttr "l_leg_02_ctrl.t" "l_leg_03_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "l_leg_02_ctrl.rp" "l_leg_03_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "l_leg_02_ctrl.rpt" "l_leg_03_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "l_leg_02_ctrl.r" "l_leg_03_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "l_leg_02_ctrl.ro" "l_leg_03_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "l_leg_02_ctrl.s" "l_leg_03_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "l_leg_02_ctrl.pm" "l_leg_03_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "l_leg_03_ctrl_grp_parentConstraint1.w0" "l_leg_03_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_leg_03_ctrl_grp.pim" "l_leg_03_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "l_leg_02_ctrl.s" "l_leg_03_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "l_leg_02_ctrl.pm" "l_leg_03_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "l_leg_03_ctrl_grp_scaleConstraint1.w0" "l_leg_03_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "l_leg_04_ctrl_grp_parentConstraint1.ctx" "l_leg_04_ctrl_grp.tx";
+connectAttr "l_leg_04_ctrl_grp_parentConstraint1.cty" "l_leg_04_ctrl_grp.ty";
+connectAttr "l_leg_04_ctrl_grp_parentConstraint1.ctz" "l_leg_04_ctrl_grp.tz";
+connectAttr "l_leg_04_ctrl_grp_parentConstraint1.crx" "l_leg_04_ctrl_grp.rx";
+connectAttr "l_leg_04_ctrl_grp_parentConstraint1.cry" "l_leg_04_ctrl_grp.ry";
+connectAttr "l_leg_04_ctrl_grp_parentConstraint1.crz" "l_leg_04_ctrl_grp.rz";
+connectAttr "l_leg_04_ctrl_grp_scaleConstraint1.csx" "l_leg_04_ctrl_grp.sx";
+connectAttr "l_leg_04_ctrl_grp_scaleConstraint1.csy" "l_leg_04_ctrl_grp.sy";
+connectAttr "l_leg_04_ctrl_grp_scaleConstraint1.csz" "l_leg_04_ctrl_grp.sz";
+connectAttr "l_leg_04_ctrl_grp.ro" "l_leg_04_ctrl_grp_parentConstraint1.cro";
+connectAttr "l_leg_04_ctrl_grp.pim" "l_leg_04_ctrl_grp_parentConstraint1.cpim";
+connectAttr "l_leg_04_ctrl_grp.rp" "l_leg_04_ctrl_grp_parentConstraint1.crp";
+connectAttr "l_leg_04_ctrl_grp.rpt" "l_leg_04_ctrl_grp_parentConstraint1.crt";
+connectAttr "l_leg_03_ctrl.t" "l_leg_04_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "l_leg_03_ctrl.rp" "l_leg_04_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "l_leg_03_ctrl.rpt" "l_leg_04_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "l_leg_03_ctrl.r" "l_leg_04_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "l_leg_03_ctrl.ro" "l_leg_04_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "l_leg_03_ctrl.s" "l_leg_04_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "l_leg_03_ctrl.pm" "l_leg_04_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "l_leg_04_ctrl_grp_parentConstraint1.w0" "l_leg_04_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_leg_04_ctrl_grp.pim" "l_leg_04_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "l_leg_03_ctrl.s" "l_leg_04_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "l_leg_03_ctrl.pm" "l_leg_04_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "l_leg_04_ctrl_grp_scaleConstraint1.w0" "l_leg_04_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "l_leg_05_ctrl_grp_parentConstraint1.ctx" "l_leg_05_ctrl_grp.tx";
+connectAttr "l_leg_05_ctrl_grp_parentConstraint1.cty" "l_leg_05_ctrl_grp.ty";
+connectAttr "l_leg_05_ctrl_grp_parentConstraint1.ctz" "l_leg_05_ctrl_grp.tz";
+connectAttr "l_leg_05_ctrl_grp_parentConstraint1.crx" "l_leg_05_ctrl_grp.rx";
+connectAttr "l_leg_05_ctrl_grp_parentConstraint1.cry" "l_leg_05_ctrl_grp.ry";
+connectAttr "l_leg_05_ctrl_grp_parentConstraint1.crz" "l_leg_05_ctrl_grp.rz";
+connectAttr "l_leg_05_ctrl_grp_scaleConstraint1.csx" "l_leg_05_ctrl_grp.sx";
+connectAttr "l_leg_05_ctrl_grp_scaleConstraint1.csy" "l_leg_05_ctrl_grp.sy";
+connectAttr "l_leg_05_ctrl_grp_scaleConstraint1.csz" "l_leg_05_ctrl_grp.sz";
+connectAttr "l_leg_05_ctrl_grp.ro" "l_leg_05_ctrl_grp_parentConstraint1.cro";
+connectAttr "l_leg_05_ctrl_grp.pim" "l_leg_05_ctrl_grp_parentConstraint1.cpim";
+connectAttr "l_leg_05_ctrl_grp.rp" "l_leg_05_ctrl_grp_parentConstraint1.crp";
+connectAttr "l_leg_05_ctrl_grp.rpt" "l_leg_05_ctrl_grp_parentConstraint1.crt";
+connectAttr "l_leg_04_ctrl.t" "l_leg_05_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "l_leg_04_ctrl.rp" "l_leg_05_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "l_leg_04_ctrl.rpt" "l_leg_05_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "l_leg_04_ctrl.r" "l_leg_05_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "l_leg_04_ctrl.ro" "l_leg_05_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "l_leg_04_ctrl.s" "l_leg_05_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "l_leg_04_ctrl.pm" "l_leg_05_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "l_leg_05_ctrl_grp_parentConstraint1.w0" "l_leg_05_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_leg_05_ctrl_grp.pim" "l_leg_05_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "l_leg_04_ctrl.s" "l_leg_05_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "l_leg_04_ctrl.pm" "l_leg_05_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "l_leg_05_ctrl_grp_scaleConstraint1.w0" "l_leg_05_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_01_ctrl_grp_parentConstraint1.ctx" "r_leg_01_ctrl_grp.tx";
+connectAttr "r_leg_01_ctrl_grp_parentConstraint1.cty" "r_leg_01_ctrl_grp.ty";
+connectAttr "r_leg_01_ctrl_grp_parentConstraint1.ctz" "r_leg_01_ctrl_grp.tz";
+connectAttr "r_leg_01_ctrl_grp_parentConstraint1.crx" "r_leg_01_ctrl_grp.rx";
+connectAttr "r_leg_01_ctrl_grp_parentConstraint1.cry" "r_leg_01_ctrl_grp.ry";
+connectAttr "r_leg_01_ctrl_grp_parentConstraint1.crz" "r_leg_01_ctrl_grp.rz";
+connectAttr "r_leg_01_ctrl_grp_scaleConstraint1.csx" "r_leg_01_ctrl_grp.sx";
+connectAttr "r_leg_01_ctrl_grp_scaleConstraint1.csy" "r_leg_01_ctrl_grp.sy";
+connectAttr "r_leg_01_ctrl_grp_scaleConstraint1.csz" "r_leg_01_ctrl_grp.sz";
+connectAttr "r_leg_01_ctrl_grp.ro" "r_leg_01_ctrl_grp_parentConstraint1.cro";
+connectAttr "r_leg_01_ctrl_grp.pim" "r_leg_01_ctrl_grp_parentConstraint1.cpim";
+connectAttr "r_leg_01_ctrl_grp.rp" "r_leg_01_ctrl_grp_parentConstraint1.crp";
+connectAttr "r_leg_01_ctrl_grp.rpt" "r_leg_01_ctrl_grp_parentConstraint1.crt";
+connectAttr "hip_01_ctrl.t" "r_leg_01_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "hip_01_ctrl.rp" "r_leg_01_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "hip_01_ctrl.rpt" "r_leg_01_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "hip_01_ctrl.r" "r_leg_01_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "hip_01_ctrl.ro" "r_leg_01_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "hip_01_ctrl.s" "r_leg_01_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "hip_01_ctrl.pm" "r_leg_01_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "r_leg_01_ctrl_grp_parentConstraint1.w0" "r_leg_01_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_01_ctrl_grp.pim" "r_leg_01_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "hip_01_ctrl.s" "r_leg_01_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "hip_01_ctrl.pm" "r_leg_01_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "r_leg_01_ctrl_grp_scaleConstraint1.w0" "r_leg_01_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_02_ctrl_grp_parentConstraint1.ctx" "r_leg_02_ctrl_grp.tx";
+connectAttr "r_leg_02_ctrl_grp_parentConstraint1.cty" "r_leg_02_ctrl_grp.ty";
+connectAttr "r_leg_02_ctrl_grp_parentConstraint1.ctz" "r_leg_02_ctrl_grp.tz";
+connectAttr "r_leg_02_ctrl_grp_parentConstraint1.crx" "r_leg_02_ctrl_grp.rx";
+connectAttr "r_leg_02_ctrl_grp_parentConstraint1.cry" "r_leg_02_ctrl_grp.ry";
+connectAttr "r_leg_02_ctrl_grp_parentConstraint1.crz" "r_leg_02_ctrl_grp.rz";
+connectAttr "r_leg_02_ctrl_grp_scaleConstraint1.csx" "r_leg_02_ctrl_grp.sx";
+connectAttr "r_leg_02_ctrl_grp_scaleConstraint1.csy" "r_leg_02_ctrl_grp.sy";
+connectAttr "r_leg_02_ctrl_grp_scaleConstraint1.csz" "r_leg_02_ctrl_grp.sz";
+connectAttr "r_leg_02_ctrl_grp.ro" "r_leg_02_ctrl_grp_parentConstraint1.cro";
+connectAttr "r_leg_02_ctrl_grp.pim" "r_leg_02_ctrl_grp_parentConstraint1.cpim";
+connectAttr "r_leg_02_ctrl_grp.rp" "r_leg_02_ctrl_grp_parentConstraint1.crp";
+connectAttr "r_leg_02_ctrl_grp.rpt" "r_leg_02_ctrl_grp_parentConstraint1.crt";
+connectAttr "r_leg_01_ctrl.t" "r_leg_02_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "r_leg_01_ctrl.rp" "r_leg_02_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "r_leg_01_ctrl.rpt" "r_leg_02_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "r_leg_01_ctrl.r" "r_leg_02_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "r_leg_01_ctrl.ro" "r_leg_02_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "r_leg_01_ctrl.s" "r_leg_02_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "r_leg_01_ctrl.pm" "r_leg_02_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "r_leg_02_ctrl_grp_parentConstraint1.w0" "r_leg_02_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_02_ctrl_grp.pim" "r_leg_02_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "r_leg_01_ctrl.s" "r_leg_02_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "r_leg_01_ctrl.pm" "r_leg_02_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "r_leg_02_ctrl_grp_scaleConstraint1.w0" "r_leg_02_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_03_ctrl_grp_parentConstraint1.ctx" "r_leg_03_ctrl_grp.tx";
+connectAttr "r_leg_03_ctrl_grp_parentConstraint1.cty" "r_leg_03_ctrl_grp.ty";
+connectAttr "r_leg_03_ctrl_grp_parentConstraint1.ctz" "r_leg_03_ctrl_grp.tz";
+connectAttr "r_leg_03_ctrl_grp_parentConstraint1.crx" "r_leg_03_ctrl_grp.rx";
+connectAttr "r_leg_03_ctrl_grp_parentConstraint1.cry" "r_leg_03_ctrl_grp.ry";
+connectAttr "r_leg_03_ctrl_grp_parentConstraint1.crz" "r_leg_03_ctrl_grp.rz";
+connectAttr "r_leg_03_ctrl_grp_scaleConstraint1.csx" "r_leg_03_ctrl_grp.sx";
+connectAttr "r_leg_03_ctrl_grp_scaleConstraint1.csy" "r_leg_03_ctrl_grp.sy";
+connectAttr "r_leg_03_ctrl_grp_scaleConstraint1.csz" "r_leg_03_ctrl_grp.sz";
+connectAttr "r_leg_03_ctrl_grp.ro" "r_leg_03_ctrl_grp_parentConstraint1.cro";
+connectAttr "r_leg_03_ctrl_grp.pim" "r_leg_03_ctrl_grp_parentConstraint1.cpim";
+connectAttr "r_leg_03_ctrl_grp.rp" "r_leg_03_ctrl_grp_parentConstraint1.crp";
+connectAttr "r_leg_03_ctrl_grp.rpt" "r_leg_03_ctrl_grp_parentConstraint1.crt";
+connectAttr "r_leg_02_ctrl.t" "r_leg_03_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "r_leg_02_ctrl.rp" "r_leg_03_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "r_leg_02_ctrl.rpt" "r_leg_03_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "r_leg_02_ctrl.r" "r_leg_03_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "r_leg_02_ctrl.ro" "r_leg_03_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "r_leg_02_ctrl.s" "r_leg_03_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "r_leg_02_ctrl.pm" "r_leg_03_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "r_leg_03_ctrl_grp_parentConstraint1.w0" "r_leg_03_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_03_ctrl_grp.pim" "r_leg_03_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "r_leg_02_ctrl.s" "r_leg_03_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "r_leg_02_ctrl.pm" "r_leg_03_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "r_leg_03_ctrl_grp_scaleConstraint1.w0" "r_leg_03_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_04_ctrl_grp_parentConstraint1.ctx" "r_leg_04_ctrl_grp.tx";
+connectAttr "r_leg_04_ctrl_grp_parentConstraint1.cty" "r_leg_04_ctrl_grp.ty";
+connectAttr "r_leg_04_ctrl_grp_parentConstraint1.ctz" "r_leg_04_ctrl_grp.tz";
+connectAttr "r_leg_04_ctrl_grp_parentConstraint1.crx" "r_leg_04_ctrl_grp.rx";
+connectAttr "r_leg_04_ctrl_grp_parentConstraint1.cry" "r_leg_04_ctrl_grp.ry";
+connectAttr "r_leg_04_ctrl_grp_parentConstraint1.crz" "r_leg_04_ctrl_grp.rz";
+connectAttr "r_leg_04_ctrl_grp_scaleConstraint1.csx" "r_leg_04_ctrl_grp.sx";
+connectAttr "r_leg_04_ctrl_grp_scaleConstraint1.csy" "r_leg_04_ctrl_grp.sy";
+connectAttr "r_leg_04_ctrl_grp_scaleConstraint1.csz" "r_leg_04_ctrl_grp.sz";
+connectAttr "r_leg_04_ctrl_grp.ro" "r_leg_04_ctrl_grp_parentConstraint1.cro";
+connectAttr "r_leg_04_ctrl_grp.pim" "r_leg_04_ctrl_grp_parentConstraint1.cpim";
+connectAttr "r_leg_04_ctrl_grp.rp" "r_leg_04_ctrl_grp_parentConstraint1.crp";
+connectAttr "r_leg_04_ctrl_grp.rpt" "r_leg_04_ctrl_grp_parentConstraint1.crt";
+connectAttr "r_leg_03_ctrl.t" "r_leg_04_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "r_leg_03_ctrl.rp" "r_leg_04_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "r_leg_03_ctrl.rpt" "r_leg_04_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "r_leg_03_ctrl.r" "r_leg_04_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "r_leg_03_ctrl.ro" "r_leg_04_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "r_leg_03_ctrl.s" "r_leg_04_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "r_leg_03_ctrl.pm" "r_leg_04_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "r_leg_04_ctrl_grp_parentConstraint1.w0" "r_leg_04_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_04_ctrl_grp.pim" "r_leg_04_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "r_leg_03_ctrl.s" "r_leg_04_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "r_leg_03_ctrl.pm" "r_leg_04_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "r_leg_04_ctrl_grp_scaleConstraint1.w0" "r_leg_04_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_05_ctrl_grp_parentConstraint1.ctx" "r_leg_05_ctrl_grp.tx";
+connectAttr "r_leg_05_ctrl_grp_parentConstraint1.cty" "r_leg_05_ctrl_grp.ty";
+connectAttr "r_leg_05_ctrl_grp_parentConstraint1.ctz" "r_leg_05_ctrl_grp.tz";
+connectAttr "r_leg_05_ctrl_grp_parentConstraint1.crx" "r_leg_05_ctrl_grp.rx";
+connectAttr "r_leg_05_ctrl_grp_parentConstraint1.cry" "r_leg_05_ctrl_grp.ry";
+connectAttr "r_leg_05_ctrl_grp_parentConstraint1.crz" "r_leg_05_ctrl_grp.rz";
+connectAttr "r_leg_05_ctrl_grp_scaleConstraint1.csx" "r_leg_05_ctrl_grp.sx";
+connectAttr "r_leg_05_ctrl_grp_scaleConstraint1.csy" "r_leg_05_ctrl_grp.sy";
+connectAttr "r_leg_05_ctrl_grp_scaleConstraint1.csz" "r_leg_05_ctrl_grp.sz";
+connectAttr "r_leg_05_ctrl_grp.ro" "r_leg_05_ctrl_grp_parentConstraint1.cro";
+connectAttr "r_leg_05_ctrl_grp.pim" "r_leg_05_ctrl_grp_parentConstraint1.cpim";
+connectAttr "r_leg_05_ctrl_grp.rp" "r_leg_05_ctrl_grp_parentConstraint1.crp";
+connectAttr "r_leg_05_ctrl_grp.rpt" "r_leg_05_ctrl_grp_parentConstraint1.crt";
+connectAttr "r_leg_04_ctrl.t" "r_leg_05_ctrl_grp_parentConstraint1.tg[0].tt";
+connectAttr "r_leg_04_ctrl.rp" "r_leg_05_ctrl_grp_parentConstraint1.tg[0].trp";
+connectAttr "r_leg_04_ctrl.rpt" "r_leg_05_ctrl_grp_parentConstraint1.tg[0].trt";
+connectAttr "r_leg_04_ctrl.r" "r_leg_05_ctrl_grp_parentConstraint1.tg[0].tr";
+connectAttr "r_leg_04_ctrl.ro" "r_leg_05_ctrl_grp_parentConstraint1.tg[0].tro";
+connectAttr "r_leg_04_ctrl.s" "r_leg_05_ctrl_grp_parentConstraint1.tg[0].ts";
+connectAttr "r_leg_04_ctrl.pm" "r_leg_05_ctrl_grp_parentConstraint1.tg[0].tpm";
+connectAttr "r_leg_05_ctrl_grp_parentConstraint1.w0" "r_leg_05_ctrl_grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_05_ctrl_grp.pim" "r_leg_05_ctrl_grp_scaleConstraint1.cpim";
+connectAttr "r_leg_04_ctrl.s" "r_leg_05_ctrl_grp_scaleConstraint1.tg[0].ts";
+connectAttr "r_leg_04_ctrl.pm" "r_leg_05_ctrl_grp_scaleConstraint1.tg[0].tpm";
+connectAttr "r_leg_05_ctrl_grp_scaleConstraint1.w0" "r_leg_05_ctrl_grp_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "skeleton_layer.di" "skeleton.do";
+connectAttr "hip_01_jnt_scaleConstraint1.csx" "hip_01_jnt.sx";
+connectAttr "hip_01_jnt_scaleConstraint1.csy" "hip_01_jnt.sy";
+connectAttr "hip_01_jnt_scaleConstraint1.csz" "hip_01_jnt.sz";
+connectAttr "hip_01_jnt_parentConstraint1.ctx" "hip_01_jnt.tx";
+connectAttr "hip_01_jnt_parentConstraint1.cty" "hip_01_jnt.ty";
+connectAttr "hip_01_jnt_parentConstraint1.ctz" "hip_01_jnt.tz";
+connectAttr "hip_01_jnt_parentConstraint1.crx" "hip_01_jnt.rx";
+connectAttr "hip_01_jnt_parentConstraint1.cry" "hip_01_jnt.ry";
+connectAttr "hip_01_jnt_parentConstraint1.crz" "hip_01_jnt.rz";
+connectAttr "hip_01_jnt.ro" "hip_01_jnt_parentConstraint1.cro";
+connectAttr "hip_01_jnt.pim" "hip_01_jnt_parentConstraint1.cpim";
+connectAttr "hip_01_jnt.rp" "hip_01_jnt_parentConstraint1.crp";
+connectAttr "hip_01_jnt.rpt" "hip_01_jnt_parentConstraint1.crt";
+connectAttr "hip_01_jnt.jo" "hip_01_jnt_parentConstraint1.cjo";
+connectAttr "hip_01_ctrl.t" "hip_01_jnt_parentConstraint1.tg[0].tt";
+connectAttr "hip_01_ctrl.rp" "hip_01_jnt_parentConstraint1.tg[0].trp";
+connectAttr "hip_01_ctrl.rpt" "hip_01_jnt_parentConstraint1.tg[0].trt";
+connectAttr "hip_01_ctrl.r" "hip_01_jnt_parentConstraint1.tg[0].tr";
+connectAttr "hip_01_ctrl.ro" "hip_01_jnt_parentConstraint1.tg[0].tro";
+connectAttr "hip_01_ctrl.s" "hip_01_jnt_parentConstraint1.tg[0].ts";
+connectAttr "hip_01_ctrl.pm" "hip_01_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "hip_01_jnt_parentConstraint1.w0" "hip_01_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "hip_01_jnt.pim" "hip_01_jnt_scaleConstraint1.cpim";
+connectAttr "hip_01_ctrl.s" "hip_01_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "hip_01_ctrl.pm" "hip_01_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "hip_01_jnt_scaleConstraint1.w0" "hip_01_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "spine_01_jnt_scaleConstraint1.csx" "spine_01_jnt.sx";
+connectAttr "spine_01_jnt_scaleConstraint1.csy" "spine_01_jnt.sy";
+connectAttr "spine_01_jnt_scaleConstraint1.csz" "spine_01_jnt.sz";
+connectAttr "spine_01_jnt_parentConstraint1.ctx" "spine_01_jnt.tx";
+connectAttr "spine_01_jnt_parentConstraint1.cty" "spine_01_jnt.ty";
+connectAttr "spine_01_jnt_parentConstraint1.ctz" "spine_01_jnt.tz";
+connectAttr "spine_01_jnt_parentConstraint1.crx" "spine_01_jnt.rx";
+connectAttr "spine_01_jnt_parentConstraint1.cry" "spine_01_jnt.ry";
+connectAttr "spine_01_jnt_parentConstraint1.crz" "spine_01_jnt.rz";
+connectAttr "spine_01_jnt.ro" "spine_01_jnt_parentConstraint1.cro";
+connectAttr "spine_01_jnt.pim" "spine_01_jnt_parentConstraint1.cpim";
+connectAttr "spine_01_jnt.rp" "spine_01_jnt_parentConstraint1.crp";
+connectAttr "spine_01_jnt.rpt" "spine_01_jnt_parentConstraint1.crt";
+connectAttr "spine_01_jnt.jo" "spine_01_jnt_parentConstraint1.cjo";
+connectAttr "spine_01_ctrl.t" "spine_01_jnt_parentConstraint1.tg[0].tt";
+connectAttr "spine_01_ctrl.rp" "spine_01_jnt_parentConstraint1.tg[0].trp";
+connectAttr "spine_01_ctrl.rpt" "spine_01_jnt_parentConstraint1.tg[0].trt";
+connectAttr "spine_01_ctrl.r" "spine_01_jnt_parentConstraint1.tg[0].tr";
+connectAttr "spine_01_ctrl.ro" "spine_01_jnt_parentConstraint1.tg[0].tro";
+connectAttr "spine_01_ctrl.s" "spine_01_jnt_parentConstraint1.tg[0].ts";
+connectAttr "spine_01_ctrl.pm" "spine_01_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "spine_01_jnt_parentConstraint1.w0" "spine_01_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "spine_01_jnt.pim" "spine_01_jnt_scaleConstraint1.cpim";
+connectAttr "spine_01_ctrl.s" "spine_01_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "spine_01_ctrl.pm" "spine_01_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "spine_01_jnt_scaleConstraint1.w0" "spine_01_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "spine_02_jnt_scaleConstraint1.csx" "spine_02_jnt.sx";
+connectAttr "spine_02_jnt_scaleConstraint1.csy" "spine_02_jnt.sy";
+connectAttr "spine_02_jnt_scaleConstraint1.csz" "spine_02_jnt.sz";
+connectAttr "spine_02_jnt_parentConstraint1.ctx" "spine_02_jnt.tx";
+connectAttr "spine_02_jnt_parentConstraint1.cty" "spine_02_jnt.ty";
+connectAttr "spine_02_jnt_parentConstraint1.ctz" "spine_02_jnt.tz";
+connectAttr "spine_02_jnt_parentConstraint1.crx" "spine_02_jnt.rx";
+connectAttr "spine_02_jnt_parentConstraint1.cry" "spine_02_jnt.ry";
+connectAttr "spine_02_jnt_parentConstraint1.crz" "spine_02_jnt.rz";
+connectAttr "spine_02_jnt.ro" "spine_02_jnt_parentConstraint1.cro";
+connectAttr "spine_02_jnt.pim" "spine_02_jnt_parentConstraint1.cpim";
+connectAttr "spine_02_jnt.rp" "spine_02_jnt_parentConstraint1.crp";
+connectAttr "spine_02_jnt.rpt" "spine_02_jnt_parentConstraint1.crt";
+connectAttr "spine_02_jnt.jo" "spine_02_jnt_parentConstraint1.cjo";
+connectAttr "spine_02_ctrl.t" "spine_02_jnt_parentConstraint1.tg[0].tt";
+connectAttr "spine_02_ctrl.rp" "spine_02_jnt_parentConstraint1.tg[0].trp";
+connectAttr "spine_02_ctrl.rpt" "spine_02_jnt_parentConstraint1.tg[0].trt";
+connectAttr "spine_02_ctrl.r" "spine_02_jnt_parentConstraint1.tg[0].tr";
+connectAttr "spine_02_ctrl.ro" "spine_02_jnt_parentConstraint1.tg[0].tro";
+connectAttr "spine_02_ctrl.s" "spine_02_jnt_parentConstraint1.tg[0].ts";
+connectAttr "spine_02_ctrl.pm" "spine_02_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "spine_02_jnt_parentConstraint1.w0" "spine_02_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "spine_02_jnt.ssc" "spine_02_jnt_scaleConstraint1.tsc";
+connectAttr "spine_02_jnt.pim" "spine_02_jnt_scaleConstraint1.cpim";
+connectAttr "spine_02_ctrl.s" "spine_02_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "spine_02_ctrl.pm" "spine_02_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "spine_02_jnt_scaleConstraint1.w0" "spine_02_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "spine_03_jnt_scaleConstraint1.csx" "spine_03_jnt.sx";
+connectAttr "spine_03_jnt_scaleConstraint1.csy" "spine_03_jnt.sy";
+connectAttr "spine_03_jnt_scaleConstraint1.csz" "spine_03_jnt.sz";
+connectAttr "spine_03_jnt_parentConstraint1.ctx" "spine_03_jnt.tx";
+connectAttr "spine_03_jnt_parentConstraint1.cty" "spine_03_jnt.ty";
+connectAttr "spine_03_jnt_parentConstraint1.ctz" "spine_03_jnt.tz";
+connectAttr "spine_03_jnt_parentConstraint1.crx" "spine_03_jnt.rx";
+connectAttr "spine_03_jnt_parentConstraint1.cry" "spine_03_jnt.ry";
+connectAttr "spine_03_jnt_parentConstraint1.crz" "spine_03_jnt.rz";
+connectAttr "spine_03_jnt.ro" "spine_03_jnt_parentConstraint1.cro";
+connectAttr "spine_03_jnt.pim" "spine_03_jnt_parentConstraint1.cpim";
+connectAttr "spine_03_jnt.rp" "spine_03_jnt_parentConstraint1.crp";
+connectAttr "spine_03_jnt.rpt" "spine_03_jnt_parentConstraint1.crt";
+connectAttr "spine_03_jnt.jo" "spine_03_jnt_parentConstraint1.cjo";
+connectAttr "spine_03_ctrl.t" "spine_03_jnt_parentConstraint1.tg[0].tt";
+connectAttr "spine_03_ctrl.rp" "spine_03_jnt_parentConstraint1.tg[0].trp";
+connectAttr "spine_03_ctrl.rpt" "spine_03_jnt_parentConstraint1.tg[0].trt";
+connectAttr "spine_03_ctrl.r" "spine_03_jnt_parentConstraint1.tg[0].tr";
+connectAttr "spine_03_ctrl.ro" "spine_03_jnt_parentConstraint1.tg[0].tro";
+connectAttr "spine_03_ctrl.s" "spine_03_jnt_parentConstraint1.tg[0].ts";
+connectAttr "spine_03_ctrl.pm" "spine_03_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "spine_03_jnt_parentConstraint1.w0" "spine_03_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "spine_03_jnt.ssc" "spine_03_jnt_scaleConstraint1.tsc";
+connectAttr "spine_03_jnt.pim" "spine_03_jnt_scaleConstraint1.cpim";
+connectAttr "spine_03_ctrl.s" "spine_03_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "spine_03_ctrl.pm" "spine_03_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "spine_03_jnt_scaleConstraint1.w0" "spine_03_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "neck_01_jnt_scaleConstraint1.csx" "neck_01_jnt.sx";
+connectAttr "neck_01_jnt_scaleConstraint1.csy" "neck_01_jnt.sy";
+connectAttr "neck_01_jnt_scaleConstraint1.csz" "neck_01_jnt.sz";
+connectAttr "neck_01_jnt_parentConstraint1.ctx" "neck_01_jnt.tx";
+connectAttr "neck_01_jnt_parentConstraint1.cty" "neck_01_jnt.ty";
+connectAttr "neck_01_jnt_parentConstraint1.ctz" "neck_01_jnt.tz";
+connectAttr "neck_01_jnt_parentConstraint1.crx" "neck_01_jnt.rx";
+connectAttr "neck_01_jnt_parentConstraint1.cry" "neck_01_jnt.ry";
+connectAttr "neck_01_jnt_parentConstraint1.crz" "neck_01_jnt.rz";
+connectAttr "neck_01_jnt.ro" "neck_01_jnt_parentConstraint1.cro";
+connectAttr "neck_01_jnt.pim" "neck_01_jnt_parentConstraint1.cpim";
+connectAttr "neck_01_jnt.rp" "neck_01_jnt_parentConstraint1.crp";
+connectAttr "neck_01_jnt.rpt" "neck_01_jnt_parentConstraint1.crt";
+connectAttr "neck_01_jnt.jo" "neck_01_jnt_parentConstraint1.cjo";
+connectAttr "neck_01_ctrl.t" "neck_01_jnt_parentConstraint1.tg[0].tt";
+connectAttr "neck_01_ctrl.rp" "neck_01_jnt_parentConstraint1.tg[0].trp";
+connectAttr "neck_01_ctrl.rpt" "neck_01_jnt_parentConstraint1.tg[0].trt";
+connectAttr "neck_01_ctrl.r" "neck_01_jnt_parentConstraint1.tg[0].tr";
+connectAttr "neck_01_ctrl.ro" "neck_01_jnt_parentConstraint1.tg[0].tro";
+connectAttr "neck_01_ctrl.s" "neck_01_jnt_parentConstraint1.tg[0].ts";
+connectAttr "neck_01_ctrl.pm" "neck_01_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "neck_01_jnt_parentConstraint1.w0" "neck_01_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "neck_01_jnt.ssc" "neck_01_jnt_scaleConstraint1.tsc";
+connectAttr "neck_01_jnt.pim" "neck_01_jnt_scaleConstraint1.cpim";
+connectAttr "neck_01_ctrl.s" "neck_01_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "neck_01_ctrl.pm" "neck_01_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "neck_01_jnt_scaleConstraint1.w0" "neck_01_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "neck_02_jnt_scaleConstraint1.csx" "neck_02_jnt.sx";
+connectAttr "neck_02_jnt_scaleConstraint1.csy" "neck_02_jnt.sy";
+connectAttr "neck_02_jnt_scaleConstraint1.csz" "neck_02_jnt.sz";
+connectAttr "neck_02_jnt_parentConstraint1.ctx" "neck_02_jnt.tx";
+connectAttr "neck_02_jnt_parentConstraint1.cty" "neck_02_jnt.ty";
+connectAttr "neck_02_jnt_parentConstraint1.ctz" "neck_02_jnt.tz";
+connectAttr "neck_02_jnt_parentConstraint1.crx" "neck_02_jnt.rx";
+connectAttr "neck_02_jnt_parentConstraint1.cry" "neck_02_jnt.ry";
+connectAttr "neck_02_jnt_parentConstraint1.crz" "neck_02_jnt.rz";
+connectAttr "neck_02_jnt.ro" "neck_02_jnt_parentConstraint1.cro";
+connectAttr "neck_02_jnt.pim" "neck_02_jnt_parentConstraint1.cpim";
+connectAttr "neck_02_jnt.rp" "neck_02_jnt_parentConstraint1.crp";
+connectAttr "neck_02_jnt.rpt" "neck_02_jnt_parentConstraint1.crt";
+connectAttr "neck_02_jnt.jo" "neck_02_jnt_parentConstraint1.cjo";
+connectAttr "neck_02_ctrl.t" "neck_02_jnt_parentConstraint1.tg[0].tt";
+connectAttr "neck_02_ctrl.rp" "neck_02_jnt_parentConstraint1.tg[0].trp";
+connectAttr "neck_02_ctrl.rpt" "neck_02_jnt_parentConstraint1.tg[0].trt";
+connectAttr "neck_02_ctrl.r" "neck_02_jnt_parentConstraint1.tg[0].tr";
+connectAttr "neck_02_ctrl.ro" "neck_02_jnt_parentConstraint1.tg[0].tro";
+connectAttr "neck_02_ctrl.s" "neck_02_jnt_parentConstraint1.tg[0].ts";
+connectAttr "neck_02_ctrl.pm" "neck_02_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "neck_02_jnt_parentConstraint1.w0" "neck_02_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "neck_02_jnt.ssc" "neck_02_jnt_scaleConstraint1.tsc";
+connectAttr "neck_02_jnt.pim" "neck_02_jnt_scaleConstraint1.cpim";
+connectAttr "neck_02_ctrl.s" "neck_02_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "neck_02_ctrl.pm" "neck_02_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "neck_02_jnt_scaleConstraint1.w0" "neck_02_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "head_jnt_scaleConstraint1.csx" "head_jnt.sx";
+connectAttr "head_jnt_scaleConstraint1.csy" "head_jnt.sy";
+connectAttr "head_jnt_scaleConstraint1.csz" "head_jnt.sz";
+connectAttr "head_jnt_parentConstraint1.ctx" "head_jnt.tx";
+connectAttr "head_jnt_parentConstraint1.cty" "head_jnt.ty";
+connectAttr "head_jnt_parentConstraint1.ctz" "head_jnt.tz";
+connectAttr "head_jnt_parentConstraint1.crx" "head_jnt.rx";
+connectAttr "head_jnt_parentConstraint1.cry" "head_jnt.ry";
+connectAttr "head_jnt_parentConstraint1.crz" "head_jnt.rz";
+connectAttr "head_jnt.ro" "head_jnt_parentConstraint1.cro";
+connectAttr "head_jnt.pim" "head_jnt_parentConstraint1.cpim";
+connectAttr "head_jnt.rp" "head_jnt_parentConstraint1.crp";
+connectAttr "head_jnt.rpt" "head_jnt_parentConstraint1.crt";
+connectAttr "head_jnt.jo" "head_jnt_parentConstraint1.cjo";
+connectAttr "head_ctrl.t" "head_jnt_parentConstraint1.tg[0].tt";
+connectAttr "head_ctrl.rp" "head_jnt_parentConstraint1.tg[0].trp";
+connectAttr "head_ctrl.rpt" "head_jnt_parentConstraint1.tg[0].trt";
+connectAttr "head_ctrl.r" "head_jnt_parentConstraint1.tg[0].tr";
+connectAttr "head_ctrl.ro" "head_jnt_parentConstraint1.tg[0].tro";
+connectAttr "head_ctrl.s" "head_jnt_parentConstraint1.tg[0].ts";
+connectAttr "head_ctrl.pm" "head_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "head_jnt_parentConstraint1.w0" "head_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "head_jnt.ssc" "head_jnt_scaleConstraint1.tsc";
+connectAttr "head_jnt.pim" "head_jnt_scaleConstraint1.cpim";
+connectAttr "head_ctrl.s" "head_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "head_ctrl.pm" "head_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "head_jnt_scaleConstraint1.w0" "head_jnt_scaleConstraint1.tg[0].tw";
+connectAttr "l_leg_01_jnt_scaleConstraint1.csx" "l_leg_01_jnt.sx";
+connectAttr "l_leg_01_jnt_scaleConstraint1.csy" "l_leg_01_jnt.sy";
+connectAttr "l_leg_01_jnt_scaleConstraint1.csz" "l_leg_01_jnt.sz";
+connectAttr "l_leg_01_jnt_parentConstraint1.ctx" "l_leg_01_jnt.tx";
+connectAttr "l_leg_01_jnt_parentConstraint1.cty" "l_leg_01_jnt.ty";
+connectAttr "l_leg_01_jnt_parentConstraint1.ctz" "l_leg_01_jnt.tz";
+connectAttr "l_leg_01_jnt_parentConstraint1.crx" "l_leg_01_jnt.rx";
+connectAttr "l_leg_01_jnt_parentConstraint1.cry" "l_leg_01_jnt.ry";
+connectAttr "l_leg_01_jnt_parentConstraint1.crz" "l_leg_01_jnt.rz";
+connectAttr "l_leg_01_jnt.ro" "l_leg_01_jnt_parentConstraint1.cro";
+connectAttr "l_leg_01_jnt.pim" "l_leg_01_jnt_parentConstraint1.cpim";
+connectAttr "l_leg_01_jnt.rp" "l_leg_01_jnt_parentConstraint1.crp";
+connectAttr "l_leg_01_jnt.rpt" "l_leg_01_jnt_parentConstraint1.crt";
+connectAttr "l_leg_01_jnt.jo" "l_leg_01_jnt_parentConstraint1.cjo";
+connectAttr "l_leg_01_ctrl.t" "l_leg_01_jnt_parentConstraint1.tg[0].tt";
+connectAttr "l_leg_01_ctrl.rp" "l_leg_01_jnt_parentConstraint1.tg[0].trp";
+connectAttr "l_leg_01_ctrl.rpt" "l_leg_01_jnt_parentConstraint1.tg[0].trt";
+connectAttr "l_leg_01_ctrl.r" "l_leg_01_jnt_parentConstraint1.tg[0].tr";
+connectAttr "l_leg_01_ctrl.ro" "l_leg_01_jnt_parentConstraint1.tg[0].tro";
+connectAttr "l_leg_01_ctrl.s" "l_leg_01_jnt_parentConstraint1.tg[0].ts";
+connectAttr "l_leg_01_ctrl.pm" "l_leg_01_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "l_leg_01_jnt_parentConstraint1.w0" "l_leg_01_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_leg_01_jnt.ssc" "l_leg_01_jnt_scaleConstraint1.tsc";
+connectAttr "l_leg_01_jnt.pim" "l_leg_01_jnt_scaleConstraint1.cpim";
+connectAttr "l_leg_01_ctrl.s" "l_leg_01_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "l_leg_01_ctrl.pm" "l_leg_01_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "l_leg_01_jnt_scaleConstraint1.w0" "l_leg_01_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "l_leg_02_jnt_scaleConstraint1.csx" "l_leg_02_jnt.sx";
+connectAttr "l_leg_02_jnt_scaleConstraint1.csy" "l_leg_02_jnt.sy";
+connectAttr "l_leg_02_jnt_scaleConstraint1.csz" "l_leg_02_jnt.sz";
+connectAttr "l_leg_02_jnt_parentConstraint1.ctx" "l_leg_02_jnt.tx";
+connectAttr "l_leg_02_jnt_parentConstraint1.cty" "l_leg_02_jnt.ty";
+connectAttr "l_leg_02_jnt_parentConstraint1.ctz" "l_leg_02_jnt.tz";
+connectAttr "l_leg_02_jnt_parentConstraint1.crx" "l_leg_02_jnt.rx";
+connectAttr "l_leg_02_jnt_parentConstraint1.cry" "l_leg_02_jnt.ry";
+connectAttr "l_leg_02_jnt_parentConstraint1.crz" "l_leg_02_jnt.rz";
+connectAttr "l_leg_02_jnt.ro" "l_leg_02_jnt_parentConstraint1.cro";
+connectAttr "l_leg_02_jnt.pim" "l_leg_02_jnt_parentConstraint1.cpim";
+connectAttr "l_leg_02_jnt.rp" "l_leg_02_jnt_parentConstraint1.crp";
+connectAttr "l_leg_02_jnt.rpt" "l_leg_02_jnt_parentConstraint1.crt";
+connectAttr "l_leg_02_jnt.jo" "l_leg_02_jnt_parentConstraint1.cjo";
+connectAttr "l_leg_02_ctrl.t" "l_leg_02_jnt_parentConstraint1.tg[0].tt";
+connectAttr "l_leg_02_ctrl.rp" "l_leg_02_jnt_parentConstraint1.tg[0].trp";
+connectAttr "l_leg_02_ctrl.rpt" "l_leg_02_jnt_parentConstraint1.tg[0].trt";
+connectAttr "l_leg_02_ctrl.r" "l_leg_02_jnt_parentConstraint1.tg[0].tr";
+connectAttr "l_leg_02_ctrl.ro" "l_leg_02_jnt_parentConstraint1.tg[0].tro";
+connectAttr "l_leg_02_ctrl.s" "l_leg_02_jnt_parentConstraint1.tg[0].ts";
+connectAttr "l_leg_02_ctrl.pm" "l_leg_02_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "l_leg_02_jnt_parentConstraint1.w0" "l_leg_02_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_leg_02_jnt.ssc" "l_leg_02_jnt_scaleConstraint1.tsc";
+connectAttr "l_leg_02_jnt.pim" "l_leg_02_jnt_scaleConstraint1.cpim";
+connectAttr "l_leg_02_ctrl.s" "l_leg_02_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "l_leg_02_ctrl.pm" "l_leg_02_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "l_leg_02_jnt_scaleConstraint1.w0" "l_leg_02_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "l_leg_03_jnt_scaleConstraint1.csx" "l_leg_03_jnt.sx";
+connectAttr "l_leg_03_jnt_scaleConstraint1.csy" "l_leg_03_jnt.sy";
+connectAttr "l_leg_03_jnt_scaleConstraint1.csz" "l_leg_03_jnt.sz";
+connectAttr "l_leg_03_jnt_parentConstraint1.ctx" "l_leg_03_jnt.tx";
+connectAttr "l_leg_03_jnt_parentConstraint1.cty" "l_leg_03_jnt.ty";
+connectAttr "l_leg_03_jnt_parentConstraint1.ctz" "l_leg_03_jnt.tz";
+connectAttr "l_leg_03_jnt_parentConstraint1.crx" "l_leg_03_jnt.rx";
+connectAttr "l_leg_03_jnt_parentConstraint1.cry" "l_leg_03_jnt.ry";
+connectAttr "l_leg_03_jnt_parentConstraint1.crz" "l_leg_03_jnt.rz";
+connectAttr "l_leg_03_jnt.ro" "l_leg_03_jnt_parentConstraint1.cro";
+connectAttr "l_leg_03_jnt.pim" "l_leg_03_jnt_parentConstraint1.cpim";
+connectAttr "l_leg_03_jnt.rp" "l_leg_03_jnt_parentConstraint1.crp";
+connectAttr "l_leg_03_jnt.rpt" "l_leg_03_jnt_parentConstraint1.crt";
+connectAttr "l_leg_03_jnt.jo" "l_leg_03_jnt_parentConstraint1.cjo";
+connectAttr "l_leg_03_ctrl.t" "l_leg_03_jnt_parentConstraint1.tg[0].tt";
+connectAttr "l_leg_03_ctrl.rp" "l_leg_03_jnt_parentConstraint1.tg[0].trp";
+connectAttr "l_leg_03_ctrl.rpt" "l_leg_03_jnt_parentConstraint1.tg[0].trt";
+connectAttr "l_leg_03_ctrl.r" "l_leg_03_jnt_parentConstraint1.tg[0].tr";
+connectAttr "l_leg_03_ctrl.ro" "l_leg_03_jnt_parentConstraint1.tg[0].tro";
+connectAttr "l_leg_03_ctrl.s" "l_leg_03_jnt_parentConstraint1.tg[0].ts";
+connectAttr "l_leg_03_ctrl.pm" "l_leg_03_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "l_leg_03_jnt_parentConstraint1.w0" "l_leg_03_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_leg_03_jnt.ssc" "l_leg_03_jnt_scaleConstraint1.tsc";
+connectAttr "l_leg_03_jnt.pim" "l_leg_03_jnt_scaleConstraint1.cpim";
+connectAttr "l_leg_03_ctrl.s" "l_leg_03_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "l_leg_03_ctrl.pm" "l_leg_03_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "l_leg_03_jnt_scaleConstraint1.w0" "l_leg_03_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "l_leg_04_jnt_scaleConstraint1.csx" "l_leg_04_jnt.sx";
+connectAttr "l_leg_04_jnt_scaleConstraint1.csy" "l_leg_04_jnt.sy";
+connectAttr "l_leg_04_jnt_scaleConstraint1.csz" "l_leg_04_jnt.sz";
+connectAttr "l_leg_04_jnt_parentConstraint1.ctx" "l_leg_04_jnt.tx";
+connectAttr "l_leg_04_jnt_parentConstraint1.cty" "l_leg_04_jnt.ty";
+connectAttr "l_leg_04_jnt_parentConstraint1.ctz" "l_leg_04_jnt.tz";
+connectAttr "l_leg_04_jnt_parentConstraint1.crx" "l_leg_04_jnt.rx";
+connectAttr "l_leg_04_jnt_parentConstraint1.cry" "l_leg_04_jnt.ry";
+connectAttr "l_leg_04_jnt_parentConstraint1.crz" "l_leg_04_jnt.rz";
+connectAttr "l_leg_04_jnt.ro" "l_leg_04_jnt_parentConstraint1.cro";
+connectAttr "l_leg_04_jnt.pim" "l_leg_04_jnt_parentConstraint1.cpim";
+connectAttr "l_leg_04_jnt.rp" "l_leg_04_jnt_parentConstraint1.crp";
+connectAttr "l_leg_04_jnt.rpt" "l_leg_04_jnt_parentConstraint1.crt";
+connectAttr "l_leg_04_jnt.jo" "l_leg_04_jnt_parentConstraint1.cjo";
+connectAttr "l_leg_04_ctrl.t" "l_leg_04_jnt_parentConstraint1.tg[0].tt";
+connectAttr "l_leg_04_ctrl.rp" "l_leg_04_jnt_parentConstraint1.tg[0].trp";
+connectAttr "l_leg_04_ctrl.rpt" "l_leg_04_jnt_parentConstraint1.tg[0].trt";
+connectAttr "l_leg_04_ctrl.r" "l_leg_04_jnt_parentConstraint1.tg[0].tr";
+connectAttr "l_leg_04_ctrl.ro" "l_leg_04_jnt_parentConstraint1.tg[0].tro";
+connectAttr "l_leg_04_ctrl.s" "l_leg_04_jnt_parentConstraint1.tg[0].ts";
+connectAttr "l_leg_04_ctrl.pm" "l_leg_04_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "l_leg_04_jnt_parentConstraint1.w0" "l_leg_04_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_leg_04_jnt.ssc" "l_leg_04_jnt_scaleConstraint1.tsc";
+connectAttr "l_leg_04_jnt.pim" "l_leg_04_jnt_scaleConstraint1.cpim";
+connectAttr "l_leg_04_ctrl.s" "l_leg_04_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "l_leg_04_ctrl.pm" "l_leg_04_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "l_leg_04_jnt_scaleConstraint1.w0" "l_leg_04_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "l_leg_05_jnt_scaleConstraint1.csx" "l_leg_05_jnt.sx";
+connectAttr "l_leg_05_jnt_scaleConstraint1.csy" "l_leg_05_jnt.sy";
+connectAttr "l_leg_05_jnt_scaleConstraint1.csz" "l_leg_05_jnt.sz";
+connectAttr "l_leg_05_jnt_parentConstraint1.ctx" "l_leg_05_jnt.tx";
+connectAttr "l_leg_05_jnt_parentConstraint1.cty" "l_leg_05_jnt.ty";
+connectAttr "l_leg_05_jnt_parentConstraint1.ctz" "l_leg_05_jnt.tz";
+connectAttr "l_leg_05_jnt_parentConstraint1.crx" "l_leg_05_jnt.rx";
+connectAttr "l_leg_05_jnt_parentConstraint1.cry" "l_leg_05_jnt.ry";
+connectAttr "l_leg_05_jnt_parentConstraint1.crz" "l_leg_05_jnt.rz";
+connectAttr "l_leg_05_jnt.ro" "l_leg_05_jnt_parentConstraint1.cro";
+connectAttr "l_leg_05_jnt.pim" "l_leg_05_jnt_parentConstraint1.cpim";
+connectAttr "l_leg_05_jnt.rp" "l_leg_05_jnt_parentConstraint1.crp";
+connectAttr "l_leg_05_jnt.rpt" "l_leg_05_jnt_parentConstraint1.crt";
+connectAttr "l_leg_05_jnt.jo" "l_leg_05_jnt_parentConstraint1.cjo";
+connectAttr "l_leg_05_ctrl.t" "l_leg_05_jnt_parentConstraint1.tg[0].tt";
+connectAttr "l_leg_05_ctrl.rp" "l_leg_05_jnt_parentConstraint1.tg[0].trp";
+connectAttr "l_leg_05_ctrl.rpt" "l_leg_05_jnt_parentConstraint1.tg[0].trt";
+connectAttr "l_leg_05_ctrl.r" "l_leg_05_jnt_parentConstraint1.tg[0].tr";
+connectAttr "l_leg_05_ctrl.ro" "l_leg_05_jnt_parentConstraint1.tg[0].tro";
+connectAttr "l_leg_05_ctrl.s" "l_leg_05_jnt_parentConstraint1.tg[0].ts";
+connectAttr "l_leg_05_ctrl.pm" "l_leg_05_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "l_leg_05_jnt_parentConstraint1.w0" "l_leg_05_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_leg_05_jnt.ssc" "l_leg_05_jnt_scaleConstraint1.tsc";
+connectAttr "l_leg_05_jnt.pim" "l_leg_05_jnt_scaleConstraint1.cpim";
+connectAttr "l_leg_05_ctrl.s" "l_leg_05_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "l_leg_05_ctrl.pm" "l_leg_05_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "l_leg_05_jnt_scaleConstraint1.w0" "l_leg_05_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_01_jnt_scaleConstraint1.csx" "r_leg_01_jnt.sx";
+connectAttr "r_leg_01_jnt_scaleConstraint1.csy" "r_leg_01_jnt.sy";
+connectAttr "r_leg_01_jnt_scaleConstraint1.csz" "r_leg_01_jnt.sz";
+connectAttr "r_leg_01_jnt_parentConstraint1.ctx" "r_leg_01_jnt.tx";
+connectAttr "r_leg_01_jnt_parentConstraint1.cty" "r_leg_01_jnt.ty";
+connectAttr "r_leg_01_jnt_parentConstraint1.ctz" "r_leg_01_jnt.tz";
+connectAttr "r_leg_01_jnt_parentConstraint1.crx" "r_leg_01_jnt.rx";
+connectAttr "r_leg_01_jnt_parentConstraint1.cry" "r_leg_01_jnt.ry";
+connectAttr "r_leg_01_jnt_parentConstraint1.crz" "r_leg_01_jnt.rz";
+connectAttr "r_leg_01_jnt.ro" "r_leg_01_jnt_parentConstraint1.cro";
+connectAttr "r_leg_01_jnt.pim" "r_leg_01_jnt_parentConstraint1.cpim";
+connectAttr "r_leg_01_jnt.rp" "r_leg_01_jnt_parentConstraint1.crp";
+connectAttr "r_leg_01_jnt.rpt" "r_leg_01_jnt_parentConstraint1.crt";
+connectAttr "r_leg_01_jnt.jo" "r_leg_01_jnt_parentConstraint1.cjo";
+connectAttr "r_leg_01_ctrl.t" "r_leg_01_jnt_parentConstraint1.tg[0].tt";
+connectAttr "r_leg_01_ctrl.rp" "r_leg_01_jnt_parentConstraint1.tg[0].trp";
+connectAttr "r_leg_01_ctrl.rpt" "r_leg_01_jnt_parentConstraint1.tg[0].trt";
+connectAttr "r_leg_01_ctrl.r" "r_leg_01_jnt_parentConstraint1.tg[0].tr";
+connectAttr "r_leg_01_ctrl.ro" "r_leg_01_jnt_parentConstraint1.tg[0].tro";
+connectAttr "r_leg_01_ctrl.s" "r_leg_01_jnt_parentConstraint1.tg[0].ts";
+connectAttr "r_leg_01_ctrl.pm" "r_leg_01_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "r_leg_01_jnt_parentConstraint1.w0" "r_leg_01_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_01_jnt.ssc" "r_leg_01_jnt_scaleConstraint1.tsc";
+connectAttr "r_leg_01_jnt.pim" "r_leg_01_jnt_scaleConstraint1.cpim";
+connectAttr "r_leg_01_ctrl.s" "r_leg_01_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "r_leg_01_ctrl.pm" "r_leg_01_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "r_leg_01_jnt_scaleConstraint1.w0" "r_leg_01_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_02_jnt_scaleConstraint1.csx" "r_leg_02_jnt.sx";
+connectAttr "r_leg_02_jnt_scaleConstraint1.csy" "r_leg_02_jnt.sy";
+connectAttr "r_leg_02_jnt_scaleConstraint1.csz" "r_leg_02_jnt.sz";
+connectAttr "r_leg_02_jnt_parentConstraint1.ctx" "r_leg_02_jnt.tx";
+connectAttr "r_leg_02_jnt_parentConstraint1.cty" "r_leg_02_jnt.ty";
+connectAttr "r_leg_02_jnt_parentConstraint1.ctz" "r_leg_02_jnt.tz";
+connectAttr "r_leg_02_jnt_parentConstraint1.crx" "r_leg_02_jnt.rx";
+connectAttr "r_leg_02_jnt_parentConstraint1.cry" "r_leg_02_jnt.ry";
+connectAttr "r_leg_02_jnt_parentConstraint1.crz" "r_leg_02_jnt.rz";
+connectAttr "r_leg_02_jnt.ro" "r_leg_02_jnt_parentConstraint1.cro";
+connectAttr "r_leg_02_jnt.pim" "r_leg_02_jnt_parentConstraint1.cpim";
+connectAttr "r_leg_02_jnt.rp" "r_leg_02_jnt_parentConstraint1.crp";
+connectAttr "r_leg_02_jnt.rpt" "r_leg_02_jnt_parentConstraint1.crt";
+connectAttr "r_leg_02_jnt.jo" "r_leg_02_jnt_parentConstraint1.cjo";
+connectAttr "r_leg_02_ctrl.t" "r_leg_02_jnt_parentConstraint1.tg[0].tt";
+connectAttr "r_leg_02_ctrl.rp" "r_leg_02_jnt_parentConstraint1.tg[0].trp";
+connectAttr "r_leg_02_ctrl.rpt" "r_leg_02_jnt_parentConstraint1.tg[0].trt";
+connectAttr "r_leg_02_ctrl.r" "r_leg_02_jnt_parentConstraint1.tg[0].tr";
+connectAttr "r_leg_02_ctrl.ro" "r_leg_02_jnt_parentConstraint1.tg[0].tro";
+connectAttr "r_leg_02_ctrl.s" "r_leg_02_jnt_parentConstraint1.tg[0].ts";
+connectAttr "r_leg_02_ctrl.pm" "r_leg_02_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "r_leg_02_jnt_parentConstraint1.w0" "r_leg_02_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_02_jnt.ssc" "r_leg_02_jnt_scaleConstraint1.tsc";
+connectAttr "r_leg_02_jnt.pim" "r_leg_02_jnt_scaleConstraint1.cpim";
+connectAttr "r_leg_02_ctrl.s" "r_leg_02_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "r_leg_02_ctrl.pm" "r_leg_02_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "r_leg_02_jnt_scaleConstraint1.w0" "r_leg_02_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_03_jnt_scaleConstraint1.csx" "r_leg_03_jnt.sx";
+connectAttr "r_leg_03_jnt_scaleConstraint1.csy" "r_leg_03_jnt.sy";
+connectAttr "r_leg_03_jnt_scaleConstraint1.csz" "r_leg_03_jnt.sz";
+connectAttr "r_leg_03_jnt_parentConstraint1.ctx" "r_leg_03_jnt.tx";
+connectAttr "r_leg_03_jnt_parentConstraint1.cty" "r_leg_03_jnt.ty";
+connectAttr "r_leg_03_jnt_parentConstraint1.ctz" "r_leg_03_jnt.tz";
+connectAttr "r_leg_03_jnt_parentConstraint1.crx" "r_leg_03_jnt.rx";
+connectAttr "r_leg_03_jnt_parentConstraint1.cry" "r_leg_03_jnt.ry";
+connectAttr "r_leg_03_jnt_parentConstraint1.crz" "r_leg_03_jnt.rz";
+connectAttr "r_leg_03_jnt.ro" "r_leg_03_jnt_parentConstraint1.cro";
+connectAttr "r_leg_03_jnt.pim" "r_leg_03_jnt_parentConstraint1.cpim";
+connectAttr "r_leg_03_jnt.rp" "r_leg_03_jnt_parentConstraint1.crp";
+connectAttr "r_leg_03_jnt.rpt" "r_leg_03_jnt_parentConstraint1.crt";
+connectAttr "r_leg_03_jnt.jo" "r_leg_03_jnt_parentConstraint1.cjo";
+connectAttr "r_leg_03_ctrl.t" "r_leg_03_jnt_parentConstraint1.tg[0].tt";
+connectAttr "r_leg_03_ctrl.rp" "r_leg_03_jnt_parentConstraint1.tg[0].trp";
+connectAttr "r_leg_03_ctrl.rpt" "r_leg_03_jnt_parentConstraint1.tg[0].trt";
+connectAttr "r_leg_03_ctrl.r" "r_leg_03_jnt_parentConstraint1.tg[0].tr";
+connectAttr "r_leg_03_ctrl.ro" "r_leg_03_jnt_parentConstraint1.tg[0].tro";
+connectAttr "r_leg_03_ctrl.s" "r_leg_03_jnt_parentConstraint1.tg[0].ts";
+connectAttr "r_leg_03_ctrl.pm" "r_leg_03_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "r_leg_03_jnt_parentConstraint1.w0" "r_leg_03_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_03_jnt.ssc" "r_leg_03_jnt_scaleConstraint1.tsc";
+connectAttr "r_leg_03_jnt.pim" "r_leg_03_jnt_scaleConstraint1.cpim";
+connectAttr "r_leg_03_ctrl.s" "r_leg_03_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "r_leg_03_ctrl.pm" "r_leg_03_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "r_leg_03_jnt_scaleConstraint1.w0" "r_leg_03_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_04_jnt_scaleConstraint1.csx" "r_leg_04_jnt.sx";
+connectAttr "r_leg_04_jnt_scaleConstraint1.csy" "r_leg_04_jnt.sy";
+connectAttr "r_leg_04_jnt_scaleConstraint1.csz" "r_leg_04_jnt.sz";
+connectAttr "r_leg_04_jnt_parentConstraint1.ctx" "r_leg_04_jnt.tx";
+connectAttr "r_leg_04_jnt_parentConstraint1.cty" "r_leg_04_jnt.ty";
+connectAttr "r_leg_04_jnt_parentConstraint1.ctz" "r_leg_04_jnt.tz";
+connectAttr "r_leg_04_jnt_parentConstraint1.crx" "r_leg_04_jnt.rx";
+connectAttr "r_leg_04_jnt_parentConstraint1.cry" "r_leg_04_jnt.ry";
+connectAttr "r_leg_04_jnt_parentConstraint1.crz" "r_leg_04_jnt.rz";
+connectAttr "r_leg_04_jnt.ro" "r_leg_04_jnt_parentConstraint1.cro";
+connectAttr "r_leg_04_jnt.pim" "r_leg_04_jnt_parentConstraint1.cpim";
+connectAttr "r_leg_04_jnt.rp" "r_leg_04_jnt_parentConstraint1.crp";
+connectAttr "r_leg_04_jnt.rpt" "r_leg_04_jnt_parentConstraint1.crt";
+connectAttr "r_leg_04_jnt.jo" "r_leg_04_jnt_parentConstraint1.cjo";
+connectAttr "r_leg_04_ctrl.t" "r_leg_04_jnt_parentConstraint1.tg[0].tt";
+connectAttr "r_leg_04_ctrl.rp" "r_leg_04_jnt_parentConstraint1.tg[0].trp";
+connectAttr "r_leg_04_ctrl.rpt" "r_leg_04_jnt_parentConstraint1.tg[0].trt";
+connectAttr "r_leg_04_ctrl.r" "r_leg_04_jnt_parentConstraint1.tg[0].tr";
+connectAttr "r_leg_04_ctrl.ro" "r_leg_04_jnt_parentConstraint1.tg[0].tro";
+connectAttr "r_leg_04_ctrl.s" "r_leg_04_jnt_parentConstraint1.tg[0].ts";
+connectAttr "r_leg_04_ctrl.pm" "r_leg_04_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "r_leg_04_jnt_parentConstraint1.w0" "r_leg_04_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_04_jnt.ssc" "r_leg_04_jnt_scaleConstraint1.tsc";
+connectAttr "r_leg_04_jnt.pim" "r_leg_04_jnt_scaleConstraint1.cpim";
+connectAttr "r_leg_04_ctrl.s" "r_leg_04_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "r_leg_04_ctrl.pm" "r_leg_04_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "r_leg_04_jnt_scaleConstraint1.w0" "r_leg_04_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_05_jnt_scaleConstraint1.csx" "r_leg_05_jnt.sx";
+connectAttr "r_leg_05_jnt_scaleConstraint1.csy" "r_leg_05_jnt.sy";
+connectAttr "r_leg_05_jnt_scaleConstraint1.csz" "r_leg_05_jnt.sz";
+connectAttr "r_leg_05_jnt_parentConstraint1.ctx" "r_leg_05_jnt.tx";
+connectAttr "r_leg_05_jnt_parentConstraint1.cty" "r_leg_05_jnt.ty";
+connectAttr "r_leg_05_jnt_parentConstraint1.ctz" "r_leg_05_jnt.tz";
+connectAttr "r_leg_05_jnt_parentConstraint1.crx" "r_leg_05_jnt.rx";
+connectAttr "r_leg_05_jnt_parentConstraint1.cry" "r_leg_05_jnt.ry";
+connectAttr "r_leg_05_jnt_parentConstraint1.crz" "r_leg_05_jnt.rz";
+connectAttr "r_leg_05_jnt.ro" "r_leg_05_jnt_parentConstraint1.cro";
+connectAttr "r_leg_05_jnt.pim" "r_leg_05_jnt_parentConstraint1.cpim";
+connectAttr "r_leg_05_jnt.rp" "r_leg_05_jnt_parentConstraint1.crp";
+connectAttr "r_leg_05_jnt.rpt" "r_leg_05_jnt_parentConstraint1.crt";
+connectAttr "r_leg_05_jnt.jo" "r_leg_05_jnt_parentConstraint1.cjo";
+connectAttr "r_leg_05_ctrl.t" "r_leg_05_jnt_parentConstraint1.tg[0].tt";
+connectAttr "r_leg_05_ctrl.rp" "r_leg_05_jnt_parentConstraint1.tg[0].trp";
+connectAttr "r_leg_05_ctrl.rpt" "r_leg_05_jnt_parentConstraint1.tg[0].trt";
+connectAttr "r_leg_05_ctrl.r" "r_leg_05_jnt_parentConstraint1.tg[0].tr";
+connectAttr "r_leg_05_ctrl.ro" "r_leg_05_jnt_parentConstraint1.tg[0].tro";
+connectAttr "r_leg_05_ctrl.s" "r_leg_05_jnt_parentConstraint1.tg[0].ts";
+connectAttr "r_leg_05_ctrl.pm" "r_leg_05_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "r_leg_05_jnt_parentConstraint1.w0" "r_leg_05_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_leg_05_jnt.ssc" "r_leg_05_jnt_scaleConstraint1.tsc";
+connectAttr "r_leg_05_jnt.pim" "r_leg_05_jnt_scaleConstraint1.cpim";
+connectAttr "r_leg_05_ctrl.s" "r_leg_05_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "r_leg_05_ctrl.pm" "r_leg_05_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "r_leg_05_jnt_scaleConstraint1.w0" "r_leg_05_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "l_clav_jnt_scaleConstraint1.csx" "l_clav_jnt.sx";
+connectAttr "l_clav_jnt_scaleConstraint1.csy" "l_clav_jnt.sy";
+connectAttr "l_clav_jnt_scaleConstraint1.csz" "l_clav_jnt.sz";
+connectAttr "l_clav_jnt_parentConstraint1.ctx" "l_clav_jnt.tx";
+connectAttr "l_clav_jnt_parentConstraint1.cty" "l_clav_jnt.ty";
+connectAttr "l_clav_jnt_parentConstraint1.ctz" "l_clav_jnt.tz";
+connectAttr "l_clav_jnt_parentConstraint1.crx" "l_clav_jnt.rx";
+connectAttr "l_clav_jnt_parentConstraint1.cry" "l_clav_jnt.ry";
+connectAttr "l_clav_jnt_parentConstraint1.crz" "l_clav_jnt.rz";
+connectAttr "l_clav_jnt.ro" "l_clav_jnt_parentConstraint1.cro";
+connectAttr "l_clav_jnt.pim" "l_clav_jnt_parentConstraint1.cpim";
+connectAttr "l_clav_jnt.rp" "l_clav_jnt_parentConstraint1.crp";
+connectAttr "l_clav_jnt.rpt" "l_clav_jnt_parentConstraint1.crt";
+connectAttr "l_clav_jnt.jo" "l_clav_jnt_parentConstraint1.cjo";
+connectAttr "l_clav_ctrl.t" "l_clav_jnt_parentConstraint1.tg[0].tt";
+connectAttr "l_clav_ctrl.rp" "l_clav_jnt_parentConstraint1.tg[0].trp";
+connectAttr "l_clav_ctrl.rpt" "l_clav_jnt_parentConstraint1.tg[0].trt";
+connectAttr "l_clav_ctrl.r" "l_clav_jnt_parentConstraint1.tg[0].tr";
+connectAttr "l_clav_ctrl.ro" "l_clav_jnt_parentConstraint1.tg[0].tro";
+connectAttr "l_clav_ctrl.s" "l_clav_jnt_parentConstraint1.tg[0].ts";
+connectAttr "l_clav_ctrl.pm" "l_clav_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "l_clav_jnt_parentConstraint1.w0" "l_clav_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_clav_jnt.ssc" "l_clav_jnt_scaleConstraint1.tsc";
+connectAttr "l_clav_jnt.pim" "l_clav_jnt_scaleConstraint1.cpim";
+connectAttr "l_clav_ctrl.s" "l_clav_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "l_clav_ctrl.pm" "l_clav_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "l_clav_jnt_scaleConstraint1.w0" "l_clav_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "l_arm_01_jnt_scaleConstraint1.csx" "l_arm_01_jnt.sx";
+connectAttr "l_arm_01_jnt_scaleConstraint1.csy" "l_arm_01_jnt.sy";
+connectAttr "l_arm_01_jnt_scaleConstraint1.csz" "l_arm_01_jnt.sz";
+connectAttr "l_arm_01_jnt_parentConstraint1.ctx" "l_arm_01_jnt.tx";
+connectAttr "l_arm_01_jnt_parentConstraint1.cty" "l_arm_01_jnt.ty";
+connectAttr "l_arm_01_jnt_parentConstraint1.ctz" "l_arm_01_jnt.tz";
+connectAttr "l_arm_01_jnt_parentConstraint1.crx" "l_arm_01_jnt.rx";
+connectAttr "l_arm_01_jnt_parentConstraint1.cry" "l_arm_01_jnt.ry";
+connectAttr "l_arm_01_jnt_parentConstraint1.crz" "l_arm_01_jnt.rz";
+connectAttr "l_arm_01_jnt.ro" "l_arm_01_jnt_parentConstraint1.cro";
+connectAttr "l_arm_01_jnt.pim" "l_arm_01_jnt_parentConstraint1.cpim";
+connectAttr "l_arm_01_jnt.rp" "l_arm_01_jnt_parentConstraint1.crp";
+connectAttr "l_arm_01_jnt.rpt" "l_arm_01_jnt_parentConstraint1.crt";
+connectAttr "l_arm_01_jnt.jo" "l_arm_01_jnt_parentConstraint1.cjo";
+connectAttr "l_arm_01_ctrl.t" "l_arm_01_jnt_parentConstraint1.tg[0].tt";
+connectAttr "l_arm_01_ctrl.rp" "l_arm_01_jnt_parentConstraint1.tg[0].trp";
+connectAttr "l_arm_01_ctrl.rpt" "l_arm_01_jnt_parentConstraint1.tg[0].trt";
+connectAttr "l_arm_01_ctrl.r" "l_arm_01_jnt_parentConstraint1.tg[0].tr";
+connectAttr "l_arm_01_ctrl.ro" "l_arm_01_jnt_parentConstraint1.tg[0].tro";
+connectAttr "l_arm_01_ctrl.s" "l_arm_01_jnt_parentConstraint1.tg[0].ts";
+connectAttr "l_arm_01_ctrl.pm" "l_arm_01_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "l_arm_01_jnt_parentConstraint1.w0" "l_arm_01_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_arm_01_jnt.ssc" "l_arm_01_jnt_scaleConstraint1.tsc";
+connectAttr "l_arm_01_jnt.pim" "l_arm_01_jnt_scaleConstraint1.cpim";
+connectAttr "l_arm_01_ctrl.s" "l_arm_01_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "l_arm_01_ctrl.pm" "l_arm_01_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "l_arm_01_jnt_scaleConstraint1.w0" "l_arm_01_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "l_arm_02_jnt_scaleConstraint1.csx" "l_arm_02_jnt.sx";
+connectAttr "l_arm_02_jnt_scaleConstraint1.csy" "l_arm_02_jnt.sy";
+connectAttr "l_arm_02_jnt_scaleConstraint1.csz" "l_arm_02_jnt.sz";
+connectAttr "l_arm_02_jnt_parentConstraint1.ctx" "l_arm_02_jnt.tx";
+connectAttr "l_arm_02_jnt_parentConstraint1.cty" "l_arm_02_jnt.ty";
+connectAttr "l_arm_02_jnt_parentConstraint1.ctz" "l_arm_02_jnt.tz";
+connectAttr "l_arm_02_jnt_parentConstraint1.crx" "l_arm_02_jnt.rx";
+connectAttr "l_arm_02_jnt_parentConstraint1.cry" "l_arm_02_jnt.ry";
+connectAttr "l_arm_02_jnt_parentConstraint1.crz" "l_arm_02_jnt.rz";
+connectAttr "l_arm_02_jnt.ro" "l_arm_02_jnt_parentConstraint1.cro";
+connectAttr "l_arm_02_jnt.pim" "l_arm_02_jnt_parentConstraint1.cpim";
+connectAttr "l_arm_02_jnt.rp" "l_arm_02_jnt_parentConstraint1.crp";
+connectAttr "l_arm_02_jnt.rpt" "l_arm_02_jnt_parentConstraint1.crt";
+connectAttr "l_arm_02_jnt.jo" "l_arm_02_jnt_parentConstraint1.cjo";
+connectAttr "l_arm_02_ctrl.t" "l_arm_02_jnt_parentConstraint1.tg[0].tt";
+connectAttr "l_arm_02_ctrl.rp" "l_arm_02_jnt_parentConstraint1.tg[0].trp";
+connectAttr "l_arm_02_ctrl.rpt" "l_arm_02_jnt_parentConstraint1.tg[0].trt";
+connectAttr "l_arm_02_ctrl.r" "l_arm_02_jnt_parentConstraint1.tg[0].tr";
+connectAttr "l_arm_02_ctrl.ro" "l_arm_02_jnt_parentConstraint1.tg[0].tro";
+connectAttr "l_arm_02_ctrl.s" "l_arm_02_jnt_parentConstraint1.tg[0].ts";
+connectAttr "l_arm_02_ctrl.pm" "l_arm_02_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "l_arm_02_jnt_parentConstraint1.w0" "l_arm_02_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_arm_02_jnt.ssc" "l_arm_02_jnt_scaleConstraint1.tsc";
+connectAttr "l_arm_02_jnt.pim" "l_arm_02_jnt_scaleConstraint1.cpim";
+connectAttr "l_arm_02_ctrl.s" "l_arm_02_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "l_arm_02_ctrl.pm" "l_arm_02_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "l_arm_02_jnt_scaleConstraint1.w0" "l_arm_02_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "l_arm_03_jnt_scaleConstraint1.csx" "l_arm_03_jnt.sx";
+connectAttr "l_arm_03_jnt_scaleConstraint1.csy" "l_arm_03_jnt.sy";
+connectAttr "l_arm_03_jnt_scaleConstraint1.csz" "l_arm_03_jnt.sz";
+connectAttr "l_arm_03_jnt_parentConstraint1.ctx" "l_arm_03_jnt.tx";
+connectAttr "l_arm_03_jnt_parentConstraint1.cty" "l_arm_03_jnt.ty";
+connectAttr "l_arm_03_jnt_parentConstraint1.ctz" "l_arm_03_jnt.tz";
+connectAttr "l_arm_03_jnt_parentConstraint1.crx" "l_arm_03_jnt.rx";
+connectAttr "l_arm_03_jnt_parentConstraint1.cry" "l_arm_03_jnt.ry";
+connectAttr "l_arm_03_jnt_parentConstraint1.crz" "l_arm_03_jnt.rz";
+connectAttr "l_arm_03_jnt.ro" "l_arm_03_jnt_parentConstraint1.cro";
+connectAttr "l_arm_03_jnt.pim" "l_arm_03_jnt_parentConstraint1.cpim";
+connectAttr "l_arm_03_jnt.rp" "l_arm_03_jnt_parentConstraint1.crp";
+connectAttr "l_arm_03_jnt.rpt" "l_arm_03_jnt_parentConstraint1.crt";
+connectAttr "l_arm_03_jnt.jo" "l_arm_03_jnt_parentConstraint1.cjo";
+connectAttr "l_arm_03_ctrl.t" "l_arm_03_jnt_parentConstraint1.tg[0].tt";
+connectAttr "l_arm_03_ctrl.rp" "l_arm_03_jnt_parentConstraint1.tg[0].trp";
+connectAttr "l_arm_03_ctrl.rpt" "l_arm_03_jnt_parentConstraint1.tg[0].trt";
+connectAttr "l_arm_03_ctrl.r" "l_arm_03_jnt_parentConstraint1.tg[0].tr";
+connectAttr "l_arm_03_ctrl.ro" "l_arm_03_jnt_parentConstraint1.tg[0].tro";
+connectAttr "l_arm_03_ctrl.s" "l_arm_03_jnt_parentConstraint1.tg[0].ts";
+connectAttr "l_arm_03_ctrl.pm" "l_arm_03_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "l_arm_03_jnt_parentConstraint1.w0" "l_arm_03_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_arm_03_jnt.ssc" "l_arm_03_jnt_scaleConstraint1.tsc";
+connectAttr "l_arm_03_jnt.pim" "l_arm_03_jnt_scaleConstraint1.cpim";
+connectAttr "l_arm_03_ctrl.s" "l_arm_03_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "l_arm_03_ctrl.pm" "l_arm_03_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "l_arm_03_jnt_scaleConstraint1.w0" "l_arm_03_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "l_arm_04_jnt_parentConstraint1.ctx" "l_arm_04_jnt.tx";
+connectAttr "l_arm_04_jnt_parentConstraint1.cty" "l_arm_04_jnt.ty";
+connectAttr "l_arm_04_jnt_parentConstraint1.ctz" "l_arm_04_jnt.tz";
+connectAttr "l_arm_04_jnt_parentConstraint1.crx" "l_arm_04_jnt.rx";
+connectAttr "l_arm_04_jnt_parentConstraint1.cry" "l_arm_04_jnt.ry";
+connectAttr "l_arm_04_jnt_parentConstraint1.crz" "l_arm_04_jnt.rz";
+connectAttr "l_arm_04_jnt_scaleConstraint1.csx" "l_arm_04_jnt.sx";
+connectAttr "l_arm_04_jnt_scaleConstraint1.csy" "l_arm_04_jnt.sy";
+connectAttr "l_arm_04_jnt_scaleConstraint1.csz" "l_arm_04_jnt.sz";
+connectAttr "l_arm_04_jnt.ro" "l_arm_04_jnt_parentConstraint1.cro";
+connectAttr "l_arm_04_jnt.pim" "l_arm_04_jnt_parentConstraint1.cpim";
+connectAttr "l_arm_04_jnt.rp" "l_arm_04_jnt_parentConstraint1.crp";
+connectAttr "l_arm_04_jnt.rpt" "l_arm_04_jnt_parentConstraint1.crt";
+connectAttr "l_arm_04_jnt.jo" "l_arm_04_jnt_parentConstraint1.cjo";
+connectAttr "l_arm_04_ctrl.t" "l_arm_04_jnt_parentConstraint1.tg[0].tt";
+connectAttr "l_arm_04_ctrl.rp" "l_arm_04_jnt_parentConstraint1.tg[0].trp";
+connectAttr "l_arm_04_ctrl.rpt" "l_arm_04_jnt_parentConstraint1.tg[0].trt";
+connectAttr "l_arm_04_ctrl.r" "l_arm_04_jnt_parentConstraint1.tg[0].tr";
+connectAttr "l_arm_04_ctrl.ro" "l_arm_04_jnt_parentConstraint1.tg[0].tro";
+connectAttr "l_arm_04_ctrl.s" "l_arm_04_jnt_parentConstraint1.tg[0].ts";
+connectAttr "l_arm_04_ctrl.pm" "l_arm_04_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "l_arm_04_jnt_parentConstraint1.w0" "l_arm_04_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "l_arm_04_jnt.ssc" "l_arm_04_jnt_scaleConstraint1.tsc";
+connectAttr "l_arm_04_jnt.pim" "l_arm_04_jnt_scaleConstraint1.cpim";
+connectAttr "l_arm_04_ctrl.s" "l_arm_04_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "l_arm_04_ctrl.pm" "l_arm_04_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "l_arm_04_jnt_scaleConstraint1.w0" "l_arm_04_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_clav_jnt_scaleConstraint1.csx" "r_clav_jnt.sx";
+connectAttr "r_clav_jnt_scaleConstraint1.csy" "r_clav_jnt.sy";
+connectAttr "r_clav_jnt_scaleConstraint1.csz" "r_clav_jnt.sz";
+connectAttr "r_clav_jnt_parentConstraint1.ctx" "r_clav_jnt.tx";
+connectAttr "r_clav_jnt_parentConstraint1.cty" "r_clav_jnt.ty";
+connectAttr "r_clav_jnt_parentConstraint1.ctz" "r_clav_jnt.tz";
+connectAttr "r_clav_jnt_parentConstraint1.crx" "r_clav_jnt.rx";
+connectAttr "r_clav_jnt_parentConstraint1.cry" "r_clav_jnt.ry";
+connectAttr "r_clav_jnt_parentConstraint1.crz" "r_clav_jnt.rz";
+connectAttr "r_clav_jnt.ro" "r_clav_jnt_parentConstraint1.cro";
+connectAttr "r_clav_jnt.pim" "r_clav_jnt_parentConstraint1.cpim";
+connectAttr "r_clav_jnt.rp" "r_clav_jnt_parentConstraint1.crp";
+connectAttr "r_clav_jnt.rpt" "r_clav_jnt_parentConstraint1.crt";
+connectAttr "r_clav_jnt.jo" "r_clav_jnt_parentConstraint1.cjo";
+connectAttr "r_clav_ctrl.t" "r_clav_jnt_parentConstraint1.tg[0].tt";
+connectAttr "r_clav_ctrl.rp" "r_clav_jnt_parentConstraint1.tg[0].trp";
+connectAttr "r_clav_ctrl.rpt" "r_clav_jnt_parentConstraint1.tg[0].trt";
+connectAttr "r_clav_ctrl.r" "r_clav_jnt_parentConstraint1.tg[0].tr";
+connectAttr "r_clav_ctrl.ro" "r_clav_jnt_parentConstraint1.tg[0].tro";
+connectAttr "r_clav_ctrl.s" "r_clav_jnt_parentConstraint1.tg[0].ts";
+connectAttr "r_clav_ctrl.pm" "r_clav_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "r_clav_jnt_parentConstraint1.w0" "r_clav_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_clav_jnt.ssc" "r_clav_jnt_scaleConstraint1.tsc";
+connectAttr "r_clav_jnt.pim" "r_clav_jnt_scaleConstraint1.cpim";
+connectAttr "r_clav_ctrl.s" "r_clav_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "r_clav_ctrl.pm" "r_clav_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "r_clav_jnt_scaleConstraint1.w0" "r_clav_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_arm_01_jnt_scaleConstraint1.csx" "r_arm_01_jnt.sx";
+connectAttr "r_arm_01_jnt_scaleConstraint1.csy" "r_arm_01_jnt.sy";
+connectAttr "r_arm_01_jnt_scaleConstraint1.csz" "r_arm_01_jnt.sz";
+connectAttr "r_arm_01_jnt_parentConstraint1.ctx" "r_arm_01_jnt.tx";
+connectAttr "r_arm_01_jnt_parentConstraint1.cty" "r_arm_01_jnt.ty";
+connectAttr "r_arm_01_jnt_parentConstraint1.ctz" "r_arm_01_jnt.tz";
+connectAttr "r_arm_01_jnt_parentConstraint1.crx" "r_arm_01_jnt.rx";
+connectAttr "r_arm_01_jnt_parentConstraint1.cry" "r_arm_01_jnt.ry";
+connectAttr "r_arm_01_jnt_parentConstraint1.crz" "r_arm_01_jnt.rz";
+connectAttr "r_arm_01_jnt.ro" "r_arm_01_jnt_parentConstraint1.cro";
+connectAttr "r_arm_01_jnt.pim" "r_arm_01_jnt_parentConstraint1.cpim";
+connectAttr "r_arm_01_jnt.rp" "r_arm_01_jnt_parentConstraint1.crp";
+connectAttr "r_arm_01_jnt.rpt" "r_arm_01_jnt_parentConstraint1.crt";
+connectAttr "r_arm_01_jnt.jo" "r_arm_01_jnt_parentConstraint1.cjo";
+connectAttr "r_arm_01_ctrl.t" "r_arm_01_jnt_parentConstraint1.tg[0].tt";
+connectAttr "r_arm_01_ctrl.rp" "r_arm_01_jnt_parentConstraint1.tg[0].trp";
+connectAttr "r_arm_01_ctrl.rpt" "r_arm_01_jnt_parentConstraint1.tg[0].trt";
+connectAttr "r_arm_01_ctrl.r" "r_arm_01_jnt_parentConstraint1.tg[0].tr";
+connectAttr "r_arm_01_ctrl.ro" "r_arm_01_jnt_parentConstraint1.tg[0].tro";
+connectAttr "r_arm_01_ctrl.s" "r_arm_01_jnt_parentConstraint1.tg[0].ts";
+connectAttr "r_arm_01_ctrl.pm" "r_arm_01_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "r_arm_01_jnt_parentConstraint1.w0" "r_arm_01_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_arm_01_jnt.ssc" "r_arm_01_jnt_scaleConstraint1.tsc";
+connectAttr "r_arm_01_jnt.pim" "r_arm_01_jnt_scaleConstraint1.cpim";
+connectAttr "r_arm_01_ctrl.s" "r_arm_01_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "r_arm_01_ctrl.pm" "r_arm_01_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "r_arm_01_jnt_scaleConstraint1.w0" "r_arm_01_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_arm_02_jnt_scaleConstraint1.csx" "r_arm_02_jnt.sx";
+connectAttr "r_arm_02_jnt_scaleConstraint1.csy" "r_arm_02_jnt.sy";
+connectAttr "r_arm_02_jnt_scaleConstraint1.csz" "r_arm_02_jnt.sz";
+connectAttr "r_arm_02_jnt_parentConstraint1.ctx" "r_arm_02_jnt.tx";
+connectAttr "r_arm_02_jnt_parentConstraint1.cty" "r_arm_02_jnt.ty";
+connectAttr "r_arm_02_jnt_parentConstraint1.ctz" "r_arm_02_jnt.tz";
+connectAttr "r_arm_02_jnt_parentConstraint1.crx" "r_arm_02_jnt.rx";
+connectAttr "r_arm_02_jnt_parentConstraint1.cry" "r_arm_02_jnt.ry";
+connectAttr "r_arm_02_jnt_parentConstraint1.crz" "r_arm_02_jnt.rz";
+connectAttr "r_arm_02_jnt.ro" "r_arm_02_jnt_parentConstraint1.cro";
+connectAttr "r_arm_02_jnt.pim" "r_arm_02_jnt_parentConstraint1.cpim";
+connectAttr "r_arm_02_jnt.rp" "r_arm_02_jnt_parentConstraint1.crp";
+connectAttr "r_arm_02_jnt.rpt" "r_arm_02_jnt_parentConstraint1.crt";
+connectAttr "r_arm_02_jnt.jo" "r_arm_02_jnt_parentConstraint1.cjo";
+connectAttr "r_arm_02_ctrl.t" "r_arm_02_jnt_parentConstraint1.tg[0].tt";
+connectAttr "r_arm_02_ctrl.rp" "r_arm_02_jnt_parentConstraint1.tg[0].trp";
+connectAttr "r_arm_02_ctrl.rpt" "r_arm_02_jnt_parentConstraint1.tg[0].trt";
+connectAttr "r_arm_02_ctrl.r" "r_arm_02_jnt_parentConstraint1.tg[0].tr";
+connectAttr "r_arm_02_ctrl.ro" "r_arm_02_jnt_parentConstraint1.tg[0].tro";
+connectAttr "r_arm_02_ctrl.s" "r_arm_02_jnt_parentConstraint1.tg[0].ts";
+connectAttr "r_arm_02_ctrl.pm" "r_arm_02_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "r_arm_02_jnt_parentConstraint1.w0" "r_arm_02_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_arm_02_jnt.ssc" "r_arm_02_jnt_scaleConstraint1.tsc";
+connectAttr "r_arm_02_jnt.pim" "r_arm_02_jnt_scaleConstraint1.cpim";
+connectAttr "r_arm_02_ctrl.s" "r_arm_02_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "r_arm_02_ctrl.pm" "r_arm_02_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "r_arm_02_jnt_scaleConstraint1.w0" "r_arm_02_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_arm_03_jnt_scaleConstraint1.csx" "r_arm_03_jnt.sx";
+connectAttr "r_arm_03_jnt_scaleConstraint1.csy" "r_arm_03_jnt.sy";
+connectAttr "r_arm_03_jnt_scaleConstraint1.csz" "r_arm_03_jnt.sz";
+connectAttr "r_arm_03_jnt_parentConstraint1.ctx" "r_arm_03_jnt.tx";
+connectAttr "r_arm_03_jnt_parentConstraint1.cty" "r_arm_03_jnt.ty";
+connectAttr "r_arm_03_jnt_parentConstraint1.ctz" "r_arm_03_jnt.tz";
+connectAttr "r_arm_03_jnt_parentConstraint1.crx" "r_arm_03_jnt.rx";
+connectAttr "r_arm_03_jnt_parentConstraint1.cry" "r_arm_03_jnt.ry";
+connectAttr "r_arm_03_jnt_parentConstraint1.crz" "r_arm_03_jnt.rz";
+connectAttr "r_arm_03_jnt.ro" "r_arm_03_jnt_parentConstraint1.cro";
+connectAttr "r_arm_03_jnt.pim" "r_arm_03_jnt_parentConstraint1.cpim";
+connectAttr "r_arm_03_jnt.rp" "r_arm_03_jnt_parentConstraint1.crp";
+connectAttr "r_arm_03_jnt.rpt" "r_arm_03_jnt_parentConstraint1.crt";
+connectAttr "r_arm_03_jnt.jo" "r_arm_03_jnt_parentConstraint1.cjo";
+connectAttr "r_arm_03_ctrl.t" "r_arm_03_jnt_parentConstraint1.tg[0].tt";
+connectAttr "r_arm_03_ctrl.rp" "r_arm_03_jnt_parentConstraint1.tg[0].trp";
+connectAttr "r_arm_03_ctrl.rpt" "r_arm_03_jnt_parentConstraint1.tg[0].trt";
+connectAttr "r_arm_03_ctrl.r" "r_arm_03_jnt_parentConstraint1.tg[0].tr";
+connectAttr "r_arm_03_ctrl.ro" "r_arm_03_jnt_parentConstraint1.tg[0].tro";
+connectAttr "r_arm_03_ctrl.s" "r_arm_03_jnt_parentConstraint1.tg[0].ts";
+connectAttr "r_arm_03_ctrl.pm" "r_arm_03_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "r_arm_03_jnt_parentConstraint1.w0" "r_arm_03_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_arm_03_jnt.ssc" "r_arm_03_jnt_scaleConstraint1.tsc";
+connectAttr "r_arm_03_jnt.pim" "r_arm_03_jnt_scaleConstraint1.cpim";
+connectAttr "r_arm_03_ctrl.s" "r_arm_03_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "r_arm_03_ctrl.pm" "r_arm_03_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "r_arm_03_jnt_scaleConstraint1.w0" "r_arm_03_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "r_arm_04_jnt_parentConstraint1.ctx" "r_arm_04_jnt.tx";
+connectAttr "r_arm_04_jnt_parentConstraint1.cty" "r_arm_04_jnt.ty";
+connectAttr "r_arm_04_jnt_parentConstraint1.ctz" "r_arm_04_jnt.tz";
+connectAttr "r_arm_04_jnt_parentConstraint1.crx" "r_arm_04_jnt.rx";
+connectAttr "r_arm_04_jnt_parentConstraint1.cry" "r_arm_04_jnt.ry";
+connectAttr "r_arm_04_jnt_parentConstraint1.crz" "r_arm_04_jnt.rz";
+connectAttr "r_arm_04_jnt_scaleConstraint1.csx" "r_arm_04_jnt.sx";
+connectAttr "r_arm_04_jnt_scaleConstraint1.csy" "r_arm_04_jnt.sy";
+connectAttr "r_arm_04_jnt_scaleConstraint1.csz" "r_arm_04_jnt.sz";
+connectAttr "r_arm_04_jnt.ro" "r_arm_04_jnt_parentConstraint1.cro";
+connectAttr "r_arm_04_jnt.pim" "r_arm_04_jnt_parentConstraint1.cpim";
+connectAttr "r_arm_04_jnt.rp" "r_arm_04_jnt_parentConstraint1.crp";
+connectAttr "r_arm_04_jnt.rpt" "r_arm_04_jnt_parentConstraint1.crt";
+connectAttr "r_arm_04_jnt.jo" "r_arm_04_jnt_parentConstraint1.cjo";
+connectAttr "r_arm_04_ctrl.t" "r_arm_04_jnt_parentConstraint1.tg[0].tt";
+connectAttr "r_arm_04_ctrl.rp" "r_arm_04_jnt_parentConstraint1.tg[0].trp";
+connectAttr "r_arm_04_ctrl.rpt" "r_arm_04_jnt_parentConstraint1.tg[0].trt";
+connectAttr "r_arm_04_ctrl.r" "r_arm_04_jnt_parentConstraint1.tg[0].tr";
+connectAttr "r_arm_04_ctrl.ro" "r_arm_04_jnt_parentConstraint1.tg[0].tro";
+connectAttr "r_arm_04_ctrl.s" "r_arm_04_jnt_parentConstraint1.tg[0].ts";
+connectAttr "r_arm_04_ctrl.pm" "r_arm_04_jnt_parentConstraint1.tg[0].tpm";
+connectAttr "r_arm_04_jnt_parentConstraint1.w0" "r_arm_04_jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "r_arm_04_jnt.ssc" "r_arm_04_jnt_scaleConstraint1.tsc";
+connectAttr "r_arm_04_jnt.pim" "r_arm_04_jnt_scaleConstraint1.cpim";
+connectAttr "r_arm_04_ctrl.s" "r_arm_04_jnt_scaleConstraint1.tg[0].ts";
+connectAttr "r_arm_04_ctrl.pm" "r_arm_04_jnt_scaleConstraint1.tg[0].tpm";
+connectAttr "r_arm_04_jnt_scaleConstraint1.w0" "r_arm_04_jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "texture_parentConstraint1.ctx" "texture.tx";
+connectAttr "texture_parentConstraint1.cty" "texture.ty";
+connectAttr "texture_parentConstraint1.ctz" "texture.tz";
+connectAttr "texture_parentConstraint1.crx" "texture.rx";
+connectAttr "texture_parentConstraint1.cry" "texture.ry";
+connectAttr "texture_parentConstraint1.crz" "texture.rz";
+connectAttr "texture_scaleConstraint1.csx" "texture.sx";
+connectAttr "texture_scaleConstraint1.csy" "texture.sy";
+connectAttr "texture_scaleConstraint1.csz" "texture.sz";
+connectAttr "texture.ro" "texture_parentConstraint1.cro";
+connectAttr "texture.pim" "texture_parentConstraint1.cpim";
+connectAttr "texture.rp" "texture_parentConstraint1.crp";
+connectAttr "texture.rpt" "texture_parentConstraint1.crt";
+connectAttr "head_jnt.t" "texture_parentConstraint1.tg[0].tt";
+connectAttr "head_jnt.rp" "texture_parentConstraint1.tg[0].trp";
+connectAttr "head_jnt.rpt" "texture_parentConstraint1.tg[0].trt";
+connectAttr "head_jnt.r" "texture_parentConstraint1.tg[0].tr";
+connectAttr "head_jnt.ro" "texture_parentConstraint1.tg[0].tro";
+connectAttr "head_jnt.s" "texture_parentConstraint1.tg[0].ts";
+connectAttr "head_jnt.pm" "texture_parentConstraint1.tg[0].tpm";
+connectAttr "head_jnt.jo" "texture_parentConstraint1.tg[0].tjo";
+connectAttr "head_jnt.ssc" "texture_parentConstraint1.tg[0].tsc";
+connectAttr "head_jnt.is" "texture_parentConstraint1.tg[0].tis";
+connectAttr "texture_parentConstraint1.w0" "texture_parentConstraint1.tg[0].tw";
+connectAttr "texture.pim" "texture_scaleConstraint1.cpim";
+connectAttr "head_jnt.s" "texture_scaleConstraint1.tg[0].ts";
+connectAttr "head_jnt.pm" "texture_scaleConstraint1.tg[0].tpm";
+connectAttr "texture_scaleConstraint1.w0" "texture_scaleConstraint1.tg[0].tw";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start:blinn1SG.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start:skin_sg.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start:l_eye_sg.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start:r_eye_sg.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start:shell_sg.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start:headphone_sg.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start:headband_sg.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start1:blinn1SG.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start1:skin_sg.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start1:l_eye_sg.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start1:r_eye_sg.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start1:shell_sg.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start1:headphone_sg.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start1:headband_sg.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start2:blinn1SG.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start2:skin_sg.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start2:l_eye_sg.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start2:r_eye_sg.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start2:shell_sg.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start2:headphone_sg.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "turtle_rig_start2:headband_sg.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "blinn1SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "skin_sg.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "l_eye_sg.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "r_eye_sg.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "shell_sg.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "headphone_sg.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "headband_sg.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start:blinn1SG.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start:skin_sg.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start:l_eye_sg.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start:r_eye_sg.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start:shell_sg.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start:headphone_sg.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start:headband_sg.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start1:blinn1SG.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start1:skin_sg.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start1:l_eye_sg.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start1:r_eye_sg.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start1:shell_sg.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start1:headphone_sg.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start1:headband_sg.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start2:blinn1SG.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start2:skin_sg.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start2:l_eye_sg.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start2:r_eye_sg.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start2:shell_sg.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start2:headphone_sg.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "turtle_rig_start2:headband_sg.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "blinn1SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "skin_sg.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "l_eye_sg.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "r_eye_sg.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "shell_sg.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "headphone_sg.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "headband_sg.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drivers"
 		 -na;
 connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
 connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
-connectAttr "turtle_rig_start:blinn1SG.msg" "turtle_rig_start:materialInfo1.sg";
-connectAttr "turtle_rig_start:place2dTexture2.c" "turtle_rig_start:file1.c";
-connectAttr "turtle_rig_start:place2dTexture2.tf" "turtle_rig_start:file1.tf";
-connectAttr "turtle_rig_start:place2dTexture2.rf" "turtle_rig_start:file1.rf";
-connectAttr "turtle_rig_start:place2dTexture2.mu" "turtle_rig_start:file1.mu";
-connectAttr "turtle_rig_start:place2dTexture2.mv" "turtle_rig_start:file1.mv";
-connectAttr "turtle_rig_start:place2dTexture2.s" "turtle_rig_start:file1.s";
-connectAttr "turtle_rig_start:place2dTexture2.wu" "turtle_rig_start:file1.wu";
-connectAttr "turtle_rig_start:place2dTexture2.wv" "turtle_rig_start:file1.wv";
-connectAttr "turtle_rig_start:place2dTexture2.re" "turtle_rig_start:file1.re";
-connectAttr "turtle_rig_start:place2dTexture2.of" "turtle_rig_start:file1.of";
-connectAttr "turtle_rig_start:place2dTexture2.r" "turtle_rig_start:file1.ro";
-connectAttr "turtle_rig_start:place2dTexture2.n" "turtle_rig_start:file1.n";
-connectAttr "turtle_rig_start:place2dTexture2.vt1" "turtle_rig_start:file1.vt1";
-connectAttr "turtle_rig_start:place2dTexture2.vt2" "turtle_rig_start:file1.vt2";
-connectAttr "turtle_rig_start:place2dTexture2.vt3" "turtle_rig_start:file1.vt3";
-connectAttr "turtle_rig_start:place2dTexture2.vc1" "turtle_rig_start:file1.vc1";
-connectAttr "turtle_rig_start:place2dTexture2.o" "turtle_rig_start:file1.uv";
-connectAttr "turtle_rig_start:place2dTexture2.ofs" "turtle_rig_start:file1.fs";
-connectAttr "turtle_rig_start:projection1.oc" "turtle_rig_start:l_eye_shader.c";
-connectAttr "turtle_rig_start:l_eye_shader.oc" "turtle_rig_start:l_eye_sg.ss";
-connectAttr "turtle_rig_start:l_eye_sg.msg" "turtle_rig_start:materialInfo5.sg";
-connectAttr "turtle_rig_start:l_eye_shader.msg" "turtle_rig_start:materialInfo5.m"
-		;
-connectAttr "turtle_rig_start:projection1.msg" "turtle_rig_start:materialInfo5.t"
-		 -na;
-connectAttr "turtle_rig_start:projection2.oc" "turtle_rig_start:r_eye_shader.c";
-connectAttr "turtle_rig_start:r_eye_shader.oc" "turtle_rig_start:r_eye_sg.ss";
-connectAttr "turtle_rig_start:r_eye_sg.msg" "turtle_rig_start:materialInfo6.sg";
-connectAttr "turtle_rig_start:r_eye_shader.msg" "turtle_rig_start:materialInfo6.m"
-		;
-connectAttr "turtle_rig_start:projection2.msg" "turtle_rig_start:materialInfo6.t"
-		 -na;
-connectAttr "layerManager.dli[1]" "turtle_rig_start:geo_layer.id";
-connectAttr "layerManager.dli[2]" "turtle_rig_start:skeleton_layer.id";
-connectAttr "layerManager.dli[3]" "turtle_rig_start:controls_layer.id";
-connectAttr "turtle_rig_start:ramp1.oc" "turtle_rig_start:projection1.im";
-connectAttr "turtle_rig_start:place2dTexture4.o" "turtle_rig_start:ramp1.uv";
-connectAttr "turtle_rig_start:place2dTexture4.ofs" "turtle_rig_start:ramp1.fs";
-connectAttr "turtle_rig_start:ramp2.oc" "turtle_rig_start:projection2.im";
-connectAttr "turtle_rig_start:place2dTexture5.o" "turtle_rig_start:ramp2.uv";
-connectAttr "turtle_rig_start:place2dTexture5.ofs" "turtle_rig_start:ramp2.fs";
-connectAttr "turtle_rig_start:file3.oc" "turtle_rig_start:headband_shader.base_color"
-		;
-connectAttr "turtle_rig_start:file4.oa" "turtle_rig_start:headband_shader.metalness"
-		;
-connectAttr "turtle_rig_start:file5.oa" "turtle_rig_start:headband_shader.specular_roughness"
-		;
-connectAttr "turtle_rig_start:bump2d1.o" "turtle_rig_start:headband_shader.n";
-connectAttr "turtle_rig_start:headband_shader.out" "turtle_rig_start:headband_sg.ss"
-		;
-connectAttr "turtle_rig_start:headband_sg.msg" "turtle_rig_start:materialInfo9.sg"
-		;
-connectAttr "turtle_rig_start:headband_shader.msg" "turtle_rig_start:materialInfo9.m"
-		;
-connectAttr "turtle_rig_start:headband_shader.msg" "turtle_rig_start:materialInfo9.t"
-		 -na;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start:file3.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start:file3.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start:file3.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start:file3.ws";
-connectAttr "turtle_rig_start:place2dTexture6.c" "turtle_rig_start:file3.c";
-connectAttr "turtle_rig_start:place2dTexture6.tf" "turtle_rig_start:file3.tf";
-connectAttr "turtle_rig_start:place2dTexture6.rf" "turtle_rig_start:file3.rf";
-connectAttr "turtle_rig_start:place2dTexture6.mu" "turtle_rig_start:file3.mu";
-connectAttr "turtle_rig_start:place2dTexture6.mv" "turtle_rig_start:file3.mv";
-connectAttr "turtle_rig_start:place2dTexture6.s" "turtle_rig_start:file3.s";
-connectAttr "turtle_rig_start:place2dTexture6.wu" "turtle_rig_start:file3.wu";
-connectAttr "turtle_rig_start:place2dTexture6.wv" "turtle_rig_start:file3.wv";
-connectAttr "turtle_rig_start:place2dTexture6.re" "turtle_rig_start:file3.re";
-connectAttr "turtle_rig_start:place2dTexture6.of" "turtle_rig_start:file3.of";
-connectAttr "turtle_rig_start:place2dTexture6.r" "turtle_rig_start:file3.ro";
-connectAttr "turtle_rig_start:place2dTexture6.n" "turtle_rig_start:file3.n";
-connectAttr "turtle_rig_start:place2dTexture6.vt1" "turtle_rig_start:file3.vt1";
-connectAttr "turtle_rig_start:place2dTexture6.vt2" "turtle_rig_start:file3.vt2";
-connectAttr "turtle_rig_start:place2dTexture6.vt3" "turtle_rig_start:file3.vt3";
-connectAttr "turtle_rig_start:place2dTexture6.vc1" "turtle_rig_start:file3.vc1";
-connectAttr "turtle_rig_start:place2dTexture6.o" "turtle_rig_start:file3.uv";
-connectAttr "turtle_rig_start:place2dTexture6.ofs" "turtle_rig_start:file3.fs";
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start:file4.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start:file4.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start:file4.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start:file4.ws";
-connectAttr "turtle_rig_start:place2dTexture7.c" "turtle_rig_start:file4.c";
-connectAttr "turtle_rig_start:place2dTexture7.tf" "turtle_rig_start:file4.tf";
-connectAttr "turtle_rig_start:place2dTexture7.rf" "turtle_rig_start:file4.rf";
-connectAttr "turtle_rig_start:place2dTexture7.mu" "turtle_rig_start:file4.mu";
-connectAttr "turtle_rig_start:place2dTexture7.mv" "turtle_rig_start:file4.mv";
-connectAttr "turtle_rig_start:place2dTexture7.s" "turtle_rig_start:file4.s";
-connectAttr "turtle_rig_start:place2dTexture7.wu" "turtle_rig_start:file4.wu";
-connectAttr "turtle_rig_start:place2dTexture7.wv" "turtle_rig_start:file4.wv";
-connectAttr "turtle_rig_start:place2dTexture7.re" "turtle_rig_start:file4.re";
-connectAttr "turtle_rig_start:place2dTexture7.of" "turtle_rig_start:file4.of";
-connectAttr "turtle_rig_start:place2dTexture7.r" "turtle_rig_start:file4.ro";
-connectAttr "turtle_rig_start:place2dTexture7.n" "turtle_rig_start:file4.n";
-connectAttr "turtle_rig_start:place2dTexture7.vt1" "turtle_rig_start:file4.vt1";
-connectAttr "turtle_rig_start:place2dTexture7.vt2" "turtle_rig_start:file4.vt2";
-connectAttr "turtle_rig_start:place2dTexture7.vt3" "turtle_rig_start:file4.vt3";
-connectAttr "turtle_rig_start:place2dTexture7.vc1" "turtle_rig_start:file4.vc1";
-connectAttr "turtle_rig_start:place2dTexture7.o" "turtle_rig_start:file4.uv";
-connectAttr "turtle_rig_start:place2dTexture7.ofs" "turtle_rig_start:file4.fs";
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start:file5.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start:file5.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start:file5.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start:file5.ws";
-connectAttr "turtle_rig_start:place2dTexture8.c" "turtle_rig_start:file5.c";
-connectAttr "turtle_rig_start:place2dTexture8.tf" "turtle_rig_start:file5.tf";
-connectAttr "turtle_rig_start:place2dTexture8.rf" "turtle_rig_start:file5.rf";
-connectAttr "turtle_rig_start:place2dTexture8.mu" "turtle_rig_start:file5.mu";
-connectAttr "turtle_rig_start:place2dTexture8.mv" "turtle_rig_start:file5.mv";
-connectAttr "turtle_rig_start:place2dTexture8.s" "turtle_rig_start:file5.s";
-connectAttr "turtle_rig_start:place2dTexture8.wu" "turtle_rig_start:file5.wu";
-connectAttr "turtle_rig_start:place2dTexture8.wv" "turtle_rig_start:file5.wv";
-connectAttr "turtle_rig_start:place2dTexture8.re" "turtle_rig_start:file5.re";
-connectAttr "turtle_rig_start:place2dTexture8.of" "turtle_rig_start:file5.of";
-connectAttr "turtle_rig_start:place2dTexture8.r" "turtle_rig_start:file5.ro";
-connectAttr "turtle_rig_start:place2dTexture8.n" "turtle_rig_start:file5.n";
-connectAttr "turtle_rig_start:place2dTexture8.vt1" "turtle_rig_start:file5.vt1";
-connectAttr "turtle_rig_start:place2dTexture8.vt2" "turtle_rig_start:file5.vt2";
-connectAttr "turtle_rig_start:place2dTexture8.vt3" "turtle_rig_start:file5.vt3";
-connectAttr "turtle_rig_start:place2dTexture8.vc1" "turtle_rig_start:file5.vc1";
-connectAttr "turtle_rig_start:place2dTexture8.o" "turtle_rig_start:file5.uv";
-connectAttr "turtle_rig_start:place2dTexture8.ofs" "turtle_rig_start:file5.fs";
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start:file6.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start:file6.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start:file6.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start:file6.ws";
-connectAttr "turtle_rig_start:place2dTexture9.c" "turtle_rig_start:file6.c";
-connectAttr "turtle_rig_start:place2dTexture9.tf" "turtle_rig_start:file6.tf";
-connectAttr "turtle_rig_start:place2dTexture9.rf" "turtle_rig_start:file6.rf";
-connectAttr "turtle_rig_start:place2dTexture9.mu" "turtle_rig_start:file6.mu";
-connectAttr "turtle_rig_start:place2dTexture9.mv" "turtle_rig_start:file6.mv";
-connectAttr "turtle_rig_start:place2dTexture9.s" "turtle_rig_start:file6.s";
-connectAttr "turtle_rig_start:place2dTexture9.wu" "turtle_rig_start:file6.wu";
-connectAttr "turtle_rig_start:place2dTexture9.wv" "turtle_rig_start:file6.wv";
-connectAttr "turtle_rig_start:place2dTexture9.re" "turtle_rig_start:file6.re";
-connectAttr "turtle_rig_start:place2dTexture9.of" "turtle_rig_start:file6.of";
-connectAttr "turtle_rig_start:place2dTexture9.r" "turtle_rig_start:file6.ro";
-connectAttr "turtle_rig_start:place2dTexture9.n" "turtle_rig_start:file6.n";
-connectAttr "turtle_rig_start:place2dTexture9.vt1" "turtle_rig_start:file6.vt1";
-connectAttr "turtle_rig_start:place2dTexture9.vt2" "turtle_rig_start:file6.vt2";
-connectAttr "turtle_rig_start:place2dTexture9.vt3" "turtle_rig_start:file6.vt3";
-connectAttr "turtle_rig_start:place2dTexture9.vc1" "turtle_rig_start:file6.vc1";
-connectAttr "turtle_rig_start:place2dTexture9.o" "turtle_rig_start:file6.uv";
-connectAttr "turtle_rig_start:place2dTexture9.ofs" "turtle_rig_start:file6.fs";
-connectAttr "turtle_rig_start:file6.oa" "turtle_rig_start:bump2d1.bv";
-connectAttr "turtle_rig_start:file7.oc" "turtle_rig_start:headphone_shader.base_color"
-		;
-connectAttr "turtle_rig_start:file8.oa" "turtle_rig_start:headphone_shader.metalness"
-		;
-connectAttr "turtle_rig_start:file9.oa" "turtle_rig_start:headphone_shader.specular_roughness"
-		;
-connectAttr "turtle_rig_start:bump2d2.o" "turtle_rig_start:headphone_shader.n";
-connectAttr "turtle_rig_start:headphone_shader.out" "turtle_rig_start:headphone_sg.ss"
-		;
-connectAttr "turtle_rig_start:headphone_sg.msg" "turtle_rig_start:materialInfo10.sg"
-		;
-connectAttr "turtle_rig_start:headphone_shader.msg" "turtle_rig_start:materialInfo10.m"
-		;
-connectAttr "turtle_rig_start:headphone_shader.msg" "turtle_rig_start:materialInfo10.t"
-		 -na;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start:file7.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start:file7.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start:file7.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start:file7.ws";
-connectAttr "turtle_rig_start:place2dTexture10.c" "turtle_rig_start:file7.c";
-connectAttr "turtle_rig_start:place2dTexture10.tf" "turtle_rig_start:file7.tf";
-connectAttr "turtle_rig_start:place2dTexture10.rf" "turtle_rig_start:file7.rf";
-connectAttr "turtle_rig_start:place2dTexture10.mu" "turtle_rig_start:file7.mu";
-connectAttr "turtle_rig_start:place2dTexture10.mv" "turtle_rig_start:file7.mv";
-connectAttr "turtle_rig_start:place2dTexture10.s" "turtle_rig_start:file7.s";
-connectAttr "turtle_rig_start:place2dTexture10.wu" "turtle_rig_start:file7.wu";
-connectAttr "turtle_rig_start:place2dTexture10.wv" "turtle_rig_start:file7.wv";
-connectAttr "turtle_rig_start:place2dTexture10.re" "turtle_rig_start:file7.re";
-connectAttr "turtle_rig_start:place2dTexture10.of" "turtle_rig_start:file7.of";
-connectAttr "turtle_rig_start:place2dTexture10.r" "turtle_rig_start:file7.ro";
-connectAttr "turtle_rig_start:place2dTexture10.n" "turtle_rig_start:file7.n";
-connectAttr "turtle_rig_start:place2dTexture10.vt1" "turtle_rig_start:file7.vt1"
-		;
-connectAttr "turtle_rig_start:place2dTexture10.vt2" "turtle_rig_start:file7.vt2"
-		;
-connectAttr "turtle_rig_start:place2dTexture10.vt3" "turtle_rig_start:file7.vt3"
-		;
-connectAttr "turtle_rig_start:place2dTexture10.vc1" "turtle_rig_start:file7.vc1"
-		;
-connectAttr "turtle_rig_start:place2dTexture10.o" "turtle_rig_start:file7.uv";
-connectAttr "turtle_rig_start:place2dTexture10.ofs" "turtle_rig_start:file7.fs";
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start:file8.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start:file8.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start:file8.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start:file8.ws";
-connectAttr "turtle_rig_start:place2dTexture11.c" "turtle_rig_start:file8.c";
-connectAttr "turtle_rig_start:place2dTexture11.tf" "turtle_rig_start:file8.tf";
-connectAttr "turtle_rig_start:place2dTexture11.rf" "turtle_rig_start:file8.rf";
-connectAttr "turtle_rig_start:place2dTexture11.mu" "turtle_rig_start:file8.mu";
-connectAttr "turtle_rig_start:place2dTexture11.mv" "turtle_rig_start:file8.mv";
-connectAttr "turtle_rig_start:place2dTexture11.s" "turtle_rig_start:file8.s";
-connectAttr "turtle_rig_start:place2dTexture11.wu" "turtle_rig_start:file8.wu";
-connectAttr "turtle_rig_start:place2dTexture11.wv" "turtle_rig_start:file8.wv";
-connectAttr "turtle_rig_start:place2dTexture11.re" "turtle_rig_start:file8.re";
-connectAttr "turtle_rig_start:place2dTexture11.of" "turtle_rig_start:file8.of";
-connectAttr "turtle_rig_start:place2dTexture11.r" "turtle_rig_start:file8.ro";
-connectAttr "turtle_rig_start:place2dTexture11.n" "turtle_rig_start:file8.n";
-connectAttr "turtle_rig_start:place2dTexture11.vt1" "turtle_rig_start:file8.vt1"
-		;
-connectAttr "turtle_rig_start:place2dTexture11.vt2" "turtle_rig_start:file8.vt2"
-		;
-connectAttr "turtle_rig_start:place2dTexture11.vt3" "turtle_rig_start:file8.vt3"
-		;
-connectAttr "turtle_rig_start:place2dTexture11.vc1" "turtle_rig_start:file8.vc1"
-		;
-connectAttr "turtle_rig_start:place2dTexture11.o" "turtle_rig_start:file8.uv";
-connectAttr "turtle_rig_start:place2dTexture11.ofs" "turtle_rig_start:file8.fs";
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start:file9.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start:file9.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start:file9.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start:file9.ws";
-connectAttr "turtle_rig_start:place2dTexture12.c" "turtle_rig_start:file9.c";
-connectAttr "turtle_rig_start:place2dTexture12.tf" "turtle_rig_start:file9.tf";
-connectAttr "turtle_rig_start:place2dTexture12.rf" "turtle_rig_start:file9.rf";
-connectAttr "turtle_rig_start:place2dTexture12.mu" "turtle_rig_start:file9.mu";
-connectAttr "turtle_rig_start:place2dTexture12.mv" "turtle_rig_start:file9.mv";
-connectAttr "turtle_rig_start:place2dTexture12.s" "turtle_rig_start:file9.s";
-connectAttr "turtle_rig_start:place2dTexture12.wu" "turtle_rig_start:file9.wu";
-connectAttr "turtle_rig_start:place2dTexture12.wv" "turtle_rig_start:file9.wv";
-connectAttr "turtle_rig_start:place2dTexture12.re" "turtle_rig_start:file9.re";
-connectAttr "turtle_rig_start:place2dTexture12.of" "turtle_rig_start:file9.of";
-connectAttr "turtle_rig_start:place2dTexture12.r" "turtle_rig_start:file9.ro";
-connectAttr "turtle_rig_start:place2dTexture12.n" "turtle_rig_start:file9.n";
-connectAttr "turtle_rig_start:place2dTexture12.vt1" "turtle_rig_start:file9.vt1"
-		;
-connectAttr "turtle_rig_start:place2dTexture12.vt2" "turtle_rig_start:file9.vt2"
-		;
-connectAttr "turtle_rig_start:place2dTexture12.vt3" "turtle_rig_start:file9.vt3"
-		;
-connectAttr "turtle_rig_start:place2dTexture12.vc1" "turtle_rig_start:file9.vc1"
-		;
-connectAttr "turtle_rig_start:place2dTexture12.o" "turtle_rig_start:file9.uv";
-connectAttr "turtle_rig_start:place2dTexture12.ofs" "turtle_rig_start:file9.fs";
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start:file10.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start:file10.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start:file10.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start:file10.ws";
-connectAttr "turtle_rig_start:place2dTexture13.c" "turtle_rig_start:file10.c";
-connectAttr "turtle_rig_start:place2dTexture13.tf" "turtle_rig_start:file10.tf";
-connectAttr "turtle_rig_start:place2dTexture13.rf" "turtle_rig_start:file10.rf";
-connectAttr "turtle_rig_start:place2dTexture13.mu" "turtle_rig_start:file10.mu";
-connectAttr "turtle_rig_start:place2dTexture13.mv" "turtle_rig_start:file10.mv";
-connectAttr "turtle_rig_start:place2dTexture13.s" "turtle_rig_start:file10.s";
-connectAttr "turtle_rig_start:place2dTexture13.wu" "turtle_rig_start:file10.wu";
-connectAttr "turtle_rig_start:place2dTexture13.wv" "turtle_rig_start:file10.wv";
-connectAttr "turtle_rig_start:place2dTexture13.re" "turtle_rig_start:file10.re";
-connectAttr "turtle_rig_start:place2dTexture13.of" "turtle_rig_start:file10.of";
-connectAttr "turtle_rig_start:place2dTexture13.r" "turtle_rig_start:file10.ro";
-connectAttr "turtle_rig_start:place2dTexture13.n" "turtle_rig_start:file10.n";
-connectAttr "turtle_rig_start:place2dTexture13.vt1" "turtle_rig_start:file10.vt1"
-		;
-connectAttr "turtle_rig_start:place2dTexture13.vt2" "turtle_rig_start:file10.vt2"
-		;
-connectAttr "turtle_rig_start:place2dTexture13.vt3" "turtle_rig_start:file10.vt3"
-		;
-connectAttr "turtle_rig_start:place2dTexture13.vc1" "turtle_rig_start:file10.vc1"
-		;
-connectAttr "turtle_rig_start:place2dTexture13.o" "turtle_rig_start:file10.uv";
-connectAttr "turtle_rig_start:place2dTexture13.ofs" "turtle_rig_start:file10.fs"
-		;
-connectAttr "turtle_rig_start:file10.oa" "turtle_rig_start:bump2d2.bv";
-connectAttr "turtle_rig_start:file11.oc" "turtle_rig_start:shell_shader.base_color"
-		;
-connectAttr "turtle_rig_start:file12.oa" "turtle_rig_start:shell_shader.metalness"
-		;
-connectAttr "turtle_rig_start:file13.oa" "turtle_rig_start:shell_shader.specular_roughness"
-		;
-connectAttr "turtle_rig_start:bump2d3.o" "turtle_rig_start:shell_shader.n";
-connectAttr "turtle_rig_start:shell_shader.out" "turtle_rig_start:shell_sg.ss";
-connectAttr "turtle_rig_start:shell_sg.msg" "turtle_rig_start:materialInfo11.sg"
-		;
-connectAttr "turtle_rig_start:shell_shader.msg" "turtle_rig_start:materialInfo11.m"
-		;
-connectAttr "turtle_rig_start:shell_shader.msg" "turtle_rig_start:materialInfo11.t"
-		 -na;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start:file11.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start:file11.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start:file11.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start:file11.ws";
-connectAttr "turtle_rig_start:place2dTexture14.c" "turtle_rig_start:file11.c";
-connectAttr "turtle_rig_start:place2dTexture14.tf" "turtle_rig_start:file11.tf";
-connectAttr "turtle_rig_start:place2dTexture14.rf" "turtle_rig_start:file11.rf";
-connectAttr "turtle_rig_start:place2dTexture14.mu" "turtle_rig_start:file11.mu";
-connectAttr "turtle_rig_start:place2dTexture14.mv" "turtle_rig_start:file11.mv";
-connectAttr "turtle_rig_start:place2dTexture14.s" "turtle_rig_start:file11.s";
-connectAttr "turtle_rig_start:place2dTexture14.wu" "turtle_rig_start:file11.wu";
-connectAttr "turtle_rig_start:place2dTexture14.wv" "turtle_rig_start:file11.wv";
-connectAttr "turtle_rig_start:place2dTexture14.re" "turtle_rig_start:file11.re";
-connectAttr "turtle_rig_start:place2dTexture14.of" "turtle_rig_start:file11.of";
-connectAttr "turtle_rig_start:place2dTexture14.r" "turtle_rig_start:file11.ro";
-connectAttr "turtle_rig_start:place2dTexture14.n" "turtle_rig_start:file11.n";
-connectAttr "turtle_rig_start:place2dTexture14.vt1" "turtle_rig_start:file11.vt1"
-		;
-connectAttr "turtle_rig_start:place2dTexture14.vt2" "turtle_rig_start:file11.vt2"
-		;
-connectAttr "turtle_rig_start:place2dTexture14.vt3" "turtle_rig_start:file11.vt3"
-		;
-connectAttr "turtle_rig_start:place2dTexture14.vc1" "turtle_rig_start:file11.vc1"
-		;
-connectAttr "turtle_rig_start:place2dTexture14.o" "turtle_rig_start:file11.uv";
-connectAttr "turtle_rig_start:place2dTexture14.ofs" "turtle_rig_start:file11.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start:file12.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start:file12.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start:file12.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start:file12.ws";
-connectAttr "turtle_rig_start:place2dTexture15.c" "turtle_rig_start:file12.c";
-connectAttr "turtle_rig_start:place2dTexture15.tf" "turtle_rig_start:file12.tf";
-connectAttr "turtle_rig_start:place2dTexture15.rf" "turtle_rig_start:file12.rf";
-connectAttr "turtle_rig_start:place2dTexture15.mu" "turtle_rig_start:file12.mu";
-connectAttr "turtle_rig_start:place2dTexture15.mv" "turtle_rig_start:file12.mv";
-connectAttr "turtle_rig_start:place2dTexture15.s" "turtle_rig_start:file12.s";
-connectAttr "turtle_rig_start:place2dTexture15.wu" "turtle_rig_start:file12.wu";
-connectAttr "turtle_rig_start:place2dTexture15.wv" "turtle_rig_start:file12.wv";
-connectAttr "turtle_rig_start:place2dTexture15.re" "turtle_rig_start:file12.re";
-connectAttr "turtle_rig_start:place2dTexture15.of" "turtle_rig_start:file12.of";
-connectAttr "turtle_rig_start:place2dTexture15.r" "turtle_rig_start:file12.ro";
-connectAttr "turtle_rig_start:place2dTexture15.n" "turtle_rig_start:file12.n";
-connectAttr "turtle_rig_start:place2dTexture15.vt1" "turtle_rig_start:file12.vt1"
-		;
-connectAttr "turtle_rig_start:place2dTexture15.vt2" "turtle_rig_start:file12.vt2"
-		;
-connectAttr "turtle_rig_start:place2dTexture15.vt3" "turtle_rig_start:file12.vt3"
-		;
-connectAttr "turtle_rig_start:place2dTexture15.vc1" "turtle_rig_start:file12.vc1"
-		;
-connectAttr "turtle_rig_start:place2dTexture15.o" "turtle_rig_start:file12.uv";
-connectAttr "turtle_rig_start:place2dTexture15.ofs" "turtle_rig_start:file12.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start:file13.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start:file13.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start:file13.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start:file13.ws";
-connectAttr "turtle_rig_start:place2dTexture16.c" "turtle_rig_start:file13.c";
-connectAttr "turtle_rig_start:place2dTexture16.tf" "turtle_rig_start:file13.tf";
-connectAttr "turtle_rig_start:place2dTexture16.rf" "turtle_rig_start:file13.rf";
-connectAttr "turtle_rig_start:place2dTexture16.mu" "turtle_rig_start:file13.mu";
-connectAttr "turtle_rig_start:place2dTexture16.mv" "turtle_rig_start:file13.mv";
-connectAttr "turtle_rig_start:place2dTexture16.s" "turtle_rig_start:file13.s";
-connectAttr "turtle_rig_start:place2dTexture16.wu" "turtle_rig_start:file13.wu";
-connectAttr "turtle_rig_start:place2dTexture16.wv" "turtle_rig_start:file13.wv";
-connectAttr "turtle_rig_start:place2dTexture16.re" "turtle_rig_start:file13.re";
-connectAttr "turtle_rig_start:place2dTexture16.of" "turtle_rig_start:file13.of";
-connectAttr "turtle_rig_start:place2dTexture16.r" "turtle_rig_start:file13.ro";
-connectAttr "turtle_rig_start:place2dTexture16.n" "turtle_rig_start:file13.n";
-connectAttr "turtle_rig_start:place2dTexture16.vt1" "turtle_rig_start:file13.vt1"
-		;
-connectAttr "turtle_rig_start:place2dTexture16.vt2" "turtle_rig_start:file13.vt2"
-		;
-connectAttr "turtle_rig_start:place2dTexture16.vt3" "turtle_rig_start:file13.vt3"
-		;
-connectAttr "turtle_rig_start:place2dTexture16.vc1" "turtle_rig_start:file13.vc1"
-		;
-connectAttr "turtle_rig_start:place2dTexture16.o" "turtle_rig_start:file13.uv";
-connectAttr "turtle_rig_start:place2dTexture16.ofs" "turtle_rig_start:file13.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start:file14.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start:file14.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start:file14.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start:file14.ws";
-connectAttr "turtle_rig_start:place2dTexture17.c" "turtle_rig_start:file14.c";
-connectAttr "turtle_rig_start:place2dTexture17.tf" "turtle_rig_start:file14.tf";
-connectAttr "turtle_rig_start:place2dTexture17.rf" "turtle_rig_start:file14.rf";
-connectAttr "turtle_rig_start:place2dTexture17.mu" "turtle_rig_start:file14.mu";
-connectAttr "turtle_rig_start:place2dTexture17.mv" "turtle_rig_start:file14.mv";
-connectAttr "turtle_rig_start:place2dTexture17.s" "turtle_rig_start:file14.s";
-connectAttr "turtle_rig_start:place2dTexture17.wu" "turtle_rig_start:file14.wu";
-connectAttr "turtle_rig_start:place2dTexture17.wv" "turtle_rig_start:file14.wv";
-connectAttr "turtle_rig_start:place2dTexture17.re" "turtle_rig_start:file14.re";
-connectAttr "turtle_rig_start:place2dTexture17.of" "turtle_rig_start:file14.of";
-connectAttr "turtle_rig_start:place2dTexture17.r" "turtle_rig_start:file14.ro";
-connectAttr "turtle_rig_start:place2dTexture17.n" "turtle_rig_start:file14.n";
-connectAttr "turtle_rig_start:place2dTexture17.vt1" "turtle_rig_start:file14.vt1"
-		;
-connectAttr "turtle_rig_start:place2dTexture17.vt2" "turtle_rig_start:file14.vt2"
-		;
-connectAttr "turtle_rig_start:place2dTexture17.vt3" "turtle_rig_start:file14.vt3"
-		;
-connectAttr "turtle_rig_start:place2dTexture17.vc1" "turtle_rig_start:file14.vc1"
-		;
-connectAttr "turtle_rig_start:place2dTexture17.o" "turtle_rig_start:file14.uv";
-connectAttr "turtle_rig_start:place2dTexture17.ofs" "turtle_rig_start:file14.fs"
-		;
-connectAttr "turtle_rig_start:file14.oa" "turtle_rig_start:bump2d3.bv";
-connectAttr "turtle_rig_start:file15.oc" "turtle_rig_start:skin_shader.base_color"
-		;
-connectAttr "turtle_rig_start:file16.oa" "turtle_rig_start:skin_shader.metalness"
-		;
-connectAttr "turtle_rig_start:file17.oa" "turtle_rig_start:skin_shader.specular_roughness"
-		;
-connectAttr "turtle_rig_start:bump2d4.o" "turtle_rig_start:skin_shader.n";
-connectAttr "turtle_rig_start:skin_shader.out" "turtle_rig_start:skin_sg.ss";
-connectAttr "turtle_rig_start:skin_sg.msg" "turtle_rig_start:materialInfo12.sg";
-connectAttr "turtle_rig_start:skin_shader.msg" "turtle_rig_start:materialInfo12.m"
-		;
-connectAttr "turtle_rig_start:skin_shader.msg" "turtle_rig_start:materialInfo12.t"
-		 -na;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start:file15.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start:file15.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start:file15.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start:file15.ws";
-connectAttr "turtle_rig_start:place2dTexture18.c" "turtle_rig_start:file15.c";
-connectAttr "turtle_rig_start:place2dTexture18.tf" "turtle_rig_start:file15.tf";
-connectAttr "turtle_rig_start:place2dTexture18.rf" "turtle_rig_start:file15.rf";
-connectAttr "turtle_rig_start:place2dTexture18.mu" "turtle_rig_start:file15.mu";
-connectAttr "turtle_rig_start:place2dTexture18.mv" "turtle_rig_start:file15.mv";
-connectAttr "turtle_rig_start:place2dTexture18.s" "turtle_rig_start:file15.s";
-connectAttr "turtle_rig_start:place2dTexture18.wu" "turtle_rig_start:file15.wu";
-connectAttr "turtle_rig_start:place2dTexture18.wv" "turtle_rig_start:file15.wv";
-connectAttr "turtle_rig_start:place2dTexture18.re" "turtle_rig_start:file15.re";
-connectAttr "turtle_rig_start:place2dTexture18.of" "turtle_rig_start:file15.of";
-connectAttr "turtle_rig_start:place2dTexture18.r" "turtle_rig_start:file15.ro";
-connectAttr "turtle_rig_start:place2dTexture18.n" "turtle_rig_start:file15.n";
-connectAttr "turtle_rig_start:place2dTexture18.vt1" "turtle_rig_start:file15.vt1"
-		;
-connectAttr "turtle_rig_start:place2dTexture18.vt2" "turtle_rig_start:file15.vt2"
-		;
-connectAttr "turtle_rig_start:place2dTexture18.vt3" "turtle_rig_start:file15.vt3"
-		;
-connectAttr "turtle_rig_start:place2dTexture18.vc1" "turtle_rig_start:file15.vc1"
-		;
-connectAttr "turtle_rig_start:place2dTexture18.o" "turtle_rig_start:file15.uv";
-connectAttr "turtle_rig_start:place2dTexture18.ofs" "turtle_rig_start:file15.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start:file16.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start:file16.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start:file16.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start:file16.ws";
-connectAttr "turtle_rig_start:place2dTexture19.c" "turtle_rig_start:file16.c";
-connectAttr "turtle_rig_start:place2dTexture19.tf" "turtle_rig_start:file16.tf";
-connectAttr "turtle_rig_start:place2dTexture19.rf" "turtle_rig_start:file16.rf";
-connectAttr "turtle_rig_start:place2dTexture19.mu" "turtle_rig_start:file16.mu";
-connectAttr "turtle_rig_start:place2dTexture19.mv" "turtle_rig_start:file16.mv";
-connectAttr "turtle_rig_start:place2dTexture19.s" "turtle_rig_start:file16.s";
-connectAttr "turtle_rig_start:place2dTexture19.wu" "turtle_rig_start:file16.wu";
-connectAttr "turtle_rig_start:place2dTexture19.wv" "turtle_rig_start:file16.wv";
-connectAttr "turtle_rig_start:place2dTexture19.re" "turtle_rig_start:file16.re";
-connectAttr "turtle_rig_start:place2dTexture19.of" "turtle_rig_start:file16.of";
-connectAttr "turtle_rig_start:place2dTexture19.r" "turtle_rig_start:file16.ro";
-connectAttr "turtle_rig_start:place2dTexture19.n" "turtle_rig_start:file16.n";
-connectAttr "turtle_rig_start:place2dTexture19.vt1" "turtle_rig_start:file16.vt1"
-		;
-connectAttr "turtle_rig_start:place2dTexture19.vt2" "turtle_rig_start:file16.vt2"
-		;
-connectAttr "turtle_rig_start:place2dTexture19.vt3" "turtle_rig_start:file16.vt3"
-		;
-connectAttr "turtle_rig_start:place2dTexture19.vc1" "turtle_rig_start:file16.vc1"
-		;
-connectAttr "turtle_rig_start:place2dTexture19.o" "turtle_rig_start:file16.uv";
-connectAttr "turtle_rig_start:place2dTexture19.ofs" "turtle_rig_start:file16.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start:file17.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start:file17.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start:file17.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start:file17.ws";
-connectAttr "turtle_rig_start:place2dTexture20.c" "turtle_rig_start:file17.c";
-connectAttr "turtle_rig_start:place2dTexture20.tf" "turtle_rig_start:file17.tf";
-connectAttr "turtle_rig_start:place2dTexture20.rf" "turtle_rig_start:file17.rf";
-connectAttr "turtle_rig_start:place2dTexture20.mu" "turtle_rig_start:file17.mu";
-connectAttr "turtle_rig_start:place2dTexture20.mv" "turtle_rig_start:file17.mv";
-connectAttr "turtle_rig_start:place2dTexture20.s" "turtle_rig_start:file17.s";
-connectAttr "turtle_rig_start:place2dTexture20.wu" "turtle_rig_start:file17.wu";
-connectAttr "turtle_rig_start:place2dTexture20.wv" "turtle_rig_start:file17.wv";
-connectAttr "turtle_rig_start:place2dTexture20.re" "turtle_rig_start:file17.re";
-connectAttr "turtle_rig_start:place2dTexture20.of" "turtle_rig_start:file17.of";
-connectAttr "turtle_rig_start:place2dTexture20.r" "turtle_rig_start:file17.ro";
-connectAttr "turtle_rig_start:place2dTexture20.n" "turtle_rig_start:file17.n";
-connectAttr "turtle_rig_start:place2dTexture20.vt1" "turtle_rig_start:file17.vt1"
-		;
-connectAttr "turtle_rig_start:place2dTexture20.vt2" "turtle_rig_start:file17.vt2"
-		;
-connectAttr "turtle_rig_start:place2dTexture20.vt3" "turtle_rig_start:file17.vt3"
-		;
-connectAttr "turtle_rig_start:place2dTexture20.vc1" "turtle_rig_start:file17.vc1"
-		;
-connectAttr "turtle_rig_start:place2dTexture20.o" "turtle_rig_start:file17.uv";
-connectAttr "turtle_rig_start:place2dTexture20.ofs" "turtle_rig_start:file17.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start:file18.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start:file18.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start:file18.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start:file18.ws";
-connectAttr "turtle_rig_start:place2dTexture21.c" "turtle_rig_start:file18.c";
-connectAttr "turtle_rig_start:place2dTexture21.tf" "turtle_rig_start:file18.tf";
-connectAttr "turtle_rig_start:place2dTexture21.rf" "turtle_rig_start:file18.rf";
-connectAttr "turtle_rig_start:place2dTexture21.mu" "turtle_rig_start:file18.mu";
-connectAttr "turtle_rig_start:place2dTexture21.mv" "turtle_rig_start:file18.mv";
-connectAttr "turtle_rig_start:place2dTexture21.s" "turtle_rig_start:file18.s";
-connectAttr "turtle_rig_start:place2dTexture21.wu" "turtle_rig_start:file18.wu";
-connectAttr "turtle_rig_start:place2dTexture21.wv" "turtle_rig_start:file18.wv";
-connectAttr "turtle_rig_start:place2dTexture21.re" "turtle_rig_start:file18.re";
-connectAttr "turtle_rig_start:place2dTexture21.of" "turtle_rig_start:file18.of";
-connectAttr "turtle_rig_start:place2dTexture21.r" "turtle_rig_start:file18.ro";
-connectAttr "turtle_rig_start:place2dTexture21.n" "turtle_rig_start:file18.n";
-connectAttr "turtle_rig_start:place2dTexture21.vt1" "turtle_rig_start:file18.vt1"
-		;
-connectAttr "turtle_rig_start:place2dTexture21.vt2" "turtle_rig_start:file18.vt2"
-		;
-connectAttr "turtle_rig_start:place2dTexture21.vt3" "turtle_rig_start:file18.vt3"
-		;
-connectAttr "turtle_rig_start:place2dTexture21.vc1" "turtle_rig_start:file18.vc1"
-		;
-connectAttr "turtle_rig_start:place2dTexture21.o" "turtle_rig_start:file18.uv";
-connectAttr "turtle_rig_start:place2dTexture21.ofs" "turtle_rig_start:file18.fs"
-		;
-connectAttr "turtle_rig_start:file18.oa" "turtle_rig_start:bump2d4.bv";
-connectAttr "turtle_rig_start:file19.oc" "turtle_rig_start:aiGobo1.slidemap";
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start:file19.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start:file19.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start:file19.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start:file19.ws";
-connectAttr "turtle_rig_start:place2dTexture22.c" "turtle_rig_start:file19.c";
-connectAttr "turtle_rig_start:place2dTexture22.tf" "turtle_rig_start:file19.tf";
-connectAttr "turtle_rig_start:place2dTexture22.rf" "turtle_rig_start:file19.rf";
-connectAttr "turtle_rig_start:place2dTexture22.mu" "turtle_rig_start:file19.mu";
-connectAttr "turtle_rig_start:place2dTexture22.mv" "turtle_rig_start:file19.mv";
-connectAttr "turtle_rig_start:place2dTexture22.s" "turtle_rig_start:file19.s";
-connectAttr "turtle_rig_start:place2dTexture22.wu" "turtle_rig_start:file19.wu";
-connectAttr "turtle_rig_start:place2dTexture22.wv" "turtle_rig_start:file19.wv";
-connectAttr "turtle_rig_start:place2dTexture22.re" "turtle_rig_start:file19.re";
-connectAttr "turtle_rig_start:place2dTexture22.of" "turtle_rig_start:file19.of";
-connectAttr "turtle_rig_start:place2dTexture22.r" "turtle_rig_start:file19.ro";
-connectAttr "turtle_rig_start:place2dTexture22.n" "turtle_rig_start:file19.n";
-connectAttr "turtle_rig_start:place2dTexture22.vt1" "turtle_rig_start:file19.vt1"
-		;
-connectAttr "turtle_rig_start:place2dTexture22.vt2" "turtle_rig_start:file19.vt2"
-		;
-connectAttr "turtle_rig_start:place2dTexture22.vt3" "turtle_rig_start:file19.vt3"
-		;
-connectAttr "turtle_rig_start:place2dTexture22.vc1" "turtle_rig_start:file19.vc1"
-		;
-connectAttr "turtle_rig_start:place2dTexture22.o" "turtle_rig_start:file19.uv";
-connectAttr "turtle_rig_start:place2dTexture22.ofs" "turtle_rig_start:file19.fs"
-		;
-connectAttr "turtle_rig_start:expression1.out[0]" "turtle_rig_start:file19.fe";
-connectAttr "turtle_rig_start:place2dTexture22_offsetU.o" "turtle_rig_start:place2dTexture22.ofu"
-		;
-connectAttr "turtle_rig_start:place2dTexture22_offsetV.o" "turtle_rig_start:place2dTexture22.ofv"
-		;
-connectAttr ":time1.o" "turtle_rig_start:expression1.tim";
-connectAttr "turtle_rig_start1:blinn1SG.msg" "turtle_rig_start1:materialInfo1.sg"
-		;
-connectAttr "turtle_rig_start1:place2dTexture2.c" "turtle_rig_start1:file1.c";
-connectAttr "turtle_rig_start1:place2dTexture2.tf" "turtle_rig_start1:file1.tf";
-connectAttr "turtle_rig_start1:place2dTexture2.rf" "turtle_rig_start1:file1.rf";
-connectAttr "turtle_rig_start1:place2dTexture2.mu" "turtle_rig_start1:file1.mu";
-connectAttr "turtle_rig_start1:place2dTexture2.mv" "turtle_rig_start1:file1.mv";
-connectAttr "turtle_rig_start1:place2dTexture2.s" "turtle_rig_start1:file1.s";
-connectAttr "turtle_rig_start1:place2dTexture2.wu" "turtle_rig_start1:file1.wu";
-connectAttr "turtle_rig_start1:place2dTexture2.wv" "turtle_rig_start1:file1.wv";
-connectAttr "turtle_rig_start1:place2dTexture2.re" "turtle_rig_start1:file1.re";
-connectAttr "turtle_rig_start1:place2dTexture2.of" "turtle_rig_start1:file1.of";
-connectAttr "turtle_rig_start1:place2dTexture2.r" "turtle_rig_start1:file1.ro";
-connectAttr "turtle_rig_start1:place2dTexture2.n" "turtle_rig_start1:file1.n";
-connectAttr "turtle_rig_start1:place2dTexture2.vt1" "turtle_rig_start1:file1.vt1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture2.vt2" "turtle_rig_start1:file1.vt2"
-		;
-connectAttr "turtle_rig_start1:place2dTexture2.vt3" "turtle_rig_start1:file1.vt3"
-		;
-connectAttr "turtle_rig_start1:place2dTexture2.vc1" "turtle_rig_start1:file1.vc1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture2.o" "turtle_rig_start1:file1.uv";
-connectAttr "turtle_rig_start1:place2dTexture2.ofs" "turtle_rig_start1:file1.fs"
-		;
-connectAttr "turtle_rig_start1:projection1.oc" "turtle_rig_start1:l_eye_shader.c"
-		;
-connectAttr "turtle_rig_start1:l_eye_shader.oc" "turtle_rig_start1:l_eye_sg.ss";
-connectAttr "turtle_rig_start1:l_eye_sg.msg" "turtle_rig_start1:materialInfo5.sg"
-		;
-connectAttr "turtle_rig_start1:l_eye_shader.msg" "turtle_rig_start1:materialInfo5.m"
-		;
-connectAttr "turtle_rig_start1:projection1.msg" "turtle_rig_start1:materialInfo5.t"
-		 -na;
-connectAttr "turtle_rig_start1:projection2.oc" "turtle_rig_start1:r_eye_shader.c"
-		;
-connectAttr "turtle_rig_start1:r_eye_shader.oc" "turtle_rig_start1:r_eye_sg.ss";
-connectAttr "turtle_rig_start1:r_eye_sg.msg" "turtle_rig_start1:materialInfo6.sg"
-		;
-connectAttr "turtle_rig_start1:r_eye_shader.msg" "turtle_rig_start1:materialInfo6.m"
-		;
-connectAttr "turtle_rig_start1:projection2.msg" "turtle_rig_start1:materialInfo6.t"
-		 -na;
-connectAttr "layerManager.dli[4]" "turtle_rig_start1:geo_layer.id";
-connectAttr "layerManager.dli[5]" "turtle_rig_start1:skeleton_layer.id";
-connectAttr "layerManager.dli[6]" "turtle_rig_start1:controls_layer.id";
-connectAttr "turtle_rig_start1:ramp1.oc" "turtle_rig_start1:projection1.im";
-connectAttr "turtle_rig_start1:place2dTexture4.o" "turtle_rig_start1:ramp1.uv";
-connectAttr "turtle_rig_start1:place2dTexture4.ofs" "turtle_rig_start1:ramp1.fs"
-		;
-connectAttr "turtle_rig_start1:ramp2.oc" "turtle_rig_start1:projection2.im";
-connectAttr "turtle_rig_start1:place2dTexture5.o" "turtle_rig_start1:ramp2.uv";
-connectAttr "turtle_rig_start1:place2dTexture5.ofs" "turtle_rig_start1:ramp2.fs"
-		;
-connectAttr "turtle_rig_start1:file3.oc" "turtle_rig_start1:headband_shader.base_color"
-		;
-connectAttr "turtle_rig_start1:file4.oa" "turtle_rig_start1:headband_shader.metalness"
-		;
-connectAttr "turtle_rig_start1:file5.oa" "turtle_rig_start1:headband_shader.specular_roughness"
-		;
-connectAttr "turtle_rig_start1:bump2d1.o" "turtle_rig_start1:headband_shader.n";
-connectAttr "turtle_rig_start1:headband_shader.out" "turtle_rig_start1:headband_sg.ss"
-		;
-connectAttr "turtle_rig_start1:headband_sg.msg" "turtle_rig_start1:materialInfo9.sg"
-		;
-connectAttr "turtle_rig_start1:headband_shader.msg" "turtle_rig_start1:materialInfo9.m"
-		;
-connectAttr "turtle_rig_start1:headband_shader.msg" "turtle_rig_start1:materialInfo9.t"
-		 -na;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start1:file3.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start1:file3.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start1:file3.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start1:file3.ws";
-connectAttr "turtle_rig_start1:place2dTexture6.c" "turtle_rig_start1:file3.c";
-connectAttr "turtle_rig_start1:place2dTexture6.tf" "turtle_rig_start1:file3.tf";
-connectAttr "turtle_rig_start1:place2dTexture6.rf" "turtle_rig_start1:file3.rf";
-connectAttr "turtle_rig_start1:place2dTexture6.mu" "turtle_rig_start1:file3.mu";
-connectAttr "turtle_rig_start1:place2dTexture6.mv" "turtle_rig_start1:file3.mv";
-connectAttr "turtle_rig_start1:place2dTexture6.s" "turtle_rig_start1:file3.s";
-connectAttr "turtle_rig_start1:place2dTexture6.wu" "turtle_rig_start1:file3.wu";
-connectAttr "turtle_rig_start1:place2dTexture6.wv" "turtle_rig_start1:file3.wv";
-connectAttr "turtle_rig_start1:place2dTexture6.re" "turtle_rig_start1:file3.re";
-connectAttr "turtle_rig_start1:place2dTexture6.of" "turtle_rig_start1:file3.of";
-connectAttr "turtle_rig_start1:place2dTexture6.r" "turtle_rig_start1:file3.ro";
-connectAttr "turtle_rig_start1:place2dTexture6.n" "turtle_rig_start1:file3.n";
-connectAttr "turtle_rig_start1:place2dTexture6.vt1" "turtle_rig_start1:file3.vt1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture6.vt2" "turtle_rig_start1:file3.vt2"
-		;
-connectAttr "turtle_rig_start1:place2dTexture6.vt3" "turtle_rig_start1:file3.vt3"
-		;
-connectAttr "turtle_rig_start1:place2dTexture6.vc1" "turtle_rig_start1:file3.vc1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture6.o" "turtle_rig_start1:file3.uv";
-connectAttr "turtle_rig_start1:place2dTexture6.ofs" "turtle_rig_start1:file3.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start1:file4.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start1:file4.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start1:file4.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start1:file4.ws";
-connectAttr "turtle_rig_start1:place2dTexture7.c" "turtle_rig_start1:file4.c";
-connectAttr "turtle_rig_start1:place2dTexture7.tf" "turtle_rig_start1:file4.tf";
-connectAttr "turtle_rig_start1:place2dTexture7.rf" "turtle_rig_start1:file4.rf";
-connectAttr "turtle_rig_start1:place2dTexture7.mu" "turtle_rig_start1:file4.mu";
-connectAttr "turtle_rig_start1:place2dTexture7.mv" "turtle_rig_start1:file4.mv";
-connectAttr "turtle_rig_start1:place2dTexture7.s" "turtle_rig_start1:file4.s";
-connectAttr "turtle_rig_start1:place2dTexture7.wu" "turtle_rig_start1:file4.wu";
-connectAttr "turtle_rig_start1:place2dTexture7.wv" "turtle_rig_start1:file4.wv";
-connectAttr "turtle_rig_start1:place2dTexture7.re" "turtle_rig_start1:file4.re";
-connectAttr "turtle_rig_start1:place2dTexture7.of" "turtle_rig_start1:file4.of";
-connectAttr "turtle_rig_start1:place2dTexture7.r" "turtle_rig_start1:file4.ro";
-connectAttr "turtle_rig_start1:place2dTexture7.n" "turtle_rig_start1:file4.n";
-connectAttr "turtle_rig_start1:place2dTexture7.vt1" "turtle_rig_start1:file4.vt1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture7.vt2" "turtle_rig_start1:file4.vt2"
-		;
-connectAttr "turtle_rig_start1:place2dTexture7.vt3" "turtle_rig_start1:file4.vt3"
-		;
-connectAttr "turtle_rig_start1:place2dTexture7.vc1" "turtle_rig_start1:file4.vc1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture7.o" "turtle_rig_start1:file4.uv";
-connectAttr "turtle_rig_start1:place2dTexture7.ofs" "turtle_rig_start1:file4.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start1:file5.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start1:file5.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start1:file5.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start1:file5.ws";
-connectAttr "turtle_rig_start1:place2dTexture8.c" "turtle_rig_start1:file5.c";
-connectAttr "turtle_rig_start1:place2dTexture8.tf" "turtle_rig_start1:file5.tf";
-connectAttr "turtle_rig_start1:place2dTexture8.rf" "turtle_rig_start1:file5.rf";
-connectAttr "turtle_rig_start1:place2dTexture8.mu" "turtle_rig_start1:file5.mu";
-connectAttr "turtle_rig_start1:place2dTexture8.mv" "turtle_rig_start1:file5.mv";
-connectAttr "turtle_rig_start1:place2dTexture8.s" "turtle_rig_start1:file5.s";
-connectAttr "turtle_rig_start1:place2dTexture8.wu" "turtle_rig_start1:file5.wu";
-connectAttr "turtle_rig_start1:place2dTexture8.wv" "turtle_rig_start1:file5.wv";
-connectAttr "turtle_rig_start1:place2dTexture8.re" "turtle_rig_start1:file5.re";
-connectAttr "turtle_rig_start1:place2dTexture8.of" "turtle_rig_start1:file5.of";
-connectAttr "turtle_rig_start1:place2dTexture8.r" "turtle_rig_start1:file5.ro";
-connectAttr "turtle_rig_start1:place2dTexture8.n" "turtle_rig_start1:file5.n";
-connectAttr "turtle_rig_start1:place2dTexture8.vt1" "turtle_rig_start1:file5.vt1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture8.vt2" "turtle_rig_start1:file5.vt2"
-		;
-connectAttr "turtle_rig_start1:place2dTexture8.vt3" "turtle_rig_start1:file5.vt3"
-		;
-connectAttr "turtle_rig_start1:place2dTexture8.vc1" "turtle_rig_start1:file5.vc1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture8.o" "turtle_rig_start1:file5.uv";
-connectAttr "turtle_rig_start1:place2dTexture8.ofs" "turtle_rig_start1:file5.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start1:file6.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start1:file6.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start1:file6.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start1:file6.ws";
-connectAttr "turtle_rig_start1:place2dTexture9.c" "turtle_rig_start1:file6.c";
-connectAttr "turtle_rig_start1:place2dTexture9.tf" "turtle_rig_start1:file6.tf";
-connectAttr "turtle_rig_start1:place2dTexture9.rf" "turtle_rig_start1:file6.rf";
-connectAttr "turtle_rig_start1:place2dTexture9.mu" "turtle_rig_start1:file6.mu";
-connectAttr "turtle_rig_start1:place2dTexture9.mv" "turtle_rig_start1:file6.mv";
-connectAttr "turtle_rig_start1:place2dTexture9.s" "turtle_rig_start1:file6.s";
-connectAttr "turtle_rig_start1:place2dTexture9.wu" "turtle_rig_start1:file6.wu";
-connectAttr "turtle_rig_start1:place2dTexture9.wv" "turtle_rig_start1:file6.wv";
-connectAttr "turtle_rig_start1:place2dTexture9.re" "turtle_rig_start1:file6.re";
-connectAttr "turtle_rig_start1:place2dTexture9.of" "turtle_rig_start1:file6.of";
-connectAttr "turtle_rig_start1:place2dTexture9.r" "turtle_rig_start1:file6.ro";
-connectAttr "turtle_rig_start1:place2dTexture9.n" "turtle_rig_start1:file6.n";
-connectAttr "turtle_rig_start1:place2dTexture9.vt1" "turtle_rig_start1:file6.vt1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture9.vt2" "turtle_rig_start1:file6.vt2"
-		;
-connectAttr "turtle_rig_start1:place2dTexture9.vt3" "turtle_rig_start1:file6.vt3"
-		;
-connectAttr "turtle_rig_start1:place2dTexture9.vc1" "turtle_rig_start1:file6.vc1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture9.o" "turtle_rig_start1:file6.uv";
-connectAttr "turtle_rig_start1:place2dTexture9.ofs" "turtle_rig_start1:file6.fs"
-		;
-connectAttr "turtle_rig_start1:file6.oa" "turtle_rig_start1:bump2d1.bv";
-connectAttr "turtle_rig_start1:file7.oc" "turtle_rig_start1:headphone_shader.base_color"
-		;
-connectAttr "turtle_rig_start1:file8.oa" "turtle_rig_start1:headphone_shader.metalness"
-		;
-connectAttr "turtle_rig_start1:file9.oa" "turtle_rig_start1:headphone_shader.specular_roughness"
-		;
-connectAttr "turtle_rig_start1:bump2d2.o" "turtle_rig_start1:headphone_shader.n"
-		;
-connectAttr "turtle_rig_start1:headphone_shader.out" "turtle_rig_start1:headphone_sg.ss"
-		;
-connectAttr "turtle_rig_start1:headphone_sg.msg" "turtle_rig_start1:materialInfo10.sg"
-		;
-connectAttr "turtle_rig_start1:headphone_shader.msg" "turtle_rig_start1:materialInfo10.m"
-		;
-connectAttr "turtle_rig_start1:headphone_shader.msg" "turtle_rig_start1:materialInfo10.t"
-		 -na;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start1:file7.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start1:file7.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start1:file7.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start1:file7.ws";
-connectAttr "turtle_rig_start1:place2dTexture10.c" "turtle_rig_start1:file7.c";
-connectAttr "turtle_rig_start1:place2dTexture10.tf" "turtle_rig_start1:file7.tf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture10.rf" "turtle_rig_start1:file7.rf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture10.mu" "turtle_rig_start1:file7.mu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture10.mv" "turtle_rig_start1:file7.mv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture10.s" "turtle_rig_start1:file7.s";
-connectAttr "turtle_rig_start1:place2dTexture10.wu" "turtle_rig_start1:file7.wu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture10.wv" "turtle_rig_start1:file7.wv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture10.re" "turtle_rig_start1:file7.re"
-		;
-connectAttr "turtle_rig_start1:place2dTexture10.of" "turtle_rig_start1:file7.of"
-		;
-connectAttr "turtle_rig_start1:place2dTexture10.r" "turtle_rig_start1:file7.ro";
-connectAttr "turtle_rig_start1:place2dTexture10.n" "turtle_rig_start1:file7.n";
-connectAttr "turtle_rig_start1:place2dTexture10.vt1" "turtle_rig_start1:file7.vt1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture10.vt2" "turtle_rig_start1:file7.vt2"
-		;
-connectAttr "turtle_rig_start1:place2dTexture10.vt3" "turtle_rig_start1:file7.vt3"
-		;
-connectAttr "turtle_rig_start1:place2dTexture10.vc1" "turtle_rig_start1:file7.vc1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture10.o" "turtle_rig_start1:file7.uv";
-connectAttr "turtle_rig_start1:place2dTexture10.ofs" "turtle_rig_start1:file7.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start1:file8.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start1:file8.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start1:file8.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start1:file8.ws";
-connectAttr "turtle_rig_start1:place2dTexture11.c" "turtle_rig_start1:file8.c";
-connectAttr "turtle_rig_start1:place2dTexture11.tf" "turtle_rig_start1:file8.tf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture11.rf" "turtle_rig_start1:file8.rf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture11.mu" "turtle_rig_start1:file8.mu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture11.mv" "turtle_rig_start1:file8.mv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture11.s" "turtle_rig_start1:file8.s";
-connectAttr "turtle_rig_start1:place2dTexture11.wu" "turtle_rig_start1:file8.wu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture11.wv" "turtle_rig_start1:file8.wv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture11.re" "turtle_rig_start1:file8.re"
-		;
-connectAttr "turtle_rig_start1:place2dTexture11.of" "turtle_rig_start1:file8.of"
-		;
-connectAttr "turtle_rig_start1:place2dTexture11.r" "turtle_rig_start1:file8.ro";
-connectAttr "turtle_rig_start1:place2dTexture11.n" "turtle_rig_start1:file8.n";
-connectAttr "turtle_rig_start1:place2dTexture11.vt1" "turtle_rig_start1:file8.vt1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture11.vt2" "turtle_rig_start1:file8.vt2"
-		;
-connectAttr "turtle_rig_start1:place2dTexture11.vt3" "turtle_rig_start1:file8.vt3"
-		;
-connectAttr "turtle_rig_start1:place2dTexture11.vc1" "turtle_rig_start1:file8.vc1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture11.o" "turtle_rig_start1:file8.uv";
-connectAttr "turtle_rig_start1:place2dTexture11.ofs" "turtle_rig_start1:file8.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start1:file9.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start1:file9.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start1:file9.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start1:file9.ws";
-connectAttr "turtle_rig_start1:place2dTexture12.c" "turtle_rig_start1:file9.c";
-connectAttr "turtle_rig_start1:place2dTexture12.tf" "turtle_rig_start1:file9.tf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture12.rf" "turtle_rig_start1:file9.rf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture12.mu" "turtle_rig_start1:file9.mu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture12.mv" "turtle_rig_start1:file9.mv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture12.s" "turtle_rig_start1:file9.s";
-connectAttr "turtle_rig_start1:place2dTexture12.wu" "turtle_rig_start1:file9.wu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture12.wv" "turtle_rig_start1:file9.wv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture12.re" "turtle_rig_start1:file9.re"
-		;
-connectAttr "turtle_rig_start1:place2dTexture12.of" "turtle_rig_start1:file9.of"
-		;
-connectAttr "turtle_rig_start1:place2dTexture12.r" "turtle_rig_start1:file9.ro";
-connectAttr "turtle_rig_start1:place2dTexture12.n" "turtle_rig_start1:file9.n";
-connectAttr "turtle_rig_start1:place2dTexture12.vt1" "turtle_rig_start1:file9.vt1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture12.vt2" "turtle_rig_start1:file9.vt2"
-		;
-connectAttr "turtle_rig_start1:place2dTexture12.vt3" "turtle_rig_start1:file9.vt3"
-		;
-connectAttr "turtle_rig_start1:place2dTexture12.vc1" "turtle_rig_start1:file9.vc1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture12.o" "turtle_rig_start1:file9.uv";
-connectAttr "turtle_rig_start1:place2dTexture12.ofs" "turtle_rig_start1:file9.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start1:file10.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start1:file10.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start1:file10.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start1:file10.ws";
-connectAttr "turtle_rig_start1:place2dTexture13.c" "turtle_rig_start1:file10.c";
-connectAttr "turtle_rig_start1:place2dTexture13.tf" "turtle_rig_start1:file10.tf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture13.rf" "turtle_rig_start1:file10.rf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture13.mu" "turtle_rig_start1:file10.mu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture13.mv" "turtle_rig_start1:file10.mv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture13.s" "turtle_rig_start1:file10.s";
-connectAttr "turtle_rig_start1:place2dTexture13.wu" "turtle_rig_start1:file10.wu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture13.wv" "turtle_rig_start1:file10.wv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture13.re" "turtle_rig_start1:file10.re"
-		;
-connectAttr "turtle_rig_start1:place2dTexture13.of" "turtle_rig_start1:file10.of"
-		;
-connectAttr "turtle_rig_start1:place2dTexture13.r" "turtle_rig_start1:file10.ro"
-		;
-connectAttr "turtle_rig_start1:place2dTexture13.n" "turtle_rig_start1:file10.n";
-connectAttr "turtle_rig_start1:place2dTexture13.vt1" "turtle_rig_start1:file10.vt1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture13.vt2" "turtle_rig_start1:file10.vt2"
-		;
-connectAttr "turtle_rig_start1:place2dTexture13.vt3" "turtle_rig_start1:file10.vt3"
-		;
-connectAttr "turtle_rig_start1:place2dTexture13.vc1" "turtle_rig_start1:file10.vc1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture13.o" "turtle_rig_start1:file10.uv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture13.ofs" "turtle_rig_start1:file10.fs"
-		;
-connectAttr "turtle_rig_start1:file10.oa" "turtle_rig_start1:bump2d2.bv";
-connectAttr "turtle_rig_start1:file11.oc" "turtle_rig_start1:shell_shader.base_color"
-		;
-connectAttr "turtle_rig_start1:file12.oa" "turtle_rig_start1:shell_shader.metalness"
-		;
-connectAttr "turtle_rig_start1:file13.oa" "turtle_rig_start1:shell_shader.specular_roughness"
-		;
-connectAttr "turtle_rig_start1:bump2d3.o" "turtle_rig_start1:shell_shader.n";
-connectAttr "turtle_rig_start1:shell_shader.out" "turtle_rig_start1:shell_sg.ss"
-		;
-connectAttr "turtle_rig_start1:shell_sg.msg" "turtle_rig_start1:materialInfo11.sg"
-		;
-connectAttr "turtle_rig_start1:shell_shader.msg" "turtle_rig_start1:materialInfo11.m"
-		;
-connectAttr "turtle_rig_start1:shell_shader.msg" "turtle_rig_start1:materialInfo11.t"
-		 -na;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start1:file11.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start1:file11.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start1:file11.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start1:file11.ws";
-connectAttr "turtle_rig_start1:place2dTexture14.c" "turtle_rig_start1:file11.c";
-connectAttr "turtle_rig_start1:place2dTexture14.tf" "turtle_rig_start1:file11.tf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture14.rf" "turtle_rig_start1:file11.rf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture14.mu" "turtle_rig_start1:file11.mu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture14.mv" "turtle_rig_start1:file11.mv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture14.s" "turtle_rig_start1:file11.s";
-connectAttr "turtle_rig_start1:place2dTexture14.wu" "turtle_rig_start1:file11.wu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture14.wv" "turtle_rig_start1:file11.wv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture14.re" "turtle_rig_start1:file11.re"
-		;
-connectAttr "turtle_rig_start1:place2dTexture14.of" "turtle_rig_start1:file11.of"
-		;
-connectAttr "turtle_rig_start1:place2dTexture14.r" "turtle_rig_start1:file11.ro"
-		;
-connectAttr "turtle_rig_start1:place2dTexture14.n" "turtle_rig_start1:file11.n";
-connectAttr "turtle_rig_start1:place2dTexture14.vt1" "turtle_rig_start1:file11.vt1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture14.vt2" "turtle_rig_start1:file11.vt2"
-		;
-connectAttr "turtle_rig_start1:place2dTexture14.vt3" "turtle_rig_start1:file11.vt3"
-		;
-connectAttr "turtle_rig_start1:place2dTexture14.vc1" "turtle_rig_start1:file11.vc1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture14.o" "turtle_rig_start1:file11.uv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture14.ofs" "turtle_rig_start1:file11.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start1:file12.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start1:file12.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start1:file12.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start1:file12.ws";
-connectAttr "turtle_rig_start1:place2dTexture15.c" "turtle_rig_start1:file12.c";
-connectAttr "turtle_rig_start1:place2dTexture15.tf" "turtle_rig_start1:file12.tf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture15.rf" "turtle_rig_start1:file12.rf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture15.mu" "turtle_rig_start1:file12.mu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture15.mv" "turtle_rig_start1:file12.mv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture15.s" "turtle_rig_start1:file12.s";
-connectAttr "turtle_rig_start1:place2dTexture15.wu" "turtle_rig_start1:file12.wu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture15.wv" "turtle_rig_start1:file12.wv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture15.re" "turtle_rig_start1:file12.re"
-		;
-connectAttr "turtle_rig_start1:place2dTexture15.of" "turtle_rig_start1:file12.of"
-		;
-connectAttr "turtle_rig_start1:place2dTexture15.r" "turtle_rig_start1:file12.ro"
-		;
-connectAttr "turtle_rig_start1:place2dTexture15.n" "turtle_rig_start1:file12.n";
-connectAttr "turtle_rig_start1:place2dTexture15.vt1" "turtle_rig_start1:file12.vt1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture15.vt2" "turtle_rig_start1:file12.vt2"
-		;
-connectAttr "turtle_rig_start1:place2dTexture15.vt3" "turtle_rig_start1:file12.vt3"
-		;
-connectAttr "turtle_rig_start1:place2dTexture15.vc1" "turtle_rig_start1:file12.vc1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture15.o" "turtle_rig_start1:file12.uv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture15.ofs" "turtle_rig_start1:file12.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start1:file13.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start1:file13.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start1:file13.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start1:file13.ws";
-connectAttr "turtle_rig_start1:place2dTexture16.c" "turtle_rig_start1:file13.c";
-connectAttr "turtle_rig_start1:place2dTexture16.tf" "turtle_rig_start1:file13.tf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture16.rf" "turtle_rig_start1:file13.rf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture16.mu" "turtle_rig_start1:file13.mu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture16.mv" "turtle_rig_start1:file13.mv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture16.s" "turtle_rig_start1:file13.s";
-connectAttr "turtle_rig_start1:place2dTexture16.wu" "turtle_rig_start1:file13.wu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture16.wv" "turtle_rig_start1:file13.wv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture16.re" "turtle_rig_start1:file13.re"
-		;
-connectAttr "turtle_rig_start1:place2dTexture16.of" "turtle_rig_start1:file13.of"
-		;
-connectAttr "turtle_rig_start1:place2dTexture16.r" "turtle_rig_start1:file13.ro"
-		;
-connectAttr "turtle_rig_start1:place2dTexture16.n" "turtle_rig_start1:file13.n";
-connectAttr "turtle_rig_start1:place2dTexture16.vt1" "turtle_rig_start1:file13.vt1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture16.vt2" "turtle_rig_start1:file13.vt2"
-		;
-connectAttr "turtle_rig_start1:place2dTexture16.vt3" "turtle_rig_start1:file13.vt3"
-		;
-connectAttr "turtle_rig_start1:place2dTexture16.vc1" "turtle_rig_start1:file13.vc1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture16.o" "turtle_rig_start1:file13.uv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture16.ofs" "turtle_rig_start1:file13.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start1:file14.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start1:file14.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start1:file14.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start1:file14.ws";
-connectAttr "turtle_rig_start1:place2dTexture17.c" "turtle_rig_start1:file14.c";
-connectAttr "turtle_rig_start1:place2dTexture17.tf" "turtle_rig_start1:file14.tf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture17.rf" "turtle_rig_start1:file14.rf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture17.mu" "turtle_rig_start1:file14.mu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture17.mv" "turtle_rig_start1:file14.mv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture17.s" "turtle_rig_start1:file14.s";
-connectAttr "turtle_rig_start1:place2dTexture17.wu" "turtle_rig_start1:file14.wu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture17.wv" "turtle_rig_start1:file14.wv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture17.re" "turtle_rig_start1:file14.re"
-		;
-connectAttr "turtle_rig_start1:place2dTexture17.of" "turtle_rig_start1:file14.of"
-		;
-connectAttr "turtle_rig_start1:place2dTexture17.r" "turtle_rig_start1:file14.ro"
-		;
-connectAttr "turtle_rig_start1:place2dTexture17.n" "turtle_rig_start1:file14.n";
-connectAttr "turtle_rig_start1:place2dTexture17.vt1" "turtle_rig_start1:file14.vt1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture17.vt2" "turtle_rig_start1:file14.vt2"
-		;
-connectAttr "turtle_rig_start1:place2dTexture17.vt3" "turtle_rig_start1:file14.vt3"
-		;
-connectAttr "turtle_rig_start1:place2dTexture17.vc1" "turtle_rig_start1:file14.vc1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture17.o" "turtle_rig_start1:file14.uv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture17.ofs" "turtle_rig_start1:file14.fs"
-		;
-connectAttr "turtle_rig_start1:file14.oa" "turtle_rig_start1:bump2d3.bv";
-connectAttr "turtle_rig_start1:file15.oc" "turtle_rig_start1:skin_shader.base_color"
-		;
-connectAttr "turtle_rig_start1:file16.oa" "turtle_rig_start1:skin_shader.metalness"
-		;
-connectAttr "turtle_rig_start1:file17.oa" "turtle_rig_start1:skin_shader.specular_roughness"
-		;
-connectAttr "turtle_rig_start1:bump2d4.o" "turtle_rig_start1:skin_shader.n";
-connectAttr "turtle_rig_start1:skin_shader.out" "turtle_rig_start1:skin_sg.ss";
-connectAttr "turtle_rig_start1:skin_sg.msg" "turtle_rig_start1:materialInfo12.sg"
-		;
-connectAttr "turtle_rig_start1:skin_shader.msg" "turtle_rig_start1:materialInfo12.m"
-		;
-connectAttr "turtle_rig_start1:skin_shader.msg" "turtle_rig_start1:materialInfo12.t"
-		 -na;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start1:file15.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start1:file15.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start1:file15.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start1:file15.ws";
-connectAttr "turtle_rig_start1:place2dTexture18.c" "turtle_rig_start1:file15.c";
-connectAttr "turtle_rig_start1:place2dTexture18.tf" "turtle_rig_start1:file15.tf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture18.rf" "turtle_rig_start1:file15.rf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture18.mu" "turtle_rig_start1:file15.mu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture18.mv" "turtle_rig_start1:file15.mv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture18.s" "turtle_rig_start1:file15.s";
-connectAttr "turtle_rig_start1:place2dTexture18.wu" "turtle_rig_start1:file15.wu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture18.wv" "turtle_rig_start1:file15.wv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture18.re" "turtle_rig_start1:file15.re"
-		;
-connectAttr "turtle_rig_start1:place2dTexture18.of" "turtle_rig_start1:file15.of"
-		;
-connectAttr "turtle_rig_start1:place2dTexture18.r" "turtle_rig_start1:file15.ro"
-		;
-connectAttr "turtle_rig_start1:place2dTexture18.n" "turtle_rig_start1:file15.n";
-connectAttr "turtle_rig_start1:place2dTexture18.vt1" "turtle_rig_start1:file15.vt1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture18.vt2" "turtle_rig_start1:file15.vt2"
-		;
-connectAttr "turtle_rig_start1:place2dTexture18.vt3" "turtle_rig_start1:file15.vt3"
-		;
-connectAttr "turtle_rig_start1:place2dTexture18.vc1" "turtle_rig_start1:file15.vc1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture18.o" "turtle_rig_start1:file15.uv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture18.ofs" "turtle_rig_start1:file15.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start1:file16.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start1:file16.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start1:file16.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start1:file16.ws";
-connectAttr "turtle_rig_start1:place2dTexture19.c" "turtle_rig_start1:file16.c";
-connectAttr "turtle_rig_start1:place2dTexture19.tf" "turtle_rig_start1:file16.tf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture19.rf" "turtle_rig_start1:file16.rf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture19.mu" "turtle_rig_start1:file16.mu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture19.mv" "turtle_rig_start1:file16.mv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture19.s" "turtle_rig_start1:file16.s";
-connectAttr "turtle_rig_start1:place2dTexture19.wu" "turtle_rig_start1:file16.wu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture19.wv" "turtle_rig_start1:file16.wv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture19.re" "turtle_rig_start1:file16.re"
-		;
-connectAttr "turtle_rig_start1:place2dTexture19.of" "turtle_rig_start1:file16.of"
-		;
-connectAttr "turtle_rig_start1:place2dTexture19.r" "turtle_rig_start1:file16.ro"
-		;
-connectAttr "turtle_rig_start1:place2dTexture19.n" "turtle_rig_start1:file16.n";
-connectAttr "turtle_rig_start1:place2dTexture19.vt1" "turtle_rig_start1:file16.vt1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture19.vt2" "turtle_rig_start1:file16.vt2"
-		;
-connectAttr "turtle_rig_start1:place2dTexture19.vt3" "turtle_rig_start1:file16.vt3"
-		;
-connectAttr "turtle_rig_start1:place2dTexture19.vc1" "turtle_rig_start1:file16.vc1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture19.o" "turtle_rig_start1:file16.uv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture19.ofs" "turtle_rig_start1:file16.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start1:file17.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start1:file17.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start1:file17.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start1:file17.ws";
-connectAttr "turtle_rig_start1:place2dTexture20.c" "turtle_rig_start1:file17.c";
-connectAttr "turtle_rig_start1:place2dTexture20.tf" "turtle_rig_start1:file17.tf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture20.rf" "turtle_rig_start1:file17.rf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture20.mu" "turtle_rig_start1:file17.mu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture20.mv" "turtle_rig_start1:file17.mv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture20.s" "turtle_rig_start1:file17.s";
-connectAttr "turtle_rig_start1:place2dTexture20.wu" "turtle_rig_start1:file17.wu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture20.wv" "turtle_rig_start1:file17.wv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture20.re" "turtle_rig_start1:file17.re"
-		;
-connectAttr "turtle_rig_start1:place2dTexture20.of" "turtle_rig_start1:file17.of"
-		;
-connectAttr "turtle_rig_start1:place2dTexture20.r" "turtle_rig_start1:file17.ro"
-		;
-connectAttr "turtle_rig_start1:place2dTexture20.n" "turtle_rig_start1:file17.n";
-connectAttr "turtle_rig_start1:place2dTexture20.vt1" "turtle_rig_start1:file17.vt1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture20.vt2" "turtle_rig_start1:file17.vt2"
-		;
-connectAttr "turtle_rig_start1:place2dTexture20.vt3" "turtle_rig_start1:file17.vt3"
-		;
-connectAttr "turtle_rig_start1:place2dTexture20.vc1" "turtle_rig_start1:file17.vc1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture20.o" "turtle_rig_start1:file17.uv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture20.ofs" "turtle_rig_start1:file17.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start1:file18.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start1:file18.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start1:file18.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start1:file18.ws";
-connectAttr "turtle_rig_start1:place2dTexture21.c" "turtle_rig_start1:file18.c";
-connectAttr "turtle_rig_start1:place2dTexture21.tf" "turtle_rig_start1:file18.tf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture21.rf" "turtle_rig_start1:file18.rf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture21.mu" "turtle_rig_start1:file18.mu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture21.mv" "turtle_rig_start1:file18.mv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture21.s" "turtle_rig_start1:file18.s";
-connectAttr "turtle_rig_start1:place2dTexture21.wu" "turtle_rig_start1:file18.wu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture21.wv" "turtle_rig_start1:file18.wv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture21.re" "turtle_rig_start1:file18.re"
-		;
-connectAttr "turtle_rig_start1:place2dTexture21.of" "turtle_rig_start1:file18.of"
-		;
-connectAttr "turtle_rig_start1:place2dTexture21.r" "turtle_rig_start1:file18.ro"
-		;
-connectAttr "turtle_rig_start1:place2dTexture21.n" "turtle_rig_start1:file18.n";
-connectAttr "turtle_rig_start1:place2dTexture21.vt1" "turtle_rig_start1:file18.vt1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture21.vt2" "turtle_rig_start1:file18.vt2"
-		;
-connectAttr "turtle_rig_start1:place2dTexture21.vt3" "turtle_rig_start1:file18.vt3"
-		;
-connectAttr "turtle_rig_start1:place2dTexture21.vc1" "turtle_rig_start1:file18.vc1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture21.o" "turtle_rig_start1:file18.uv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture21.ofs" "turtle_rig_start1:file18.fs"
-		;
-connectAttr "turtle_rig_start1:file18.oa" "turtle_rig_start1:bump2d4.bv";
-connectAttr "turtle_rig_start1:file19.oc" "turtle_rig_start1:aiGobo1.slidemap";
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start1:file19.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start1:file19.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start1:file19.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start1:file19.ws";
-connectAttr "turtle_rig_start1:place2dTexture22.c" "turtle_rig_start1:file19.c";
-connectAttr "turtle_rig_start1:place2dTexture22.tf" "turtle_rig_start1:file19.tf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture22.rf" "turtle_rig_start1:file19.rf"
-		;
-connectAttr "turtle_rig_start1:place2dTexture22.mu" "turtle_rig_start1:file19.mu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture22.mv" "turtle_rig_start1:file19.mv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture22.s" "turtle_rig_start1:file19.s";
-connectAttr "turtle_rig_start1:place2dTexture22.wu" "turtle_rig_start1:file19.wu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture22.wv" "turtle_rig_start1:file19.wv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture22.re" "turtle_rig_start1:file19.re"
-		;
-connectAttr "turtle_rig_start1:place2dTexture22.of" "turtle_rig_start1:file19.of"
-		;
-connectAttr "turtle_rig_start1:place2dTexture22.r" "turtle_rig_start1:file19.ro"
-		;
-connectAttr "turtle_rig_start1:place2dTexture22.n" "turtle_rig_start1:file19.n";
-connectAttr "turtle_rig_start1:place2dTexture22.vt1" "turtle_rig_start1:file19.vt1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture22.vt2" "turtle_rig_start1:file19.vt2"
-		;
-connectAttr "turtle_rig_start1:place2dTexture22.vt3" "turtle_rig_start1:file19.vt3"
-		;
-connectAttr "turtle_rig_start1:place2dTexture22.vc1" "turtle_rig_start1:file19.vc1"
-		;
-connectAttr "turtle_rig_start1:place2dTexture22.o" "turtle_rig_start1:file19.uv"
-		;
-connectAttr "turtle_rig_start1:place2dTexture22.ofs" "turtle_rig_start1:file19.fs"
-		;
-connectAttr "turtle_rig_start1:expression1.out[0]" "turtle_rig_start1:file19.fe"
-		;
-connectAttr "turtle_rig_start1:place2dTexture22_offsetU.o" "turtle_rig_start1:place2dTexture22.ofu"
-		;
-connectAttr "turtle_rig_start1:place2dTexture22_offsetV.o" "turtle_rig_start1:place2dTexture22.ofv"
-		;
-connectAttr ":time1.o" "turtle_rig_start1:expression1.tim";
-connectAttr "turtle_rig_start2:blinn1SG.msg" "turtle_rig_start2:materialInfo1.sg"
-		;
-connectAttr "turtle_rig_start2:place2dTexture2.c" "turtle_rig_start2:file1.c";
-connectAttr "turtle_rig_start2:place2dTexture2.tf" "turtle_rig_start2:file1.tf";
-connectAttr "turtle_rig_start2:place2dTexture2.rf" "turtle_rig_start2:file1.rf";
-connectAttr "turtle_rig_start2:place2dTexture2.mu" "turtle_rig_start2:file1.mu";
-connectAttr "turtle_rig_start2:place2dTexture2.mv" "turtle_rig_start2:file1.mv";
-connectAttr "turtle_rig_start2:place2dTexture2.s" "turtle_rig_start2:file1.s";
-connectAttr "turtle_rig_start2:place2dTexture2.wu" "turtle_rig_start2:file1.wu";
-connectAttr "turtle_rig_start2:place2dTexture2.wv" "turtle_rig_start2:file1.wv";
-connectAttr "turtle_rig_start2:place2dTexture2.re" "turtle_rig_start2:file1.re";
-connectAttr "turtle_rig_start2:place2dTexture2.of" "turtle_rig_start2:file1.of";
-connectAttr "turtle_rig_start2:place2dTexture2.r" "turtle_rig_start2:file1.ro";
-connectAttr "turtle_rig_start2:place2dTexture2.n" "turtle_rig_start2:file1.n";
-connectAttr "turtle_rig_start2:place2dTexture2.vt1" "turtle_rig_start2:file1.vt1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture2.vt2" "turtle_rig_start2:file1.vt2"
-		;
-connectAttr "turtle_rig_start2:place2dTexture2.vt3" "turtle_rig_start2:file1.vt3"
-		;
-connectAttr "turtle_rig_start2:place2dTexture2.vc1" "turtle_rig_start2:file1.vc1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture2.o" "turtle_rig_start2:file1.uv";
-connectAttr "turtle_rig_start2:place2dTexture2.ofs" "turtle_rig_start2:file1.fs"
-		;
-connectAttr "turtle_rig_start2:projection1.oc" "turtle_rig_start2:l_eye_shader.c"
-		;
-connectAttr "turtle_rig_start2:l_eye_shader.oc" "turtle_rig_start2:l_eye_sg.ss";
-connectAttr "turtle_rig_start2:r_eye_geoShape.iog" "turtle_rig_start2:l_eye_sg.dsm"
-		 -na;
-connectAttr "turtle_rig_start2:l_eye_sg.msg" "turtle_rig_start2:materialInfo5.sg"
-		;
-connectAttr "turtle_rig_start2:l_eye_shader.msg" "turtle_rig_start2:materialInfo5.m"
-		;
-connectAttr "turtle_rig_start2:projection1.msg" "turtle_rig_start2:materialInfo5.t"
-		 -na;
-connectAttr "turtle_rig_start2:projection2.oc" "turtle_rig_start2:r_eye_shader.c"
-		;
-connectAttr "turtle_rig_start2:r_eye_shader.oc" "turtle_rig_start2:r_eye_sg.ss";
-connectAttr "turtle_rig_start2:l_eye_geoShape.iog" "turtle_rig_start2:r_eye_sg.dsm"
-		 -na;
-connectAttr "turtle_rig_start2:r_eye_sg.msg" "turtle_rig_start2:materialInfo6.sg"
-		;
-connectAttr "turtle_rig_start2:r_eye_shader.msg" "turtle_rig_start2:materialInfo6.m"
-		;
-connectAttr "turtle_rig_start2:projection2.msg" "turtle_rig_start2:materialInfo6.t"
-		 -na;
-connectAttr "layerManager.dli[7]" "turtle_rig_start2:geo_layer.id";
-connectAttr "layerManager.dli[8]" "turtle_rig_start2:skeleton_layer.id";
-connectAttr "layerManager.dli[9]" "turtle_rig_start2:controls_layer.id";
-connectAttr "turtle_rig_start2:l_eye_projector.wim" "turtle_rig_start2:projection1.pm"
-		;
-connectAttr "turtle_rig_start2:ramp1.oc" "turtle_rig_start2:projection1.im";
-connectAttr "turtle_rig_start2:place2dTexture4.o" "turtle_rig_start2:ramp1.uv";
-connectAttr "turtle_rig_start2:place2dTexture4.ofs" "turtle_rig_start2:ramp1.fs"
-		;
-connectAttr "turtle_rig_start2:r_eye_projector.wim" "turtle_rig_start2:projection2.pm"
-		;
-connectAttr "turtle_rig_start2:ramp2.oc" "turtle_rig_start2:projection2.im";
-connectAttr "turtle_rig_start2:place2dTexture5.o" "turtle_rig_start2:ramp2.uv";
-connectAttr "turtle_rig_start2:place2dTexture5.ofs" "turtle_rig_start2:ramp2.fs"
-		;
-connectAttr "turtle_rig_start2:file3.oc" "turtle_rig_start2:headband_shader.base_color"
-		;
-connectAttr "turtle_rig_start2:file4.oa" "turtle_rig_start2:headband_shader.metalness"
-		;
-connectAttr "turtle_rig_start2:file5.oa" "turtle_rig_start2:headband_shader.specular_roughness"
-		;
-connectAttr "turtle_rig_start2:bump2d1.o" "turtle_rig_start2:headband_shader.n";
-connectAttr "turtle_rig_start2:headband_shader.out" "turtle_rig_start2:headband_sg.ss"
-		;
-connectAttr "turtle_rig_start2:headband_sg.msg" "turtle_rig_start2:materialInfo9.sg"
-		;
-connectAttr "turtle_rig_start2:headband_shader.msg" "turtle_rig_start2:materialInfo9.m"
-		;
-connectAttr "turtle_rig_start2:headband_shader.msg" "turtle_rig_start2:materialInfo9.t"
-		 -na;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start2:file3.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start2:file3.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start2:file3.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start2:file3.ws";
-connectAttr "turtle_rig_start2:place2dTexture6.c" "turtle_rig_start2:file3.c";
-connectAttr "turtle_rig_start2:place2dTexture6.tf" "turtle_rig_start2:file3.tf";
-connectAttr "turtle_rig_start2:place2dTexture6.rf" "turtle_rig_start2:file3.rf";
-connectAttr "turtle_rig_start2:place2dTexture6.mu" "turtle_rig_start2:file3.mu";
-connectAttr "turtle_rig_start2:place2dTexture6.mv" "turtle_rig_start2:file3.mv";
-connectAttr "turtle_rig_start2:place2dTexture6.s" "turtle_rig_start2:file3.s";
-connectAttr "turtle_rig_start2:place2dTexture6.wu" "turtle_rig_start2:file3.wu";
-connectAttr "turtle_rig_start2:place2dTexture6.wv" "turtle_rig_start2:file3.wv";
-connectAttr "turtle_rig_start2:place2dTexture6.re" "turtle_rig_start2:file3.re";
-connectAttr "turtle_rig_start2:place2dTexture6.of" "turtle_rig_start2:file3.of";
-connectAttr "turtle_rig_start2:place2dTexture6.r" "turtle_rig_start2:file3.ro";
-connectAttr "turtle_rig_start2:place2dTexture6.n" "turtle_rig_start2:file3.n";
-connectAttr "turtle_rig_start2:place2dTexture6.vt1" "turtle_rig_start2:file3.vt1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture6.vt2" "turtle_rig_start2:file3.vt2"
-		;
-connectAttr "turtle_rig_start2:place2dTexture6.vt3" "turtle_rig_start2:file3.vt3"
-		;
-connectAttr "turtle_rig_start2:place2dTexture6.vc1" "turtle_rig_start2:file3.vc1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture6.o" "turtle_rig_start2:file3.uv";
-connectAttr "turtle_rig_start2:place2dTexture6.ofs" "turtle_rig_start2:file3.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start2:file4.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start2:file4.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start2:file4.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start2:file4.ws";
-connectAttr "turtle_rig_start2:place2dTexture7.c" "turtle_rig_start2:file4.c";
-connectAttr "turtle_rig_start2:place2dTexture7.tf" "turtle_rig_start2:file4.tf";
-connectAttr "turtle_rig_start2:place2dTexture7.rf" "turtle_rig_start2:file4.rf";
-connectAttr "turtle_rig_start2:place2dTexture7.mu" "turtle_rig_start2:file4.mu";
-connectAttr "turtle_rig_start2:place2dTexture7.mv" "turtle_rig_start2:file4.mv";
-connectAttr "turtle_rig_start2:place2dTexture7.s" "turtle_rig_start2:file4.s";
-connectAttr "turtle_rig_start2:place2dTexture7.wu" "turtle_rig_start2:file4.wu";
-connectAttr "turtle_rig_start2:place2dTexture7.wv" "turtle_rig_start2:file4.wv";
-connectAttr "turtle_rig_start2:place2dTexture7.re" "turtle_rig_start2:file4.re";
-connectAttr "turtle_rig_start2:place2dTexture7.of" "turtle_rig_start2:file4.of";
-connectAttr "turtle_rig_start2:place2dTexture7.r" "turtle_rig_start2:file4.ro";
-connectAttr "turtle_rig_start2:place2dTexture7.n" "turtle_rig_start2:file4.n";
-connectAttr "turtle_rig_start2:place2dTexture7.vt1" "turtle_rig_start2:file4.vt1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture7.vt2" "turtle_rig_start2:file4.vt2"
-		;
-connectAttr "turtle_rig_start2:place2dTexture7.vt3" "turtle_rig_start2:file4.vt3"
-		;
-connectAttr "turtle_rig_start2:place2dTexture7.vc1" "turtle_rig_start2:file4.vc1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture7.o" "turtle_rig_start2:file4.uv";
-connectAttr "turtle_rig_start2:place2dTexture7.ofs" "turtle_rig_start2:file4.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start2:file5.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start2:file5.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start2:file5.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start2:file5.ws";
-connectAttr "turtle_rig_start2:place2dTexture8.c" "turtle_rig_start2:file5.c";
-connectAttr "turtle_rig_start2:place2dTexture8.tf" "turtle_rig_start2:file5.tf";
-connectAttr "turtle_rig_start2:place2dTexture8.rf" "turtle_rig_start2:file5.rf";
-connectAttr "turtle_rig_start2:place2dTexture8.mu" "turtle_rig_start2:file5.mu";
-connectAttr "turtle_rig_start2:place2dTexture8.mv" "turtle_rig_start2:file5.mv";
-connectAttr "turtle_rig_start2:place2dTexture8.s" "turtle_rig_start2:file5.s";
-connectAttr "turtle_rig_start2:place2dTexture8.wu" "turtle_rig_start2:file5.wu";
-connectAttr "turtle_rig_start2:place2dTexture8.wv" "turtle_rig_start2:file5.wv";
-connectAttr "turtle_rig_start2:place2dTexture8.re" "turtle_rig_start2:file5.re";
-connectAttr "turtle_rig_start2:place2dTexture8.of" "turtle_rig_start2:file5.of";
-connectAttr "turtle_rig_start2:place2dTexture8.r" "turtle_rig_start2:file5.ro";
-connectAttr "turtle_rig_start2:place2dTexture8.n" "turtle_rig_start2:file5.n";
-connectAttr "turtle_rig_start2:place2dTexture8.vt1" "turtle_rig_start2:file5.vt1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture8.vt2" "turtle_rig_start2:file5.vt2"
-		;
-connectAttr "turtle_rig_start2:place2dTexture8.vt3" "turtle_rig_start2:file5.vt3"
-		;
-connectAttr "turtle_rig_start2:place2dTexture8.vc1" "turtle_rig_start2:file5.vc1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture8.o" "turtle_rig_start2:file5.uv";
-connectAttr "turtle_rig_start2:place2dTexture8.ofs" "turtle_rig_start2:file5.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start2:file6.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start2:file6.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start2:file6.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start2:file6.ws";
-connectAttr "turtle_rig_start2:place2dTexture9.c" "turtle_rig_start2:file6.c";
-connectAttr "turtle_rig_start2:place2dTexture9.tf" "turtle_rig_start2:file6.tf";
-connectAttr "turtle_rig_start2:place2dTexture9.rf" "turtle_rig_start2:file6.rf";
-connectAttr "turtle_rig_start2:place2dTexture9.mu" "turtle_rig_start2:file6.mu";
-connectAttr "turtle_rig_start2:place2dTexture9.mv" "turtle_rig_start2:file6.mv";
-connectAttr "turtle_rig_start2:place2dTexture9.s" "turtle_rig_start2:file6.s";
-connectAttr "turtle_rig_start2:place2dTexture9.wu" "turtle_rig_start2:file6.wu";
-connectAttr "turtle_rig_start2:place2dTexture9.wv" "turtle_rig_start2:file6.wv";
-connectAttr "turtle_rig_start2:place2dTexture9.re" "turtle_rig_start2:file6.re";
-connectAttr "turtle_rig_start2:place2dTexture9.of" "turtle_rig_start2:file6.of";
-connectAttr "turtle_rig_start2:place2dTexture9.r" "turtle_rig_start2:file6.ro";
-connectAttr "turtle_rig_start2:place2dTexture9.n" "turtle_rig_start2:file6.n";
-connectAttr "turtle_rig_start2:place2dTexture9.vt1" "turtle_rig_start2:file6.vt1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture9.vt2" "turtle_rig_start2:file6.vt2"
-		;
-connectAttr "turtle_rig_start2:place2dTexture9.vt3" "turtle_rig_start2:file6.vt3"
-		;
-connectAttr "turtle_rig_start2:place2dTexture9.vc1" "turtle_rig_start2:file6.vc1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture9.o" "turtle_rig_start2:file6.uv";
-connectAttr "turtle_rig_start2:place2dTexture9.ofs" "turtle_rig_start2:file6.fs"
-		;
-connectAttr "turtle_rig_start2:file6.oa" "turtle_rig_start2:bump2d1.bv";
-connectAttr "turtle_rig_start2:file7.oc" "turtle_rig_start2:headphone_shader.base_color"
-		;
-connectAttr "turtle_rig_start2:file8.oa" "turtle_rig_start2:headphone_shader.metalness"
-		;
-connectAttr "turtle_rig_start2:file9.oa" "turtle_rig_start2:headphone_shader.specular_roughness"
-		;
-connectAttr "turtle_rig_start2:bump2d2.o" "turtle_rig_start2:headphone_shader.n"
-		;
-connectAttr "turtle_rig_start2:headphone_shader.out" "turtle_rig_start2:headphone_sg.ss"
-		;
-connectAttr "turtle_rig_start2:headphone_sg.msg" "turtle_rig_start2:materialInfo10.sg"
-		;
-connectAttr "turtle_rig_start2:headphone_shader.msg" "turtle_rig_start2:materialInfo10.m"
-		;
-connectAttr "turtle_rig_start2:headphone_shader.msg" "turtle_rig_start2:materialInfo10.t"
-		 -na;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start2:file7.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start2:file7.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start2:file7.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start2:file7.ws";
-connectAttr "turtle_rig_start2:place2dTexture10.c" "turtle_rig_start2:file7.c";
-connectAttr "turtle_rig_start2:place2dTexture10.tf" "turtle_rig_start2:file7.tf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture10.rf" "turtle_rig_start2:file7.rf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture10.mu" "turtle_rig_start2:file7.mu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture10.mv" "turtle_rig_start2:file7.mv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture10.s" "turtle_rig_start2:file7.s";
-connectAttr "turtle_rig_start2:place2dTexture10.wu" "turtle_rig_start2:file7.wu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture10.wv" "turtle_rig_start2:file7.wv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture10.re" "turtle_rig_start2:file7.re"
-		;
-connectAttr "turtle_rig_start2:place2dTexture10.of" "turtle_rig_start2:file7.of"
-		;
-connectAttr "turtle_rig_start2:place2dTexture10.r" "turtle_rig_start2:file7.ro";
-connectAttr "turtle_rig_start2:place2dTexture10.n" "turtle_rig_start2:file7.n";
-connectAttr "turtle_rig_start2:place2dTexture10.vt1" "turtle_rig_start2:file7.vt1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture10.vt2" "turtle_rig_start2:file7.vt2"
-		;
-connectAttr "turtle_rig_start2:place2dTexture10.vt3" "turtle_rig_start2:file7.vt3"
-		;
-connectAttr "turtle_rig_start2:place2dTexture10.vc1" "turtle_rig_start2:file7.vc1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture10.o" "turtle_rig_start2:file7.uv";
-connectAttr "turtle_rig_start2:place2dTexture10.ofs" "turtle_rig_start2:file7.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start2:file8.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start2:file8.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start2:file8.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start2:file8.ws";
-connectAttr "turtle_rig_start2:place2dTexture11.c" "turtle_rig_start2:file8.c";
-connectAttr "turtle_rig_start2:place2dTexture11.tf" "turtle_rig_start2:file8.tf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture11.rf" "turtle_rig_start2:file8.rf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture11.mu" "turtle_rig_start2:file8.mu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture11.mv" "turtle_rig_start2:file8.mv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture11.s" "turtle_rig_start2:file8.s";
-connectAttr "turtle_rig_start2:place2dTexture11.wu" "turtle_rig_start2:file8.wu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture11.wv" "turtle_rig_start2:file8.wv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture11.re" "turtle_rig_start2:file8.re"
-		;
-connectAttr "turtle_rig_start2:place2dTexture11.of" "turtle_rig_start2:file8.of"
-		;
-connectAttr "turtle_rig_start2:place2dTexture11.r" "turtle_rig_start2:file8.ro";
-connectAttr "turtle_rig_start2:place2dTexture11.n" "turtle_rig_start2:file8.n";
-connectAttr "turtle_rig_start2:place2dTexture11.vt1" "turtle_rig_start2:file8.vt1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture11.vt2" "turtle_rig_start2:file8.vt2"
-		;
-connectAttr "turtle_rig_start2:place2dTexture11.vt3" "turtle_rig_start2:file8.vt3"
-		;
-connectAttr "turtle_rig_start2:place2dTexture11.vc1" "turtle_rig_start2:file8.vc1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture11.o" "turtle_rig_start2:file8.uv";
-connectAttr "turtle_rig_start2:place2dTexture11.ofs" "turtle_rig_start2:file8.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start2:file9.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start2:file9.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start2:file9.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start2:file9.ws";
-connectAttr "turtle_rig_start2:place2dTexture12.c" "turtle_rig_start2:file9.c";
-connectAttr "turtle_rig_start2:place2dTexture12.tf" "turtle_rig_start2:file9.tf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture12.rf" "turtle_rig_start2:file9.rf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture12.mu" "turtle_rig_start2:file9.mu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture12.mv" "turtle_rig_start2:file9.mv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture12.s" "turtle_rig_start2:file9.s";
-connectAttr "turtle_rig_start2:place2dTexture12.wu" "turtle_rig_start2:file9.wu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture12.wv" "turtle_rig_start2:file9.wv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture12.re" "turtle_rig_start2:file9.re"
-		;
-connectAttr "turtle_rig_start2:place2dTexture12.of" "turtle_rig_start2:file9.of"
-		;
-connectAttr "turtle_rig_start2:place2dTexture12.r" "turtle_rig_start2:file9.ro";
-connectAttr "turtle_rig_start2:place2dTexture12.n" "turtle_rig_start2:file9.n";
-connectAttr "turtle_rig_start2:place2dTexture12.vt1" "turtle_rig_start2:file9.vt1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture12.vt2" "turtle_rig_start2:file9.vt2"
-		;
-connectAttr "turtle_rig_start2:place2dTexture12.vt3" "turtle_rig_start2:file9.vt3"
-		;
-connectAttr "turtle_rig_start2:place2dTexture12.vc1" "turtle_rig_start2:file9.vc1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture12.o" "turtle_rig_start2:file9.uv";
-connectAttr "turtle_rig_start2:place2dTexture12.ofs" "turtle_rig_start2:file9.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start2:file10.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start2:file10.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start2:file10.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start2:file10.ws";
-connectAttr "turtle_rig_start2:place2dTexture13.c" "turtle_rig_start2:file10.c";
-connectAttr "turtle_rig_start2:place2dTexture13.tf" "turtle_rig_start2:file10.tf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture13.rf" "turtle_rig_start2:file10.rf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture13.mu" "turtle_rig_start2:file10.mu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture13.mv" "turtle_rig_start2:file10.mv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture13.s" "turtle_rig_start2:file10.s";
-connectAttr "turtle_rig_start2:place2dTexture13.wu" "turtle_rig_start2:file10.wu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture13.wv" "turtle_rig_start2:file10.wv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture13.re" "turtle_rig_start2:file10.re"
-		;
-connectAttr "turtle_rig_start2:place2dTexture13.of" "turtle_rig_start2:file10.of"
-		;
-connectAttr "turtle_rig_start2:place2dTexture13.r" "turtle_rig_start2:file10.ro"
-		;
-connectAttr "turtle_rig_start2:place2dTexture13.n" "turtle_rig_start2:file10.n";
-connectAttr "turtle_rig_start2:place2dTexture13.vt1" "turtle_rig_start2:file10.vt1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture13.vt2" "turtle_rig_start2:file10.vt2"
-		;
-connectAttr "turtle_rig_start2:place2dTexture13.vt3" "turtle_rig_start2:file10.vt3"
-		;
-connectAttr "turtle_rig_start2:place2dTexture13.vc1" "turtle_rig_start2:file10.vc1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture13.o" "turtle_rig_start2:file10.uv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture13.ofs" "turtle_rig_start2:file10.fs"
-		;
-connectAttr "turtle_rig_start2:file10.oa" "turtle_rig_start2:bump2d2.bv";
-connectAttr "turtle_rig_start2:file11.oc" "turtle_rig_start2:shell_shader.base_color"
-		;
-connectAttr "turtle_rig_start2:file12.oa" "turtle_rig_start2:shell_shader.metalness"
-		;
-connectAttr "turtle_rig_start2:file13.oa" "turtle_rig_start2:shell_shader.specular_roughness"
-		;
-connectAttr "turtle_rig_start2:bump2d3.o" "turtle_rig_start2:shell_shader.n";
-connectAttr "turtle_rig_start2:shell_shader.out" "turtle_rig_start2:shell_sg.ss"
-		;
-connectAttr "turtle_rig_start2:shell_geo_Shape.iog" "turtle_rig_start2:shell_sg.dsm"
-		 -na;
-connectAttr "turtle_rig_start2:shell_sg.msg" "turtle_rig_start2:materialInfo11.sg"
-		;
-connectAttr "turtle_rig_start2:shell_shader.msg" "turtle_rig_start2:materialInfo11.m"
-		;
-connectAttr "turtle_rig_start2:shell_shader.msg" "turtle_rig_start2:materialInfo11.t"
-		 -na;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start2:file11.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start2:file11.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start2:file11.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start2:file11.ws";
-connectAttr "turtle_rig_start2:place2dTexture14.c" "turtle_rig_start2:file11.c";
-connectAttr "turtle_rig_start2:place2dTexture14.tf" "turtle_rig_start2:file11.tf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture14.rf" "turtle_rig_start2:file11.rf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture14.mu" "turtle_rig_start2:file11.mu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture14.mv" "turtle_rig_start2:file11.mv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture14.s" "turtle_rig_start2:file11.s";
-connectAttr "turtle_rig_start2:place2dTexture14.wu" "turtle_rig_start2:file11.wu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture14.wv" "turtle_rig_start2:file11.wv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture14.re" "turtle_rig_start2:file11.re"
-		;
-connectAttr "turtle_rig_start2:place2dTexture14.of" "turtle_rig_start2:file11.of"
-		;
-connectAttr "turtle_rig_start2:place2dTexture14.r" "turtle_rig_start2:file11.ro"
-		;
-connectAttr "turtle_rig_start2:place2dTexture14.n" "turtle_rig_start2:file11.n";
-connectAttr "turtle_rig_start2:place2dTexture14.vt1" "turtle_rig_start2:file11.vt1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture14.vt2" "turtle_rig_start2:file11.vt2"
-		;
-connectAttr "turtle_rig_start2:place2dTexture14.vt3" "turtle_rig_start2:file11.vt3"
-		;
-connectAttr "turtle_rig_start2:place2dTexture14.vc1" "turtle_rig_start2:file11.vc1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture14.o" "turtle_rig_start2:file11.uv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture14.ofs" "turtle_rig_start2:file11.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start2:file12.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start2:file12.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start2:file12.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start2:file12.ws";
-connectAttr "turtle_rig_start2:place2dTexture15.c" "turtle_rig_start2:file12.c";
-connectAttr "turtle_rig_start2:place2dTexture15.tf" "turtle_rig_start2:file12.tf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture15.rf" "turtle_rig_start2:file12.rf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture15.mu" "turtle_rig_start2:file12.mu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture15.mv" "turtle_rig_start2:file12.mv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture15.s" "turtle_rig_start2:file12.s";
-connectAttr "turtle_rig_start2:place2dTexture15.wu" "turtle_rig_start2:file12.wu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture15.wv" "turtle_rig_start2:file12.wv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture15.re" "turtle_rig_start2:file12.re"
-		;
-connectAttr "turtle_rig_start2:place2dTexture15.of" "turtle_rig_start2:file12.of"
-		;
-connectAttr "turtle_rig_start2:place2dTexture15.r" "turtle_rig_start2:file12.ro"
-		;
-connectAttr "turtle_rig_start2:place2dTexture15.n" "turtle_rig_start2:file12.n";
-connectAttr "turtle_rig_start2:place2dTexture15.vt1" "turtle_rig_start2:file12.vt1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture15.vt2" "turtle_rig_start2:file12.vt2"
-		;
-connectAttr "turtle_rig_start2:place2dTexture15.vt3" "turtle_rig_start2:file12.vt3"
-		;
-connectAttr "turtle_rig_start2:place2dTexture15.vc1" "turtle_rig_start2:file12.vc1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture15.o" "turtle_rig_start2:file12.uv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture15.ofs" "turtle_rig_start2:file12.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start2:file13.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start2:file13.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start2:file13.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start2:file13.ws";
-connectAttr "turtle_rig_start2:place2dTexture16.c" "turtle_rig_start2:file13.c";
-connectAttr "turtle_rig_start2:place2dTexture16.tf" "turtle_rig_start2:file13.tf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture16.rf" "turtle_rig_start2:file13.rf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture16.mu" "turtle_rig_start2:file13.mu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture16.mv" "turtle_rig_start2:file13.mv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture16.s" "turtle_rig_start2:file13.s";
-connectAttr "turtle_rig_start2:place2dTexture16.wu" "turtle_rig_start2:file13.wu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture16.wv" "turtle_rig_start2:file13.wv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture16.re" "turtle_rig_start2:file13.re"
-		;
-connectAttr "turtle_rig_start2:place2dTexture16.of" "turtle_rig_start2:file13.of"
-		;
-connectAttr "turtle_rig_start2:place2dTexture16.r" "turtle_rig_start2:file13.ro"
-		;
-connectAttr "turtle_rig_start2:place2dTexture16.n" "turtle_rig_start2:file13.n";
-connectAttr "turtle_rig_start2:place2dTexture16.vt1" "turtle_rig_start2:file13.vt1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture16.vt2" "turtle_rig_start2:file13.vt2"
-		;
-connectAttr "turtle_rig_start2:place2dTexture16.vt3" "turtle_rig_start2:file13.vt3"
-		;
-connectAttr "turtle_rig_start2:place2dTexture16.vc1" "turtle_rig_start2:file13.vc1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture16.o" "turtle_rig_start2:file13.uv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture16.ofs" "turtle_rig_start2:file13.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start2:file14.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start2:file14.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start2:file14.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start2:file14.ws";
-connectAttr "turtle_rig_start2:place2dTexture17.c" "turtle_rig_start2:file14.c";
-connectAttr "turtle_rig_start2:place2dTexture17.tf" "turtle_rig_start2:file14.tf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture17.rf" "turtle_rig_start2:file14.rf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture17.mu" "turtle_rig_start2:file14.mu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture17.mv" "turtle_rig_start2:file14.mv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture17.s" "turtle_rig_start2:file14.s";
-connectAttr "turtle_rig_start2:place2dTexture17.wu" "turtle_rig_start2:file14.wu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture17.wv" "turtle_rig_start2:file14.wv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture17.re" "turtle_rig_start2:file14.re"
-		;
-connectAttr "turtle_rig_start2:place2dTexture17.of" "turtle_rig_start2:file14.of"
-		;
-connectAttr "turtle_rig_start2:place2dTexture17.r" "turtle_rig_start2:file14.ro"
-		;
-connectAttr "turtle_rig_start2:place2dTexture17.n" "turtle_rig_start2:file14.n";
-connectAttr "turtle_rig_start2:place2dTexture17.vt1" "turtle_rig_start2:file14.vt1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture17.vt2" "turtle_rig_start2:file14.vt2"
-		;
-connectAttr "turtle_rig_start2:place2dTexture17.vt3" "turtle_rig_start2:file14.vt3"
-		;
-connectAttr "turtle_rig_start2:place2dTexture17.vc1" "turtle_rig_start2:file14.vc1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture17.o" "turtle_rig_start2:file14.uv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture17.ofs" "turtle_rig_start2:file14.fs"
-		;
-connectAttr "turtle_rig_start2:file14.oa" "turtle_rig_start2:bump2d3.bv";
-connectAttr "turtle_rig_start2:file15.oc" "turtle_rig_start2:skin_shader.base_color"
-		;
-connectAttr "turtle_rig_start2:file16.oa" "turtle_rig_start2:skin_shader.metalness"
-		;
-connectAttr "turtle_rig_start2:file17.oa" "turtle_rig_start2:skin_shader.specular_roughness"
-		;
-connectAttr "turtle_rig_start2:bump2d4.o" "turtle_rig_start2:skin_shader.n";
-connectAttr "turtle_rig_start2:skin_shader.out" "turtle_rig_start2:skin_sg.ss";
-connectAttr "turtle_rig_start2:r_leg_geoShape.iog" "turtle_rig_start2:skin_sg.dsm"
-		 -na;
-connectAttr "turtle_rig_start2:l_leg_geoShape.iog" "turtle_rig_start2:skin_sg.dsm"
-		 -na;
-connectAttr "turtle_rig_start2:f_legs_geo_Shape.iog" "turtle_rig_start2:skin_sg.dsm"
-		 -na;
-connectAttr "turtle_rig_start2:skin_sg.msg" "turtle_rig_start2:materialInfo12.sg"
-		;
-connectAttr "turtle_rig_start2:skin_shader.msg" "turtle_rig_start2:materialInfo12.m"
-		;
-connectAttr "turtle_rig_start2:skin_shader.msg" "turtle_rig_start2:materialInfo12.t"
-		 -na;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start2:file15.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start2:file15.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start2:file15.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start2:file15.ws";
-connectAttr "turtle_rig_start2:place2dTexture18.c" "turtle_rig_start2:file15.c";
-connectAttr "turtle_rig_start2:place2dTexture18.tf" "turtle_rig_start2:file15.tf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture18.rf" "turtle_rig_start2:file15.rf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture18.mu" "turtle_rig_start2:file15.mu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture18.mv" "turtle_rig_start2:file15.mv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture18.s" "turtle_rig_start2:file15.s";
-connectAttr "turtle_rig_start2:place2dTexture18.wu" "turtle_rig_start2:file15.wu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture18.wv" "turtle_rig_start2:file15.wv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture18.re" "turtle_rig_start2:file15.re"
-		;
-connectAttr "turtle_rig_start2:place2dTexture18.of" "turtle_rig_start2:file15.of"
-		;
-connectAttr "turtle_rig_start2:place2dTexture18.r" "turtle_rig_start2:file15.ro"
-		;
-connectAttr "turtle_rig_start2:place2dTexture18.n" "turtle_rig_start2:file15.n";
-connectAttr "turtle_rig_start2:place2dTexture18.vt1" "turtle_rig_start2:file15.vt1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture18.vt2" "turtle_rig_start2:file15.vt2"
-		;
-connectAttr "turtle_rig_start2:place2dTexture18.vt3" "turtle_rig_start2:file15.vt3"
-		;
-connectAttr "turtle_rig_start2:place2dTexture18.vc1" "turtle_rig_start2:file15.vc1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture18.o" "turtle_rig_start2:file15.uv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture18.ofs" "turtle_rig_start2:file15.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start2:file16.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start2:file16.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start2:file16.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start2:file16.ws";
-connectAttr "turtle_rig_start2:place2dTexture19.c" "turtle_rig_start2:file16.c";
-connectAttr "turtle_rig_start2:place2dTexture19.tf" "turtle_rig_start2:file16.tf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture19.rf" "turtle_rig_start2:file16.rf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture19.mu" "turtle_rig_start2:file16.mu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture19.mv" "turtle_rig_start2:file16.mv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture19.s" "turtle_rig_start2:file16.s";
-connectAttr "turtle_rig_start2:place2dTexture19.wu" "turtle_rig_start2:file16.wu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture19.wv" "turtle_rig_start2:file16.wv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture19.re" "turtle_rig_start2:file16.re"
-		;
-connectAttr "turtle_rig_start2:place2dTexture19.of" "turtle_rig_start2:file16.of"
-		;
-connectAttr "turtle_rig_start2:place2dTexture19.r" "turtle_rig_start2:file16.ro"
-		;
-connectAttr "turtle_rig_start2:place2dTexture19.n" "turtle_rig_start2:file16.n";
-connectAttr "turtle_rig_start2:place2dTexture19.vt1" "turtle_rig_start2:file16.vt1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture19.vt2" "turtle_rig_start2:file16.vt2"
-		;
-connectAttr "turtle_rig_start2:place2dTexture19.vt3" "turtle_rig_start2:file16.vt3"
-		;
-connectAttr "turtle_rig_start2:place2dTexture19.vc1" "turtle_rig_start2:file16.vc1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture19.o" "turtle_rig_start2:file16.uv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture19.ofs" "turtle_rig_start2:file16.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start2:file17.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start2:file17.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start2:file17.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start2:file17.ws";
-connectAttr "turtle_rig_start2:place2dTexture20.c" "turtle_rig_start2:file17.c";
-connectAttr "turtle_rig_start2:place2dTexture20.tf" "turtle_rig_start2:file17.tf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture20.rf" "turtle_rig_start2:file17.rf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture20.mu" "turtle_rig_start2:file17.mu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture20.mv" "turtle_rig_start2:file17.mv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture20.s" "turtle_rig_start2:file17.s";
-connectAttr "turtle_rig_start2:place2dTexture20.wu" "turtle_rig_start2:file17.wu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture20.wv" "turtle_rig_start2:file17.wv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture20.re" "turtle_rig_start2:file17.re"
-		;
-connectAttr "turtle_rig_start2:place2dTexture20.of" "turtle_rig_start2:file17.of"
-		;
-connectAttr "turtle_rig_start2:place2dTexture20.r" "turtle_rig_start2:file17.ro"
-		;
-connectAttr "turtle_rig_start2:place2dTexture20.n" "turtle_rig_start2:file17.n";
-connectAttr "turtle_rig_start2:place2dTexture20.vt1" "turtle_rig_start2:file17.vt1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture20.vt2" "turtle_rig_start2:file17.vt2"
-		;
-connectAttr "turtle_rig_start2:place2dTexture20.vt3" "turtle_rig_start2:file17.vt3"
-		;
-connectAttr "turtle_rig_start2:place2dTexture20.vc1" "turtle_rig_start2:file17.vc1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture20.o" "turtle_rig_start2:file17.uv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture20.ofs" "turtle_rig_start2:file17.fs"
-		;
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start2:file18.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start2:file18.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start2:file18.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start2:file18.ws";
-connectAttr "turtle_rig_start2:place2dTexture21.c" "turtle_rig_start2:file18.c";
-connectAttr "turtle_rig_start2:place2dTexture21.tf" "turtle_rig_start2:file18.tf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture21.rf" "turtle_rig_start2:file18.rf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture21.mu" "turtle_rig_start2:file18.mu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture21.mv" "turtle_rig_start2:file18.mv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture21.s" "turtle_rig_start2:file18.s";
-connectAttr "turtle_rig_start2:place2dTexture21.wu" "turtle_rig_start2:file18.wu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture21.wv" "turtle_rig_start2:file18.wv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture21.re" "turtle_rig_start2:file18.re"
-		;
-connectAttr "turtle_rig_start2:place2dTexture21.of" "turtle_rig_start2:file18.of"
-		;
-connectAttr "turtle_rig_start2:place2dTexture21.r" "turtle_rig_start2:file18.ro"
-		;
-connectAttr "turtle_rig_start2:place2dTexture21.n" "turtle_rig_start2:file18.n";
-connectAttr "turtle_rig_start2:place2dTexture21.vt1" "turtle_rig_start2:file18.vt1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture21.vt2" "turtle_rig_start2:file18.vt2"
-		;
-connectAttr "turtle_rig_start2:place2dTexture21.vt3" "turtle_rig_start2:file18.vt3"
-		;
-connectAttr "turtle_rig_start2:place2dTexture21.vc1" "turtle_rig_start2:file18.vc1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture21.o" "turtle_rig_start2:file18.uv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture21.ofs" "turtle_rig_start2:file18.fs"
-		;
-connectAttr "turtle_rig_start2:file18.oa" "turtle_rig_start2:bump2d4.bv";
-connectAttr "turtle_rig_start2:file19.oc" "turtle_rig_start2:aiGobo1.slidemap";
-connectAttr ":defaultColorMgtGlobals.cme" "turtle_rig_start2:file19.cme";
-connectAttr ":defaultColorMgtGlobals.cfe" "turtle_rig_start2:file19.cmcf";
-connectAttr ":defaultColorMgtGlobals.cfp" "turtle_rig_start2:file19.cmcp";
-connectAttr ":defaultColorMgtGlobals.wsn" "turtle_rig_start2:file19.ws";
-connectAttr "turtle_rig_start2:place2dTexture22.c" "turtle_rig_start2:file19.c";
-connectAttr "turtle_rig_start2:place2dTexture22.tf" "turtle_rig_start2:file19.tf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture22.rf" "turtle_rig_start2:file19.rf"
-		;
-connectAttr "turtle_rig_start2:place2dTexture22.mu" "turtle_rig_start2:file19.mu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture22.mv" "turtle_rig_start2:file19.mv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture22.s" "turtle_rig_start2:file19.s";
-connectAttr "turtle_rig_start2:place2dTexture22.wu" "turtle_rig_start2:file19.wu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture22.wv" "turtle_rig_start2:file19.wv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture22.re" "turtle_rig_start2:file19.re"
-		;
-connectAttr "turtle_rig_start2:place2dTexture22.of" "turtle_rig_start2:file19.of"
-		;
-connectAttr "turtle_rig_start2:place2dTexture22.r" "turtle_rig_start2:file19.ro"
-		;
-connectAttr "turtle_rig_start2:place2dTexture22.n" "turtle_rig_start2:file19.n";
-connectAttr "turtle_rig_start2:place2dTexture22.vt1" "turtle_rig_start2:file19.vt1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture22.vt2" "turtle_rig_start2:file19.vt2"
-		;
-connectAttr "turtle_rig_start2:place2dTexture22.vt3" "turtle_rig_start2:file19.vt3"
-		;
-connectAttr "turtle_rig_start2:place2dTexture22.vc1" "turtle_rig_start2:file19.vc1"
-		;
-connectAttr "turtle_rig_start2:place2dTexture22.o" "turtle_rig_start2:file19.uv"
-		;
-connectAttr "turtle_rig_start2:place2dTexture22.ofs" "turtle_rig_start2:file19.fs"
-		;
-connectAttr "turtle_rig_start2:expression1.out[0]" "turtle_rig_start2:file19.fe"
-		;
-connectAttr "turtle_rig_start2:place2dTexture22_offsetU.o" "turtle_rig_start2:place2dTexture22.ofu"
-		;
-connectAttr "turtle_rig_start2:place2dTexture22_offsetV.o" "turtle_rig_start2:place2dTexture22.ofv"
-		;
-connectAttr ":time1.o" "turtle_rig_start2:expression1.tim";
-connectAttr "turtle_rig_start2:r_leg_geoShapeOrig.w" "skinCluster1.ip[0].ig";
-connectAttr "turtle_rig_start2:r_leg_geoShapeOrig.o" "skinCluster1.orggeom[0]";
-connectAttr "bindPose1.msg" "skinCluster1.bp";
-connectAttr "turtle_rig_start2:r_leg_01_jnt.wm" "skinCluster1.ma[0]";
-connectAttr "turtle_rig_start2:r_leg_01_jnt.liw" "skinCluster1.lw[0]";
-connectAttr "turtle_rig_start2:r_leg_01_jnt.obcc" "skinCluster1.ifcl[0]";
-connectAttr "turtle_rig_start2:sea_turtle.msg" "bindPose1.m[0]";
-connectAttr "turtle_rig_start2:skeleton.msg" "bindPose1.m[1]";
-connectAttr "turtle_rig_start2:r_leg_jnt_grp.msg" "bindPose1.m[2]";
-connectAttr "turtle_rig_start2:r_leg_01_jnt.msg" "bindPose1.m[3]";
-connectAttr "bindPose1.w" "bindPose1.p[0]";
-connectAttr "bindPose1.m[0]" "bindPose1.p[1]";
-connectAttr "bindPose1.m[1]" "bindPose1.p[2]";
-connectAttr "bindPose1.m[2]" "bindPose1.p[3]";
-connectAttr "turtle_rig_start2:r_leg_01_jnt.bps" "bindPose1.wm[3]";
-connectAttr "turtle_rig_start2:l_leg_geoShapeOrig.w" "skinCluster2.ip[0].ig";
-connectAttr "turtle_rig_start2:l_leg_geoShapeOrig.o" "skinCluster2.orggeom[0]";
-connectAttr "bindPose2.msg" "skinCluster2.bp";
-connectAttr "turtle_rig_start2:l_leg_01_jnt.wm" "skinCluster2.ma[0]";
-connectAttr "turtle_rig_start2:l_leg_01_jnt.liw" "skinCluster2.lw[0]";
-connectAttr "turtle_rig_start2:l_leg_01_jnt.obcc" "skinCluster2.ifcl[0]";
-connectAttr "turtle_rig_start2:sea_turtle.msg" "bindPose2.m[0]";
-connectAttr "turtle_rig_start2:skeleton.msg" "bindPose2.m[1]";
-connectAttr "turtle_rig_start2:l_leg_jnt_grp.msg" "bindPose2.m[2]";
-connectAttr "turtle_rig_start2:l_leg_01_jnt.msg" "bindPose2.m[3]";
-connectAttr "bindPose2.w" "bindPose2.p[0]";
-connectAttr "bindPose2.m[0]" "bindPose2.p[1]";
-connectAttr "bindPose2.m[1]" "bindPose2.p[2]";
-connectAttr "bindPose2.m[2]" "bindPose2.p[3]";
-connectAttr "turtle_rig_start2:l_eye_geoShapeOrig.w" "skinCluster3.ip[0].ig";
-connectAttr "turtle_rig_start2:l_eye_geoShapeOrig.o" "skinCluster3.orggeom[0]";
-connectAttr "bindPose3.msg" "skinCluster3.bp";
-connectAttr "turtle_rig_start2:spine_01_jnt.wm" "skinCluster3.ma[0]";
-connectAttr "turtle_rig_start2:spine_01_jnt.liw" "skinCluster3.lw[0]";
-connectAttr "turtle_rig_start2:spine_01_jnt.obcc" "skinCluster3.ifcl[0]";
-connectAttr "turtle_rig_start2:sea_turtle.msg" "bindPose3.m[0]";
-connectAttr "turtle_rig_start2:skeleton.msg" "bindPose3.m[1]";
-connectAttr "turtle_rig_start2:spine_jnt_grp.msg" "bindPose3.m[2]";
-connectAttr "turtle_rig_start2:spine_01_jnt.msg" "bindPose3.m[3]";
-connectAttr "bindPose3.w" "bindPose3.p[0]";
-connectAttr "bindPose3.m[0]" "bindPose3.p[1]";
-connectAttr "bindPose3.m[1]" "bindPose3.p[2]";
-connectAttr "bindPose3.m[2]" "bindPose3.p[3]";
-connectAttr "turtle_rig_start2:r_eye_geoShapeOrig1.w" "skinCluster4.ip[0].ig";
-connectAttr "turtle_rig_start2:r_eye_geoShapeOrig1.o" "skinCluster4.orggeom[0]";
-connectAttr "turtle_rig_start2:spine_01_jnt.wm" "skinCluster4.ma[0]";
-connectAttr "turtle_rig_start2:spine_01_jnt.liw" "skinCluster4.lw[0]";
-connectAttr "turtle_rig_start2:spine_01_jnt.obcc" "skinCluster4.ifcl[0]";
-connectAttr "bindPose3.msg" "skinCluster4.bp";
-connectAttr "turtle_rig_start2:f_legs_geo_ShapeOrig.w" "skinCluster5.ip[0].ig";
-connectAttr "turtle_rig_start2:f_legs_geo_ShapeOrig.o" "skinCluster5.orggeom[0]"
-		;
-connectAttr "turtle_rig_start2:spine_01_jnt.wm" "skinCluster5.ma[0]";
-connectAttr "turtle_rig_start2:spine_01_jnt.liw" "skinCluster5.lw[0]";
-connectAttr "turtle_rig_start2:spine_01_jnt.obcc" "skinCluster5.ifcl[0]";
-connectAttr "bindPose3.msg" "skinCluster5.bp";
-connectAttr "turtle_rig_start2:shell_geo_ShapeOrig.w" "skinCluster6.ip[0].ig";
-connectAttr "turtle_rig_start2:shell_geo_ShapeOrig.o" "skinCluster6.orggeom[0]";
-connectAttr "bindPose4.msg" "skinCluster6.bp";
-connectAttr "turtle_rig_start2:hip_01_jnt.wm" "skinCluster6.ma[0]";
-connectAttr "turtle_rig_start2:hip_01_jnt.liw" "skinCluster6.lw[0]";
-connectAttr "turtle_rig_start2:hip_01_jnt.obcc" "skinCluster6.ifcl[0]";
-connectAttr "turtle_rig_start2:sea_turtle.msg" "bindPose4.m[0]";
-connectAttr "turtle_rig_start2:skeleton.msg" "bindPose4.m[1]";
-connectAttr "turtle_rig_start2:hip_jnt_grp.msg" "bindPose4.m[2]";
-connectAttr "turtle_rig_start2:hip_01_jnt.msg" "bindPose4.m[3]";
-connectAttr "bindPose4.w" "bindPose4.p[0]";
-connectAttr "bindPose4.m[0]" "bindPose4.p[1]";
-connectAttr "bindPose4.m[1]" "bindPose4.p[2]";
-connectAttr "bindPose4.m[2]" "bindPose4.p[3]";
-connectAttr "turtle_rig_start:blinn1SG.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start:l_eye_sg.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start:r_eye_sg.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start:headband_sg.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start:headphone_sg.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start:shell_sg.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start:skin_sg.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start1:blinn1SG.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start1:l_eye_sg.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start1:r_eye_sg.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start1:headband_sg.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start1:headphone_sg.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start1:shell_sg.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start1:skin_sg.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start2:blinn1SG.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start2:l_eye_sg.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start2:r_eye_sg.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start2:headband_sg.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start2:headphone_sg.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start2:shell_sg.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start2:skin_sg.pa" ":renderPartition.st" -na;
-connectAttr "turtle_rig_start:l_eye_shader.msg" ":defaultShaderList1.s" -na;
-connectAttr "turtle_rig_start:r_eye_shader.msg" ":defaultShaderList1.s" -na;
-connectAttr "turtle_rig_start:headband_shader.msg" ":defaultShaderList1.s" -na;
-connectAttr "turtle_rig_start:headphone_shader.msg" ":defaultShaderList1.s" -na;
-connectAttr "turtle_rig_start:shell_shader.msg" ":defaultShaderList1.s" -na;
-connectAttr "turtle_rig_start:skin_shader.msg" ":defaultShaderList1.s" -na;
-connectAttr "turtle_rig_start1:l_eye_shader.msg" ":defaultShaderList1.s" -na;
-connectAttr "turtle_rig_start1:r_eye_shader.msg" ":defaultShaderList1.s" -na;
-connectAttr "turtle_rig_start1:headband_shader.msg" ":defaultShaderList1.s" -na;
-connectAttr "turtle_rig_start1:headphone_shader.msg" ":defaultShaderList1.s" -na
-		;
-connectAttr "turtle_rig_start1:shell_shader.msg" ":defaultShaderList1.s" -na;
-connectAttr "turtle_rig_start1:skin_shader.msg" ":defaultShaderList1.s" -na;
-connectAttr "turtle_rig_start2:l_eye_shader.msg" ":defaultShaderList1.s" -na;
-connectAttr "turtle_rig_start2:r_eye_shader.msg" ":defaultShaderList1.s" -na;
-connectAttr "turtle_rig_start2:headband_shader.msg" ":defaultShaderList1.s" -na;
-connectAttr "turtle_rig_start2:headphone_shader.msg" ":defaultShaderList1.s" -na
-		;
-connectAttr "turtle_rig_start2:shell_shader.msg" ":defaultShaderList1.s" -na;
-connectAttr "turtle_rig_start2:skin_shader.msg" ":defaultShaderList1.s" -na;
-connectAttr "turtle_rig_start:place2dTexture2.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start:place2dTexture4.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start:place2dTexture5.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start:place2dTexture6.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start:place2dTexture7.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start:place2dTexture8.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start:place2dTexture9.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start:bump2d1.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "turtle_rig_start:place2dTexture10.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start:place2dTexture11.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start:place2dTexture12.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start:place2dTexture13.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start:bump2d2.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "turtle_rig_start:place2dTexture14.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start:place2dTexture15.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start:place2dTexture16.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start:place2dTexture17.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start:bump2d3.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "turtle_rig_start:place2dTexture18.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start:place2dTexture19.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start:place2dTexture20.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start:place2dTexture21.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start:bump2d4.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "turtle_rig_start:aiGobo1.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "turtle_rig_start:place2dTexture22.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:place2dTexture2.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:place2dTexture4.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:place2dTexture5.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:place2dTexture6.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:place2dTexture7.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:place2dTexture8.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:place2dTexture9.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:bump2d1.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "turtle_rig_start1:place2dTexture10.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:place2dTexture11.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:place2dTexture12.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:place2dTexture13.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:bump2d2.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "turtle_rig_start1:place2dTexture14.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:place2dTexture15.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:place2dTexture16.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:place2dTexture17.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:bump2d3.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "turtle_rig_start1:place2dTexture18.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:place2dTexture19.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:place2dTexture20.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:place2dTexture21.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start1:bump2d4.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "turtle_rig_start1:aiGobo1.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "turtle_rig_start1:place2dTexture22.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:place2dTexture2.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:l_eye_projector.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:place2dTexture4.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:r_eye_projector.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:place2dTexture5.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:place2dTexture6.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:place2dTexture7.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:place2dTexture8.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:place2dTexture9.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:bump2d1.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "turtle_rig_start2:place2dTexture10.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:place2dTexture11.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:place2dTexture12.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:place2dTexture13.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:bump2d2.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "turtle_rig_start2:place2dTexture14.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:place2dTexture15.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:place2dTexture16.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:place2dTexture17.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:bump2d3.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "turtle_rig_start2:place2dTexture18.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:place2dTexture19.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:place2dTexture20.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:place2dTexture21.msg" ":defaultRenderUtilityList1.u"
-		 -na;
-connectAttr "turtle_rig_start2:bump2d4.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "turtle_rig_start2:aiGobo1.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "turtle_rig_start2:place2dTexture22.msg" ":defaultRenderUtilityList1.u"
-		 -na;
+connectAttr "blinn1SG.msg" "materialInfo1.sg";
+connectAttr "place2dTexture2.c" "file1.c";
+connectAttr "place2dTexture2.tf" "file1.tf";
+connectAttr "place2dTexture2.rf" "file1.rf";
+connectAttr "place2dTexture2.mu" "file1.mu";
+connectAttr "place2dTexture2.mv" "file1.mv";
+connectAttr "place2dTexture2.s" "file1.s";
+connectAttr "place2dTexture2.wu" "file1.wu";
+connectAttr "place2dTexture2.wv" "file1.wv";
+connectAttr "place2dTexture2.re" "file1.re";
+connectAttr "place2dTexture2.of" "file1.of";
+connectAttr "place2dTexture2.r" "file1.ro";
+connectAttr "place2dTexture2.n" "file1.n";
+connectAttr "place2dTexture2.vt1" "file1.vt1";
+connectAttr "place2dTexture2.vt2" "file1.vt2";
+connectAttr "place2dTexture2.vt3" "file1.vt3";
+connectAttr "place2dTexture2.vc1" "file1.vc1";
+connectAttr "place2dTexture2.o" "file1.uv";
+connectAttr "place2dTexture2.ofs" "file1.fs";
+connectAttr "projection1.oc" "l_eye_shader.c";
+connectAttr "l_eye_shader.oc" "l_eye_sg.ss";
+connectAttr "r_eye_geoShape.iog" "l_eye_sg.dsm" -na;
+connectAttr "l_eye_sg.msg" "materialInfo5.sg";
+connectAttr "l_eye_shader.msg" "materialInfo5.m";
+connectAttr "projection1.msg" "materialInfo5.t" -na;
+connectAttr "projection2.oc" "r_eye_shader.c";
+connectAttr "r_eye_shader.oc" "r_eye_sg.ss";
+connectAttr "l_eye_geoShape.iog" "r_eye_sg.dsm" -na;
+connectAttr "r_eye_sg.msg" "materialInfo6.sg";
+connectAttr "r_eye_shader.msg" "materialInfo6.m";
+connectAttr "projection2.msg" "materialInfo6.t" -na;
+connectAttr "layerManager.dli[1]" "geo_layer.id";
+connectAttr "layerManager.dli[2]" "skeleton_layer.id";
+connectAttr "layerManager.dli[3]" "controls_layer.id";
+connectAttr "l_eye_projector.wim" "projection1.pm";
+connectAttr "ramp1.oc" "projection1.im";
+connectAttr "place2dTexture4.o" "ramp1.uv";
+connectAttr "place2dTexture4.ofs" "ramp1.fs";
+connectAttr "r_eye_projector.wim" "projection2.pm";
+connectAttr "ramp2.oc" "projection2.im";
+connectAttr "place2dTexture5.o" "ramp2.uv";
+connectAttr "place2dTexture5.ofs" "ramp2.fs";
+connectAttr "file3.oc" "headband_shader.base_color";
+connectAttr "file4.oa" "headband_shader.metalness";
+connectAttr "file5.oa" "headband_shader.specular_roughness";
+connectAttr "bump2d1.o" "headband_shader.n";
+connectAttr "headband_shader.out" "headband_sg.ss";
+connectAttr "headband_sg.msg" "materialInfo9.sg";
+connectAttr "headband_shader.msg" "materialInfo9.m";
+connectAttr "headband_shader.msg" "materialInfo9.t" -na;
+connectAttr ":defaultColorMgtGlobals.cme" "file3.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file3.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file3.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file3.ws";
+connectAttr "place2dTexture6.c" "file3.c";
+connectAttr "place2dTexture6.tf" "file3.tf";
+connectAttr "place2dTexture6.rf" "file3.rf";
+connectAttr "place2dTexture6.mu" "file3.mu";
+connectAttr "place2dTexture6.mv" "file3.mv";
+connectAttr "place2dTexture6.s" "file3.s";
+connectAttr "place2dTexture6.wu" "file3.wu";
+connectAttr "place2dTexture6.wv" "file3.wv";
+connectAttr "place2dTexture6.re" "file3.re";
+connectAttr "place2dTexture6.of" "file3.of";
+connectAttr "place2dTexture6.r" "file3.ro";
+connectAttr "place2dTexture6.n" "file3.n";
+connectAttr "place2dTexture6.vt1" "file3.vt1";
+connectAttr "place2dTexture6.vt2" "file3.vt2";
+connectAttr "place2dTexture6.vt3" "file3.vt3";
+connectAttr "place2dTexture6.vc1" "file3.vc1";
+connectAttr "place2dTexture6.o" "file3.uv";
+connectAttr "place2dTexture6.ofs" "file3.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file4.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file4.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file4.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file4.ws";
+connectAttr "place2dTexture7.c" "file4.c";
+connectAttr "place2dTexture7.tf" "file4.tf";
+connectAttr "place2dTexture7.rf" "file4.rf";
+connectAttr "place2dTexture7.mu" "file4.mu";
+connectAttr "place2dTexture7.mv" "file4.mv";
+connectAttr "place2dTexture7.s" "file4.s";
+connectAttr "place2dTexture7.wu" "file4.wu";
+connectAttr "place2dTexture7.wv" "file4.wv";
+connectAttr "place2dTexture7.re" "file4.re";
+connectAttr "place2dTexture7.of" "file4.of";
+connectAttr "place2dTexture7.r" "file4.ro";
+connectAttr "place2dTexture7.n" "file4.n";
+connectAttr "place2dTexture7.vt1" "file4.vt1";
+connectAttr "place2dTexture7.vt2" "file4.vt2";
+connectAttr "place2dTexture7.vt3" "file4.vt3";
+connectAttr "place2dTexture7.vc1" "file4.vc1";
+connectAttr "place2dTexture7.o" "file4.uv";
+connectAttr "place2dTexture7.ofs" "file4.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file5.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file5.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file5.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file5.ws";
+connectAttr "place2dTexture8.c" "file5.c";
+connectAttr "place2dTexture8.tf" "file5.tf";
+connectAttr "place2dTexture8.rf" "file5.rf";
+connectAttr "place2dTexture8.mu" "file5.mu";
+connectAttr "place2dTexture8.mv" "file5.mv";
+connectAttr "place2dTexture8.s" "file5.s";
+connectAttr "place2dTexture8.wu" "file5.wu";
+connectAttr "place2dTexture8.wv" "file5.wv";
+connectAttr "place2dTexture8.re" "file5.re";
+connectAttr "place2dTexture8.of" "file5.of";
+connectAttr "place2dTexture8.r" "file5.ro";
+connectAttr "place2dTexture8.n" "file5.n";
+connectAttr "place2dTexture8.vt1" "file5.vt1";
+connectAttr "place2dTexture8.vt2" "file5.vt2";
+connectAttr "place2dTexture8.vt3" "file5.vt3";
+connectAttr "place2dTexture8.vc1" "file5.vc1";
+connectAttr "place2dTexture8.o" "file5.uv";
+connectAttr "place2dTexture8.ofs" "file5.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file6.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file6.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file6.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file6.ws";
+connectAttr "place2dTexture9.c" "file6.c";
+connectAttr "place2dTexture9.tf" "file6.tf";
+connectAttr "place2dTexture9.rf" "file6.rf";
+connectAttr "place2dTexture9.mu" "file6.mu";
+connectAttr "place2dTexture9.mv" "file6.mv";
+connectAttr "place2dTexture9.s" "file6.s";
+connectAttr "place2dTexture9.wu" "file6.wu";
+connectAttr "place2dTexture9.wv" "file6.wv";
+connectAttr "place2dTexture9.re" "file6.re";
+connectAttr "place2dTexture9.of" "file6.of";
+connectAttr "place2dTexture9.r" "file6.ro";
+connectAttr "place2dTexture9.n" "file6.n";
+connectAttr "place2dTexture9.vt1" "file6.vt1";
+connectAttr "place2dTexture9.vt2" "file6.vt2";
+connectAttr "place2dTexture9.vt3" "file6.vt3";
+connectAttr "place2dTexture9.vc1" "file6.vc1";
+connectAttr "place2dTexture9.o" "file6.uv";
+connectAttr "place2dTexture9.ofs" "file6.fs";
+connectAttr "file6.oa" "bump2d1.bv";
+connectAttr "file7.oc" "headphone_shader.base_color";
+connectAttr "file8.oa" "headphone_shader.metalness";
+connectAttr "file9.oa" "headphone_shader.specular_roughness";
+connectAttr "bump2d2.o" "headphone_shader.n";
+connectAttr "headphone_shader.out" "headphone_sg.ss";
+connectAttr "headphone_sg.msg" "materialInfo10.sg";
+connectAttr "headphone_shader.msg" "materialInfo10.m";
+connectAttr "headphone_shader.msg" "materialInfo10.t" -na;
+connectAttr ":defaultColorMgtGlobals.cme" "file7.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file7.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file7.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file7.ws";
+connectAttr "place2dTexture10.c" "file7.c";
+connectAttr "place2dTexture10.tf" "file7.tf";
+connectAttr "place2dTexture10.rf" "file7.rf";
+connectAttr "place2dTexture10.mu" "file7.mu";
+connectAttr "place2dTexture10.mv" "file7.mv";
+connectAttr "place2dTexture10.s" "file7.s";
+connectAttr "place2dTexture10.wu" "file7.wu";
+connectAttr "place2dTexture10.wv" "file7.wv";
+connectAttr "place2dTexture10.re" "file7.re";
+connectAttr "place2dTexture10.of" "file7.of";
+connectAttr "place2dTexture10.r" "file7.ro";
+connectAttr "place2dTexture10.n" "file7.n";
+connectAttr "place2dTexture10.vt1" "file7.vt1";
+connectAttr "place2dTexture10.vt2" "file7.vt2";
+connectAttr "place2dTexture10.vt3" "file7.vt3";
+connectAttr "place2dTexture10.vc1" "file7.vc1";
+connectAttr "place2dTexture10.o" "file7.uv";
+connectAttr "place2dTexture10.ofs" "file7.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file8.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file8.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file8.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file8.ws";
+connectAttr "place2dTexture11.c" "file8.c";
+connectAttr "place2dTexture11.tf" "file8.tf";
+connectAttr "place2dTexture11.rf" "file8.rf";
+connectAttr "place2dTexture11.mu" "file8.mu";
+connectAttr "place2dTexture11.mv" "file8.mv";
+connectAttr "place2dTexture11.s" "file8.s";
+connectAttr "place2dTexture11.wu" "file8.wu";
+connectAttr "place2dTexture11.wv" "file8.wv";
+connectAttr "place2dTexture11.re" "file8.re";
+connectAttr "place2dTexture11.of" "file8.of";
+connectAttr "place2dTexture11.r" "file8.ro";
+connectAttr "place2dTexture11.n" "file8.n";
+connectAttr "place2dTexture11.vt1" "file8.vt1";
+connectAttr "place2dTexture11.vt2" "file8.vt2";
+connectAttr "place2dTexture11.vt3" "file8.vt3";
+connectAttr "place2dTexture11.vc1" "file8.vc1";
+connectAttr "place2dTexture11.o" "file8.uv";
+connectAttr "place2dTexture11.ofs" "file8.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file9.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file9.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file9.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file9.ws";
+connectAttr "place2dTexture12.c" "file9.c";
+connectAttr "place2dTexture12.tf" "file9.tf";
+connectAttr "place2dTexture12.rf" "file9.rf";
+connectAttr "place2dTexture12.mu" "file9.mu";
+connectAttr "place2dTexture12.mv" "file9.mv";
+connectAttr "place2dTexture12.s" "file9.s";
+connectAttr "place2dTexture12.wu" "file9.wu";
+connectAttr "place2dTexture12.wv" "file9.wv";
+connectAttr "place2dTexture12.re" "file9.re";
+connectAttr "place2dTexture12.of" "file9.of";
+connectAttr "place2dTexture12.r" "file9.ro";
+connectAttr "place2dTexture12.n" "file9.n";
+connectAttr "place2dTexture12.vt1" "file9.vt1";
+connectAttr "place2dTexture12.vt2" "file9.vt2";
+connectAttr "place2dTexture12.vt3" "file9.vt3";
+connectAttr "place2dTexture12.vc1" "file9.vc1";
+connectAttr "place2dTexture12.o" "file9.uv";
+connectAttr "place2dTexture12.ofs" "file9.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file10.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file10.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file10.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file10.ws";
+connectAttr "place2dTexture13.c" "file10.c";
+connectAttr "place2dTexture13.tf" "file10.tf";
+connectAttr "place2dTexture13.rf" "file10.rf";
+connectAttr "place2dTexture13.mu" "file10.mu";
+connectAttr "place2dTexture13.mv" "file10.mv";
+connectAttr "place2dTexture13.s" "file10.s";
+connectAttr "place2dTexture13.wu" "file10.wu";
+connectAttr "place2dTexture13.wv" "file10.wv";
+connectAttr "place2dTexture13.re" "file10.re";
+connectAttr "place2dTexture13.of" "file10.of";
+connectAttr "place2dTexture13.r" "file10.ro";
+connectAttr "place2dTexture13.n" "file10.n";
+connectAttr "place2dTexture13.vt1" "file10.vt1";
+connectAttr "place2dTexture13.vt2" "file10.vt2";
+connectAttr "place2dTexture13.vt3" "file10.vt3";
+connectAttr "place2dTexture13.vc1" "file10.vc1";
+connectAttr "place2dTexture13.o" "file10.uv";
+connectAttr "place2dTexture13.ofs" "file10.fs";
+connectAttr "file10.oa" "bump2d2.bv";
+connectAttr "file11.oc" "shell_shader.base_color";
+connectAttr "file12.oa" "shell_shader.metalness";
+connectAttr "file13.oa" "shell_shader.specular_roughness";
+connectAttr "bump2d3.o" "shell_shader.n";
+connectAttr "shell_shader.out" "shell_sg.ss";
+connectAttr "shell_geo_Shape.iog" "shell_sg.dsm" -na;
+connectAttr "shell_sg.msg" "materialInfo11.sg";
+connectAttr "shell_shader.msg" "materialInfo11.m";
+connectAttr "shell_shader.msg" "materialInfo11.t" -na;
+connectAttr ":defaultColorMgtGlobals.cme" "file11.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file11.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file11.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file11.ws";
+connectAttr "place2dTexture14.c" "file11.c";
+connectAttr "place2dTexture14.tf" "file11.tf";
+connectAttr "place2dTexture14.rf" "file11.rf";
+connectAttr "place2dTexture14.mu" "file11.mu";
+connectAttr "place2dTexture14.mv" "file11.mv";
+connectAttr "place2dTexture14.s" "file11.s";
+connectAttr "place2dTexture14.wu" "file11.wu";
+connectAttr "place2dTexture14.wv" "file11.wv";
+connectAttr "place2dTexture14.re" "file11.re";
+connectAttr "place2dTexture14.of" "file11.of";
+connectAttr "place2dTexture14.r" "file11.ro";
+connectAttr "place2dTexture14.n" "file11.n";
+connectAttr "place2dTexture14.vt1" "file11.vt1";
+connectAttr "place2dTexture14.vt2" "file11.vt2";
+connectAttr "place2dTexture14.vt3" "file11.vt3";
+connectAttr "place2dTexture14.vc1" "file11.vc1";
+connectAttr "place2dTexture14.o" "file11.uv";
+connectAttr "place2dTexture14.ofs" "file11.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file12.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file12.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file12.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file12.ws";
+connectAttr "place2dTexture15.c" "file12.c";
+connectAttr "place2dTexture15.tf" "file12.tf";
+connectAttr "place2dTexture15.rf" "file12.rf";
+connectAttr "place2dTexture15.mu" "file12.mu";
+connectAttr "place2dTexture15.mv" "file12.mv";
+connectAttr "place2dTexture15.s" "file12.s";
+connectAttr "place2dTexture15.wu" "file12.wu";
+connectAttr "place2dTexture15.wv" "file12.wv";
+connectAttr "place2dTexture15.re" "file12.re";
+connectAttr "place2dTexture15.of" "file12.of";
+connectAttr "place2dTexture15.r" "file12.ro";
+connectAttr "place2dTexture15.n" "file12.n";
+connectAttr "place2dTexture15.vt1" "file12.vt1";
+connectAttr "place2dTexture15.vt2" "file12.vt2";
+connectAttr "place2dTexture15.vt3" "file12.vt3";
+connectAttr "place2dTexture15.vc1" "file12.vc1";
+connectAttr "place2dTexture15.o" "file12.uv";
+connectAttr "place2dTexture15.ofs" "file12.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file13.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file13.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file13.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file13.ws";
+connectAttr "place2dTexture16.c" "file13.c";
+connectAttr "place2dTexture16.tf" "file13.tf";
+connectAttr "place2dTexture16.rf" "file13.rf";
+connectAttr "place2dTexture16.mu" "file13.mu";
+connectAttr "place2dTexture16.mv" "file13.mv";
+connectAttr "place2dTexture16.s" "file13.s";
+connectAttr "place2dTexture16.wu" "file13.wu";
+connectAttr "place2dTexture16.wv" "file13.wv";
+connectAttr "place2dTexture16.re" "file13.re";
+connectAttr "place2dTexture16.of" "file13.of";
+connectAttr "place2dTexture16.r" "file13.ro";
+connectAttr "place2dTexture16.n" "file13.n";
+connectAttr "place2dTexture16.vt1" "file13.vt1";
+connectAttr "place2dTexture16.vt2" "file13.vt2";
+connectAttr "place2dTexture16.vt3" "file13.vt3";
+connectAttr "place2dTexture16.vc1" "file13.vc1";
+connectAttr "place2dTexture16.o" "file13.uv";
+connectAttr "place2dTexture16.ofs" "file13.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file14.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file14.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file14.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file14.ws";
+connectAttr "place2dTexture17.c" "file14.c";
+connectAttr "place2dTexture17.tf" "file14.tf";
+connectAttr "place2dTexture17.rf" "file14.rf";
+connectAttr "place2dTexture17.mu" "file14.mu";
+connectAttr "place2dTexture17.mv" "file14.mv";
+connectAttr "place2dTexture17.s" "file14.s";
+connectAttr "place2dTexture17.wu" "file14.wu";
+connectAttr "place2dTexture17.wv" "file14.wv";
+connectAttr "place2dTexture17.re" "file14.re";
+connectAttr "place2dTexture17.of" "file14.of";
+connectAttr "place2dTexture17.r" "file14.ro";
+connectAttr "place2dTexture17.n" "file14.n";
+connectAttr "place2dTexture17.vt1" "file14.vt1";
+connectAttr "place2dTexture17.vt2" "file14.vt2";
+connectAttr "place2dTexture17.vt3" "file14.vt3";
+connectAttr "place2dTexture17.vc1" "file14.vc1";
+connectAttr "place2dTexture17.o" "file14.uv";
+connectAttr "place2dTexture17.ofs" "file14.fs";
+connectAttr "file14.oa" "bump2d3.bv";
+connectAttr "file15.oc" "skin_shader.base_color";
+connectAttr "file16.oa" "skin_shader.metalness";
+connectAttr "file17.oa" "skin_shader.specular_roughness";
+connectAttr "bump2d4.o" "skin_shader.n";
+connectAttr "skin_shader.out" "skin_sg.ss";
+connectAttr "r_leg_geoShape.iog" "skin_sg.dsm" -na;
+connectAttr "l_leg_geoShape.iog" "skin_sg.dsm" -na;
+connectAttr "f_legs_geo_Shape.iog" "skin_sg.dsm" -na;
+connectAttr "skin_sg.msg" "materialInfo12.sg";
+connectAttr "skin_shader.msg" "materialInfo12.m";
+connectAttr "skin_shader.msg" "materialInfo12.t" -na;
+connectAttr ":defaultColorMgtGlobals.cme" "file15.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file15.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file15.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file15.ws";
+connectAttr "place2dTexture18.c" "file15.c";
+connectAttr "place2dTexture18.tf" "file15.tf";
+connectAttr "place2dTexture18.rf" "file15.rf";
+connectAttr "place2dTexture18.mu" "file15.mu";
+connectAttr "place2dTexture18.mv" "file15.mv";
+connectAttr "place2dTexture18.s" "file15.s";
+connectAttr "place2dTexture18.wu" "file15.wu";
+connectAttr "place2dTexture18.wv" "file15.wv";
+connectAttr "place2dTexture18.re" "file15.re";
+connectAttr "place2dTexture18.of" "file15.of";
+connectAttr "place2dTexture18.r" "file15.ro";
+connectAttr "place2dTexture18.n" "file15.n";
+connectAttr "place2dTexture18.vt1" "file15.vt1";
+connectAttr "place2dTexture18.vt2" "file15.vt2";
+connectAttr "place2dTexture18.vt3" "file15.vt3";
+connectAttr "place2dTexture18.vc1" "file15.vc1";
+connectAttr "place2dTexture18.o" "file15.uv";
+connectAttr "place2dTexture18.ofs" "file15.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file16.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file16.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file16.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file16.ws";
+connectAttr "place2dTexture19.c" "file16.c";
+connectAttr "place2dTexture19.tf" "file16.tf";
+connectAttr "place2dTexture19.rf" "file16.rf";
+connectAttr "place2dTexture19.mu" "file16.mu";
+connectAttr "place2dTexture19.mv" "file16.mv";
+connectAttr "place2dTexture19.s" "file16.s";
+connectAttr "place2dTexture19.wu" "file16.wu";
+connectAttr "place2dTexture19.wv" "file16.wv";
+connectAttr "place2dTexture19.re" "file16.re";
+connectAttr "place2dTexture19.of" "file16.of";
+connectAttr "place2dTexture19.r" "file16.ro";
+connectAttr "place2dTexture19.n" "file16.n";
+connectAttr "place2dTexture19.vt1" "file16.vt1";
+connectAttr "place2dTexture19.vt2" "file16.vt2";
+connectAttr "place2dTexture19.vt3" "file16.vt3";
+connectAttr "place2dTexture19.vc1" "file16.vc1";
+connectAttr "place2dTexture19.o" "file16.uv";
+connectAttr "place2dTexture19.ofs" "file16.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file17.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file17.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file17.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file17.ws";
+connectAttr "place2dTexture20.c" "file17.c";
+connectAttr "place2dTexture20.tf" "file17.tf";
+connectAttr "place2dTexture20.rf" "file17.rf";
+connectAttr "place2dTexture20.mu" "file17.mu";
+connectAttr "place2dTexture20.mv" "file17.mv";
+connectAttr "place2dTexture20.s" "file17.s";
+connectAttr "place2dTexture20.wu" "file17.wu";
+connectAttr "place2dTexture20.wv" "file17.wv";
+connectAttr "place2dTexture20.re" "file17.re";
+connectAttr "place2dTexture20.of" "file17.of";
+connectAttr "place2dTexture20.r" "file17.ro";
+connectAttr "place2dTexture20.n" "file17.n";
+connectAttr "place2dTexture20.vt1" "file17.vt1";
+connectAttr "place2dTexture20.vt2" "file17.vt2";
+connectAttr "place2dTexture20.vt3" "file17.vt3";
+connectAttr "place2dTexture20.vc1" "file17.vc1";
+connectAttr "place2dTexture20.o" "file17.uv";
+connectAttr "place2dTexture20.ofs" "file17.fs";
+connectAttr ":defaultColorMgtGlobals.cme" "file18.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file18.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file18.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file18.ws";
+connectAttr "place2dTexture21.c" "file18.c";
+connectAttr "place2dTexture21.tf" "file18.tf";
+connectAttr "place2dTexture21.rf" "file18.rf";
+connectAttr "place2dTexture21.mu" "file18.mu";
+connectAttr "place2dTexture21.mv" "file18.mv";
+connectAttr "place2dTexture21.s" "file18.s";
+connectAttr "place2dTexture21.wu" "file18.wu";
+connectAttr "place2dTexture21.wv" "file18.wv";
+connectAttr "place2dTexture21.re" "file18.re";
+connectAttr "place2dTexture21.of" "file18.of";
+connectAttr "place2dTexture21.r" "file18.ro";
+connectAttr "place2dTexture21.n" "file18.n";
+connectAttr "place2dTexture21.vt1" "file18.vt1";
+connectAttr "place2dTexture21.vt2" "file18.vt2";
+connectAttr "place2dTexture21.vt3" "file18.vt3";
+connectAttr "place2dTexture21.vc1" "file18.vc1";
+connectAttr "place2dTexture21.o" "file18.uv";
+connectAttr "place2dTexture21.ofs" "file18.fs";
+connectAttr "file18.oa" "bump2d4.bv";
+connectAttr "file19.oc" "aiGobo1.slidemap";
+connectAttr ":defaultColorMgtGlobals.cme" "file19.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file19.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file19.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file19.ws";
+connectAttr "place2dTexture22.c" "file19.c";
+connectAttr "place2dTexture22.tf" "file19.tf";
+connectAttr "place2dTexture22.rf" "file19.rf";
+connectAttr "place2dTexture22.mu" "file19.mu";
+connectAttr "place2dTexture22.mv" "file19.mv";
+connectAttr "place2dTexture22.s" "file19.s";
+connectAttr "place2dTexture22.wu" "file19.wu";
+connectAttr "place2dTexture22.wv" "file19.wv";
+connectAttr "place2dTexture22.re" "file19.re";
+connectAttr "place2dTexture22.of" "file19.of";
+connectAttr "place2dTexture22.r" "file19.ro";
+connectAttr "place2dTexture22.n" "file19.n";
+connectAttr "place2dTexture22.vt1" "file19.vt1";
+connectAttr "place2dTexture22.vt2" "file19.vt2";
+connectAttr "place2dTexture22.vt3" "file19.vt3";
+connectAttr "place2dTexture22.vc1" "file19.vc1";
+connectAttr "place2dTexture22.o" "file19.uv";
+connectAttr "place2dTexture22.ofs" "file19.fs";
+connectAttr "expression1.out[0]" "file19.fe";
+connectAttr "place2dTexture22_offsetU.o" "place2dTexture22.ofu";
+connectAttr "place2dTexture22_offsetV.o" "place2dTexture22.ofv";
+connectAttr ":time1.o" "expression1.tim";
+connectAttr "blinn1SG.pa" ":renderPartition.st" -na;
+connectAttr "l_eye_sg.pa" ":renderPartition.st" -na;
+connectAttr "r_eye_sg.pa" ":renderPartition.st" -na;
+connectAttr "headband_sg.pa" ":renderPartition.st" -na;
+connectAttr "headphone_sg.pa" ":renderPartition.st" -na;
+connectAttr "shell_sg.pa" ":renderPartition.st" -na;
+connectAttr "skin_sg.pa" ":renderPartition.st" -na;
+connectAttr "l_eye_shader.msg" ":defaultShaderList1.s" -na;
+connectAttr "r_eye_shader.msg" ":defaultShaderList1.s" -na;
+connectAttr "headband_shader.msg" ":defaultShaderList1.s" -na;
+connectAttr "headphone_shader.msg" ":defaultShaderList1.s" -na;
+connectAttr "shell_shader.msg" ":defaultShaderList1.s" -na;
+connectAttr "skin_shader.msg" ":defaultShaderList1.s" -na;
+connectAttr "place2dTexture2.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "l_eye_projector.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture4.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "r_eye_projector.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture5.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture6.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture7.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture8.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture9.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "bump2d1.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture10.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture11.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture12.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture13.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "bump2d2.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture14.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture15.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture16.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture17.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "bump2d3.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture18.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture19.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture20.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture21.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "bump2d4.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "aiGobo1.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture22.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "turtle_rig_start:file1.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:projection1.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:ramp1.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:projection2.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:ramp2.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:file3.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:file4.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:file5.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:file6.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:file7.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:file8.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:file9.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:file10.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:file11.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:file12.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:file13.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:file14.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:file15.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:file16.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:file17.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:file18.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start:file19.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:file1.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:projection1.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:ramp1.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:projection2.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:ramp2.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:file3.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:file4.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:file5.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:file6.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:file7.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:file8.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:file9.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:file10.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:file11.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:file12.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:file13.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:file14.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:file15.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:file16.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:file17.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:file18.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start1:file19.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:file1.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:projection1.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:ramp1.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:projection2.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:ramp2.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:file3.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:file4.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:file5.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:file6.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:file7.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:file8.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:file9.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:file10.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:file11.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:file12.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:file13.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:file14.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:file15.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:file16.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:file17.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:file18.msg" ":defaultTextureList1.tx" -na;
-connectAttr "turtle_rig_start2:file19.msg" ":defaultTextureList1.tx" -na;
-// End of TurtleSkin(1).ma
+connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
+connectAttr "projection1.msg" ":defaultTextureList1.tx" -na;
+connectAttr "ramp1.msg" ":defaultTextureList1.tx" -na;
+connectAttr "projection2.msg" ":defaultTextureList1.tx" -na;
+connectAttr "ramp2.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file3.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file4.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file5.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file6.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file7.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file8.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file9.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file10.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file11.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file12.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file13.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file14.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file15.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file16.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file17.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file18.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file19.msg" ":defaultTextureList1.tx" -na;
+// End of turtle_rig_start.ma

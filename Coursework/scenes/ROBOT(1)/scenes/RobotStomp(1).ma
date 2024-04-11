@@ -1,6 +1,6 @@
 //Maya ASCII 2023 scene
 //Name: RobotStomp(1).ma
-//Last modified: Tue, Apr 09, 2024 11:52:47 AM
+//Last modified: Tue, Apr 09, 2024 12:25:29 PM
 //Codeset: 1252
 file -rdi 1 -ns "Robot_Biped_Rig" -rfn "Robot_Biped_RigRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/vigor/Repositories/Maya(Films)/MayaUVU/MayaUVU/Coursework/scenes/ROBOT(1)//assets/Robot_Biped_Rig.ma";
@@ -9,13 +9,14 @@ file -r -ns "Robot_Biped_Rig" -dr 1 -rfn "Robot_Biped_RigRN" -op "v=0;" -typ "ma
 requires maya "2023";
 requires "stereoCamera" "10.0";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.2.1.1";
+requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2023";
 fileInfo "version" "2023";
 fileInfo "cutIdentifier" "202211021031-847a9f9623";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22631)";
-fileInfo "UUID" "52C6FFEE-4028-4194-B3F5-499D3C8282E3";
+fileInfo "UUID" "550F7930-4788-BEE5-4BE5-4F9D9A6CC9BF";
 createNode transform -s -n "persp";
 	rename -uid "C52967F2-410C-B42E-F408-9C9082B5F906";
 	setAttr ".v" no;
@@ -424,20 +425,20 @@ createNode mesh -n "pCubeShape6" -p "transform1";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "64DA1ED0-44CE-351A-108D-2C9F4376B519";
+	rename -uid "D2C8886F-4052-C2FA-A867-BEAB82CC0DAB";
 	setAttr -s 3 ".lnk";
 	setAttr -s 3 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "C24F73D0-4BAF-92F4-37B0-9FB3E93BA20F";
+	rename -uid "D3C597D8-4D47-BA22-60AA-BA8F5320EF9E";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "859EF6C0-43C0-7A3E-2B03-CC82A74D146E";
+	rename -uid "B4ABF011-4312-814B-A16E-B8B9824E8345";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "B9D71989-4D36-9D5F-FF82-91A5453AE0BB";
+	rename -uid "CA666329-4154-859D-12A1-C981E7EC1260";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "ABDD3738-4F01-9D5D-1AC7-F0868FD44FA6";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "C53F8ED6-45F1-6350-79E4-1FBF702DC431";
+	rename -uid "DDE26613-47BD-C9A5-9D49-DAA09386D7DF";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "7A67C8BE-4148-3E9E-B53B-4CA90E869CB6";
 	setAttr ".g" yes;
@@ -2180,7 +2181,7 @@ createNode animCurveTA -n "Foot_ctrl_0_rotateX";
 	rename -uid "4E191BC2-48EA-D876-5DBC-15A4EE0A3414";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 -24.67027505524646 3 -19.49030858231238
+	setAttr -s 3 ".ktv[0:2]"  1 -24.670275055246464 3 -19.49030858231238
 		 5 -19.364757114926348;
 createNode animCurveTA -n "Foot_ctrl_0_rotateY";
 	rename -uid "A6048250-4EB4-A458-5D31-26A6F577F37C";
@@ -3690,8 +3691,8 @@ select -ne :time1;
 	setAttr -av -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -k on ".o" 11;
-	setAttr -av ".unw" 11;
+	setAttr -k on ".o" 14;
+	setAttr -av ".unw" 14;
 	setAttr -av -k on ".etw";
 	setAttr -av -k on ".tps";
 	setAttr -av -k on ".tms";

@@ -16,6 +16,18 @@ def renameLeftControls(*args):
     selection = cmds.ls(selection=True)
     cmds.rename(selection[0], "L_ctrl_")
 
+def renameFKJoints(*args):
+    selection = cmds.ls(selection=True)
+    cmds.rename(selection[0], "FK_")
+
+def renameIKJoints(*args):
+    selection = cmds.ls(selection=True)
+    cmds.rename(selection[0], "IK_")
+
+def renameRKJoints(*args):
+  selection = cmds.ls(selection=True)
+  cmds.rename(selection[0], "RK_"+ )
+
 
 def createUI():
     windowID = "renameJoints"
@@ -28,6 +40,9 @@ def createUI():
     cmds.button(label="Rename Right Joints", command=renameRightJoints)
     cmds.button(label="Rename Left Controls", command=renameLeftControls)
     cmds.button(label="Rename Right Controls", command=renameRightControls)
+    cmds.button(label="Rename FK Joints", command=renameFKJoints)
+    cmds.button(label="Rename IK Joints", command=renameIKJoints)
+    cmds.button(label="Rename RK Joints", command=renameRKJoints)
     cmds.showWindow()
 
 createUI()

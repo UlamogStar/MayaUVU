@@ -18,15 +18,19 @@ def renameLeftControls(*args):
 
 def renameFKJoints(*args):
     selection = cmds.ls(selection=True)
-    cmds.rename(selection[0], "FK_")
+    new_name = cmds.rename(selection[0], cmds.ls(selection=True)[0].replace("_", "FK_"))
+    cmds.select(new_name)
 
 def renameIKJoints(*args):
     selection = cmds.ls(selection=True)
-    cmds.rename(selection[0], "IK_")
+    new_name = cmds.rename(selection[0], cmds.ls(selection=True)[0].replace("_", "IK_"))
+    cmds.select(new_name)
 
 def renameRKJoints(*args):
-  selection = cmds.ls(selection=True)
-  cmds.rename(selection[0], "RK_"+ )
+    selection = cmds.ls(selection=True)
+    new_name = cmds.rename(selection[0], cmds.ls(selection=True)[0].replace("_", "RK_"))
+    cmds.select(new_name)
+    
 
 
 def createUI():

@@ -14,7 +14,7 @@ def create_joints_at_selected():
         cmds.select(clear=True)
         
         # Create a joint at the origin
-        joint = cmds.joint(name=obj + "_jnt")
+        joint = cmds.joint(name=obj + "_Jnt")
         
         # Match the joint's transform to the selected object's transform
         cmds.matchTransform(joint, obj, position=True, rotation=False)

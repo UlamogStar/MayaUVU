@@ -1,14 +1,14 @@
 # Various Input types/ variable declarations
 
-total_pirates = int(input("How many pirates: ")) #total number of pirates 
-total_units = float(input("How many Units: ")) #total units found
+total_pirates = int(input("How many pirates: \n")) #total number of pirates 
+total_units = float(input("How many Units: \n")) #total units found
 initial_distribution = int(3) #pirates all recieve 3 units initially
 
 # Solving variables/ equations
 # Example of long form
 # Remaining_units = remaining_units - yondu_share
 
-remaining_units = total_units - initial_distribution #calculating yondu's 13% cut
+remaining_units = total_units - (initial_distribution * (total_pirates-2)) #calculating yondu's 13% cut
 yondu_share = round(remaining_units * 0.13, 2)
 remaining_units -= yondu_share
 
@@ -23,6 +23,6 @@ peter_share += crew_share
 
 # Print the results
 
-print(f"Yondu's share: {yondu_share:.2f}")
+print(f"\nYondu's share: {yondu_share:.2f}")
 print(f"Peter's share: {peter_share:.2f}")
-print(f"Crew's share: {crew_share:.2f}")
+print(f"Crew's share: {crew_share+3:.2f}")

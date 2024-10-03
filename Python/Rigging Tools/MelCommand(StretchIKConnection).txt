@@ -1,0 +1,5 @@
+import maya.cmds as cmds
+'''
+cmds.connectAttr -f L_Arm_IK_Joint_Length_Ref_MD.outputX L_Arm_Upper_Length_PMA.input1D[0];
+cmds.connectAttr -f L_Arm_IK_Joint_Length_Ref_MD.outputX L_Arm_Upper_Length_PMA.input1D[1];
+'''

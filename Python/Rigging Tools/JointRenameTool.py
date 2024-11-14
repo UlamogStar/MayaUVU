@@ -1,53 +1,54 @@
 import maya.cmds as cmds
 
-def renameLeftJoints(*args):
-    selection = cmds.ls(selection=True)
-    cmds.rename(selection[0], "L_jnt_")
+def rename_joints_with_hierarchy(prefix, body_part, suffix):
+    selected_joints = cmds.ls(selection=True, type="joint")
+    if not selected_joints:
+        cmds.warning("No joints selected.")
+        return
 
-def renameRightJoints(*args):
-    selection = cmds.ls(selection=True)
-    cmds.rename(selection[0], "R_jnt_")
+    sorted_joints = cmds.ls(selected_joints, dag=True, type="joint")
 
-def renameRightControls(*args):
-    selection = cmds.ls(selection=True)
-    cmds.rename(selection[0], "R_ctrl_")
-
-def renameLeftControls(*args):
-    selection = cmds.ls(selection=True)
-    cmds.rename(selection[0], "L_ctrl_")
-
-def renameFKJoints(*args):
-    selection = cmds.ls(selection=True)
-    new_name = cmds.rename(selection[0], cmds.ls(selection=True)[0].replace("_", "FK_"))
-    cmds.select(new_name)
-
-def renameIKJoints(*args):
-    selection = cmds.ls(selection=True)
-    new_name = cmds.rename(selection[0], cmds.ls(selection=True)[0].replace("_", "IK_"))
-    cmds.select(new_name)
-
-def renameRKJoints(*args):
-    selection = cmds.ls(selection=True)
-    new_name = cmds.rename(selection[0], cmds.ls(selection=True)[0].replace("_", "RK_"))
-    cmds.select(new_name)
+    for i, joint in enumerate(sorted_joints, start=1):
+        new_name = f"{prefix}_{body_part}_{suffix}_{i:02d}_Jnt"
+        cmds.rename(joint, new_name)
     
+    print("Renamed joints successfully.")
 
-
-def createUI():
-    windowID = "renameJoints"
-    if cmds.window(windowID, exists=True):
-        cmds.deleteUI(windowID, window=True)
-
-    cmds.window(windowID, title="Rename Joints")
+def rename_tool_ui():
+    if cmds.window("renameToolWindow", exists=True):
+        cmds.deleteUI("renameToolWindow")
+    
+    window = cmds.window("renameToolWindow", title="Joint Renaming Tool", widthHeight=(300, 200))
     cmds.columnLayout(adjustableColumn=True)
-    cmds.button(label="Rename Left Joints", command=renameLeftJoints)
-    cmds.button(label="Rename Right Joints", command=renameRightJoints)
-    cmds.button(label="Rename Left Controls", command=renameLeftControls)
-    cmds.button(label="Rename Right Controls", command=renameRightControls)
-    cmds.button(label="Rename FK Joints", command=renameFKJoints)
-    cmds.button(label="Rename IK Joints", command=renameIKJoints)
-    cmds.button(label="Rename RK Joints", command=renameRKJoints)
-    cmds.showWindow()
+    
+    cmds.text(label="Prefix (Side)")
+    prefix_menu = cmds.optionMenu("prefix_menu")
+    cmds.menuItem(label="L")
+    cmds.menuItem(label="R")
+    
+    cmds.text(label="Body Part")
+    body_part_menu = cmds.optionMenu("body_part_menu")
+    cmds.menuItem(label="Arm")
+    cmds.menuItem(label="Leg")
+    cmds.menuItem(label="Foot")  # Added Foot option
 
-createUI()
+    cmds.text(label="Suffix (Type)")
+    suffix_menu = cmds.optionMenu("suffix_menu")
+    cmds.menuItem(label="FK")
+    cmds.menuItem(label="IK")
+    cmds.menuItem(label="RK")
+    
+    cmds.separator(height=10, style="in")
+    cmds.button(label="Rename Selected Joints", command=lambda x: execute_renaming())
+    
+    cmds.setParent('..')
+    cmds.showWindow(window)
 
+def execute_renaming():
+    prefix = cmds.optionMenu("prefix_menu", query=True, value=True)
+    body_part = cmds.optionMenu("body_part_menu", query=True, value=True)
+    suffix = cmds.optionMenu("suffix_menu", query=True, value=True)
+    
+    rename_joints_with_hierarchy(prefix, body_part, suffix)
+
+rename_tool_ui()

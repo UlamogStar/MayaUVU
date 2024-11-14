@@ -1,14 +1,21 @@
 import maya.cmds as cmds
+import re  # For handling numerical ordering
 
-def create_curves_at_selected():
-    # Get the selected objects
+# Dictionary to store groups and curves by sequence prefix
+sequence_groups = {}
+
+def create_controls():
+    global sequence_groups
+    sequence_groups = {}  # Reset the dictionary each time this function is run
+
+    # Get the selected objects in the order they were selected
     selected_objects = cmds.ls(selection=True, type='transform')
     
     if not selected_objects:
         cmds.warning("Select at least one object.")
         return
-    
-    # Create a curve at each selected object's position
+
+    # Create a group and a curve at each selected object's position without parenting
     for obj in selected_objects:
         # Clear the selection to avoid any parenting or selection issues
         cmds.select(clear=True)
@@ -17,30 +24,61 @@ def create_curves_at_selected():
         pos = cmds.xform(obj, query=True, worldSpace=True, translation=True)
         rot = cmds.xform(obj, query=True, worldSpace=True, rotation=True)
         
-        # Create a curve at the origin (initially)
+        # Create a group at the object's position
+        group = cmds.group(empty=True, name=obj + "_Ctrl_Grp")
+        cmds.xform(group, worldSpace=True, translation=pos, rotation=rot)
+        
+        # Create a curve and parent it under the group
         curve = cmds.circle(normal=(0, 1, 0), radius=1, name=obj + "_Ctrl")[0]
+        cmds.parent(curve, group)
         
-        # Move the curve to the object's position
-        cmds.xform(curve, worldSpace=True, translation=pos)
+        # Reset curve transformations so it's zeroed out relative to the group
+        cmds.xform(curve, objectSpace=True, translation=(0, 0, 0), rotation=(0, 0, 0))
         
-        # Rotate the curve to match the object's rotation (if needed)
-        cmds.xform(curve, worldSpace=True, rotation=rot)
+        # Extract the prefix (e.g., "L_Foot_FK") and sequence number
+        prefix_match = re.match(r"([a-zA-Z_]+)(\d+)", obj)
+        if prefix_match:
+            prefix = prefix_match.group(1)
+            number = int(prefix_match.group(2))
+            
+            # Add group and curve to the dictionary under its prefix
+            if prefix not in sequence_groups:
+                sequence_groups[prefix] = []
+            sequence_groups[prefix].append((number, group, curve))
+
+    cmds.warning("Controls created. Run 'Parent Controls in Sequence' to parent them.")
+
+def parent_controls_in_sequence():
+    global sequence_groups
+    
+    # Check if sequence_groups has data
+    if not sequence_groups:
+        cmds.warning("No controls to parent. Use 'Create Controls' first.")
+        return
+
+    # Parent each sequence group with the highest-numbered group as the parent
+    for groups in sequence_groups.values():
+        # Sort groups by their number in ascending order
+        groups.sort(reverse=True)  # Sort in descending order to start with the highest number as the parent
+        
+        # Parent each lower-numbered group's group to the next curve in line
+        for i in range(len(groups) - 1):
+            _, group, next_curve = groups[i + 1]
+            _, _, higher_curve = groups[i]
+            cmds.parent(group, higher_curve)
+    
+    cmds.warning("Controls parented in sequence.")
 
 def create_ui():
     # Check if the window exists, and if so, delete it
     if cmds.window("curveCreationUI", exists=True):
         cmds.deleteUI("curveCreationUI")
     
-    # Create a new window
+    # Create a new window with two buttons
     window = cmds.window("curveCreationUI", title="Curve Creation Tool", widthHeight=(200, 100))
-    
-    # Create a column layout
     cmds.columnLayout(adjustableColumn=True)
-    
-    # Add a button that calls the create_curves_at_selected function
-    cmds.button(label="Create Curves at Selected", command=lambda *args: create_curves_at_selected())
-    
-    # Show the window
+    cmds.button(label="Create Controls", command=lambda *args: create_controls())
+    cmds.button(label="Parent Controls in Sequence", command=lambda *args: parent_controls_in_sequence())
     cmds.showWindow(window)
 
 # Run the UI

@@ -9,7 +9,6 @@ def create_curve_shape_ui():
     window = cmds.window("curveShapeWindow", title="Curve Shape Adjuster", widthHeight=(300, 200))
     cmds.columnLayout(adjustableColumn=True)
 
-    # Dropdown for selecting the shape
     cmds.text(label="Select Shape:")
     shape_option = cmds.optionMenu("shapeOptionMenu")
     cmds.menuItem(label="Original")
@@ -19,14 +18,20 @@ def create_curve_shape_ui():
     cmds.menuItem(label="Oval")
     cmds.menuItem(label="Rectangle")
 
-    # Button to apply shape
     cmds.button(label="Apply Shape", command=lambda x: apply_shape(cmds.optionMenu("shapeOptionMenu", query=True, value=True)))
-    
     cmds.showWindow(window)
+
+def get_bounding_box_scale(obj):
+    """Gets the bounding box size for auto-scaling the shape."""
+    bbox = cmds.exactWorldBoundingBox(obj)
+    width = bbox[3] - bbox[0]
+    height = bbox[4] - bbox[1]
+    depth = bbox[5] - bbox[2]
+    center = [(bbox[0] + bbox[3]) / 2, (bbox[1] + bbox[4]) / 2, (bbox[2] + bbox[5]) / 2]
+    return max(width, height, depth) / 2, center
 
 def apply_shape(selected_shape):
     """Adjusts the selected object's control vertices based on the chosen shape."""
-    # Get the selected objects
     selected_objects = cmds.ls(selection=True)
 
     if not selected_objects:
@@ -37,95 +42,71 @@ def apply_shape(selected_shape):
         shape_nodes = cmds.listRelatives(obj, shapes=True)
 
         if shape_nodes:
-            shape_node = shape_nodes[0]  # Take the first shape node
+            shape_node = shape_nodes[0]
+            scale_factor, center = get_bounding_box_scale(obj)  # Get scale based on bounding box
             numCVs = cmds.getAttr(shape_node + ".spans") + cmds.getAttr(shape_node + ".degree")
 
-            # Store the original position
-            original_position = cmds.xform(obj, query=True, worldSpace=True, translation=True)
-
-            # Clear existing CV positions
             cmds.xform(shape_node + ".cv[*]", worldSpace=True, translation=[0, 0, 0])
 
             if selected_shape == "Circle":
-                adjust_to_circle(shape_node, original_position)
+                adjust_to_circle(shape_node, center, scale_factor)
             elif selected_shape == "Diamond":
-                adjust_to_diamond(shape_node, original_position)
+                adjust_to_diamond(shape_node, center, scale_factor)
             elif selected_shape == "Square":
-                adjust_to_square(shape_node, original_position)
+                adjust_to_square(shape_node, center, scale_factor)
             elif selected_shape == "Oval":
-                adjust_to_oval(shape_node, original_position)
+                adjust_to_oval(shape_node, center, scale_factor)
             elif selected_shape == "Rectangle":
-                adjust_to_rectangle(shape_node, original_position)
+                adjust_to_rectangle(shape_node, center, scale_factor)
             else:
                 reset_curve(shape_node, numCVs)
 
-def adjust_to_circle(shape_node, original_position):
-    """Adjusts the curve to a circular shape."""
-    numCVs = 32  # More CVs for a smoother circle
+def adjust_to_circle(shape_node, center, scale_factor):
+    numCVs = 32
     for i in range(numCVs):
-        angle = (i / float(numCVs)) * (2 * math.pi)  # Full circle
-        x = original_position[0] + 5 * math.cos(angle)  # Keep original position
-        y = original_position[1] + 5 * math.sin(angle)
+        angle = (i / float(numCVs)) * (2 * math.pi)
+        x = center[0] + scale_factor * math.cos(angle)
+        y = center[1] + scale_factor * math.sin(angle)
         cmds.xform(shape_node + ".cv[%d]" % i, worldSpace=True, translation=(x, y, 0))
 
-def adjust_to_diamond(shape_node, original_position):
-    """Adjusts the curve to a diamond shape with sharp corners."""
+def adjust_to_diamond(shape_node, center, scale_factor):
     diamond_positions = [
-        (0, 5, 0),    # Top
-        (5, 0, 0),    # Right
-        (0, -5, 0),   # Bottom
-        (-5, 0, 0),   # Left
-        (0, 5, 0)     # Close the diamond
+        (0, scale_factor), (scale_factor, 0), (0, -scale_factor), (-scale_factor, 0), (0, scale_factor)
     ]
-
-    for i in range(len(diamond_positions)):
-        x = original_position[0] + diamond_positions[i][0]
-        y = original_position[1] + diamond_positions[i][1]
+    for i, (dx, dy) in enumerate(diamond_positions):
+        x = center[0] + dx
+        y = center[1] + dy
         cmds.xform(shape_node + ".cv[%d]" % i, worldSpace=True, translation=(x, y, 0))
 
-def adjust_to_square(shape_node, original_position):
-    """Adjusts the curve to a square shape with hard corners."""
+def adjust_to_square(shape_node, center, scale_factor):
     square_positions = [
-        (5, 5, 0),   # Top Right
-        (5, -5, 0),  # Bottom Right
-        (-5, -5, 0), # Bottom Left
-        (-5, 5, 0),  # Top Left
-        (5, 5, 0)    # Close the square
+        (scale_factor, scale_factor), (scale_factor, -scale_factor),
+        (-scale_factor, -scale_factor), (-scale_factor, scale_factor), (scale_factor, scale_factor)
     ]
-
-    for i in range(len(square_positions)):
-        x = original_position[0] + square_positions[i][0]
-        y = original_position[1] + square_positions[i][1]
+    for i, (dx, dy) in enumerate(square_positions):
+        x = center[0] + dx
+        y = center[1] + dy
         cmds.xform(shape_node + ".cv[%d]" % i, worldSpace=True, translation=(x, y, 0))
 
-def adjust_to_rectangle(shape_node, original_position):
-    """Adjusts the curve to a rectangle shape with sharp corners."""
+def adjust_to_rectangle(shape_node, center, scale_factor):
     rectangle_positions = [
-        (6, 4, 0),   # Top Right
-        (6, -4, 0),  # Bottom Right
-        (-6, -4, 0), # Bottom Left
-        (-6, 4, 0),  # Top Left
-        (6, 4, 0)    # Close the rectangle
+        (1.5 * scale_factor, scale_factor), (1.5 * scale_factor, -scale_factor),
+        (-1.5 * scale_factor, -scale_factor), (-1.5 * scale_factor, scale_factor), (1.5 * scale_factor, scale_factor)
     ]
-
-    for i in range(len(rectangle_positions)):
-        x = original_position[0] + rectangle_positions[i][0]
-        y = original_position[1] + rectangle_positions[i][1]
+    for i, (dx, dy) in enumerate(rectangle_positions):
+        x = center[0] + dx
+        y = center[1] + dy
         cmds.xform(shape_node + ".cv[%d]" % i, worldSpace=True, translation=(x, y, 0))
 
-def adjust_to_oval(shape_node, original_position):
-    """Adjusts the curve to an oval shape."""
-    numCVs = 32  # More CVs for a smoother oval
+def adjust_to_oval(shape_node, center, scale_factor):
+    numCVs = 32
     for i in range(numCVs):
-        angle = (i / float(numCVs)) * (2 * math.pi)  # Full circle
-        x = original_position[0] + 6 * math.cos(angle)  # Adjust the width for oval
-        y = original_position[1] + 4 * math.sin(angle)  # Adjust the height for oval
+        angle = (i / float(numCVs)) * (2 * math.pi)
+        x = center[0] + 1.5 * scale_factor * math.cos(angle)
+        y = center[1] + scale_factor * math.sin(angle)
         cmds.xform(shape_node + ".cv[%d]" % i, worldSpace=True, translation=(x, y, 0))
 
 def reset_curve(shape_node, numCVs):
-    """Resets the curve to its original shape."""
-    # This function can be customized based on how you want to reset the curve
-    pass  # Add logic to reset curve here
+    pass
 
-# Run the UI
 create_curve_shape_ui()

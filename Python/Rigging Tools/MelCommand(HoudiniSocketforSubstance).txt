@@ -1,0 +1,2 @@
+Houdini socket command for Substance
+optionVar -iv "houdiniEngineSessionType" 2 -iv "houdiniEngineSessionPipeCustom" 0;
